@@ -55,72 +55,69 @@ export default function VideoWheel() {
 
   return (
     <div className="relative w-full flex flex-col items-center">
-      {/* Navigation and 3D scene */}
-      <div className="flex items-center justify-center gap-8 w-full">
-        {/* Left arrow */}
-        <button
-          onClick={handlePrev}
-          className="p-2 text-gray-400 hover:text-amber-400 transition-colors"
-          aria-label="Previous video"
-        >
-          <ChevronLeft size={28} />
-        </button>
+      {/* Left arrow - positioned at page edge */}
+      <button
+        onClick={handlePrev}
+        className="absolute left-0 top-1/2 -translate-y-1/2 p-3 text-gray-400 hover:text-amber-400 transition-colors z-10"
+        aria-label="Previous video"
+      >
+        <ChevronLeft size={32} />
+      </button>
 
-        {/* 3D scene */}
+      {/* 3D scene - centered */}
+      <div
+        className="relative"
+        style={{ height: 280, width: '100%', maxWidth: 600, perspective: 1100 }}
+      >
         <div
-          className="relative"
-          style={{ height: 280, width: '100%', maxWidth: 600, perspective: 1100 }}
+          ref={wheelRef}
+          className="absolute left-1/2 top-1/2"
+          style={{
+            transformStyle: 'preserve-3d',
+            transform: 'rotateY(0deg)',
+            marginLeft: -120,
+            marginTop: -100,
+            transition: 'transform 0.6s ease-out',
+          }}
         >
-          <div
-            ref={wheelRef}
-            className="absolute left-1/2 top-1/2"
-            style={{
-              transformStyle: 'preserve-3d',
-              transform: 'rotateY(0deg)',
-              marginLeft: -120,
-              marginTop: -100,
-              transition: 'transform 0.6s ease-out',
-            }}
-          >
-            {videoItems.map((item, i) => {
-              const angle = anglePerItem * i
-              return (
+          {videoItems.map((item, i) => {
+            const angle = anglePerItem * i
+            return (
+              <div
+                key={item.id}
+                className="absolute"
+                style={{
+                  width: 240,
+                  height: 200,
+                  transform: `rotateY(${angle}deg) translateZ(${radius}px)`,
+                  backfaceVisibility: 'hidden',
+                }}
+              >
                 <div
-                  key={item.id}
-                  className="absolute"
-                  style={{
-                    width: 240,
-                    height: 200,
-                    transform: `rotateY(${angle}deg) translateZ(${radius}px)`,
-                    backfaceVisibility: 'hidden',
-                  }}
+                  className={`w-full h-full rounded-xl bg-gradient-to-br ${CATEGORY_COLORS[item.category] ?? 'from-gray-800 to-gray-600'} border border-white/10 flex flex-col items-center justify-center gap-3 cursor-pointer hover:border-amber-400/50 transition-colors shadow-xl`}
                 >
-                  <div
-                    className={`w-full h-full rounded-xl bg-gradient-to-br ${CATEGORY_COLORS[item.category] ?? 'from-gray-800 to-gray-600'} border border-white/10 flex flex-col items-center justify-center gap-3 cursor-pointer hover:border-amber-400/50 transition-colors shadow-xl`}
-                  >
-                    <div className="w-14 h-14 rounded-full bg-white/10 flex items-center justify-center">
-                      <Play className="w-6 h-6 text-white fill-white ml-1" />
-                    </div>
-                    <div className="text-center px-4">
-                      <p className="text-white font-semibold text-sm leading-tight">{item.title}</p>
-                      <p className="text-white/50 text-xs mt-1 uppercase tracking-wider">{item.category}</p>
-                    </div>
+                  <div className="w-14 h-14 rounded-full bg-white/10 flex items-center justify-center">
+                    <Play className="w-6 h-6 text-white fill-white ml-1" />
+                  </div>
+                  <div className="text-center px-4">
+                    <p className="text-white font-semibold text-sm leading-tight">{item.title}</p>
+                    <p className="text-white/50 text-xs mt-1 uppercase tracking-wider">{item.category}</p>
                   </div>
                 </div>
-              )
-            })}
-          </div>
+              </div>
+            )
+          })}
         </div>
-
-        {/* Right arrow */}
-        <button
-          onClick={handleNext}
-          className="p-2 text-gray-400 hover:text-amber-400 transition-colors"
-          aria-label="Next video"
-        >
-          <ChevronRight size={28} />
-        </button>
       </div>
+
+      {/* Right arrow - positioned at page edge */}
+      <button
+        onClick={handleNext}
+        className="absolute right-0 top-1/2 -translate-y-1/2 p-3 text-gray-400 hover:text-amber-400 transition-colors z-10"
+        aria-label="Next video"
+      >
+        <ChevronRight size={32} />
+      </button>
 
       <p className="text-gray-500 text-sm mt-6 flex items-center gap-2">
         <Film size={14} />
