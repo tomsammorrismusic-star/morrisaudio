@@ -16,8 +16,8 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 bg-gray-950/90 backdrop-blur-sm border-b border-gray-800">
       <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-2 font-bold text-lg text-white hover:text-amber-400 transition-colors">
-          <Mic className="w-5 h-5 text-amber-400" />
+        <Link to="/" className="flex items-center gap-2 font-bold text-xl text-white hover:text-amber-400 transition-colors tracking-tight">
+          <Mic className="w-6 h-6 text-amber-400" />
           Morris Audio
         </Link>
 
