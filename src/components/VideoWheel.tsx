@@ -63,8 +63,6 @@ export default function VideoWheel() {
       <div
         className="relative"
         style={{ height: 280, width: '100%', perspective: 1100 }}
-        onMouseEnter={() => { pausedRef.current = true }}
-        onMouseLeave={() => { pausedRef.current = false }}
       >
         <div
           ref={wheelRef}
@@ -108,7 +106,7 @@ export default function VideoWheel() {
 
       <p className="text-gray-500 text-sm mt-4 flex items-center gap-2">
         <Film size={14} />
-        Hover to pause · scroll to explore showreel
+        Featured productions showcase
       </p>
     </div>
   )
