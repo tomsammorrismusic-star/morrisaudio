@@ -16,9 +16,9 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 bg-gray-950/90 backdrop-blur-sm border-b border-gray-800">
       <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-2 font-bold text-lg text-white hover:text-amber-400 transition-colors">
-          <Mic className="w-5 h-5 text-amber-400" />
-          Sound Recordist
+        <Link to="/" className="flex items-center gap-3 font-bold text-2xl md:text-3xl text-white hover:text-amber-400 transition-colors tracking-tight">
+          <Mic className="w-7 h-7 md:w-8 md:h-8 text-amber-400" />
+          <span>Morris Audio</span>
         </Link>
 
         {/* Desktop nav */}
@@ -27,7 +27,7 @@ export default function Header() {
             <Link
               key={link.to}
               to={link.to}
-              className="text-sm text-gray-400 hover:text-white transition-colors"
+              className="text-sm text-gray-400 hover:text-white hover:underline underline-offset-4 transition-colors"
               activeProps={{ className: 'text-sm text-amber-400 font-medium' }}
             >
               {link.label}
@@ -37,7 +37,7 @@ export default function Header() {
             href="mailto:hello@soundrecordist.com"
             className="px-4 py-2 bg-amber-500 hover:bg-amber-400 text-gray-950 font-semibold text-sm rounded-lg transition-colors"
           >
-            Hire Me
+            Email Me
           </a>
         </nav>
 
@@ -59,7 +59,7 @@ export default function Header() {
               key={link.to}
               to={link.to}
               onClick={() => setMobileOpen(false)}
-              className="text-gray-300 hover:text-white transition-colors"
+              className="text-gray-300 hover:text-white hover:underline underline-offset-4 transition-colors"
             >
               {link.label}
             </Link>
@@ -68,7 +68,7 @@ export default function Header() {
             href="mailto:hello@soundrecordist.com"
             className="px-4 py-2 bg-amber-500 text-gray-950 font-semibold text-sm rounded-lg text-center"
           >
-            Hire Me
+            Email Me
           </a>
         </nav>
       )}

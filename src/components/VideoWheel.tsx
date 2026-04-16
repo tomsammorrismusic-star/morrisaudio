@@ -1,5 +1,5 @@
-import { useRef, useEffect } from 'react'
-import { Play, Film } from 'lucide-react'
+import { useRef, useEffect, useState } from 'react'
+import { Play, Film, ChevronLeft, ChevronRight } from 'lucide-react'
 
 interface VideoItem {
   id: string
@@ -33,38 +33,41 @@ const CATEGORY_COLORS: Record<string, string> = {
 
 export default function VideoWheel() {
   const wheelRef = useRef<HTMLDivElement>(null)
-  const animRef = useRef<number>(0)
-  const angleRef = useRef(0)
-  const pausedRef = useRef(false)
+  const [currentIndex, setCurrentIndex] = useState(0)
 
   const n = videoItems.length
   const radius = 320
+  const anglePerItem = 360 / n
 
   useEffect(() => {
-    let last = performance.now()
-    function tick(now: number) {
-      if (!pausedRef.current) {
-        const delta = now - last
-        angleRef.current = (angleRef.current + delta * 0.018) % 360
-        if (wheelRef.current) {
-          wheelRef.current.style.transform = `rotateY(${angleRef.current}deg)`
-        }
-      }
-      last = now
-      animRef.current = requestAnimationFrame(tick)
+    if (wheelRef.current) {
+      wheelRef.current.style.transform = `rotateY(${-currentIndex * anglePerItem}deg)`
     }
-    animRef.current = requestAnimationFrame(tick)
-    return () => cancelAnimationFrame(animRef.current)
-  }, [])
+  }, [currentIndex, anglePerItem])
+
+  const handlePrev = () => {
+    setCurrentIndex((prev) => (prev - 1 + n) % n)
+  }
+
+  const handleNext = () => {
+    setCurrentIndex((prev) => (prev + 1) % n)
+  }
 
   return (
     <div className="relative w-full flex flex-col items-center">
-      {/* 3D scene */}
+      {/* Left arrow - positioned at page edge */}
+      <button
+        onClick={handlePrev}
+        className="absolute left-0 top-1/2 -translate-y-1/2 p-3 text-gray-400 hover:text-amber-400 transition-colors z-10"
+        aria-label="Previous video"
+      >
+        <ChevronLeft size={32} />
+      </button>
+
+      {/* 3D scene - centered */}
       <div
         className="relative"
-        style={{ height: 280, width: '100%', perspective: 1100 }}
-        onMouseEnter={() => { pausedRef.current = true }}
-        onMouseLeave={() => { pausedRef.current = false }}
+        style={{ height: 280, width: '100%', maxWidth: 600, perspective: 1100 }}
       >
         <div
           ref={wheelRef}
@@ -74,10 +77,11 @@ export default function VideoWheel() {
             transform: 'rotateY(0deg)',
             marginLeft: -120,
             marginTop: -100,
+            transition: 'transform 0.6s ease-out',
           }}
         >
           {videoItems.map((item, i) => {
-            const angle = (360 / n) * i
+            const angle = anglePerItem * i
             return (
               <div
                 key={item.id}
@@ -106,9 +110,18 @@ export default function VideoWheel() {
         </div>
       </div>
 
-      <p className="text-gray-500 text-sm mt-4 flex items-center gap-2">
+      {/* Right arrow - positioned at page edge */}
+      <button
+        onClick={handleNext}
+        className="absolute right-0 top-1/2 -translate-y-1/2 p-3 text-gray-400 hover:text-amber-400 transition-colors z-10"
+        aria-label="Next video"
+      >
+        <ChevronRight size={32} />
+      </button>
+
+      <p className="text-gray-500 text-sm mt-6 flex items-center gap-2">
         <Film size={14} />
-        Hover to pause · scroll to explore showreel
+        Use arrows to browse productions
       </p>
     </div>
   )

@@ -7,10 +7,11 @@ export const Route = createFileRoute('/')({
 })
 
 const stats = [
-  { label: 'Years Experience', value: '10+' },
-  { label: 'Productions', value: '200+' },
-  { label: 'Awards', value: '5' },
-  { label: 'Countries', value: '15' },
+  { label: 'Commercials', value: '20+' },
+  { label: 'Documentaries', value: '5+' },
+  { label: 'Features', value: '20+' },
+  { label: 'Short Films', value: '50+' },
+  { label: 'Podcasts', value: '45+' },
 ]
 
 const services = [
@@ -24,11 +25,6 @@ const services = [
     title: 'Post-Production Audio',
     desc: 'Sound editing, dialogue cleanup, foley supervision, and audio delivery to broadcast standards.',
   },
-  {
-    icon: Volume2,
-    title: 'Documentary & ENG',
-    desc: 'Fast-turnaround documentary and news gathering. Discreet, reliable sound in challenging environments.',
-  },
 ]
 
 function Home() {
@@ -40,17 +36,15 @@ function Home() {
         <div className="relative z-10 max-w-3xl mx-auto space-y-6">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-sm font-medium">
             <Mic size={14} />
-            Available for hire · London &amp; worldwide
+            Available for hire&nbsp;
           </div>
           <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight">
-            Capturing Sound
+            Capturing You
             <br />
-            <span className="text-amber-400">That Moves You</span>
+            <span className="text-amber-400">Great Audio</span>
           </h1>
           <p className="text-xl text-gray-400 max-w-xl mx-auto leading-relaxed">
-            Professional sound recordist specialising in film, documentary, and commercial
-            productions. Over a decade of experience bringing stories to life through
-            pristine audio.
+            Professional sound recordist specialising in film, documentary, and commercial productions.&nbsp;
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-2">
             <Link
@@ -71,11 +65,11 @@ function Home() {
 
       {/* Stats */}
       <section className="border-y border-gray-800 py-10">
-        <div className="max-w-4xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div className="max-w-5xl mx-auto px-4 flex flex-col sm:flex-row gap-6 justify-center items-center flex-wrap">
           {stats.map((s) => (
-            <div key={s.label}>
+            <div key={s.label} className="flex flex-col items-center justify-center px-6 py-4 rounded-xl border border-gray-800 bg-gray-900/40 hover:border-amber-400/30 transition-colors">
               <p className="text-4xl font-extrabold text-amber-400">{s.value}</p>
-              <p className="text-gray-500 text-sm mt-1">{s.label}</p>
+              <p className="text-gray-400 text-sm mt-2 whitespace-nowrap">{s.label}</p>
             </div>
           ))}
         </div>
@@ -95,18 +89,18 @@ function Home() {
       </section>
 
       {/* Services */}
-      <section className="py-20 px-4 border-t border-gray-800">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">What I Do</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <section className="py-24 px-4 border-t border-gray-800">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">What I Do</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
             {services.map((svc) => (
               <div
                 key={svc.title}
-                className="p-6 rounded-2xl border border-gray-800 hover:border-amber-400/40 bg-gray-900/50 transition-colors"
+                className="p-8 rounded-3xl border border-gray-700 hover:border-amber-400/60 bg-gradient-to-br from-gray-900/80 to-gray-950/80 hover:from-gray-900 hover:to-gray-900/90 transition-all duration-300"
               >
-                <svc.icon className="w-8 h-8 text-amber-400 mb-4" />
-                <h3 className="text-xl font-semibold mb-2">{svc.title}</h3>
-                <p className="text-gray-400 text-sm leading-relaxed">{svc.desc}</p>
+                <svc.icon className="w-14 h-14 text-amber-400 mb-6" />
+                <h3 className="text-2xl font-bold mb-4">{svc.title}</h3>
+                <p className="text-gray-300 text-base leading-relaxed">{svc.desc}</p>
               </div>
             ))}
           </div>
