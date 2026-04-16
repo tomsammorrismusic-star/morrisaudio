@@ -89,18 +89,18 @@ function Home() {
       </section>
 
       {/* Services */}
-      <section className="py-20 px-4 border-t border-gray-800">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">What I Do</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-2xl mx-auto">
+      <section className="py-24 px-4 border-t border-gray-800">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">What I Do</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
             {services.map((svc) => (
               <div
                 key={svc.title}
-                className="p-6 rounded-2xl border border-gray-800 hover:border-amber-400/40 bg-gray-900/50 transition-colors"
+                className="p-8 rounded-3xl border border-gray-700 hover:border-amber-400/60 bg-gradient-to-br from-gray-900/80 to-gray-950/80 hover:from-gray-900 hover:to-gray-900/90 transition-all duration-300"
               >
-                <svc.icon className="w-8 h-8 text-amber-400 mb-4" />
-                <h3 className="text-xl font-semibold mb-2">{svc.title}</h3>
-                <p className="text-gray-400 text-sm leading-relaxed">{svc.desc}</p>
+                <svc.icon className="w-14 h-14 text-amber-400 mb-6" />
+                <h3 className="text-2xl font-bold mb-4">{svc.title}</h3>
+                <p className="text-gray-300 text-base leading-relaxed">{svc.desc}</p>
               </div>
             ))}
           </div>
