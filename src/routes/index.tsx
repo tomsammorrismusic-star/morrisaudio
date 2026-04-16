@@ -25,11 +25,6 @@ const services = [
     title: 'Post-Production Audio',
     desc: 'Sound editing, dialogue cleanup, foley supervision, and audio delivery to broadcast standards.',
   },
-  {
-    icon: Volume2,
-    title: 'Documentary & ENG',
-    desc: 'Fast-turnaround documentary and news gathering. Discreet, reliable sound in challenging environments.',
-  },
 ]
 
 function Home() {
@@ -97,7 +92,7 @@ function Home() {
       <section className="py-20 px-4 border-t border-gray-800">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">What I Do</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-2xl mx-auto">
             {services.map((svc) => (
               <div
                 key={svc.title}
