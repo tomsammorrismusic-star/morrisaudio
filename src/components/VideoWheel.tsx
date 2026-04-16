@@ -41,9 +41,18 @@ export default function VideoWheel() {
   const radius = 320
 
   useEffect(() => {
-    if (wheelRef.current) {
-      wheelRef.current.style.transform = `rotateY(0deg)`
+    let last = performance.now()
+    function tick(now: number) {
+      const delta = now - last
+      angleRef.current = (angleRef.current + delta * 0.018) % 360
+      if (wheelRef.current) {
+        wheelRef.current.style.transform = `rotateZ(${angleRef.current}deg)`
+      }
+      last = now
+      animRef.current = requestAnimationFrame(tick)
     }
+    animRef.current = requestAnimationFrame(tick)
+    return () => cancelAnimationFrame(animRef.current)
   }, [])
 
   return (
