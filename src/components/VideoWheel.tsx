@@ -1,5 +1,5 @@
-import { useRef, useEffect } from 'react'
-import { Play, Film } from 'lucide-react'
+import { useRef, useEffect, useState } from 'react'
+import { Play, Film, ChevronLeft, ChevronRight } from 'lucide-react'
 
 interface VideoItem {
   id: string
@@ -33,78 +33,98 @@ const CATEGORY_COLORS: Record<string, string> = {
 
 export default function VideoWheel() {
   const wheelRef = useRef<HTMLDivElement>(null)
-  const animRef = useRef<number>(0)
-  const angleRef = useRef(0)
-  const pausedRef = useRef(false)
+  const [currentIndex, setCurrentIndex] = useState(0)
 
   const n = videoItems.length
   const radius = 320
+  const anglePerItem = 360 / n
 
   useEffect(() => {
-    let last = performance.now()
-    function tick(now: number) {
-      const delta = now - last
-      angleRef.current = (angleRef.current + delta * 0.018) % 360
-      if (wheelRef.current) {
-        wheelRef.current.style.transform = `rotateY(${angleRef.current}deg)`
-      }
-      last = now
-      animRef.current = requestAnimationFrame(tick)
+    if (wheelRef.current) {
+      wheelRef.current.style.transform = `rotateY(${-currentIndex * anglePerItem}deg)`
     }
-    animRef.current = requestAnimationFrame(tick)
-    return () => cancelAnimationFrame(animRef.current)
-  }, [])
+  }, [currentIndex, anglePerItem])
+
+  const handlePrev = () => {
+    setCurrentIndex((prev) => (prev - 1 + n) % n)
+  }
+
+  const handleNext = () => {
+    setCurrentIndex((prev) => (prev + 1) % n)
+  }
 
   return (
     <div className="relative w-full flex flex-col items-center">
-      {/* 3D scene */}
-      <div
-        className="relative"
-        style={{ height: 280, width: '100%', perspective: 1100 }}
-      >
-        <div
-          ref={wheelRef}
-          className="absolute left-1/2 top-1/2"
-          style={{
-            transformStyle: 'preserve-3d',
-            transform: 'rotateY(0deg)',
-            marginLeft: -120,
-            marginTop: -100,
-          }}
+      {/* Navigation and 3D scene */}
+      <div className="flex items-center justify-center gap-8 w-full">
+        {/* Left arrow */}
+        <button
+          onClick={handlePrev}
+          className="p-2 text-gray-400 hover:text-amber-400 transition-colors"
+          aria-label="Previous video"
         >
-          {videoItems.map((item, i) => {
-            const angle = (360 / n) * i
-            return (
-              <div
-                key={item.id}
-                className="absolute"
-                style={{
-                  width: 240,
-                  height: 200,
-                  transform: `rotateY(${angle}deg) translateZ(${radius}px)`,
-                  backfaceVisibility: 'hidden',
-                }}
-              >
+          <ChevronLeft size={28} />
+        </button>
+
+        {/* 3D scene */}
+        <div
+          className="relative"
+          style={{ height: 280, width: '100%', maxWidth: 600, perspective: 1100 }}
+        >
+          <div
+            ref={wheelRef}
+            className="absolute left-1/2 top-1/2"
+            style={{
+              transformStyle: 'preserve-3d',
+              transform: 'rotateY(0deg)',
+              marginLeft: -120,
+              marginTop: -100,
+              transition: 'transform 0.6s ease-out',
+            }}
+          >
+            {videoItems.map((item, i) => {
+              const angle = anglePerItem * i
+              return (
                 <div
-                  className={`w-full h-full rounded-xl bg-gradient-to-br ${CATEGORY_COLORS[item.category] ?? 'from-gray-800 to-gray-600'} border border-white/10 flex flex-col items-center justify-center gap-3 cursor-pointer hover:border-amber-400/50 transition-colors shadow-xl`}
+                  key={item.id}
+                  className="absolute"
+                  style={{
+                    width: 240,
+                    height: 200,
+                    transform: `rotateY(${angle}deg) translateZ(${radius}px)`,
+                    backfaceVisibility: 'hidden',
+                  }}
                 >
-                  <div className="w-14 h-14 rounded-full bg-white/10 flex items-center justify-center">
-                    <Play className="w-6 h-6 text-white fill-white ml-1" />
-                  </div>
-                  <div className="text-center px-4">
-                    <p className="text-white font-semibold text-sm leading-tight">{item.title}</p>
-                    <p className="text-white/50 text-xs mt-1 uppercase tracking-wider">{item.category}</p>
+                  <div
+                    className={`w-full h-full rounded-xl bg-gradient-to-br ${CATEGORY_COLORS[item.category] ?? 'from-gray-800 to-gray-600'} border border-white/10 flex flex-col items-center justify-center gap-3 cursor-pointer hover:border-amber-400/50 transition-colors shadow-xl`}
+                  >
+                    <div className="w-14 h-14 rounded-full bg-white/10 flex items-center justify-center">
+                      <Play className="w-6 h-6 text-white fill-white ml-1" />
+                    </div>
+                    <div className="text-center px-4">
+                      <p className="text-white font-semibold text-sm leading-tight">{item.title}</p>
+                      <p className="text-white/50 text-xs mt-1 uppercase tracking-wider">{item.category}</p>
+                    </div>
                   </div>
                 </div>
-              </div>
-            )
-          })}
+              )
+            })}
+          </div>
         </div>
+
+        {/* Right arrow */}
+        <button
+          onClick={handleNext}
+          className="p-2 text-gray-400 hover:text-amber-400 transition-colors"
+          aria-label="Next video"
+        >
+          <ChevronRight size={28} />
+        </button>
       </div>
 
-      <p className="text-gray-500 text-sm mt-4 flex items-center gap-2">
+      <p className="text-gray-500 text-sm mt-6 flex items-center gap-2">
         <Film size={14} />
-        Featured productions showcase
+        Use arrows to browse productions
       </p>
     </div>
   )
