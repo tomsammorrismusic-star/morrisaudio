@@ -27,7 +27,7 @@ export default function Header() {
             <Link
               key={link.to}
               to={link.to}
-              className="text-sm text-gray-400 hover:text-white transition-colors"
+              className="text-sm text-gray-400 hover:text-white hover:underline underline-offset-4 transition-colors"
               activeProps={{ className: 'text-sm text-amber-400 font-medium' }}
             >
               {link.label}
@@ -59,7 +59,7 @@ export default function Header() {
               key={link.to}
               to={link.to}
               onClick={() => setMobileOpen(false)}
-              className="text-gray-300 hover:text-white transition-colors"
+              className="text-gray-300 hover:text-white hover:underline underline-offset-4 transition-colors"
             >
               {link.label}
             </Link>
