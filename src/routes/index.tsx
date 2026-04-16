@@ -40,17 +40,15 @@ function Home() {
         <div className="relative z-10 max-w-3xl mx-auto space-y-6">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-sm font-medium">
             <Mic size={14} />
-            Available for hire · London &amp; worldwide
+            Available for hire&nbsp;
           </div>
           <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight">
-            Capturing Sound
+            Capturing You
             <br />
-            <span className="text-amber-400">That Moves You</span>
+            <span className="text-amber-400">Great Audio</span>
           </h1>
           <p className="text-xl text-gray-400 max-w-xl mx-auto leading-relaxed">
-            Professional sound recordist specialising in film, documentary, and commercial
-            productions. Over a decade of experience bringing stories to life through
-            pristine audio.
+            Professional sound recordist specialising in film, documentary, and commercial productions.&nbsp;
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-2">
             <Link

@@ -18,7 +18,7 @@ export default function Header() {
       <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2 font-bold text-lg text-white hover:text-amber-400 transition-colors">
           <Mic className="w-5 h-5 text-amber-400" />
-          Sound Recordist
+          Morris Audio
         </Link>
 
         {/* Desktop nav */}
@@ -37,7 +37,7 @@ export default function Header() {
             href="mailto:hello@soundrecordist.com"
             className="px-4 py-2 bg-amber-500 hover:bg-amber-400 text-gray-950 font-semibold text-sm rounded-lg transition-colors"
           >
-            Hire Me
+            Email Me
           </a>
         </nav>
 
@@ -68,7 +68,7 @@ export default function Header() {
             href="mailto:hello@soundrecordist.com"
             className="px-4 py-2 bg-amber-500 text-gray-950 font-semibold text-sm rounded-lg text-center"
           >
-            Hire Me
+            Email Me
           </a>
         </nav>
       )}
