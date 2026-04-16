@@ -7,10 +7,9 @@ export const Route = createFileRoute('/')({
 })
 
 const stats = [
-  { label: 'Years Experience', value: '10+' },
+  { label: 'Years Experience', value: '3+' },
   { label: 'Productions', value: '200+' },
-  { label: 'Awards', value: '5' },
-  { label: 'Countries', value: '15' },
+  { label: 'Awards', value: '1' },
 ]
 
 const services = [
@@ -69,7 +68,7 @@ function Home() {
 
       {/* Stats */}
       <section className="border-y border-gray-800 py-10">
-        <div className="max-w-4xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div className="max-w-4xl mx-auto px-4 flex flex-col sm:flex-row gap-8 justify-start items-start">
           {stats.map((s) => (
             <div key={s.label}>
               <p className="text-4xl font-extrabold text-amber-400">{s.value}</p>
