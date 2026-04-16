@@ -70,11 +70,11 @@ function Home() {
 
       {/* Stats */}
       <section className="border-y border-gray-800 py-10">
-        <div className="max-w-4xl mx-auto px-4 flex flex-col sm:flex-row gap-8 justify-center items-start flex-wrap">
+        <div className="max-w-5xl mx-auto px-4 flex flex-col sm:flex-row gap-6 justify-center items-center flex-wrap">
           {stats.map((s) => (
-            <div key={s.label}>
+            <div key={s.label} className="flex flex-col items-center justify-center px-6 py-4 rounded-xl border border-gray-800 bg-gray-900/40 hover:border-amber-400/30 transition-colors">
               <p className="text-4xl font-extrabold text-amber-400">{s.value}</p>
-              <p className="text-gray-500 text-sm mt-1">{s.label}</p>
+              <p className="text-gray-400 text-sm mt-2 whitespace-nowrap">{s.label}</p>
             </div>
           ))}
         </div>
