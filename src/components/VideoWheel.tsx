@@ -46,7 +46,7 @@ export default function VideoWheel() {
       const delta = now - last
       angleRef.current = (angleRef.current + delta * 0.018) % 360
       if (wheelRef.current) {
-        wheelRef.current.style.transform = `rotateX(${angleRef.current}deg)`
+        wheelRef.current.style.transform = `rotateY(${angleRef.current}deg)`
       }
       last = now
       animRef.current = requestAnimationFrame(tick)
