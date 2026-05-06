@@ -41,11 +41,10 @@ function Showreel() {
           <p className="text-gray-400 mb-6">Listen now</p>
           <div className="rounded-lg overflow-hidden">
             <iframe
-              src="https://open.spotify.com/embed/show/YOUR_SPOTIFY_ID?utm_source=generator"
+              src="https://open.spotify.com/embed/show/50zl8ics5uAV2aMAJ7spOF?utm_source=generator&theme=0"
               width="100%"
-              height="352"
+              height="152"
               frameBorder="0"
-              allowFullScreen={true}
               allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
               loading="lazy"
               className="rounded-lg"
