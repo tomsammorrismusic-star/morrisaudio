@@ -74,7 +74,7 @@ export default function VideoWheel() {
         <button
           onClick={() => scroll('left')}
           disabled={!canScrollLeft}
-          className="absolute left-0 top-1/2 -translate-y-1/2 p-3 text-gray-400 hover:text-amber-400 disabled:opacity-30 disabled:cursor-not-allowed transition-colors z-10"
+          className="absolute left-0 top-1/2 -translate-y-1/2 p-3 text-gray-400 hover:text-yellow-400 disabled:opacity-30 disabled:cursor-not-allowed transition-colors z-10"
           aria-label="Previous video"
         >
           <ChevronLeft size={32} />
@@ -114,7 +114,7 @@ export default function VideoWheel() {
         <button
           onClick={() => scroll('right')}
           disabled={!canScrollRight}
-          className="absolute right-0 top-1/2 -translate-y-1/2 p-3 text-gray-400 hover:text-amber-400 disabled:opacity-30 disabled:cursor-not-allowed transition-colors z-10"
+          className="absolute right-0 top-1/2 -translate-y-1/2 p-3 text-gray-400 hover:text-yellow-400 disabled:opacity-30 disabled:cursor-not-allowed transition-colors z-10"
           aria-label="Next video"
         >
           <ChevronRight size={32} />
@@ -164,7 +164,7 @@ export default function VideoWheel() {
               <div className="flex items-center justify-between gap-4">
                 <button
                   onClick={() => handleLightboxNav('prev')}
-                  className="p-2 text-gray-400 hover:text-amber-400 transition-colors"
+                  className="p-2 text-gray-400 hover:text-yellow-400 transition-colors"
                   aria-label="Previous item"
                 >
                   <ChevronLeft size={24} />
@@ -174,7 +174,7 @@ export default function VideoWheel() {
                 </span>
                 <button
                   onClick={() => handleLightboxNav('next')}
-                  className="p-2 text-gray-400 hover:text-amber-400 transition-colors"
+                  className="p-2 text-gray-400 hover:text-yellow-400 transition-colors"
                   aria-label="Next item"
                 >
                   <ChevronRight size={24} />

@@ -16,8 +16,8 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 bg-gray-950/90 backdrop-blur-sm border-b border-gray-800">
       <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-3 font-bold text-2xl md:text-3xl text-white hover:text-amber-400 transition-colors tracking-tight">
-          <Mic className="w-7 h-7 md:w-8 md:h-8 text-amber-400" />
+        <Link to="/" className="flex items-center gap-3 font-bold text-2xl md:text-3xl text-white hover:text-yellow-400 transition-colors tracking-tight">
+          <Mic className="w-7 h-7 md:w-8 md:h-8 text-yellow-400" />
           <span>Morris Audio</span>
         </Link>
 
@@ -28,14 +28,14 @@ export default function Header() {
               key={link.to}
               to={link.to}
               className="text-sm text-gray-400 hover:text-white hover:underline underline-offset-4 transition-colors"
-              activeProps={{ className: 'text-sm text-amber-400 font-medium' }}
+              activeProps={{ className: 'text-sm text-yellow-400 font-medium' }}
             >
               {link.label}
             </Link>
           ))}
           <a
             href="mailto:hello@soundrecordist.com"
-            className="px-4 py-2 bg-amber-500 hover:bg-amber-400 text-gray-950 font-semibold text-sm rounded-lg transition-colors"
+            className="px-4 py-2 bg-yellow-600 hover:bg-yellow-500 text-gray-950 font-semibold text-sm rounded-lg transition-colors"
           >
             Email Me
           </a>
@@ -66,7 +66,7 @@ export default function Header() {
           ))}
           <a
             href="mailto:hello@soundrecordist.com"
-            className="px-4 py-2 bg-amber-500 text-gray-950 font-semibold text-sm rounded-lg text-center"
+            className="px-4 py-2 bg-yellow-600 text-gray-950 font-semibold text-sm rounded-lg text-center"
           >
             Email Me
           </a>

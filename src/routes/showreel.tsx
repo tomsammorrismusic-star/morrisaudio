@@ -104,7 +104,7 @@ function Showreel() {
           </p>
           <a
             href="mailto:hello@soundrecordist.com"
-            className="inline-block px-6 py-3 bg-amber-500 hover:bg-amber-400 text-gray-950 font-semibold rounded-lg transition-colors"
+            className="inline-block px-6 py-3 bg-yellow-600 hover:bg-yellow-500 text-gray-950 font-semibold rounded-lg transition-colors"
           >
             Get in Touch
           </a>
