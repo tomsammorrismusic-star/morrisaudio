@@ -1,5 +1,5 @@
 import { useRef, useState } from 'react'
-import { Play, Film, ChevronLeft, ChevronRight } from 'lucide-react'
+import { Play, Film, ChevronLeft, ChevronRight, X } from 'lucide-react'
 
 interface VideoItem {
   id: string
@@ -35,6 +35,7 @@ export default function VideoWheel() {
   const scrollContainer = useRef<HTMLDivElement>(null)
   const [canScrollLeft, setCanScrollLeft] = useState(false)
   const [canScrollRight, setCanScrollRight] = useState(true)
+  const [selectedItem, setSelectedItem] = useState<VideoItem | null>(null)
 
   const checkScroll = () => {
     if (scrollContainer.current) {
@@ -55,61 +56,134 @@ export default function VideoWheel() {
     }
   }
 
-  return (
-    <div className="relative w-full flex flex-col items-center gap-6">
-      {/* Left arrow */}
-      <button
-        onClick={() => scroll('left')}
-        disabled={!canScrollLeft}
-        className="absolute left-0 top-1/2 -translate-y-1/2 p-3 text-gray-400 hover:text-amber-400 disabled:opacity-30 disabled:cursor-not-allowed transition-colors z-10"
-        aria-label="Previous video"
-      >
-        <ChevronLeft size={32} />
-      </button>
+  const handleCardClick = (item: VideoItem) => {
+    setSelectedItem(item)
+  }
 
-      {/* Horizontal scroll container */}
-      <div className="w-full px-16">
-        <div
-          ref={scrollContainer}
-          className="flex gap-4 overflow-x-auto scroll-smooth pb-4 no-scrollbar"
-          onScroll={checkScroll}
-          style={{ scrollBehavior: 'smooth', scrollbarWidth: 'none' }}
+  const handleLightboxNav = (direction: 'prev' | 'next') => {
+    if (!selectedItem) return
+    const currentIndex = videoItems.findIndex((item) => item.id === selectedItem.id)
+    const newIndex = direction === 'prev' ? (currentIndex - 1 + videoItems.length) % videoItems.length : (currentIndex + 1) % videoItems.length
+    setSelectedItem(videoItems[newIndex])
+  }
+
+  return (
+    <>
+      <div className="relative w-full flex flex-col items-center gap-6">
+        {/* Left arrow */}
+        <button
+          onClick={() => scroll('left')}
+          disabled={!canScrollLeft}
+          className="absolute left-0 top-1/2 -translate-y-1/2 p-3 text-gray-400 hover:text-amber-400 disabled:opacity-30 disabled:cursor-not-allowed transition-colors z-10"
+          aria-label="Previous video"
         >
-          {videoItems.map((item) => (
-            <div
-              key={item.id}
-              className="flex-shrink-0 w-64"
-            >
-              <div
-                className={`w-full h-56 rounded-xl bg-gradient-to-br ${CATEGORY_COLORS[item.category] ?? 'from-gray-800 to-gray-600'} border border-white/10 flex flex-col items-center justify-center gap-3 cursor-pointer hover:border-amber-400/50 transition-colors shadow-xl`}
-              >
-                <div className="w-14 h-14 rounded-full bg-white/10 flex items-center justify-center">
-                  <Play className="w-6 h-6 text-white fill-white ml-1" />
-                </div>
-                <div className="text-center px-4">
-                  <p className="text-white font-semibold text-sm leading-tight">{item.title}</p>
-                  <p className="text-white/50 text-xs mt-1 uppercase tracking-wider">{item.category}</p>
-                </div>
+          <ChevronLeft size={32} />
+        </button>
+
+        {/* Horizontal scroll container */}
+        <div className="w-full px-16">
+          <div
+            ref={scrollContainer}
+            className="flex gap-4 overflow-x-auto scroll-smooth pb-4 no-scrollbar"
+            onScroll={checkScroll}
+            style={{ scrollBehavior: 'smooth', scrollbarWidth: 'none' }}
+          >
+            {videoItems.map((item) => (
+              <div key={item.id} className="flex-shrink-0 w-64">
+                <button
+                  onClick={() => handleCardClick(item)}
+                  className="w-full h-56 rounded-xl bg-gradient-to-br from-gray-800 to-gray-600 border border-white/10 flex flex-col items-center justify-center gap-3 cursor-pointer hover:border-amber-400/50 transition-colors shadow-xl group"
+                >
+                  <div className={`w-full h-full rounded-xl bg-gradient-to-br ${CATEGORY_COLORS[item.category] ?? 'from-gray-800 to-gray-600'} border border-white/10 flex flex-col items-center justify-center gap-3 cursor-pointer hover:border-amber-400/50 transition-colors shadow-xl relative overflow-hidden`}>
+                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-200" />
+                    <div className="w-14 h-14 rounded-full bg-white/10 flex items-center justify-center relative z-10">
+                      <Play className="w-6 h-6 text-white fill-white ml-1" />
+                    </div>
+                    <div className="text-center px-4 relative z-10">
+                      <p className="text-white font-semibold text-sm leading-tight">{item.title}</p>
+                      <p className="text-white/50 text-xs mt-1 uppercase tracking-wider">{item.category}</p>
+                    </div>
+                  </div>
+                </button>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
+
+        {/* Right arrow */}
+        <button
+          onClick={() => scroll('right')}
+          disabled={!canScrollRight}
+          className="absolute right-0 top-1/2 -translate-y-1/2 p-3 text-gray-400 hover:text-amber-400 disabled:opacity-30 disabled:cursor-not-allowed transition-colors z-10"
+          aria-label="Next video"
+        >
+          <ChevronRight size={32} />
+        </button>
+
+        <p className="text-gray-500 text-sm flex items-center gap-2">
+          <Film size={14} />
+          Use arrows to browse productions
+        </p>
       </div>
 
-      {/* Right arrow */}
-      <button
-        onClick={() => scroll('right')}
-        disabled={!canScrollRight}
-        className="absolute right-0 top-1/2 -translate-y-1/2 p-3 text-gray-400 hover:text-amber-400 disabled:opacity-30 disabled:cursor-not-allowed transition-colors z-10"
-        aria-label="Next video"
-      >
-        <ChevronRight size={32} />
-      </button>
+      {/* Lightbox Modal */}
+      {selectedItem && (
+        <div
+          className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+          onClick={() => setSelectedItem(null)}
+        >
+          <div
+            className="relative bg-gray-900 rounded-xl border border-gray-800 shadow-2xl max-w-2xl w-full"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Close button */}
+            <button
+              onClick={() => setSelectedItem(null)}
+              className="absolute top-4 right-4 p-2 text-gray-400 hover:text-white bg-black/50 rounded-lg z-10 transition-colors"
+              aria-label="Close lightbox"
+            >
+              <X size={24} />
+            </button>
 
-      <p className="text-gray-500 text-sm flex items-center gap-2">
-        <Film size={14} />
-        Use arrows to browse productions
-      </p>
-    </div>
+            {/* Lightbox content */}
+            <div className={`w-full h-96 rounded-t-xl bg-gradient-to-br ${CATEGORY_COLORS[selectedItem.category] ?? 'from-gray-800 to-gray-600'} flex flex-col items-center justify-center gap-4 relative overflow-hidden`}>
+              <div className="w-20 h-20 rounded-full bg-white/10 flex items-center justify-center">
+                <Play className="w-8 h-8 text-white fill-white ml-1" />
+              </div>
+            </div>
+
+            {/* Content section */}
+            <div className="p-8">
+              <h3 className="text-3xl font-bold mb-2 text-white">{selectedItem.title}</h3>
+              <p className="text-amber-400 uppercase text-sm tracking-wider font-semibold mb-4">{selectedItem.category}</p>
+              <p className="text-gray-300 mb-6 leading-relaxed">
+                This production showcases professional audio work in the {selectedItem.category.toLowerCase()} industry, featuring cutting-edge recording techniques and post-production expertise.
+              </p>
+
+              {/* Navigation */}
+              <div className="flex items-center justify-between gap-4">
+                <button
+                  onClick={() => handleLightboxNav('prev')}
+                  className="p-2 text-gray-400 hover:text-amber-400 transition-colors"
+                  aria-label="Previous item"
+                >
+                  <ChevronLeft size={24} />
+                </button>
+                <span className="text-gray-500 text-sm">
+                  {videoItems.findIndex((item) => item.id === selectedItem.id) + 1} / {videoItems.length}
+                </span>
+                <button
+                  onClick={() => handleLightboxNav('next')}
+                  className="p-2 text-gray-400 hover:text-amber-400 transition-colors"
+                  aria-label="Next item"
+                >
+                  <ChevronRight size={24} />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+    </>
   )
 }
