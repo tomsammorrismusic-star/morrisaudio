@@ -2,7 +2,7 @@ import { createFileRoute } from '@tanstack/react-router'
 import { allProjects } from 'content-collections'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
-import { ExternalLink, Film } from 'lucide-react'
+import { ExternalLink, Film, Music } from 'lucide-react'
 import VideoWheel from '@/components/VideoWheel'
 
 export const Route = createFileRoute('/showreel')({
@@ -28,6 +28,26 @@ function Showreel() {
           <h2 className="text-2xl font-bold mb-2">Featured Work</h2>
           <p className="text-gray-400 mb-6">Use arrows to browse productions</p>
           <VideoWheel />
+        </div>
+      </div>
+
+      <div className="max-w-6xl mx-auto px-4 py-12">
+        <h2 className="text-3xl font-bold mb-8">Featured Podcast</h2>
+        <div className="bg-gray-900 rounded-lg p-8 mb-16 border border-gray-800">
+          <div className="flex items-center gap-3 mb-4">
+            <Music className="w-6 h-6 text-green-500" />
+            <h3 className="text-2xl font-bold">VCL Vintners Podcast</h3>
+          </div>
+          <p className="text-gray-400 mb-6">Listen on Spotify</p>
+          <a
+            href="https://open.spotify.com/show/YOUR_SPOTIFY_ID"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-green-500 hover:bg-green-400 text-gray-950 font-semibold rounded-lg transition-colors"
+          >
+            <Music size={18} />
+            Listen on Spotify
+          </a>
         </div>
       </div>
 
