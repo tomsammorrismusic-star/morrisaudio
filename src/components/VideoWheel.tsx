@@ -1,4 +1,4 @@
-import { useRef, useEffect, useState } from 'react'
+import { useRef, useState } from 'react'
 import { Play, Film, ChevronLeft, ChevronRight } from 'lucide-react'
 
 interface VideoItem {
@@ -32,94 +32,81 @@ const CATEGORY_COLORS: Record<string, string> = {
 }
 
 export default function VideoWheel() {
-  const wheelRef = useRef<HTMLDivElement>(null)
-  const [currentIndex, setCurrentIndex] = useState(0)
+  const scrollContainer = useRef<HTMLDivElement>(null)
+  const [canScrollLeft, setCanScrollLeft] = useState(false)
+  const [canScrollRight, setCanScrollRight] = useState(true)
 
-  const n = videoItems.length
-  const radius = 320
-  const anglePerItem = 360 / n
-
-  useEffect(() => {
-    if (wheelRef.current) {
-      wheelRef.current.style.transform = `rotateY(${-currentIndex * anglePerItem}deg)`
+  const checkScroll = () => {
+    if (scrollContainer.current) {
+      const { scrollLeft, scrollWidth, clientWidth } = scrollContainer.current
+      setCanScrollLeft(scrollLeft > 0)
+      setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 10)
     }
-  }, [currentIndex, anglePerItem])
-
-  const handlePrev = () => {
-    setCurrentIndex((prev) => (prev - 1 + n) % n)
   }
 
-  const handleNext = () => {
-    setCurrentIndex((prev) => (prev + 1) % n)
+  const scroll = (direction: 'left' | 'right') => {
+    if (scrollContainer.current) {
+      const scrollAmount = 300
+      scrollContainer.current.scrollBy({
+        left: direction === 'left' ? -scrollAmount : scrollAmount,
+        behavior: 'smooth',
+      })
+      setTimeout(checkScroll, 600)
+    }
   }
 
   return (
-    <div className="relative w-full flex flex-col items-center">
-      {/* Left arrow - positioned at page edge */}
+    <div className="relative w-full flex flex-col items-center gap-6">
+      {/* Left arrow */}
       <button
-        onClick={handlePrev}
-        className="absolute left-0 top-1/2 -translate-y-1/2 p-3 text-gray-400 hover:text-amber-400 transition-colors z-10"
+        onClick={() => scroll('left')}
+        disabled={!canScrollLeft}
+        className="absolute left-0 top-1/2 -translate-y-1/2 p-3 text-gray-400 hover:text-amber-400 disabled:opacity-30 disabled:cursor-not-allowed transition-colors z-10"
         aria-label="Previous video"
       >
         <ChevronLeft size={32} />
       </button>
 
-      {/* 3D scene - centered */}
-      <div
-        className="relative"
-        style={{ height: 280, width: '100%', maxWidth: 600, perspective: 1100 }}
-      >
+      {/* Horizontal scroll container */}
+      <div className="w-full px-16">
         <div
-          ref={wheelRef}
-          className="absolute left-1/2 top-1/2"
-          style={{
-            transformStyle: 'preserve-3d',
-            transform: 'rotateY(0deg)',
-            marginLeft: -120,
-            marginTop: -100,
-            transition: 'transform 0.6s ease-out',
-          }}
+          ref={scrollContainer}
+          className="flex gap-4 overflow-x-auto scroll-smooth pb-4 no-scrollbar"
+          onScroll={checkScroll}
+          style={{ scrollBehavior: 'smooth', scrollbarWidth: 'none' }}
         >
-          {videoItems.map((item, i) => {
-            const angle = anglePerItem * i
-            return (
+          {videoItems.map((item) => (
+            <div
+              key={item.id}
+              className="flex-shrink-0 w-64"
+            >
               <div
-                key={item.id}
-                className="absolute"
-                style={{
-                  width: 240,
-                  height: 200,
-                  transform: `rotateY(${angle}deg) translateZ(${radius}px)`,
-                  backfaceVisibility: 'hidden',
-                }}
+                className={`w-full h-56 rounded-xl bg-gradient-to-br ${CATEGORY_COLORS[item.category] ?? 'from-gray-800 to-gray-600'} border border-white/10 flex flex-col items-center justify-center gap-3 cursor-pointer hover:border-amber-400/50 transition-colors shadow-xl`}
               >
-                <div
-                  className={`w-full h-full rounded-xl bg-gradient-to-br ${CATEGORY_COLORS[item.category] ?? 'from-gray-800 to-gray-600'} border border-white/10 flex flex-col items-center justify-center gap-3 cursor-pointer hover:border-amber-400/50 transition-colors shadow-xl`}
-                >
-                  <div className="w-14 h-14 rounded-full bg-white/10 flex items-center justify-center">
-                    <Play className="w-6 h-6 text-white fill-white ml-1" />
-                  </div>
-                  <div className="text-center px-4">
-                    <p className="text-white font-semibold text-sm leading-tight">{item.title}</p>
-                    <p className="text-white/50 text-xs mt-1 uppercase tracking-wider">{item.category}</p>
-                  </div>
+                <div className="w-14 h-14 rounded-full bg-white/10 flex items-center justify-center">
+                  <Play className="w-6 h-6 text-white fill-white ml-1" />
+                </div>
+                <div className="text-center px-4">
+                  <p className="text-white font-semibold text-sm leading-tight">{item.title}</p>
+                  <p className="text-white/50 text-xs mt-1 uppercase tracking-wider">{item.category}</p>
                 </div>
               </div>
-            )
-          })}
+            </div>
+          ))}
         </div>
       </div>
 
-      {/* Right arrow - positioned at page edge */}
+      {/* Right arrow */}
       <button
-        onClick={handleNext}
-        className="absolute right-0 top-1/2 -translate-y-1/2 p-3 text-gray-400 hover:text-amber-400 transition-colors z-10"
+        onClick={() => scroll('right')}
+        disabled={!canScrollRight}
+        className="absolute right-0 top-1/2 -translate-y-1/2 p-3 text-gray-400 hover:text-amber-400 disabled:opacity-30 disabled:cursor-not-allowed transition-colors z-10"
         aria-label="Next video"
       >
         <ChevronRight size={32} />
       </button>
 
-      <p className="text-gray-500 text-sm mt-6 flex items-center gap-2">
+      <p className="text-gray-500 text-sm flex items-center gap-2">
         <Film size={14} />
         Use arrows to browse productions
       </p>
