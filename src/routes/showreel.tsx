@@ -38,16 +38,19 @@ function Showreel() {
             <Music className="w-6 h-6 text-green-500" />
             <h3 className="text-2xl font-bold">VCL Vintners Podcast</h3>
           </div>
-          <p className="text-gray-400 mb-6">Listen on Spotify</p>
-          <a
-            href="https://open.spotify.com/show/YOUR_SPOTIFY_ID"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-green-500 hover:bg-green-400 text-gray-950 font-semibold rounded-lg transition-colors"
-          >
-            <Music size={18} />
-            Listen on Spotify
-          </a>
+          <p className="text-gray-400 mb-6">Listen now</p>
+          <div className="rounded-lg overflow-hidden">
+            <iframe
+              src="https://open.spotify.com/embed/show/YOUR_SPOTIFY_ID?utm_source=generator"
+              width="100%"
+              height="352"
+              frameBorder="0"
+              allowFullScreen={true}
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              loading="lazy"
+              className="rounded-lg"
+            />
+          </div>
         </div>
       </div>
 
