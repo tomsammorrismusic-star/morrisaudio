@@ -27,7 +27,7 @@ export default function Header() {
             <Link
               key={link.to}
               to={link.to}
-              className="text-sm text-gray-600 hover:text-black hover:underline underline-offset-4 transition-colors"
+              className="text-sm text-gray-600 hover:text-black hover:underline underline-offset-4 transition-colors bubble-hover"
               activeProps={{ className: 'text-sm text-yellow-700 font-medium' }}
             >
               {link.label}
@@ -35,7 +35,7 @@ export default function Header() {
           ))}
           <a
             href="mailto:hello@soundrecordist.com"
-            className="px-4 py-2 bg-yellow-700 hover:bg-yellow-600 text-white font-semibold text-sm rounded-xl transition-all duration-200"
+            className="px-4 py-2 bg-yellow-700 hover:bg-yellow-600 text-white font-semibold text-sm rounded-xl transition-all duration-200 bubble-hover"
           >
             Email Me
           </a>
@@ -59,14 +59,14 @@ export default function Header() {
               key={link.to}
               to={link.to}
               onClick={() => setMobileOpen(false)}
-              className="text-gray-700 hover:text-black hover:underline underline-offset-4 transition-colors"
+              className="text-gray-700 hover:text-black hover:underline underline-offset-4 transition-colors bubble-hover"
             >
               {link.label}
             </Link>
           ))}
           <a
             href="mailto:hello@soundrecordist.com"
-            className="px-4 py-2 bg-yellow-700 hover:bg-yellow-600 text-white font-semibold text-sm rounded-xl transition-all duration-200 text-center"
+            className="px-4 py-2 bg-yellow-700 hover:bg-yellow-600 text-white font-semibold text-sm rounded-xl transition-all duration-200 text-center bubble-hover"
           >
             Email Me
           </a>

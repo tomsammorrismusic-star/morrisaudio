@@ -145,3 +145,20 @@ code {
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
+
+@keyframes bubble-expand {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.08);
+  }
+}
+
+.bubble-hover {
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.bubble-hover:hover {
+  animation: bubble-expand 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}

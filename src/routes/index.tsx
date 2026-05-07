@@ -50,13 +50,13 @@ function Home() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-2">
             <Link
               to="/contact"
-              className="px-8 py-3 bg-yellow-700 hover:bg-yellow-600 text-white font-bold rounded-xl transition-colors text-lg"
+              className="px-8 py-3 bg-yellow-700 hover:bg-yellow-600 text-white font-bold rounded-xl transition-colors text-lg bubble-hover"
             >
               Get In Touch
             </Link>
             <Link
               to="/projects"
-              className="px-8 py-3 border border-gray-400 hover:border-yellow-700 text-gray-700 hover:text-black rounded-xl transition-colors text-lg"
+              className="px-8 py-3 border border-gray-400 hover:border-yellow-700 text-gray-700 hover:text-black rounded-xl transition-colors text-lg bubble-hover"
             >
               View My Work
             </Link>
@@ -81,7 +81,7 @@ function Home() {
       <section className="border-y border-gray-200 py-10">
         <div className="max-w-5xl mx-auto px-4 flex flex-col sm:flex-row gap-6 justify-center items-center flex-wrap">
           {stats.map((s) => (
-            <div key={s.label} className="flex flex-col items-center justify-center px-6 py-4 rounded-xl border border-gray-300 bg-gray-50 hover:border-yellow-700/50 transition-colors">
+            <div key={s.label} className="flex flex-col items-center justify-center px-6 py-4 rounded-xl border border-gray-300 bg-gray-50 hover:border-yellow-700/50 transition-colors bubble-hover">
               <p className="text-4xl font-extrabold text-yellow-700">{s.value}</p>
               <p className="text-gray-600 text-sm mt-2 whitespace-nowrap">{s.label}</p>
             </div>
@@ -110,7 +110,7 @@ function Home() {
             {services.map((svc) => (
               <div
                 key={svc.title}
-                className="p-8 rounded-3xl border border-gray-300 hover:border-yellow-700/60 bg-gradient-to-br from-gray-50 to-gray-100 hover:from-gray-100 hover:to-gray-100 transition-all duration-300"
+                className="p-8 rounded-3xl border border-gray-300 hover:border-yellow-700/60 bg-gradient-to-br from-gray-50 to-gray-100 hover:from-gray-100 hover:to-gray-100 transition-all duration-300 bubble-hover"
               >
                 <svc.icon className="w-14 h-14 text-yellow-700 mb-6" />
                 <h3 className="text-2xl font-bold mb-4">{svc.title}</h3>
@@ -133,14 +133,14 @@ function Home() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               to="/contact"
-              className="inline-flex items-center justify-center gap-2 px-8 py-3 bg-yellow-700 hover:bg-yellow-600 text-white font-bold rounded-xl transition-colors"
+              className="inline-flex items-center justify-center gap-2 px-8 py-3 bg-yellow-700 hover:bg-yellow-600 text-white font-bold rounded-xl transition-colors bubble-hover"
             >
               <Mail size={18} />
               Contact Me
             </Link>
             <a
               href="mailto:hello@soundrecordist.com"
-              className="inline-flex items-center justify-center gap-2 px-8 py-3 border border-gray-400 hover:border-yellow-700 text-gray-700 hover:text-black rounded-xl transition-colors"
+              className="inline-flex items-center justify-center gap-2 px-8 py-3 border border-gray-400 hover:border-yellow-700 text-gray-700 hover:text-black rounded-xl transition-colors bubble-hover"
             >
               Email Directly
             </a>
