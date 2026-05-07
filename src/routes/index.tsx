@@ -64,6 +64,19 @@ function Home() {
         </div>
       </section>
 
+      {/* Trusted By */}
+      <section className="py-16 px-4">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-3">Trusted By</h2>
+            <p className="text-gray-400 max-w-xl mx-auto">
+              Working with leading brands across sports and technology.
+            </p>
+          </div>
+          <LogoReel />
+        </div>
+      </section>
+
       {/* Stats */}
       <section className="border-y border-gray-800 py-10">
         <div className="max-w-5xl mx-auto px-4 flex flex-col sm:flex-row gap-6 justify-center items-center flex-wrap">
@@ -86,19 +99,6 @@ function Home() {
             </p>
           </div>
           <VideoWheel />
-        </div>
-      </section>
-
-      {/* Trusted By */}
-      <section className="py-20 px-4 border-t border-gray-800">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-3">Trusted By</h2>
-            <p className="text-gray-400 max-w-xl mx-auto">
-              Working with leading brands across sports and technology.
-            </p>
-          </div>
-          <LogoReel />
         </div>
       </section>
 
