@@ -14,8 +14,8 @@ export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false)
 
   return (
-    <header className="sticky top-0 z-50 bg-gray-950/90 backdrop-blur-sm border-b border-gray-800">
-      <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+    <header className="sticky top-0 z-50 bg-gray-950/80 backdrop-blur-md border-b border-gray-800/50 transition-all duration-300">
+      <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between rounded-b-2xl">
         <Link to="/" className="flex items-center gap-3 font-bold text-2xl md:text-3xl text-white hover:text-yellow-400 transition-colors tracking-tight">
           <Mic className="w-7 h-7 md:w-8 md:h-8 text-yellow-400" />
           <span>Morris Audio</span>
@@ -35,7 +35,7 @@ export default function Header() {
           ))}
           <a
             href="mailto:hello@soundrecordist.com"
-            className="px-4 py-2 bg-yellow-600 hover:bg-yellow-500 text-gray-950 font-semibold text-sm rounded-lg transition-colors"
+            className="px-4 py-2 bg-yellow-600 hover:bg-yellow-500 text-gray-950 font-semibold text-sm rounded-xl transition-all duration-200"
           >
             Email Me
           </a>
@@ -66,7 +66,7 @@ export default function Header() {
           ))}
           <a
             href="mailto:hello@soundrecordist.com"
-            className="px-4 py-2 bg-yellow-600 text-gray-950 font-semibold text-sm rounded-lg text-center"
+            className="px-4 py-2 bg-yellow-600 hover:bg-yellow-500 text-gray-950 font-semibold text-sm rounded-xl transition-all duration-200 text-center"
           >
             Email Me
           </a>
