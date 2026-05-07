@@ -74,7 +74,7 @@ export default function VideoWheel() {
         <button
           onClick={() => scroll('left')}
           disabled={!canScrollLeft}
-          className="absolute left-0 top-1/2 -translate-y-1/2 p-3 text-gray-500 hover:text-yellow-700 disabled:opacity-30 disabled:cursor-not-allowed transition-colors z-10 bubble-hover"
+          className="absolute left-0 top-1/2 -translate-y-1/2 p-3 text-gray-500 hover:text-yellow-500 disabled:opacity-30 disabled:cursor-not-allowed transition-colors z-10 bubble-hover"
           aria-label="Previous video"
         >
           <ChevronLeft size={32} />
@@ -92,9 +92,9 @@ export default function VideoWheel() {
               <div key={item.id} className="flex-shrink-0 w-64">
                 <button
                   onClick={() => handleCardClick(item)}
-                  className="w-full h-56 rounded-xl bg-gradient-to-br from-gray-300 to-gray-200 border border-gray-400 flex flex-col items-center justify-center gap-3 cursor-pointer hover:border-yellow-700/50 transition-colors shadow-xl group bubble-hover"
+                  className="w-full h-56 rounded-xl bg-gradient-to-br from-gray-300 to-gray-200 border border-gray-400 flex flex-col items-center justify-center gap-3 cursor-pointer hover:border-yellow-500/50 transition-colors shadow-xl group bubble-hover"
                 >
-                  <div className={`w-full h-full rounded-xl bg-gradient-to-br ${CATEGORY_COLORS[item.category] ?? 'from-gray-300 to-gray-200'} border border-gray-400 flex flex-col items-center justify-center gap-3 cursor-pointer hover:border-yellow-700/50 transition-colors shadow-xl relative overflow-hidden`}>
+                  <div className={`w-full h-full rounded-xl bg-gradient-to-br ${CATEGORY_COLORS[item.category] ?? 'from-gray-300 to-gray-200'} border border-gray-400 flex flex-col items-center justify-center gap-3 cursor-pointer hover:border-yellow-500/50 transition-colors shadow-xl relative overflow-hidden`}>
                     <div className="absolute inset-0 bg-white/0 group-hover:bg-white/10 transition-all duration-200" />
                     <div className="w-14 h-14 rounded-full bg-white/10 flex items-center justify-center relative z-10">
                       <Play className="w-6 h-6 text-white fill-white ml-1" />
@@ -114,7 +114,7 @@ export default function VideoWheel() {
         <button
           onClick={() => scroll('right')}
           disabled={!canScrollRight}
-          className="absolute right-0 top-1/2 -translate-y-1/2 p-3 text-gray-500 hover:text-yellow-700 disabled:opacity-30 disabled:cursor-not-allowed transition-colors z-10 bubble-hover"
+          className="absolute right-0 top-1/2 -translate-y-1/2 p-3 text-gray-500 hover:text-yellow-500 disabled:opacity-30 disabled:cursor-not-allowed transition-colors z-10 bubble-hover"
           aria-label="Next video"
         >
           <ChevronRight size={32} />
@@ -155,7 +155,7 @@ export default function VideoWheel() {
             {/* Content section */}
             <div className="p-8 bg-white">
               <h3 className="text-3xl font-bold mb-2 text-black">{selectedItem.title}</h3>
-              <p className="text-yellow-700 uppercase text-sm tracking-wider font-semibold mb-4">{selectedItem.category}</p>
+              <p className="text-yellow-500 uppercase text-sm tracking-wider font-semibold mb-4">{selectedItem.category}</p>
               <p className="text-gray-700 mb-6 leading-relaxed">
                 This production showcases professional audio work in the {selectedItem.category.toLowerCase()} industry, featuring cutting-edge recording techniques and post-production expertise.
               </p>
@@ -164,7 +164,7 @@ export default function VideoWheel() {
               <div className="flex items-center justify-between gap-4">
                 <button
                   onClick={() => handleLightboxNav('prev')}
-                  className="p-2 text-gray-600 hover:text-yellow-700 transition-colors bubble-hover"
+                  className="p-2 text-gray-600 hover:text-yellow-500 transition-colors bubble-hover"
                   aria-label="Previous item"
                 >
                   <ChevronLeft size={24} />
@@ -174,7 +174,7 @@ export default function VideoWheel() {
                 </span>
                 <button
                   onClick={() => handleLightboxNav('next')}
-                  className="p-2 text-gray-600 hover:text-yellow-700 transition-colors bubble-hover"
+                  className="p-2 text-gray-600 hover:text-yellow-500 transition-colors bubble-hover"
                   aria-label="Next item"
                 >
                   <ChevronRight size={24} />
