@@ -14,10 +14,10 @@ export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false)
 
   return (
-    <header className="sticky top-0 z-50 bg-gray-950/90 backdrop-blur-sm border-b border-gray-800">
-      <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-3 font-bold text-2xl md:text-3xl text-white hover:text-yellow-400 transition-colors tracking-tight">
-          <Mic className="w-7 h-7 md:w-8 md:h-8 text-yellow-400" />
+    <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-300 transition-all duration-300">
+      <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between rounded-b-2xl">
+        <Link to="/" className="flex items-center gap-3 font-bold text-2xl md:text-3xl text-black hover:text-yellow-500 transition-colors tracking-tight">
+          <Mic className="w-7 h-7 md:w-8 md:h-8 text-yellow-500" />
           <span>Morris Audio</span>
         </Link>
 
@@ -27,15 +27,15 @@ export default function Header() {
             <Link
               key={link.to}
               to={link.to}
-              className="text-sm text-gray-400 hover:text-white hover:underline underline-offset-4 transition-colors"
-              activeProps={{ className: 'text-sm text-yellow-400 font-medium' }}
+              className="text-sm text-gray-600 hover:text-black hover:underline underline-offset-4 transition-colors bubble-hover"
+              activeProps={{ className: 'text-sm text-yellow-500 font-medium' }}
             >
               {link.label}
             </Link>
           ))}
           <a
             href="mailto:hello@soundrecordist.com"
-            className="px-4 py-2 bg-yellow-600 hover:bg-yellow-500 text-gray-950 font-semibold text-sm rounded-lg transition-colors"
+            className="px-4 py-2 bg-yellow-500 hover:bg-yellow-400 text-gray-950 font-semibold text-sm rounded-xl transition-all duration-200 bubble-hover"
           >
             Email Me
           </a>
@@ -44,7 +44,7 @@ export default function Header() {
         {/* Mobile toggle */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="md:hidden p-2 text-gray-400 hover:text-white"
+          className="md:hidden p-2 text-gray-600 hover:text-black"
           aria-label="Toggle menu"
         >
           {mobileOpen ? <X size={22} /> : <Menu size={22} />}
@@ -53,20 +53,20 @@ export default function Header() {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <nav className="md:hidden border-t border-gray-800 bg-gray-950 px-4 py-4 flex flex-col gap-4">
+        <nav className="md:hidden border-t border-gray-300 bg-gray-50 px-4 py-4 flex flex-col gap-4">
           {navLinks.map((link) => (
             <Link
               key={link.to}
               to={link.to}
               onClick={() => setMobileOpen(false)}
-              className="text-gray-300 hover:text-white hover:underline underline-offset-4 transition-colors"
+              className="text-gray-700 hover:text-black hover:underline underline-offset-4 transition-colors bubble-hover"
             >
               {link.label}
             </Link>
           ))}
           <a
             href="mailto:hello@soundrecordist.com"
-            className="px-4 py-2 bg-yellow-600 text-gray-950 font-semibold text-sm rounded-lg text-center"
+            className="px-4 py-2 bg-yellow-500 hover:bg-yellow-400 text-gray-950 font-semibold text-sm rounded-xl transition-all duration-200 text-center bubble-hover"
           >
             Email Me
           </a>
