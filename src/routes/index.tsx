@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
 import VideoWheel from '@/components/VideoWheel'
+import LogoReel from '@/components/LogoReel'
 import { Mic, Volume2, Headphones, Award, Mail } from 'lucide-react'
 
 export const Route = createFileRoute('/')({
@@ -85,6 +86,19 @@ function Home() {
             </p>
           </div>
           <VideoWheel />
+        </div>
+      </section>
+
+      {/* Trusted By */}
+      <section className="py-20 px-4 border-t border-gray-800">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-3">Trusted By</h2>
+            <p className="text-gray-400 max-w-xl mx-auto">
+              Working with leading brands across sports and technology.
+            </p>
+          </div>
+          <LogoReel />
         </div>
       </section>
 
