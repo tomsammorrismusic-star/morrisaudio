@@ -29,16 +29,16 @@ const CATEGORY_COLORS: Record<string, string> = {
   Audio: 'from-teal-900 to-teal-700',
 }
 
-// Layout positions mimicking the organic collage pattern
+// Layout positions mimicking the organic collage pattern - scaled and fitted
 const layoutConfig = [
-  { id: '1', w: 140, h: 100, x: 90, y: 90 },    // top left small
-  { id: '2', w: 160, h: 110, x: 250, y: 70 },   // top left-center medium
-  { id: '3', w: 130, h: 180, x: 420, y: 35 },   // top center tall (focal)
-  { id: '4', w: 150, h: 110, x: 570, y: 70 },   // top right medium
-  { id: '5', w: 200, h: 100, x: 50, y: 220 },   // middle left wide
-  { id: '6', w: 140, h: 140, x: 270, y: 210 },  // middle-left medium square
-  { id: '7', w: 190, h: 120, x: 430, y: 240 },  // middle center wide
-  { id: '8', w: 160, h: 130, x: 640, y: 220 },  // middle right
+  { id: '1', w: 220, h: 160, x: 140, y: 140 },    // top left small
+  { id: '2', w: 250, h: 170, x: 390, y: 110 },   // top left-center medium
+  { id: '3', w: 200, h: 280, x: 650, y: 55 },    // top center tall (focal)
+  { id: '4', w: 240, h: 170, x: 890, y: 110 },   // top right medium
+  { id: '5', w: 310, h: 160, x: 80, y: 340 },    // middle left wide
+  { id: '6', w: 220, h: 220, x: 420, y: 330 },   // middle-left medium square
+  { id: '7', w: 300, h: 190, x: 680, y: 365 },   // middle center wide
+  { id: '8', w: 250, h: 210, x: 1000, y: 340 },  // middle right
 ]
 
 export default function VideoCollage() {
@@ -46,15 +46,15 @@ export default function VideoCollage() {
 
   return (
     <>
-      <div className="flex items-center justify-center w-full py-16">
-        <div className="relative" style={{ width: '800px', height: '450px' }}>
+      <div className="flex items-center justify-center w-full py-8 px-4">
+        <div className="relative" style={{ width: '100%', maxWidth: '1300px', height: '600px' }}>
           {videoItems.map((item, index) => {
             const config = layoutConfig[index]
             return (
               <button
                 key={item.id}
                 onClick={() => setSelectedItem(item)}
-                className={`absolute bg-gradient-to-br ${CATEGORY_COLORS[item.category]} border-4 border-white flex flex-col items-center justify-center gap-2 cursor-pointer transition-all duration-300 group overflow-hidden bubble-hover hover:shadow-2xl hover:z-20`}
+                className={`absolute bg-gradient-to-br ${CATEGORY_COLORS[item.category]} flex flex-col items-center justify-center gap-2 cursor-pointer transition-all duration-300 group overflow-hidden bubble-hover hover:shadow-2xl hover:z-20`}
                 style={{
                   left: `${config.x}px`,
                   top: `${config.y}px`,
