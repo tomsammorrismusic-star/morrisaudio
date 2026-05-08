@@ -69,7 +69,7 @@ export default function VideoWheel() {
 
   return (
     <>
-      <div className="relative w-full flex flex-col items-center gap-6">
+      <div className="relative w-full flex flex-col items-center gap-6 overflow-visible">
         {/* Left arrow */}
         <button
           onClick={() => scroll('left')}
@@ -81,20 +81,20 @@ export default function VideoWheel() {
         </button>
 
         {/* Horizontal scroll container */}
-        <div className="w-full px-16">
+        <div className="w-full px-16 overflow-y-visible">
           <div
             ref={scrollContainer}
-            className="flex gap-4 overflow-x-auto scroll-smooth pb-4 no-scrollbar"
+            className="flex gap-4 overflow-x-auto overflow-y-visible scroll-smooth pb-4 no-scrollbar"
             onScroll={checkScroll}
-            style={{ scrollBehavior: 'smooth', scrollbarWidth: 'none' }}
+            style={{ scrollBehavior: 'smooth', scrollbarWidth: 'none', overflowY: 'visible' }}
           >
             {videoItems.map((item) => (
-              <div key={item.id} className="flex-shrink-0 w-64">
+              <div key={item.id} className="flex-shrink-0 w-64 overflow-visible">
                 <button
                   onClick={() => handleCardClick(item)}
-                  className="w-full h-56 rounded-xl bg-gradient-to-br from-gray-300 to-gray-200 border border-gray-400 flex flex-col items-center justify-center gap-3 cursor-pointer hover:border-yellow-500/50 transition-colors shadow-xl group bubble-hover"
+                  className="w-full h-56 rounded-xl bg-gradient-to-br from-gray-300 to-gray-200 border border-gray-400 flex flex-col items-center justify-center gap-3 cursor-pointer hover:border-yellow-500/50 transition-colors shadow-xl group bubble-hover overflow-visible"
                 >
-                  <div className={`w-full h-full rounded-xl bg-gradient-to-br ${CATEGORY_COLORS[item.category] ?? 'from-gray-300 to-gray-200'} border border-gray-400 flex flex-col items-center justify-center gap-3 cursor-pointer hover:border-yellow-500/50 transition-colors shadow-xl relative overflow-hidden`}>
+                  <div className={`w-full h-full rounded-xl bg-gradient-to-br ${CATEGORY_COLORS[item.category] ?? 'from-gray-300 to-gray-200'} border border-gray-400 flex flex-col items-center justify-center gap-3 cursor-pointer hover:border-yellow-500/50 transition-colors shadow-xl relative overflow-visible`}>
                     <div className="absolute inset-0 bg-white/0 group-hover:bg-white/10 transition-all duration-200" />
                     <div className="w-14 h-14 rounded-full bg-white/10 flex items-center justify-center relative z-10">
                       <Play className="w-6 h-6 text-white fill-white ml-1" />
