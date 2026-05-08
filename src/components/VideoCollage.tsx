@@ -6,17 +6,19 @@ interface VideoItem {
   title: string
   category: string
   shape: 'circle' | 'tall-rect' | 'wide-rect' | 'square'
+  row: number
+  col: number
 }
 
 const videoItems: VideoItem[] = [
-  { id: '1', title: 'Feature Film Location Sound', category: 'Film', shape: 'wide-rect' },
-  { id: '2', title: 'Documentary — Wildlife Series', category: 'Documentary', shape: 'circle' },
-  { id: '3', title: 'TV Commercial — Automotive', category: 'Commercial', shape: 'square' },
-  { id: '4', title: 'Short Film — Drama', category: 'Drama', shape: 'tall-rect' },
-  { id: '5', title: 'Corporate Interview Package', category: 'Corporate', shape: 'square' },
-  { id: '6', title: 'Music Video — Live Recording', category: 'Music', shape: 'tall-rect' },
-  { id: '7', title: 'ENG News — Field Recording', category: 'News', shape: 'circle' },
-  { id: '8', title: 'Podcast & Voice Over', category: 'Audio', shape: 'wide-rect' },
+  { id: '1', title: 'Feature Film Location Sound', category: 'Film', shape: 'wide-rect', row: 0, col: 0 },
+  { id: '2', title: 'Documentary — Wildlife Series', category: 'Documentary', shape: 'circle', row: 0, col: 2 },
+  { id: '3', title: 'TV Commercial — Automotive', category: 'Commercial', shape: 'square', row: 0, col: 4 },
+  { id: '4', title: 'Short Film — Drama', category: 'Drama', shape: 'tall-rect', row: 1, col: 0 },
+  { id: '5', title: 'Corporate Interview Package', category: 'Corporate', shape: 'square', row: 1, col: 2 },
+  { id: '6', title: 'Music Video — Live Recording', category: 'Music', shape: 'tall-rect', row: 1, col: 3 },
+  { id: '7', title: 'ENG News — Field Recording', category: 'News', shape: 'circle', row: 1, col: 5 },
+  { id: '8', title: 'Podcast & Voice Over', category: 'Audio', shape: 'wide-rect', row: 2, col: 0 },
 ]
 
 const CATEGORY_COLORS: Record<string, string> = {
@@ -32,35 +34,41 @@ const CATEGORY_COLORS: Record<string, string> = {
 
 const shapeClasses = {
   circle: 'w-40 h-40 rounded-full',
-  square: 'w-48 h-48 rounded-lg',
+  square: 'w-44 h-44 rounded-lg',
   'tall-rect': 'w-32 h-56 rounded-xl',
   'wide-rect': 'w-56 h-32 rounded-xl',
 }
 
 export default function VideoCollage() {
   const [selectedItem, setSelectedItem] = useState<VideoItem | null>(null)
-  const [hoveredId, setHoveredId] = useState<string | null>(null)
 
   return (
     <>
-      <div className="flex flex-wrap gap-6 justify-center items-center py-8">
-        {videoItems.map((item) => (
-          <button
-            key={item.id}
-            onClick={() => setSelectedItem(item)}
-            onMouseEnter={() => setHoveredId(item.id)}
-            onMouseLeave={() => setHoveredId(null)}
-            className={`${shapeClasses[item.shape]} bg-gradient-to-br ${CATEGORY_COLORS[item.category] ?? 'from-gray-300 to-gray-200'} border border-gray-400 flex flex-col items-center justify-center gap-2 cursor-pointer hover:border-yellow-500/50 transition-colors group overflow-hidden relative bubble-hover`}
-          >
-            <div className="absolute inset-0 bg-white/0 group-hover:bg-white/10 transition-all duration-200" />
-            <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center relative z-10">
-              <Play className="w-5 h-5 text-white fill-white ml-1" />
-            </div>
-            <div className="text-center px-3 relative z-10 text-xs">
-              <p className="text-white font-semibold leading-tight line-clamp-2">{item.title}</p>
-            </div>
-          </button>
-        ))}
+      <div className="relative w-full mx-auto" style={{ height: '600px' }}>
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="relative w-full h-full" style={{ maxWidth: '900px' }}>
+            {videoItems.map((item) => (
+              <button
+                key={item.id}
+                onClick={() => setSelectedItem(item)}
+                className={`absolute ${shapeClasses[item.shape]} bg-gradient-to-br ${CATEGORY_COLORS[item.category] ?? 'from-gray-300 to-gray-200'} border-2 border-gray-300 flex flex-col items-center justify-center gap-2 cursor-pointer hover:border-yellow-500 transition-all duration-300 group overflow-hidden shadow-lg hover:shadow-2xl bubble-hover`}
+                style={{
+                  left: `${item.col * 12}%`,
+                  top: `${item.row * 20}%`,
+                  zIndex: 10 + item.row * 2 + item.col,
+                }}
+              >
+                <div className="absolute inset-0 bg-white/0 group-hover:bg-white/10 transition-all duration-200" />
+                <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center relative z-10">
+                  <Play className="w-5 h-5 text-white fill-white ml-1" />
+                </div>
+                <div className="text-center px-3 relative z-10 text-xs">
+                  <p className="text-white font-semibold leading-tight line-clamp-1">{item.title}</p>
+                </div>
+              </button>
+            ))}
+          </div>
+        </div>
       </div>
 
       {/* Fullscreen Video Modal */}
