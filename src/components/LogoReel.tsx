@@ -31,11 +31,11 @@ const ManchesterUnitedLogo = () => (
 )
 
 const NewcastleLogo = () => (
-  <svg className="w-10 h-10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="12" cy="12" r="11" fill="black" />
-    <path d="M12 3 L15.5 9.5 L22.5 9.5 L17.25 14 L19.75 20.5 L12 16 L4.25 20.5 L6.75 14 L1.5 9.5 L8.5 9.5 Z" fill="white" />
-    <circle cx="12" cy="12" r="11" fill="none" stroke="white" strokeWidth="0.8" />
-  </svg>
+  <img
+    src="https://cdn.builder.io/api/v1/image/assets%2F1a8d84947e9444f98df7c975eda41851%2Fbcd08217e74f4cbf9d2ad0ce4da27867"
+    alt="Newcastle United"
+    className="w-10 h-10 object-contain"
+  />
 )
 
 const logos: LogoItem[] = [
