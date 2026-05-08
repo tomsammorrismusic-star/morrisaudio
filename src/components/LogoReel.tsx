@@ -16,10 +16,11 @@ const GoogleLogo = () => (
 )
 
 const EELogo = () => (
-  <svg className="w-10 h-10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <rect width="24" height="24" fill="#FF6B00" rx="2" />
-    <text x="4" y="17" fontSize="14" fontWeight="900" fill="white">EE</text>
-  </svg>
+  <img
+    src="https://cdn.builder.io/api/v1/image/assets%2F1a8d84947e9444f98df7c975eda41851%2F85b0e76edc2c47ab841aa836b8576d83"
+    alt="EE"
+    className="w-10 h-10 object-contain"
+  />
 )
 
 const ManchesterUnitedLogo = () => (
