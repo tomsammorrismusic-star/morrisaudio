@@ -21,24 +21,23 @@ export default function LogoReel() {
     if (isPaused || !scrollContainer.current) return
 
     const container = scrollContainer.current
-    let animationId: NodeJS.Timeout
+    const singleSetWidth = container.scrollWidth / 2
+    let scrollPos = 0
+    let animationId: number
 
-    const scroll = () => {
-      if (!container) return
+    const animate = () => {
+      scrollPos += 1
 
-      const maxScroll = container.scrollWidth - container.clientWidth
-      const currentScroll = container.scrollLeft
-      const nextScroll = currentScroll + 2
-
-      if (nextScroll >= maxScroll) {
-        container.scrollLeft = 0
-      } else {
-        container.scrollLeft = nextScroll
+      if (scrollPos >= singleSetWidth) {
+        scrollPos = 0
       }
+
+      container.scrollLeft = scrollPos
+      animationId = requestAnimationFrame(animate)
     }
 
-    animationId = setInterval(scroll, 30)
-    return () => clearInterval(animationId)
+    animationId = requestAnimationFrame(animate)
+    return () => cancelAnimationFrame(animationId)
   }, [isPaused])
 
   return (
