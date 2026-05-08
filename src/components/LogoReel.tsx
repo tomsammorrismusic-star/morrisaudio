@@ -8,36 +8,33 @@ interface LogoItem {
 
 const GoogleLogo = () => (
   <svg className="w-10 h-10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <text x="2" y="18" fontSize="16" fontWeight="bold" fill="#4285F4">G</text>
-    <text x="8" y="18" fontSize="16" fontWeight="bold" fill="#EA4335">o</text>
-    <text x="13" y="18" fontSize="16" fontWeight="bold" fill="#FBBC04">o</text>
-    <text x="18" y="18" fontSize="16" fontWeight="bold" fill="#4285F4">g</text>
+    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" fill="#F1F1F1" />
+    <path d="M12 21c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z" fill="#4285F4" />
+    <path d="M16.51 12.27c0-.79-.71-1.56-1.84-1.84v-1.03c.73.03 1.43.27 2.04.65.43.28.75.67.96 1.12.21.45.31.93.31 1.43 0 .5-.1.98-.31 1.43-.21.45-.53.84-.96 1.12-.61.38-1.31.62-2.04.65v-1.03c1.13-.28 1.84-1.05 1.84-1.84z" fill="#EA4335" />
+    <path d="M12 18.5c-3.59 0-6.5-2.91-6.5-6.5S8.41 5.5 12 5.5s6.5 2.91 6.5 6.5-2.91 6.5-6.5 6.5z" fill="none" stroke="#34A853" strokeWidth="1.5" />
   </svg>
 )
 
 const EELogo = () => (
   <svg className="w-10 h-10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <rect x="2" y="6" width="5" height="12" fill="#FF6B00" />
-    <rect x="10" y="6" width="5" height="12" fill="#FF6B00" />
-    <line x1="4" y1="10" x2="7" y2="10" stroke="white" strokeWidth="1.5" />
-    <line x1="4" y1="14" x2="7" y2="14" stroke="white" strokeWidth="1.5" />
-    <line x1="12" y1="10" x2="15" y2="10" stroke="white" strokeWidth="1.5" />
-    <line x1="12" y1="14" x2="15" y2="14" stroke="white" strokeWidth="1.5" />
+    <rect width="24" height="24" fill="#FF6B00" rx="2" />
+    <text x="4" y="17" fontSize="14" fontWeight="900" fill="white">EE</text>
   </svg>
 )
 
 const ManchesterUnitedLogo = () => (
   <svg className="w-10 h-10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="12" cy="12" r="10" fill="#DA291C" />
-    <path d="M12 4 L14 8 L18 8 L15 11 L16 15 L12 12 L8 15 L9 11 L6 8 L10 8 Z" fill="white" />
+    <circle cx="12" cy="12" r="11" fill="#DA291C" />
+    <path d="M12 3 L15.5 9.5 L22.5 9.5 L17.25 14 L19.75 20.5 L12 16 L4.25 20.5 L6.75 14 L1.5 9.5 L8.5 9.5 Z" fill="white" />
+    <circle cx="12" cy="12" r="11" fill="none" stroke="#FFD100" strokeWidth="0.8" />
   </svg>
 )
 
 const NewcastleLogo = () => (
   <svg className="w-10 h-10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="12" cy="12" r="10" fill="black" />
-    <circle cx="12" cy="12" r="10" fill="none" stroke="white" strokeWidth="0.5" />
-    <path d="M12 6 L14 10 L18 10 L15 13 L16 17 L12 14 L8 17 L9 13 L6 10 L10 10 Z" fill="white" />
+    <circle cx="12" cy="12" r="11" fill="black" />
+    <path d="M12 3 L15.5 9.5 L22.5 9.5 L17.25 14 L19.75 20.5 L12 16 L4.25 20.5 L6.75 14 L1.5 9.5 L8.5 9.5 Z" fill="white" />
+    <circle cx="12" cy="12" r="11" fill="none" stroke="white" strokeWidth="0.8" />
   </svg>
 )
 
