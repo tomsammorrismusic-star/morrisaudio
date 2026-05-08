@@ -18,26 +18,14 @@ export default function LogoReel() {
   const [isPaused, setIsPaused] = useState(false)
 
   useEffect(() => {
-    if (isPaused || !scrollContainer.current) return
+    if (!scrollContainer.current) return
 
     const container = scrollContainer.current
-    const singleSetWidth = container.scrollWidth / 2
-    let scrollPos = 0
-    let animationId: number
-
-    const animate = () => {
-      scrollPos += 1
-
-      if (scrollPos >= singleSetWidth) {
-        scrollPos = 0
-      }
-
-      container.scrollLeft = scrollPos
-      animationId = requestAnimationFrame(animate)
+    if (isPaused) {
+      container.style.animationPlayState = 'paused'
+    } else {
+      container.style.animationPlayState = 'running'
     }
-
-    animationId = requestAnimationFrame(animate)
-    return () => cancelAnimationFrame(animationId)
   }, [isPaused])
 
   return (
