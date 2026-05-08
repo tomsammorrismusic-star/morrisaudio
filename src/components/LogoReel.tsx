@@ -10,7 +10,7 @@ const GoogleLogo = () => (
   <img
     src="https://cdn.builder.io/api/v1/image/assets%2F1a8d84947e9444f98df7c975eda41851%2F76c3d14629a84e948fe655ce4e510bee"
     alt="Google"
-    className="w-10 h-10 object-contain"
+    className="w-10 h-10 object-contain logo-outline"
   />
 )
 
@@ -18,7 +18,7 @@ const EELogo = () => (
   <img
     src="https://cdn.builder.io/api/v1/image/assets%2F1a8d84947e9444f98df7c975eda41851%2F85b0e76edc2c47ab841aa836b8576d83"
     alt="EE"
-    className="w-10 h-10 object-contain"
+    className="w-10 h-10 object-contain logo-outline"
   />
 )
 
@@ -26,7 +26,7 @@ const ManchesterUnitedLogo = () => (
   <img
     src="https://cdn.builder.io/api/v1/image/assets%2F1a8d84947e9444f98df7c975eda41851%2Fb1f8303e0651451ebb2204a72828c78a"
     alt="Manchester United"
-    className="w-10 h-10 object-contain"
+    className="w-10 h-10 object-contain logo-outline"
   />
 )
 
@@ -34,7 +34,7 @@ const NewcastleLogo = () => (
   <img
     src="https://cdn.builder.io/api/v1/image/assets%2F1a8d84947e9444f98df7c975eda41851%2Fbcd08217e74f4cbf9d2ad0ce4da27867"
     alt="Newcastle United"
-    className="w-10 h-10 object-contain"
+    className="w-10 h-10 object-contain logo-outline"
   />
 )
 

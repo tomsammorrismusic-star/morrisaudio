@@ -191,3 +191,7 @@ code {
 .video-wheel-scroll {
   animation: scroll-right 40s linear infinite;
 }
+
+.logo-outline {
+  filter: grayscale(100%) contrast(1.2) brightness(0.9) invert(1) hue-rotate(180deg);
+}
