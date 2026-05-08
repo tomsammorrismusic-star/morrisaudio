@@ -7,12 +7,11 @@ interface LogoItem {
 }
 
 const GoogleLogo = () => (
-  <svg className="w-10 h-10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" fill="#F1F1F1" />
-    <path d="M12 21c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z" fill="#4285F4" />
-    <path d="M16.51 12.27c0-.79-.71-1.56-1.84-1.84v-1.03c.73.03 1.43.27 2.04.65.43.28.75.67.96 1.12.21.45.31.93.31 1.43 0 .5-.1.98-.31 1.43-.21.45-.53.84-.96 1.12-.61.38-1.31.62-2.04.65v-1.03c1.13-.28 1.84-1.05 1.84-1.84z" fill="#EA4335" />
-    <path d="M12 18.5c-3.59 0-6.5-2.91-6.5-6.5S8.41 5.5 12 5.5s6.5 2.91 6.5 6.5-2.91 6.5-6.5 6.5z" fill="none" stroke="#34A853" strokeWidth="1.5" />
-  </svg>
+  <img
+    src="https://cdn.builder.io/api/v1/image/assets%2F1a8d84947e9444f98df7c975eda41851%2F76c3d14629a84e948fe655ce4e510bee"
+    alt="Google"
+    className="w-10 h-10 object-contain"
+  />
 )
 
 const EELogo = () => (
