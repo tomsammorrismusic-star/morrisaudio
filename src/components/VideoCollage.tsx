@@ -29,16 +29,16 @@ const CATEGORY_COLORS: Record<string, string> = {
   Audio: 'from-teal-900 to-teal-700',
 }
 
-// Layout positions mimicking the organic collage pattern - scaled and fitted
+// Layout positions mimicking the organic collage pattern - fitted to container
 const layoutConfig = [
-  { id: '1', w: 220, h: 160, x: 140, y: 140 },    // top left small
-  { id: '2', w: 250, h: 170, x: 390, y: 110 },   // top left-center medium
-  { id: '3', w: 200, h: 280, x: 650, y: 55 },    // top center tall (focal)
-  { id: '4', w: 240, h: 170, x: 890, y: 110 },   // top right medium
-  { id: '5', w: 310, h: 160, x: 80, y: 340 },    // middle left wide
-  { id: '6', w: 220, h: 220, x: 420, y: 330 },   // middle-left medium square
-  { id: '7', w: 300, h: 190, x: 680, y: 365 },   // middle center wide
-  { id: '8', w: 250, h: 210, x: 1000, y: 340 },  // middle right
+  { id: '1', w: 180, h: 130, x: 10, y: 110 },      // top left small
+  { id: '2', w: 200, h: 140, x: 200, y: 85 },      // top left-center medium
+  { id: '3', w: 160, h: 230, x: 420, y: 40 },      // top center tall (focal)
+  { id: '4', w: 190, h: 140, x: 600, y: 85 },      // top right medium
+  { id: '5', w: 260, h: 130, x: 10, y: 260 },      // middle left wide
+  { id: '6', w: 190, h: 180, x: 290, y: 270 },     // middle-left medium square
+  { id: '7', w: 240, h: 155, x: 500, y: 290 },     // middle center wide
+  { id: '8', w: 200, h: 175, x: 760, y: 270 },     // middle right
 ]
 
 export default function VideoCollage() {
@@ -46,8 +46,8 @@ export default function VideoCollage() {
 
   return (
     <>
-      <div className="flex items-center justify-center w-full py-8 px-4">
-        <div className="relative" style={{ width: '100%', maxWidth: '1300px', height: '600px' }}>
+      <div className="flex items-center justify-center w-full py-8">
+        <div className="relative max-w-6xl" style={{ width: '100%', height: '480px' }}>
           {videoItems.map((item, index) => {
             const config = layoutConfig[index]
             return (
