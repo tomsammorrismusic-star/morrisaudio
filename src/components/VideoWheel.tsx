@@ -80,13 +80,14 @@ export default function VideoWheel() {
           <ChevronLeft size={32} />
         </button>
 
-        {/* Horizontal scroll container */}
-        <div className="w-full px-16 overflow-y-visible">
+        {/* Outer scroll container with overflow-x-auto */}
+        <div className="w-full px-16 overflow-x-auto py-8">
+          {/* Inner scroll container without overflow clipping */}
           <div
             ref={scrollContainer}
-            className="flex gap-4 overflow-x-auto overflow-y-visible scroll-smooth pb-4 no-scrollbar"
+            className="flex gap-4 scroll-smooth no-scrollbar"
             onScroll={checkScroll}
-            style={{ scrollBehavior: 'smooth', scrollbarWidth: 'none', overflowY: 'visible' }}
+            style={{ scrollBehavior: 'smooth', scrollbarWidth: 'none' }}
           >
             {videoItems.map((item) => (
               <div key={item.id} className="flex-shrink-0 w-64 overflow-visible">
