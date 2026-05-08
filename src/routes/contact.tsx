@@ -103,7 +103,7 @@ function Contact() {
                 Prefer to email directly? Use the button below.
               </p>
               <a
-                href="mailto:tomsammorrismusic@gmail.com"
+                href="mailto:tomsammorrismusic@gmail.com?subject=Audio%20Production%20Inquiry"
                 className="inline-flex items-center gap-2 px-5 py-2.5 bg-yellow-500 hover:bg-yellow-400 text-gray-950 font-bold rounded-lg transition-colors text-sm w-full justify-center"
               >
                 <Mail size={16} />
