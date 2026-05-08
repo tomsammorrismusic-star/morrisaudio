@@ -178,3 +178,16 @@ code {
 .logo-reel-scroll {
   animation: scroll-left 30s linear infinite;
 }
+
+@keyframes scroll-right {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(50%);
+  }
+}
+
+.video-wheel-scroll {
+  animation: scroll-right 40s linear infinite;
+}

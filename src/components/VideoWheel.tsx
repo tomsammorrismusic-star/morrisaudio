@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react'
+import { useRef, useState, useEffect } from 'react'
 import { Play, Film, ChevronLeft, ChevronRight, X } from 'lucide-react'
 
 interface VideoItem {
@@ -36,6 +36,7 @@ export default function VideoWheel() {
   const [canScrollLeft, setCanScrollLeft] = useState(false)
   const [canScrollRight, setCanScrollRight] = useState(true)
   const [selectedItem, setSelectedItem] = useState<VideoItem | null>(null)
+  const [isPaused, setIsPaused] = useState(false)
 
   const checkScroll = () => {
     if (scrollContainer.current) {
@@ -59,6 +60,16 @@ export default function VideoWheel() {
   const handleCardClick = (item: VideoItem) => {
     setSelectedItem(item)
   }
+
+  useEffect(() => {
+    if (!scrollContainer.current) return
+
+    if (isPaused) {
+      scrollContainer.current.style.animationPlayState = 'paused'
+    } else {
+      scrollContainer.current.style.animationPlayState = 'running'
+    }
+  }, [isPaused])
 
   const handleLightboxNav = (direction: 'prev' | 'next') => {
     if (!selectedItem) return
@@ -85,8 +96,10 @@ export default function VideoWheel() {
           {/* Inner scroll container without overflow clipping */}
           <div
             ref={scrollContainer}
-            className="flex gap-4 scroll-smooth no-scrollbar"
+            className="flex gap-4 scroll-smooth no-scrollbar video-wheel-scroll"
             onScroll={checkScroll}
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
             style={{ scrollBehavior: 'smooth', scrollbarWidth: 'none' }}
           >
             {videoItems.map((item) => (
