@@ -5,8 +5,8 @@ interface VideoItem {
   id: string
   title: string
   category: string
-  colSpan: 1 | 2
-  rowSpan: 1 | 2
+  colSpan: 1 | 2 | 3
+  rowSpan: 1 | 2 | 3
 }
 
 const videoItems: VideoItem[] = [
@@ -14,10 +14,10 @@ const videoItems: VideoItem[] = [
   { id: '2', title: 'Documentary — Wildlife Series', category: 'Documentary', colSpan: 1, rowSpan: 1 },
   { id: '3', title: 'TV Commercial — Automotive', category: 'Commercial', colSpan: 1, rowSpan: 2 },
   { id: '4', title: 'Short Film — Drama', category: 'Drama', colSpan: 1, rowSpan: 1 },
-  { id: '5', title: 'Corporate Interview Package', category: 'Corporate', colSpan: 2, rowSpan: 1 },
-  { id: '6', title: 'Music Video — Live Recording', category: 'Music', colSpan: 1, rowSpan: 1 },
+  { id: '5', title: 'Corporate Interview Package', category: 'Corporate', colSpan: 1, rowSpan: 1 },
+  { id: '6', title: 'Music Video — Live Recording', category: 'Music', colSpan: 2, rowSpan: 1 },
   { id: '7', title: 'ENG News — Field Recording', category: 'News', colSpan: 1, rowSpan: 1 },
-  { id: '8', title: 'Podcast & Voice Over', category: 'Audio', colSpan: 2, rowSpan: 1 },
+  { id: '8', title: 'Podcast & Voice Over', category: 'Audio', colSpan: 1, rowSpan: 1 },
 ]
 
 const CATEGORY_COLORS: Record<string, string> = {
@@ -36,34 +36,37 @@ export default function VideoCollage() {
 
   return (
     <>
-      <div 
-        className="grid gap-0 w-full"
-        style={{ 
-          gridTemplateColumns: 'repeat(4, 1fr)',
-          gridAutoRows: '200px',
-          gridAutoFlow: 'dense'
-        }}
-      >
-        {videoItems.map((item) => (
-          <button
-            key={item.id}
-            onClick={() => setSelectedItem(item)}
-            className={`relative bg-gradient-to-br ${CATEGORY_COLORS[item.category] ?? 'from-gray-300 to-gray-200'} border border-gray-200 flex flex-col items-center justify-center gap-3 cursor-pointer transition-all duration-300 group overflow-hidden bubble-hover hover:z-20 hover:border-yellow-400`}
-            style={{
-              gridColumn: `span ${item.colSpan}`,
-              gridRow: `span ${item.rowSpan}`,
-            }}
-          >
-            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300" />
-            <div className="w-14 h-14 rounded-full bg-white/15 flex items-center justify-center relative z-10 group-hover:bg-white/25 transition-all">
-              <Play className="w-7 h-7 text-white fill-white ml-1" />
-            </div>
-            <div className="text-center px-4 relative z-10">
-              <p className="text-white font-semibold text-sm leading-snug line-clamp-2">{item.title}</p>
-              <p className="text-white/60 text-xs uppercase tracking-wider mt-1">{item.category}</p>
-            </div>
-          </button>
-        ))}
+      <div className="flex items-center justify-center w-full py-12">
+        <div 
+          className="grid gap-0"
+          style={{ 
+            gridTemplateColumns: 'repeat(4, 1fr)',
+            gridAutoRows: '160px',
+            gridAutoFlow: 'dense',
+            width: 'fit-content',
+            maxWidth: '100%'
+          }}
+        >
+          {videoItems.map((item) => (
+            <button
+              key={item.id}
+              onClick={() => setSelectedItem(item)}
+              className={`relative bg-gradient-to-br ${CATEGORY_COLORS[item.category] ?? 'from-gray-300 to-gray-200'} border border-gray-200 flex flex-col items-center justify-center gap-2 cursor-pointer transition-all duration-300 group overflow-hidden bubble-hover hover:z-20 hover:border-yellow-400`}
+              style={{
+                gridColumn: `span ${item.colSpan}`,
+                gridRow: `span ${item.rowSpan}`,
+              }}
+            >
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300" />
+              <div className="w-12 h-12 rounded-full bg-white/15 flex items-center justify-center relative z-10 group-hover:bg-white/25 transition-all">
+                <Play className="w-6 h-6 text-white fill-white ml-1" />
+              </div>
+              <div className="text-center px-3 relative z-10">
+                <p className="text-white font-semibold text-xs leading-snug line-clamp-2">{item.title}</p>
+              </div>
+            </button>
+          ))}
+        </div>
       </div>
 
       {/* Fullscreen Video Modal with Bubble Effect */}
