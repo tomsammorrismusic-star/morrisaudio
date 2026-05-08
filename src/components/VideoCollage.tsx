@@ -29,16 +29,16 @@ const CATEGORY_COLORS: Record<string, string> = {
   Audio: 'from-teal-900 to-teal-700',
 }
 
-// Layout positions mimicking the organic collage pattern - fitted to container
+// Layout positions mimicking the organic collage pattern - flipped 180 degrees
 const layoutConfig = [
-  { id: '1', w: 180, h: 130, x: 10, y: 110 },      // top left small
-  { id: '2', w: 200, h: 140, x: 200, y: 85 },      // top left-center medium
-  { id: '3', w: 160, h: 230, x: 420, y: 40 },      // top center tall (focal)
-  { id: '4', w: 190, h: 140, x: 600, y: 85 },      // top right medium
-  { id: '5', w: 260, h: 130, x: 10, y: 260 },      // middle left wide
-  { id: '6', w: 190, h: 180, x: 290, y: 270 },     // middle-left medium square
-  { id: '7', w: 240, h: 155, x: 500, y: 290 },     // middle center wide
-  { id: '8', w: 200, h: 175, x: 760, y: 270 },     // middle right
+  { id: '1', w: 180, h: 130, x: 770, y: 240 },     // flipped top right
+  { id: '2', w: 200, h: 140, x: 560, y: 255 },     // flipped top center-right
+  { id: '3', w: 160, h: 230, x: 380, y: 210 },     // center tall (focal)
+  { id: '4', w: 190, h: 140, x: 170, y: 255 },     // flipped top left
+  { id: '5', w: 260, h: 130, x: 690, y: 90 },      // flipped bottom right
+  { id: '6', w: 190, h: 180, x: 480, y: 30 },      // flipped bottom center
+  { id: '7', w: 240, h: 155, x: 220, y: 35 },      // flipped bottom left-center
+  { id: '8', w: 200, h: 175, x: 10, y: 90 },       // flipped bottom left
 ]
 
 export default function VideoCollage() {
