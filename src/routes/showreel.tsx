@@ -1,19 +1,13 @@
 import { createFileRoute } from '@tanstack/react-router'
-import { allProjects } from 'content-collections'
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { Badge } from '@/components/ui/badge'
-import { ExternalLink, Film, Music } from 'lucide-react'
+import { Music } from 'lucide-react'
 import VideoWheel from '@/components/VideoWheel'
+import VideoCollage from '@/components/VideoCollage'
 
 export const Route = createFileRoute('/showreel')({
   component: Showreel,
 })
 
 function Showreel() {
-  const showreelProjects = allProjects.filter((project) =>
-    project.tags.some((tag) => ['Podcast', 'Voice Over', 'Corporate', 'Commercial', 'Audio'].includes(tag)),
-  )
-
   return (
     <div className="min-h-screen bg-white text-gray-900">
       <div className="max-w-6xl mx-auto px-4 py-16">
@@ -53,46 +47,8 @@ function Showreel() {
       </div>
 
       <div className="max-w-6xl mx-auto px-4 py-12">
-        <h2 className="text-3xl font-bold mb-8 text-gray-900">Services & Specializations</h2>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {showreelProjects.map((project) => (
-            <Card key={project._meta.path} className="flex flex-col bg-gray-50 border-gray-200 text-gray-900">
-              <CardHeader>
-                <CardTitle className="text-xl text-gray-900">{project.title}</CardTitle>
-              </CardHeader>
-              <CardContent className="flex-1 flex flex-col">
-                <p className="text-gray-600 mb-4 flex-1">{project.description}</p>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.tags.map((tag) => (
-                    <Badge key={tag} variant="secondary" className="bg-gray-200 text-gray-700">
-                      {tag}
-                    </Badge>
-                  ))}
-                </div>
-                <div className="flex gap-3">
-                  {project.liveUrl && (
-                    <a
-                      href={project.liveUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-sm text-yellow-600 hover:text-yellow-500 transition-colors"
-                    >
-                      <ExternalLink size={16} />
-                      View Project
-                    </a>
-                  )}
-                  {!project.liveUrl && (
-                    <span className="inline-flex items-center gap-2 text-sm text-gray-500">
-                      <Film size={16} />
-                      In archive
-                    </span>
-                  )}
-                </div>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
+        <h2 className="text-3xl font-bold mb-8 text-gray-900">Portfolio</h2>
+        <VideoCollage />
       </div>
 
       <div className="max-w-6xl mx-auto px-4 py-16">
