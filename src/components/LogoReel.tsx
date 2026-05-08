@@ -21,12 +21,12 @@ export default function LogoReel() {
     if (isPaused || !scrollContainer.current) return
 
     const container = scrollContainer.current
-    let scrollPos = 0
+    let scrollPos = container.scrollWidth - container.clientWidth
 
     const scroll = () => {
-      scrollPos += 1
-      if (scrollPos > container.scrollWidth - container.clientWidth) {
-        scrollPos = 0
+      scrollPos -= 1
+      if (scrollPos <= 0) {
+        scrollPos = container.scrollWidth - container.clientWidth
       }
       container.scrollLeft = scrollPos
     }
