@@ -81,15 +81,6 @@ export default function VideoWheel() {
   return (
     <>
       <div className="relative w-full flex flex-col items-center gap-6 overflow-visible">
-        {/* Left arrow */}
-        <button
-          onClick={() => scroll('left')}
-          disabled={!canScrollLeft}
-          className="absolute left-0 top-1/2 -translate-y-1/2 p-3 text-gray-500 hover:text-yellow-500 disabled:opacity-30 disabled:cursor-not-allowed transition-colors z-10 bubble-hover"
-          aria-label="Previous video"
-        >
-          <ChevronLeft size={32} />
-        </button>
 
         {/* Outer scroll container with overflow-x-auto */}
         <div className="w-full px-16 overflow-x-auto py-8">
@@ -102,13 +93,13 @@ export default function VideoWheel() {
             onMouseLeave={() => setIsPaused(false)}
             style={{ scrollBehavior: 'smooth', scrollbarWidth: 'none' }}
           >
-            {videoItems.map((item) => (
-              <div key={item.id} className="flex-shrink-0 w-64 overflow-visible">
+            {[...videoItems, ...videoItems].map((item, index) => (
+              <div key={`${item.id}-${index}`} className="flex-shrink-0 w-64 overflow-visible">
                 <button
                   onClick={() => handleCardClick(item)}
-                  className="w-full h-56 rounded-xl bg-gradient-to-br from-gray-300 to-gray-200 border border-gray-400 flex flex-col items-center justify-center gap-3 cursor-pointer hover:border-yellow-500/50 transition-colors shadow-xl group bubble-hover overflow-visible"
+                  className="w-full h-56 rounded-xl bg-gradient-to-br from-gray-300 to-gray-200 border border-gray-400 flex flex-col items-center justify-center gap-3 cursor-pointer hover:border-yellow-500/50 transition-colors group bubble-hover overflow-visible"
                 >
-                  <div className={`w-full h-full rounded-xl bg-gradient-to-br ${CATEGORY_COLORS[item.category] ?? 'from-gray-300 to-gray-200'} border border-gray-400 flex flex-col items-center justify-center gap-3 cursor-pointer hover:border-yellow-500/50 transition-colors shadow-xl relative overflow-visible`}>
+                  <div className={`w-full h-full rounded-xl bg-gradient-to-br ${CATEGORY_COLORS[item.category] ?? 'from-gray-300 to-gray-200'} border border-gray-400 flex flex-col items-center justify-center gap-3 cursor-pointer hover:border-yellow-500/50 transition-colors relative overflow-visible`}>
                     <div className="absolute inset-0 bg-white/0 group-hover:bg-white/10 transition-all duration-200" />
                     <div className="w-14 h-14 rounded-full bg-white/10 flex items-center justify-center relative z-10">
                       <Play className="w-6 h-6 text-white fill-white ml-1" />
@@ -124,20 +115,6 @@ export default function VideoWheel() {
           </div>
         </div>
 
-        {/* Right arrow */}
-        <button
-          onClick={() => scroll('right')}
-          disabled={!canScrollRight}
-          className="absolute right-0 top-1/2 -translate-y-1/2 p-3 text-gray-500 hover:text-yellow-500 disabled:opacity-30 disabled:cursor-not-allowed transition-colors z-10 bubble-hover"
-          aria-label="Next video"
-        >
-          <ChevronRight size={32} />
-        </button>
-
-        <p className="text-gray-600 text-sm flex items-center gap-2">
-          <Film size={14} />
-          Use arrows to browse productions
-        </p>
       </div>
 
       {/* Lightbox Modal */}
