@@ -193,5 +193,5 @@ code {
 }
 
 .logo-outline {
-  filter: grayscale(100%) contrast(1.5) brightness(0.7) invert(0.15);
+  filter: grayscale(100%) contrast(2) brightness(0.6) saturate(0);
 }
