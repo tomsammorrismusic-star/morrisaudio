@@ -102,7 +102,7 @@ function Showreel() {
             Let's discuss your next audio project and how I can help bring your vision to life.
           </p>
           <a
-            href="mailto:hello@soundrecordist.com"
+            href="mailto:tomsammorrismusic@gmail.com"
             className="inline-block px-6 py-3 bg-yellow-500 hover:bg-yellow-400 text-gray-950 font-semibold rounded-lg transition-colors"
           >
             Get in Touch

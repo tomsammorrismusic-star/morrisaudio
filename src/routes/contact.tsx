@@ -10,19 +10,19 @@ const contactDetails = [
   {
     icon: Mail,
     label: 'Email',
-    value: 'hello@soundrecordist.com',
-    href: 'mailto:hello@soundrecordist.com',
+    value: 'tomsammorrismusic@gmail.com',
+    href: 'mailto:tomsammorrismusic@gmail.com',
   },
   {
     icon: Phone,
     label: 'Phone',
-    value: '+44 (0)7700 900000',
-    href: 'tel:+447700900000',
+    value: '07857 484127',
+    href: 'tel:+447857484127',
   },
   {
     icon: MapPin,
     label: 'Based',
-    value: 'London, UK · Available worldwide',
+    value: 'Yorkshire & London',
     href: null,
   },
   {
@@ -103,7 +103,7 @@ function Contact() {
                 Prefer to email directly? Use the button below.
               </p>
               <a
-                href="mailto:hello@soundrecordist.com"
+                href="mailto:tomsammorrismusic@gmail.com"
                 className="inline-flex items-center gap-2 px-5 py-2.5 bg-yellow-500 hover:bg-yellow-400 text-gray-950 font-bold rounded-lg transition-colors text-sm w-full justify-center"
               >
                 <Mail size={16} />

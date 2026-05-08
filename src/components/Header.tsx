@@ -34,7 +34,7 @@ export default function Header() {
             </Link>
           ))}
           <a
-            href="mailto:hello@soundrecordist.com"
+            href="mailto:tomsammorrismusic@gmail.com"
             className="px-4 py-2 bg-yellow-500 hover:bg-yellow-400 text-gray-950 font-semibold text-sm rounded-xl transition-all duration-200 bubble-hover"
           >
             Email Me
@@ -65,7 +65,7 @@ export default function Header() {
             </Link>
           ))}
           <a
-            href="mailto:hello@soundrecordist.com"
+            href="mailto:tomsammorrismusic@gmail.com"
             className="px-4 py-2 bg-yellow-500 hover:bg-yellow-400 text-gray-950 font-semibold text-sm rounded-xl transition-all duration-200 text-center bubble-hover"
           >
             Email Me

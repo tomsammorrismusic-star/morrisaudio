@@ -51,7 +51,7 @@ function Resume() {
             </div>
             <div className="mt-6">
               <a
-                href="mailto:hello@soundrecordist.com"
+                href="mailto:tomsammorrismusic@gmail.com"
                 className="inline-flex items-center gap-2 px-5 py-2.5 bg-yellow-500 hover:bg-yellow-400 text-gray-950 font-bold rounded-lg transition-colors text-sm"
               >
                 <Mail size={16} />

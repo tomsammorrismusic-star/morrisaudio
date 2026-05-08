@@ -139,7 +139,7 @@ function Home() {
               Contact Me
             </Link>
             <a
-              href="mailto:hello@soundrecordist.com"
+              href="mailto:tomsammorrismusic@gmail.com"
               className="inline-flex items-center justify-center gap-2 px-8 py-3 border border-gray-400 hover:border-yellow-500 text-gray-700 hover:text-black rounded-xl transition-colors bubble-hover"
             >
               Email Directly
