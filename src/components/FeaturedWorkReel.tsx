@@ -66,7 +66,6 @@ export default function FeaturedWorkReel() {
           scrollbarWidth: 'none',
           overflowX: 'auto',
           overflowY: 'visible',
-          overflow: 'visible',
         }}
       >
         {/* Duplicate videos for seamless loop */}

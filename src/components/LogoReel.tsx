@@ -50,7 +50,6 @@ export default function LogoReel() {
           scrollbarWidth: 'none',
           overflowX: 'auto',
           overflowY: 'visible',
-          overflow: 'visible',
         }}
       >
         {/* Duplicate logos for seamless loop */}
