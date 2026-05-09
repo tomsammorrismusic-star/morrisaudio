@@ -170,7 +170,7 @@ function Contact() {
               </div>
 
               <div>
-                <label htmlFor="production" className="block text-sm font-medium text-gray-200 mb-1.5">
+                <label htmlFor="production" className="block text-sm font-medium text-gray-700 mb-1.5">
                   Production Type
                 </label>
                 <select
