@@ -122,7 +122,7 @@ export default function VideoWheel() {
                       <p className="text-white font-semibold text-sm leading-tight">{item.title}</p>
                       <p className="text-white/50 text-xs mt-1 uppercase tracking-wider">{item.category}</p>
                     </div>
-                  )}
+                  </div>
                 </button>
               </div>
             ))}
