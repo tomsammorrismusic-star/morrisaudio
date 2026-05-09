@@ -72,15 +72,15 @@ export default function VideoWheel() {
     const container = scrollContainer.current
     let scrollPos = 0
 
-    const scroll = () => {
-      scrollPos += 1
+    const autoScroll = () => {
+      scrollPos += 2
       if (scrollPos > container.scrollWidth - container.clientWidth) {
         scrollPos = 0
       }
       container.scrollLeft = scrollPos
     }
 
-    const interval = setInterval(scroll, 50)
+    const interval = setInterval(autoScroll, 30)
     return () => clearInterval(interval)
   }, [isPaused])
 
@@ -110,10 +110,9 @@ export default function VideoWheel() {
           <div
             ref={scrollContainer}
             className="flex gap-4 scroll-smooth video-wheel-scroll"
-            onScroll={checkScroll}
             onMouseEnter={() => setIsPaused(true)}
             onMouseLeave={() => setIsPaused(false)}
-            style={{ scrollBehavior: 'smooth' }}
+            style={{ scrollBehavior: 'auto' }}
           >
             {[...videoItems, ...videoItems].map((item, index) => (
               <div key={`${item.id}-${index}`} className="flex-shrink-0 w-64 overflow-visible">
