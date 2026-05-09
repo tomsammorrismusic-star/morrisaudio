@@ -81,11 +81,11 @@ export default function LogoReel() {
           {[...logos, ...logos].map((item, index) => (
             <div
               key={`${item.id}-${index}`}
-              className="logo-item flex-shrink-0 flex items-center justify-center px-8 py-6 rounded-xl border border-gray-300 hover:border-yellow-500/50 transition-all duration-300 min-w-max bubble-hover"
+              className="logo-item flex-shrink-0 flex items-center justify-center px-8 py-6 rounded-xl border border-gray-600 hover:border-yellow-400 transition-all duration-300 min-w-max bubble-hover"
             >
               <div className="flex items-center gap-3">
                 <div className="flex-shrink-0">{item.logo}</div>
-                <span className="text-lg font-semibold text-gray-700">{item.name}</span>
+                <span className="text-lg font-semibold text-gray-300">{item.name}</span>
               </div>
             </div>
           ))}
@@ -93,8 +93,8 @@ export default function LogoReel() {
       </div>
 
       {/* Fade effect on edges */}
-      <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-white to-transparent pointer-events-none" />
-      <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-white to-transparent pointer-events-none" />
+      <div className="absolute left-0 top-0 bottom-0 w-16 pointer-events-none" style={{ backgroundImage: 'linear-gradient(to right, #2d2d2d, transparent)' }} />
+      <div className="absolute right-0 top-0 bottom-0 w-16 pointer-events-none" style={{ backgroundImage: 'linear-gradient(to left, #2d2d2d, transparent)' }} />
     </div>
   )
 }
