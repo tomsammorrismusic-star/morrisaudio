@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
-import VideoWheel from '@/components/VideoWheel'
 import LogoReel from '@/components/LogoReel'
+import FeaturedWorkReel from '@/components/FeaturedWorkReel'
 import { Mic, Volume2, Headphones, Award, Mail, Instagram, MessageCircle } from 'lucide-react'
 
 export const Route = createFileRoute('/')({
@@ -89,16 +89,16 @@ function Home() {
         </div>
       </section>
 
-      {/* Video Wheel */}
-      <section className="py-20 px-4">
+      {/* Featured Work */}
+      <section className="py-16 px-4">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-3">Featured Work</h2>
             <p className="text-gray-600 max-w-xl mx-auto">
-              A selection of productions across genres. Hover over any card to pause the reel.
+              A selection of productions across genres and formats.
             </p>
           </div>
-          <VideoWheel />
+          <FeaturedWorkReel />
         </div>
       </section>
 

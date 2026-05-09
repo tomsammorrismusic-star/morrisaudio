@@ -21,9 +21,9 @@ export default function LogoReel() {
     if (isPaused || !scrollContainer.current) return
 
     const container = scrollContainer.current
-    let scrollPos = 0
 
     const scroll = () => {
+      let scrollPos = container.scrollLeft
       scrollPos += 1
       if (scrollPos > container.scrollWidth - container.clientWidth) {
         scrollPos = 0
@@ -37,16 +37,18 @@ export default function LogoReel() {
 
   return (
     <div
-      className="logo-reel-container relative w-full py-12"
+      className="logo-reel-container relative w-full"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
+      style={{ padding: '3rem 0' }}
     >
       <div
         ref={scrollContainer}
-        className="logo-reel-scroll flex gap-12 overflow-hidden"
+        className="logo-reel-scroll flex gap-12 overflow-x-auto"
         style={{
           scrollBehavior: 'auto',
           scrollbarWidth: 'none',
+          WebkitOverflowScrolling: 'touch',
         }}
       >
         {/* Duplicate logos for seamless loop */}
@@ -64,8 +66,8 @@ export default function LogoReel() {
       </div>
 
       {/* Fade effect on edges */}
-      <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-white to-transparent pointer-events-none" />
-      <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-white to-transparent pointer-events-none" />
+      <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-white to-transparent pointer-events-none" />
+      <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-white to-transparent pointer-events-none" />
     </div>
   )
 }

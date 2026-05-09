@@ -1,6 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { Music, Instagram, MessageCircle } from 'lucide-react'
-import VideoWheel from '@/components/VideoWheel'
 import VideoCollage from '@/components/VideoCollage'
 
 export const Route = createFileRoute('/showreel')({
@@ -15,13 +14,6 @@ function Showreel() {
         <p className="text-gray-600 mb-10 text-lg">
           Podcast, voice-over, corporate, and commercial audio production samples.
         </p>
-      </div>
-
-      <div className="max-w-6xl mx-auto px-4 py-12">
-        <div className="bg-gray-50 rounded-lg p-8 mb-16 border border-gray-200">
-          <h2 className="text-2xl font-bold mb-6 text-gray-900">Featured Work</h2>
-          <VideoWheel />
-        </div>
       </div>
 
       <div className="max-w-6xl mx-auto px-4 py-12">
