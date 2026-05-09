@@ -1,6 +1,6 @@
 import { Link } from '@tanstack/react-router'
 import { useState, useEffect } from 'react'
-import { Menu, X, Mic } from 'lucide-react'
+import { Menu, X, Mic, Instagram, MessageCircle } from 'lucide-react'
 
 const navLinks = [
   { to: '/', label: 'Home' },
@@ -42,6 +42,26 @@ export default function Header() {
               {link.label}
             </Link>
           ))}
+          <div className="flex items-center gap-2">
+            <a
+              href="https://www.instagram.com/tom_morris2810/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center w-9 h-9 rounded-lg border border-gray-300 hover:border-yellow-500 text-gray-600 hover:text-yellow-500 transition-colors bubble-hover"
+              aria-label="Instagram"
+            >
+              <Instagram className="w-4 h-4" />
+            </a>
+            <a
+              href="https://wa.me/447857484127"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center w-9 h-9 rounded-lg border border-gray-300 hover:border-yellow-500 text-gray-600 hover:text-yellow-500 transition-colors bubble-hover"
+              aria-label="WhatsApp"
+            >
+              <MessageCircle className="w-4 h-4" />
+            </a>
+          </div>
           <a
             href="mailto:hello@soundrecordist.com"
             className="px-4 py-2 bg-yellow-500 hover:bg-yellow-400 text-gray-950 font-semibold text-sm rounded-xl transition-all duration-200 bubble-hover"
@@ -74,6 +94,28 @@ export default function Header() {
               {link.label}
             </Link>
           ))}
+          <div className="flex gap-3">
+            <a
+              href="https://www.instagram.com/tom_morris2810/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-1 inline-flex items-center justify-center gap-2 px-3 py-2 rounded-lg border border-gray-300 hover:border-yellow-500 text-gray-600 hover:text-yellow-500 transition-colors bubble-hover text-sm font-medium"
+              aria-label="Instagram"
+            >
+              <Instagram className="w-4 h-4" />
+              Instagram
+            </a>
+            <a
+              href="https://wa.me/447857484127"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-1 inline-flex items-center justify-center gap-2 px-3 py-2 rounded-lg border border-gray-300 hover:border-yellow-500 text-gray-600 hover:text-yellow-500 transition-colors bubble-hover text-sm font-medium"
+              aria-label="WhatsApp"
+            >
+              <MessageCircle className="w-4 h-4" />
+              WhatsApp
+            </a>
+          </div>
           <a
             href="mailto:hello@soundrecordist.com"
             className="px-4 py-2 bg-yellow-500 hover:bg-yellow-400 text-gray-950 font-semibold text-sm rounded-xl transition-all duration-200 text-center bubble-hover"
