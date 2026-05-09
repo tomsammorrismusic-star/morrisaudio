@@ -67,13 +67,28 @@ export default function VideoWheel() {
   }
 
   useEffect(() => {
-    if (!scrollContainer.current) return
+    if (!scrollContainer.current || isPaused) return
 
-    if (isPaused) {
-      scrollContainer.current.style.animationPlayState = 'paused'
-    } else {
-      scrollContainer.current.style.animationPlayState = 'running'
-    }
+    const interval = setInterval(() => {
+      if (scrollContainer.current) {
+        const { scrollLeft, scrollWidth, clientWidth } = scrollContainer.current
+        const scrollAmount = 300
+
+        if (scrollLeft < scrollWidth - clientWidth - 10) {
+          scrollContainer.current.scrollBy({
+            left: scrollAmount,
+            behavior: 'smooth',
+          })
+        } else {
+          scrollContainer.current.scrollTo({
+            left: 0,
+            behavior: 'smooth',
+          })
+        }
+      }
+    }, 4000)
+
+    return () => clearInterval(interval)
   }, [isPaused])
 
   const handleLightboxNav = (direction: 'prev' | 'next') => {
