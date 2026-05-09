@@ -1,13 +1,13 @@
 import { Link } from '@tanstack/react-router'
 import { useState, useEffect } from 'react'
-import { Menu, X, Mic, Instagram, MessageCircle } from 'lucide-react'
+import { Menu, X, Mic, Instagram, MessageCircle, Home, Film, Briefcase, FolderOpen, Mail } from 'lucide-react'
 
 const navLinks = [
-  { to: '/', label: 'Home' },
-  { to: '/showreel', label: 'Showreel' },
-  { to: '/resume', label: 'Experience' },
-  { to: '/projects', label: 'Projects' },
-  { to: '/contact', label: 'Contact' },
+  { to: '/', label: 'Home', icon: Home },
+  { to: '/showreel', label: 'Showreel', icon: Film },
+  { to: '/resume', label: 'Experience', icon: Briefcase },
+  { to: '/projects', label: 'Projects', icon: FolderOpen },
+  { to: '/contact', label: 'Contact', icon: Mail },
 ]
 
 export default function Header() {
@@ -31,18 +31,19 @@ export default function Header() {
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden md:flex items-center gap-6">
+        <nav className="hidden md:flex items-center gap-3">
           {navLinks.map((link) => (
             <Link
               key={link.to}
               to={link.to}
-              className="text-sm text-gray-600 hover:text-black hover:underline underline-offset-4 transition-colors bubble-hover"
-              activeProps={{ className: 'text-sm text-yellow-500 font-medium' }}
+              className="inline-flex items-center justify-center w-9 h-9 rounded-lg text-gray-600 hover:text-yellow-500 hover:border border-gray-300 hover:border-yellow-500 transition-colors bubble-hover"
+              activeProps={{ className: 'inline-flex items-center justify-center w-9 h-9 rounded-lg text-yellow-500 border border-yellow-500 transition-colors' }}
+              title={link.label}
             >
-              {link.label}
+              <link.icon className="w-5 h-5" />
             </Link>
           ))}
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 pl-2 border-l border-gray-300">
             <a
               href="https://www.instagram.com/tom_morris2810/"
               target="_blank"
@@ -64,9 +65,9 @@ export default function Header() {
           </div>
           <a
             href="mailto:hello@soundrecordist.com"
-            className="px-4 py-2 bg-yellow-500 hover:bg-yellow-400 text-gray-950 font-semibold text-sm rounded-xl transition-all duration-200 bubble-hover"
+            className="px-3 py-2 bg-yellow-500 hover:bg-yellow-400 text-gray-950 font-semibold text-xs rounded-lg transition-all duration-200 bubble-hover ml-2"
           >
-            Email Me
+            Email
           </a>
         </nav>
 
@@ -82,19 +83,23 @@ export default function Header() {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <nav className="md:hidden border-t border-gray-200 bg-white px-4 py-4 flex flex-col gap-4">
-          {navLinks.map((link) => (
-            <Link
-              key={link.to}
-              to={link.to}
-              onClick={() => setMobileOpen(false)}
-              className="text-gray-600 hover:text-black hover:underline underline-offset-4 transition-colors bubble-hover"
-              activeProps={{ className: 'text-gray-600 hover:text-black hover:underline underline-offset-4 transition-colors bubble-hover text-yellow-500' }}
-            >
-              {link.label}
-            </Link>
-          ))}
-          <div className="flex gap-3">
+        <nav className="md:hidden border-t border-gray-200 bg-white px-4 py-4 flex flex-col gap-3">
+          <div className="flex gap-2">
+            {navLinks.map((link) => (
+              <Link
+                key={link.to}
+                to={link.to}
+                onClick={() => setMobileOpen(false)}
+                className="flex-1 inline-flex items-center justify-center gap-2 px-3 py-2 rounded-lg border border-gray-300 hover:border-yellow-500 text-gray-600 hover:text-yellow-500 transition-colors bubble-hover text-xs font-medium"
+                activeProps={{ className: 'flex-1 inline-flex items-center justify-center gap-2 px-3 py-2 rounded-lg border border-yellow-500 text-yellow-500 transition-colors bubble-hover text-xs font-medium' }}
+                title={link.label}
+              >
+                <link.icon className="w-4 h-4" />
+                {link.label}
+              </Link>
+            ))}
+          </div>
+          <div className="flex gap-2">
             <a
               href="https://www.instagram.com/tom_morris2810/"
               target="_blank"
@@ -103,7 +108,6 @@ export default function Header() {
               aria-label="Instagram"
             >
               <Instagram className="w-4 h-4" />
-              Instagram
             </a>
             <a
               href="https://wa.me/447857484127"
@@ -113,12 +117,11 @@ export default function Header() {
               aria-label="WhatsApp"
             >
               <MessageCircle className="w-4 h-4" />
-              WhatsApp
             </a>
           </div>
           <a
             href="mailto:hello@soundrecordist.com"
-            className="px-4 py-2 bg-yellow-500 hover:bg-yellow-400 text-gray-950 font-semibold text-sm rounded-xl transition-all duration-200 text-center bubble-hover"
+            className="px-4 py-2 bg-yellow-500 hover:bg-yellow-400 text-gray-950 font-semibold text-sm rounded-lg transition-all duration-200 text-center bubble-hover"
           >
             Email Me
           </a>
