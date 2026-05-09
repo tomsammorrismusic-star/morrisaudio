@@ -23,7 +23,7 @@ export default function Header() {
   }, [])
 
   return (
-    <header className={`sticky top-0 z-50 backdrop-blur-md border-b transition-all duration-300 ${isScrolled ? 'bg-gray-900/80 border-gray-800' : 'bg-transparent border-transparent'}`}>
+    <header className={`sticky top-0 z-50 backdrop-blur-md border-b transition-all duration-300 ${isScrolled ? 'border-gray-700' : 'border-transparent'}`} style={isScrolled ? { backgroundColor: 'rgba(45, 45, 45, 0.8)' } : { backgroundColor: 'transparent' }}>
       <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between rounded-b-2xl">
         <Link to="/" className="flex items-center gap-3 font-bold text-2xl md:text-3xl text-white hover:text-yellow-400 transition-colors tracking-tight">
           <Mic className="w-7 h-7 md:w-8 md:h-8 text-yellow-500" />

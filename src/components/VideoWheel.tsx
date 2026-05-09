@@ -180,7 +180,7 @@ export default function VideoWheel() {
             </div>
 
             {/* Content section */}
-            <div className="p-8 bg-gray-900">
+            <div className="p-8" style={{ backgroundColor: '#3d3d3d' }}>
               <h3 className="text-3xl font-bold mb-2 text-white">{selectedItem.title}</h3>
               <p className="text-yellow-500 uppercase text-sm tracking-wider font-semibold mb-4">{selectedItem.category}</p>
               <p className="text-gray-300 mb-6 leading-relaxed">

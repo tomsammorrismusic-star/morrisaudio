@@ -30,7 +30,7 @@ const services = [
 
 function Home() {
   return (
-    <div className="bg-gray-900 text-white">
+    <div className="text-white" style={{ backgroundColor: '#2d2d2d' }}>
       {/* Hero */}
       <section className="relative min-h-[80vh] flex flex-col items-center justify-center text-center px-4 py-20">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(217,119,6,0.03)_0%,_transparent_70%)] pointer-events-none" />
