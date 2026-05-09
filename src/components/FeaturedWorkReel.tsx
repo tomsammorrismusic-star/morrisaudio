@@ -60,12 +60,13 @@ export default function FeaturedWorkReel() {
     >
       <div
         ref={scrollContainer}
-        className="featured-work-scroll flex gap-6 overflow-x-auto"
+        className="featured-work-scroll flex gap-6 overflow-x-auto items-center"
         style={{
           scrollBehavior: 'auto',
           scrollbarWidth: 'none',
           WebkitOverflowScrolling: 'touch',
           overflowY: 'visible',
+          minHeight: '400px',
         }}
       >
         {/* Duplicate videos for seamless loop */}
@@ -73,9 +74,11 @@ export default function FeaturedWorkReel() {
           <div
             key={`${item.id}-${index}`}
             className="flex-shrink-0 flex items-center justify-center min-w-max"
+            style={{ perspective: '1000px' }}
           >
             <button
               className={`relative w-64 h-64 rounded-xl bg-gradient-to-br ${CATEGORY_COLORS[item.category] ?? 'from-gray-300 to-gray-200'} border border-gray-400 flex flex-col items-center justify-center gap-2 cursor-pointer hover:border-yellow-500 transition-all duration-500 ease-out group bubble-hover hover:shadow-2xl hover:scale-110`}
+              style={{ transformOrigin: 'center' }}
             >
               <div className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center group-hover:bg-white/30 transition-all duration-300">
                 <Play className="w-5 h-5 text-white fill-white ml-0.5" />
