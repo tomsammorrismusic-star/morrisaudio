@@ -37,10 +37,10 @@ export default function LogoReel() {
 
   return (
     <div
-      className="logo-reel-container relative w-full py-12"
+      className="logo-reel-container relative w-full"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
-      style={{ overflow: 'visible' }}
+      style={{ overflow: 'visible', padding: '3rem 0' }}
     >
       <div
         ref={scrollContainer}
@@ -50,6 +50,7 @@ export default function LogoReel() {
           scrollbarWidth: 'none',
           overflowX: 'auto',
           overflowY: 'visible',
+          overflow: 'visible',
         }}
       >
         {/* Duplicate logos for seamless loop */}
