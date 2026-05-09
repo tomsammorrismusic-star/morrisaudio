@@ -67,24 +67,19 @@ export default function VideoWheel() {
   }
 
   useEffect(() => {
+    checkScroll()
+  }, [])
+
+  useEffect(() => {
     if (!scrollContainer.current || isPaused) return
 
     const interval = setInterval(() => {
       if (scrollContainer.current) {
-        const { scrollLeft, scrollWidth, clientWidth } = scrollContainer.current
-        const scrollAmount = 300
-
-        if (scrollLeft < scrollWidth - clientWidth - 10) {
-          scrollContainer.current.scrollBy({
-            left: scrollAmount,
-            behavior: 'smooth',
-          })
-        } else {
-          scrollContainer.current.scrollTo({
-            left: 0,
-            behavior: 'smooth',
-          })
-        }
+        const scrollAmount = 280
+        scrollContainer.current.scrollBy({
+          left: scrollAmount,
+          behavior: 'smooth',
+        })
       }
     }, 4000)
 
