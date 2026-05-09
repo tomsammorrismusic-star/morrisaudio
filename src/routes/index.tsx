@@ -130,7 +130,7 @@ function Home() {
             Let's talk about your next production. Available for short-term engagements
             and long-term projects worldwide.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
             <Link
               to="/contact"
               className="inline-flex items-center justify-center gap-2 px-8 py-3 bg-yellow-500 hover:bg-yellow-400 text-gray-950 font-bold rounded-xl transition-colors bubble-hover"
@@ -143,6 +143,26 @@ function Home() {
               className="inline-flex items-center justify-center gap-2 px-8 py-3 border border-gray-400 hover:border-yellow-500 text-gray-700 hover:text-black rounded-xl transition-colors bubble-hover"
             >
               Email Directly
+            </a>
+          </div>
+          <div className="flex justify-center gap-4">
+            <a
+              href="https://www.instagram.com/tom_morris2810/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center w-12 h-12 rounded-lg border border-gray-600 hover:border-yellow-400 transition-colors bubble-hover"
+              aria-label="Instagram"
+            >
+              <Instagram className="w-6 h-6 text-yellow-400" />
+            </a>
+            <a
+              href="https://wa.me/447857484127"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center w-12 h-12 rounded-lg border border-gray-600 hover:border-yellow-400 transition-colors bubble-hover"
+              aria-label="WhatsApp"
+            >
+              <MessageCircle className="w-6 h-6 text-yellow-400" />
             </a>
           </div>
         </div>

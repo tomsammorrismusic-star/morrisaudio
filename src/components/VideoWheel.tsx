@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react'
+import { useRef, useState, useEffect } from 'react'
 import { Play, Film, ChevronLeft, ChevronRight, X } from 'lucide-react'
 
 interface VideoItem {
@@ -7,16 +7,21 @@ interface VideoItem {
   category: string
   thumbnail?: string
   youtubeId?: string
+  description?: string
+}
+
+const getYouTubeThumbnail = (youtubeId: string) => {
+  return `https://img.youtube.com/vi/${youtubeId}/maxresdefault.jpg`
 }
 
 const videoItems: VideoItem[] = [
   { id: '1', title: 'Feature Film Location Sound', category: 'Film', youtubeId: '' },
   { id: '2', title: 'Documentary — Wildlife Series', category: 'Documentary', youtubeId: '' },
   { id: '3', title: 'TV Commercial — Automotive', category: 'Commercial', youtubeId: '' },
-  { id: '4', title: 'Short Film — Drama', category: 'Drama', youtubeId: '' },
+  { id: '4', title: 'Short Film — Drama', category: 'Drama', youtubeId: 'iFlZqFyTiso' },
   { id: '5', title: 'Corporate Interview Package', category: 'Corporate', youtubeId: '' },
-  { id: '6', title: 'Music Video — Live Recording', category: 'Music', youtubeId: '' },
-  { id: '7', title: 'ENG News — Field Recording', category: 'News', youtubeId: '' },
+  { id: '6', title: 'Social Commercial — Gold Bullion', category: 'Commercial', youtubeId: '58wu_GswQD0' },
+  { id: '7', title: 'Corporate Podcast — VCL Vintners', category: 'Corporate', youtubeId: 'L_n0IijJl74', description: 'Professional corporate podcast production for VCL Vintners. This production showcases in-depth interviewing techniques, audio mastering, and production quality suitable for corporate communications and industry discussions.' },
   { id: '8', title: 'Podcast & Voice Over', category: 'Audio', youtubeId: '' },
 ]
 
@@ -36,6 +41,7 @@ export default function VideoWheel() {
   const [canScrollLeft, setCanScrollLeft] = useState(false)
   const [canScrollRight, setCanScrollRight] = useState(true)
   const [selectedItem, setSelectedItem] = useState<VideoItem | null>(null)
+  const [isPaused, setIsPaused] = useState(false)
 
   const checkScroll = () => {
     if (scrollContainer.current) {
@@ -60,6 +66,16 @@ export default function VideoWheel() {
     setSelectedItem(item)
   }
 
+  useEffect(() => {
+    if (!scrollContainer.current) return
+
+    if (isPaused) {
+      scrollContainer.current.style.animationPlayState = 'paused'
+    } else {
+      scrollContainer.current.style.animationPlayState = 'running'
+    }
+  }, [isPaused])
+
   const handleLightboxNav = (direction: 'prev' | 'next') => {
     if (!selectedItem) return
     const currentIndex = videoItems.findIndex((item) => item.id === selectedItem.id)
@@ -80,16 +96,19 @@ export default function VideoWheel() {
           <ChevronLeft size={32} />
         </button>
 
-        {/* Horizontal scroll container */}
-        <div className="w-full px-16">
+        {/* Outer scroll container with overflow-x-auto */}
+        <div className="w-full px-16 overflow-x-auto py-8">
+          {/* Inner scroll container without overflow clipping */}
           <div
             ref={scrollContainer}
-            className="flex gap-4 overflow-x-auto scroll-smooth pb-4 no-scrollbar"
+            className="flex gap-4 scroll-smooth video-wheel-scroll"
             onScroll={checkScroll}
-            style={{ scrollBehavior: 'smooth', scrollbarWidth: 'none' }}
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
+            style={{ scrollBehavior: 'smooth' }}
           >
-            {videoItems.map((item) => (
-              <div key={item.id} className="flex-shrink-0 w-64">
+            {[...videoItems, ...videoItems].map((item, index) => (
+              <div key={`${item.id}-${index}`} className="flex-shrink-0 w-64 overflow-visible">
                 <button
                   onClick={() => handleCardClick(item)}
                   className="w-full h-56 rounded-xl bg-gradient-to-br from-gray-300 to-gray-200 border border-gray-400 flex flex-col items-center justify-center gap-3 cursor-pointer hover:border-yellow-500/50 transition-colors shadow-xl group bubble-hover"
@@ -103,7 +122,7 @@ export default function VideoWheel() {
                       <p className="text-white font-semibold text-sm leading-tight">{item.title}</p>
                       <p className="text-white/50 text-xs mt-1 uppercase tracking-wider">{item.category}</p>
                     </div>
-                  </div>
+                  )}
                 </button>
               </div>
             ))}
