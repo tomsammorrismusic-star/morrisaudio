@@ -73,14 +73,14 @@ export default function VideoWheel() {
     let scrollPos = 0
 
     const autoScroll = () => {
-      scrollPos += 2
+      scrollPos += 1
       if (scrollPos > container.scrollWidth - container.clientWidth) {
         scrollPos = 0
       }
       container.scrollLeft = scrollPos
     }
 
-    const interval = setInterval(autoScroll, 30)
+    const interval = setInterval(autoScroll, 50)
     return () => clearInterval(interval)
   }, [isPaused])
 
@@ -110,17 +110,16 @@ export default function VideoWheel() {
     <>
       <div className="relative w-full flex flex-col items-center gap-6">
 
-        {/* Outer scroll container with overflow-x-scroll */}
-        <div className="w-full px-16 overflow-x-scroll py-8">
+        {/* Outer scroll container with overflow hidden for marquee effect */}
+        <div className="w-full overflow-hidden py-8">
           {/* Inner scroll container without overflow clipping */}
           <div
             ref={scrollContainer}
-            className="flex gap-4 scroll-smooth video-wheel-scroll"
+            className="flex gap-4 video-wheel-scroll"
             onMouseEnter={() => setIsPaused(true)}
             onMouseLeave={() => setIsPaused(false)}
             onClick={() => setIsPaused(true)}
-            onBlur={() => setIsPaused(false)}
-            style={{ scrollBehavior: 'auto' }}
+            style={{ scrollBehavior: 'auto', scrollbarWidth: 'none' }}
           >
             {[...videoItems, ...videoItems].map((item, index) => (
               <div key={`${item.id}-${index}`} className="flex-shrink-0 w-64 overflow-visible">
