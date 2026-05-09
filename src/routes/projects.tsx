@@ -13,21 +13,21 @@ function Projects() {
     <div className="min-h-screen text-white" style={{ backgroundColor: '#2d2d2d' }}>
       <div className="max-w-4xl mx-auto px-4 py-16">
         <h1 className="text-4xl md:text-5xl font-extrabold mb-3">Notable Productions</h1>
-        <p className="text-gray-400 mb-10 text-lg">
+        <p className="text-gray-200 mb-10 text-lg">
           A selection of film, documentary, and commercial projects.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {allProjects.map((project) => (
-            <Card key={project._meta.path} className="flex flex-col bg-gray-800 border-gray-700 text-white">
+            <Card key={project._meta.path} className="flex flex-col bg-gray-750 border-gray-700 text-white">
               <CardHeader>
                 <CardTitle className="text-xl text-white">{project.title}</CardTitle>
               </CardHeader>
               <CardContent className="flex-1 flex flex-col">
-                <p className="text-gray-400 mb-4 flex-1">{project.description}</p>
+                <p className="text-gray-200 mb-4 flex-1">{project.description}</p>
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.tags.map((tag) => (
-                    <Badge key={tag} variant="secondary" className="bg-gray-700 text-gray-300">
+                    <Badge key={tag} variant="secondary" className="bg-gray-700 text-gray-200">
                       {tag}
                     </Badge>
                   ))}
@@ -38,7 +38,7 @@ function Projects() {
                       href={project.liveUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-sm text-yellow-600 hover:text-yellow-500 transition-colors"
+                      className="inline-flex items-center gap-2 text-sm text-yellow-300 hover:text-yellow-400 transition-colors"
                     >
                       <ExternalLink size={16} />
                       View Project

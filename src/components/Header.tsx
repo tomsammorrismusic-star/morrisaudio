@@ -26,7 +26,7 @@ export default function Header() {
     <header className={`sticky top-0 z-50 backdrop-blur-md border-b transition-all duration-300 ${isScrolled ? 'border-gray-700' : 'border-transparent'}`} style={isScrolled ? { backgroundColor: 'rgba(45, 45, 45, 0.8)' } : { backgroundColor: 'transparent' }}>
       <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between rounded-b-2xl">
         <Link to="/" className="flex items-center gap-3 font-bold text-2xl md:text-3xl text-white hover:text-yellow-400 transition-colors tracking-tight">
-          <Mic className="w-7 h-7 md:w-8 md:h-8 text-yellow-500" />
+          <Mic className="w-7 h-7 md:w-8 md:h-8 text-yellow-400" />
           <span>Morris Audio</span>
         </Link>
 
@@ -36,7 +36,7 @@ export default function Header() {
             <Link
               key={link.to}
               to={link.to}
-              className="text-sm text-gray-400 hover:text-white hover:underline underline-offset-4 transition-colors bubble-hover"
+              className="text-sm text-gray-200 hover:text-white hover:underline underline-offset-4 transition-colors bubble-hover"
               activeProps={{ className: 'text-sm text-yellow-400 font-medium' }}
             >
               {link.label}
@@ -44,7 +44,7 @@ export default function Header() {
           ))}
           <a
             href="mailto:tomsammorrismusic@gmail.com"
-            className="px-4 py-2 bg-yellow-500 hover:bg-yellow-400 text-gray-950 font-semibold text-sm rounded-xl transition-all duration-200 bubble-hover"
+            className="px-4 py-2 bg-yellow-400 hover:bg-yellow-300 text-gray-950 font-semibold text-sm rounded-xl transition-all duration-200 bubble-hover"
           >
             Email Me
           </a>
@@ -53,7 +53,7 @@ export default function Header() {
         {/* Mobile toggle */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="md:hidden p-2 text-gray-400 hover:text-white"
+          className="md:hidden p-2 text-gray-200 hover:text-white"
           aria-label="Toggle menu"
         >
           {mobileOpen ? <X size={22} /> : <Menu size={22} />}
@@ -68,14 +68,14 @@ export default function Header() {
               key={link.to}
               to={link.to}
               onClick={() => setMobileOpen(false)}
-              className="text-gray-400 hover:text-white hover:underline underline-offset-4 transition-colors bubble-hover"
+              className="text-gray-200 hover:text-white hover:underline underline-offset-4 transition-colors bubble-hover"
             >
               {link.label}
             </Link>
           ))}
           <a
             href="mailto:tomsammorrismusic@gmail.com"
-            className="px-4 py-2 bg-yellow-500 hover:bg-yellow-400 text-gray-950 font-semibold text-sm rounded-xl transition-all duration-200 text-center bubble-hover"
+            className="px-4 py-2 bg-yellow-400 hover:bg-yellow-300 text-gray-950 font-semibold text-sm rounded-xl transition-all duration-200 text-center bubble-hover"
           >
             Email Me
           </a>

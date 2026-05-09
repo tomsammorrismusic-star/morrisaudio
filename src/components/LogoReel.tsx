@@ -85,7 +85,7 @@ export default function LogoReel() {
             >
               <div className="flex items-center gap-3">
                 <div className="flex-shrink-0">{item.logo}</div>
-                <span className="text-lg font-semibold text-gray-300">{item.name}</span>
+                <span className="text-lg font-semibold text-gray-200">{item.name}</span>
               </div>
             </div>
           ))}

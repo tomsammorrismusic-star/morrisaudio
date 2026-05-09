@@ -102,7 +102,7 @@ export default function VideoWheel() {
               <div key={`${item.id}-${index}`} className="flex-shrink-0 w-64 overflow-visible">
                 <button
                   onClick={() => handleCardClick(item)}
-                  className="w-full h-56 rounded-xl overflow-hidden border border-gray-400 cursor-pointer hover:border-yellow-500/50 transition-colors group bubble-hover relative"
+                  className="w-full h-56 rounded-xl overflow-hidden border border-gray-400 cursor-pointer hover:border-yellow-400/50 transition-colors group bubble-hover relative"
                   style={item.youtubeId ? {
                     backgroundImage: `url('${getYouTubeThumbnail(item.youtubeId)}')`,
                     backgroundSize: 'cover',
@@ -182,8 +182,8 @@ export default function VideoWheel() {
             {/* Content section */}
             <div className="p-8" style={{ backgroundColor: '#3d3d3d' }}>
               <h3 className="text-3xl font-bold mb-2 text-white">{selectedItem.title}</h3>
-              <p className="text-yellow-500 uppercase text-sm tracking-wider font-semibold mb-4">{selectedItem.category}</p>
-              <p className="text-gray-300 mb-6 leading-relaxed">
+              <p className="text-yellow-400 uppercase text-sm tracking-wider font-semibold mb-4">{selectedItem.category}</p>
+              <p className="text-gray-200 mb-6 leading-relaxed">
                 {selectedItem.description || `This production showcases professional audio work in the ${selectedItem.category.toLowerCase()} industry, featuring cutting-edge recording techniques and post-production expertise.`}
               </p>
 
@@ -191,17 +191,17 @@ export default function VideoWheel() {
               <div className="flex items-center justify-between gap-4">
                 <button
                   onClick={() => handleLightboxNav('prev')}
-                  className="p-2 text-gray-400 hover:text-yellow-400 transition-colors bubble-hover"
+                  className="p-2 text-gray-200 hover:text-yellow-400 transition-colors bubble-hover"
                   aria-label="Previous item"
                 >
                   <ChevronLeft size={24} />
                 </button>
-                <span className="text-gray-400 text-sm">
+                <span className="text-gray-200 text-sm">
                   {videoItems.findIndex((item) => item.id === selectedItem.id) + 1} / {videoItems.length}
                 </span>
                 <button
                   onClick={() => handleLightboxNav('next')}
-                  className="p-2 text-gray-400 hover:text-yellow-400 transition-colors bubble-hover"
+                  className="p-2 text-gray-200 hover:text-yellow-400 transition-colors bubble-hover"
                   aria-label="Next item"
                 >
                   <ChevronRight size={24} />
