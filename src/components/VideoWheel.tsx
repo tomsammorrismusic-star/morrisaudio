@@ -19,7 +19,7 @@ const videoItems: VideoItem[] = [
   { id: '3', title: 'TV Commercial — Automotive', category: 'Commercial', youtubeId: '' },
   { id: '4', title: 'Short Film — Drama', category: 'Drama', youtubeId: 'iFlZqFyTiso' },
   { id: '5', title: 'Corporate Interview Package', category: 'Corporate', youtubeId: '' },
-  { id: '6', title: 'Music Video — Live Recording', category: 'Music', youtubeId: '58wu_GswQD0' },
+  { id: '6', title: 'Gold commercial advert', category: 'Music', youtubeId: '58wu_GswQD0' },
   { id: '7', title: 'ENG News — Field Recording', category: 'News', youtubeId: '' },
   { id: '8', title: 'Podcast & Voice Over', category: 'Audio', youtubeId: '' },
 ]
