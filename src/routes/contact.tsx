@@ -76,8 +76,8 @@ function Contact() {
               <div className="space-y-4">
                 {contactDetails.map((item) => (
                   <div key={item.label} className="flex items-start gap-3">
-                    <div className="w-9 h-9 rounded-lg bg-gray-200 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <item.icon size={16} className="text-yellow-300" />
+                    <div className="w-9 h-9 rounded-lg bg-gray-800 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <item.icon size={16} className="text-yellow-400" />
                     </div>
                     <div>
                       <p className="text-xs text-gray-500 uppercase tracking-wider mb-0.5">{item.label}</p>
@@ -99,7 +99,7 @@ function Contact() {
 
             {/* Direct email CTA */}
             <div className="p-5 rounded-2xl bg-yellow-400/10 border border-yellow-400/30">
-              <p className="text-sm text-gray-700 mb-3">
+              <p className="text-sm text-gray-200 mb-3">
                 Prefer to email directly? Use the button below.
               </p>
               <a
