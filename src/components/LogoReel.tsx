@@ -40,14 +40,16 @@ export default function LogoReel() {
       className="logo-reel-container relative w-full py-12"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
+      style={{ overflow: 'visible' }}
     >
       <div
         ref={scrollContainer}
-        className="logo-reel-scroll flex gap-12 overflow-y-visible overflow-x-hidden"
+        className="logo-reel-scroll flex gap-12"
         style={{
           scrollBehavior: 'auto',
           scrollbarWidth: 'none',
           overflowX: 'auto',
+          overflowY: 'visible',
         }}
       >
         {/* Duplicate logos for seamless loop */}
