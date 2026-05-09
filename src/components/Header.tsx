@@ -64,7 +64,7 @@ export default function Header() {
             </a>
           </div>
           <a
-            href="mailto:hello@soundrecordist.com"
+            href="mailto:tomsammorrismusic@gmail.com"
             className="px-3 py-2 bg-yellow-500 hover:bg-yellow-400 text-gray-950 font-semibold text-xs rounded-lg transition-all duration-200 bubble-hover ml-2"
           >
             Email
@@ -120,7 +120,7 @@ export default function Header() {
             </a>
           </div>
           <a
-            href="mailto:hello@soundrecordist.com"
+            href="mailto:tomsammorrismusic@gmail.com"
             className="px-3 py-1.5 bg-yellow-500 hover:bg-yellow-400 text-gray-950 font-semibold text-xs rounded transition-all duration-200 text-center bubble-hover"
           >
             Email
