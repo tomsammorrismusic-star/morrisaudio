@@ -44,11 +44,13 @@ export default function LogoReel() {
     >
       <div
         ref={scrollContainer}
-        className="logo-reel-scroll flex gap-12 overflow-x-auto"
+        className="logo-reel-scroll flex gap-12 overflow-x-auto items-center"
         style={{
           scrollBehavior: 'auto',
           scrollbarWidth: 'none',
           WebkitOverflowScrolling: 'touch',
+          overflowY: 'visible',
+          minHeight: '200px',
         }}
       >
         {/* Duplicate logos for seamless loop */}
