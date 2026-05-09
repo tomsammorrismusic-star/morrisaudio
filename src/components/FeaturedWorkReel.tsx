@@ -56,16 +56,14 @@ export default function FeaturedWorkReel() {
       className="featured-work-reel relative w-full py-12"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
-      style={{ overflow: 'visible' }}
     >
       <div
         ref={scrollContainer}
-        className="featured-work-scroll flex gap-6"
+        className="featured-work-scroll flex gap-6 overflow-x-auto"
         style={{
           scrollBehavior: 'auto',
           scrollbarWidth: 'none',
-          overflowX: 'auto',
-          overflowY: 'visible',
+          WebkitOverflowScrolling: 'touch',
         }}
       >
         {/* Duplicate videos for seamless loop */}

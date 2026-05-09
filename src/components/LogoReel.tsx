@@ -40,16 +40,15 @@ export default function LogoReel() {
       className="logo-reel-container relative w-full"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
-      style={{ overflow: 'visible', padding: '3rem 0' }}
+      style={{ padding: '3rem 0' }}
     >
       <div
         ref={scrollContainer}
-        className="logo-reel-scroll flex gap-12"
+        className="logo-reel-scroll flex gap-12 overflow-x-auto"
         style={{
           scrollBehavior: 'auto',
           scrollbarWidth: 'none',
-          overflowX: 'auto',
-          overflowY: 'visible',
+          WebkitOverflowScrolling: 'touch',
         }}
       >
         {/* Duplicate logos for seamless loop */}
