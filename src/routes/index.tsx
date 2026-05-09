@@ -1,5 +1,4 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
-import VideoWheel from '@/components/VideoWheel'
 import LogoReel from '@/components/LogoReel'
 import { Mic, Volume2, Headphones, Award, Mail, Instagram, MessageCircle } from 'lucide-react'
 
