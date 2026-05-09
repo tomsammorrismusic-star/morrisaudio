@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
 import LogoReel from '@/components/LogoReel'
+import FeaturedWorkReel from '@/components/FeaturedWorkReel'
 import { Mic, Volume2, Headphones, Award, Mail, Instagram, MessageCircle } from 'lucide-react'
 
 export const Route = createFileRoute('/')({
@@ -85,6 +86,19 @@ function Home() {
               <p className="text-gray-600 text-sm mt-2 whitespace-nowrap">{s.label}</p>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* Featured Work */}
+      <section className="py-16 px-4">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-3">Featured Work</h2>
+            <p className="text-gray-600 max-w-xl mx-auto">
+              A selection of productions across genres and formats.
+            </p>
+          </div>
+          <FeaturedWorkReel />
         </div>
       </section>
 
