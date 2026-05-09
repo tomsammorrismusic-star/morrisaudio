@@ -63,7 +63,7 @@ function Contact() {
       <div className="max-w-5xl mx-auto px-4 py-16">
         <div className="mb-12">
           <h1 className="text-4xl md:text-5xl font-extrabold mb-3">Get In Touch</h1>
-          <p className="text-gray-200 text-lg max-w-xl">
+          <p className="text-gray-600 text-lg max-w-xl">
             Looking for a sound recordist for your next production? Let's talk.
           </p>
         </div>
