@@ -180,10 +180,10 @@ export default function VideoWheel() {
             </div>
 
             {/* Content section */}
-            <div className="p-8 bg-white">
-              <h3 className="text-3xl font-bold mb-2 text-black">{selectedItem.title}</h3>
+            <div className="p-8 bg-gray-900">
+              <h3 className="text-3xl font-bold mb-2 text-white">{selectedItem.title}</h3>
               <p className="text-yellow-500 uppercase text-sm tracking-wider font-semibold mb-4">{selectedItem.category}</p>
-              <p className="text-gray-700 mb-6 leading-relaxed">
+              <p className="text-gray-300 mb-6 leading-relaxed">
                 {selectedItem.description || `This production showcases professional audio work in the ${selectedItem.category.toLowerCase()} industry, featuring cutting-edge recording techniques and post-production expertise.`}
               </p>
 
@@ -191,17 +191,17 @@ export default function VideoWheel() {
               <div className="flex items-center justify-between gap-4">
                 <button
                   onClick={() => handleLightboxNav('prev')}
-                  className="p-2 text-gray-600 hover:text-yellow-500 transition-colors bubble-hover"
+                  className="p-2 text-gray-400 hover:text-yellow-400 transition-colors bubble-hover"
                   aria-label="Previous item"
                 >
                   <ChevronLeft size={24} />
                 </button>
-                <span className="text-gray-600 text-sm">
+                <span className="text-gray-400 text-sm">
                   {videoItems.findIndex((item) => item.id === selectedItem.id) + 1} / {videoItems.length}
                 </span>
                 <button
                   onClick={() => handleLightboxNav('next')}
-                  className="p-2 text-gray-600 hover:text-yellow-500 transition-colors bubble-hover"
+                  className="p-2 text-gray-400 hover:text-yellow-400 transition-colors bubble-hover"
                   aria-label="Next item"
                 >
                   <ChevronRight size={24} />

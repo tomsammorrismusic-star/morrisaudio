@@ -14,9 +14,9 @@ export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false)
 
   return (
-    <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-300 transition-all duration-300">
+    <header className="sticky top-0 z-50 bg-gray-950/80 backdrop-blur-md border-b border-gray-800 transition-all duration-300">
       <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between rounded-b-2xl">
-        <Link to="/" className="flex items-center gap-3 font-bold text-2xl md:text-3xl text-black hover:text-yellow-500 transition-colors tracking-tight">
+        <Link to="/" className="flex items-center gap-3 font-bold text-2xl md:text-3xl text-white hover:text-yellow-400 transition-colors tracking-tight">
           <Mic className="w-7 h-7 md:w-8 md:h-8 text-yellow-500" />
           <span>Morris Audio</span>
         </Link>
@@ -27,8 +27,8 @@ export default function Header() {
             <Link
               key={link.to}
               to={link.to}
-              className="text-sm text-gray-600 hover:text-black hover:underline underline-offset-4 transition-colors bubble-hover"
-              activeProps={{ className: 'text-sm text-yellow-500 font-medium' }}
+              className="text-sm text-gray-400 hover:text-white hover:underline underline-offset-4 transition-colors bubble-hover"
+              activeProps={{ className: 'text-sm text-yellow-400 font-medium' }}
             >
               {link.label}
             </Link>
@@ -44,7 +44,7 @@ export default function Header() {
         {/* Mobile toggle */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="md:hidden p-2 text-gray-600 hover:text-black"
+          className="md:hidden p-2 text-gray-400 hover:text-white"
           aria-label="Toggle menu"
         >
           {mobileOpen ? <X size={22} /> : <Menu size={22} />}
@@ -53,13 +53,13 @@ export default function Header() {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <nav className="md:hidden border-t border-gray-300 bg-gray-50 px-4 py-4 flex flex-col gap-4">
+        <nav className="md:hidden border-t border-gray-800 bg-gray-900 px-4 py-4 flex flex-col gap-4">
           {navLinks.map((link) => (
             <Link
               key={link.to}
               to={link.to}
               onClick={() => setMobileOpen(false)}
-              className="text-gray-700 hover:text-black hover:underline underline-offset-4 transition-colors bubble-hover"
+              className="text-gray-400 hover:text-white hover:underline underline-offset-4 transition-colors bubble-hover"
             >
               {link.label}
             </Link>
