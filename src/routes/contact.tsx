@@ -63,7 +63,7 @@ function Contact() {
       <div className="max-w-5xl mx-auto px-4 py-16">
         <div className="mb-12">
           <h1 className="text-4xl md:text-5xl font-extrabold mb-3">Get In Touch</h1>
-          <p className="text-gray-600 text-lg max-w-xl">
+          <p className="text-gray-400 text-lg max-w-xl">
             Looking for a sound recordist for your next production? Let's talk.
           </p>
         </div>
@@ -84,12 +84,12 @@ function Contact() {
                       {item.href ? (
                         <a
                           href={item.href}
-                          className="text-gray-900 hover:text-yellow-600 transition-colors font-medium"
+                          className="text-white hover:text-yellow-600 transition-colors font-medium"
                         >
                           {item.value}
                         </a>
                       ) : (
-                        <p className="text-gray-900 font-medium">{item.value}</p>
+                        <p className="text-white font-medium">{item.value}</p>
                       )}
                     </div>
                   </div>
@@ -150,7 +150,7 @@ function Contact() {
                     id="name"
                     name="name"
                     required
-                    className="w-full px-4 py-2.5 bg-white border border-gray-300 rounded-lg text-gray-900 placeholder-gray-500 focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500 outline-none transition-colors"
+                    className="w-full px-4 py-2.5 bg-white border border-gray-300 rounded-lg text-white placeholder-gray-500 focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500 outline-none transition-colors"
                     placeholder="Your name"
                   />
                 </div>
@@ -163,7 +163,7 @@ function Contact() {
                     id="email"
                     name="email"
                     required
-                    className="w-full px-4 py-2.5 bg-white border border-gray-300 rounded-lg text-gray-900 placeholder-gray-500 focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500 outline-none transition-colors"
+                    className="w-full px-4 py-2.5 bg-white border border-gray-300 rounded-lg text-white placeholder-gray-500 focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500 outline-none transition-colors"
                     placeholder="your@email.com"
                   />
                 </div>
@@ -176,7 +176,7 @@ function Contact() {
                 <select
                   id="production"
                   name="production"
-                  className="w-full px-4 py-2.5 bg-white border border-gray-300 rounded-lg text-gray-900 focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500 outline-none transition-colors"
+                  className="w-full px-4 py-2.5 bg-white border border-gray-300 rounded-lg text-white focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500 outline-none transition-colors"
                 >
                   <option value="">Select a type…</option>
                   <option value="film">Feature Film</option>
@@ -198,7 +198,7 @@ function Contact() {
                   name="message"
                   required
                   rows={5}
-                  className="w-full px-4 py-2.5 bg-white border border-gray-300 rounded-lg text-gray-900 placeholder-gray-500 focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500 outline-none transition-colors resize-none"
+                  className="w-full px-4 py-2.5 bg-white border border-gray-300 rounded-lg text-white placeholder-gray-500 focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500 outline-none transition-colors resize-none"
                   placeholder="Tell me about your project — dates, location, and what you need…"
                 />
               </div>

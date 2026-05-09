@@ -22,16 +22,16 @@ function Resume() {
       <div className="max-w-4xl mx-auto space-y-12">
         <div className="text-center space-y-4">
           <h1 className="text-5xl font-bold">Experience & CV</h1>
-          <p className="text-gray-600 text-lg">
+          <p className="text-gray-400 text-lg">
             Professional sound recordist with 10+ years in film, documentary, and broadcast.
           </p>
-          <Separator className="mt-8 bg-gray-300" />
+          <Separator className="mt-8 bg-gray-700" />
         </div>
 
         {/* Career Summary */}
-        <Card className="bg-gray-50 border-gray-200 text-gray-900">
+        <Card className="bg-gray-50 border-gray-200 text-white">
           <CardHeader>
-            <CardTitle className="text-2xl text-gray-900">Career Summary</CardTitle>
+            <CardTitle className="text-2xl text-white">Career Summary</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="flex flex-col md:flex-row items-start gap-8">
@@ -63,14 +63,14 @@ function Resume() {
 
         {/* Work Experience */}
         <section className="space-y-6">
-          <h2 className="text-3xl font-semibold text-gray-900">Work Experience</h2>
+          <h2 className="text-3xl font-semibold text-white">Work Experience</h2>
           <div className="space-y-6">
             {allJobs.map((job) => (
-              <Card key={job.jobTitle} className="bg-gray-50 border-gray-200 text-gray-900">
+              <Card key={job.jobTitle} className="bg-gray-50 border-gray-200 text-white">
                 <CardHeader>
                   <div className="flex justify-between items-start flex-wrap gap-3">
                     <div className="space-y-1">
-                      <CardTitle className="text-xl text-gray-900">{job.jobTitle}</CardTitle>
+                      <CardTitle className="text-xl text-white">{job.jobTitle}</CardTitle>
                       <p className="font-medium text-yellow-600">
                         {job.company} · {job.location}
                       </p>
@@ -110,12 +110,12 @@ function Resume() {
 
         {/* Education */}
         <section className="space-y-6">
-          <h2 className="text-3xl font-semibold text-gray-900">Education</h2>
+          <h2 className="text-3xl font-semibold text-white">Education</h2>
           <div className="space-y-6">
             {allEducations.map((education) => (
-              <Card key={education.school} className="bg-gray-50 border-gray-200 text-gray-900">
+              <Card key={education.school} className="bg-gray-50 border-gray-200 text-white">
                 <CardHeader>
-                  <CardTitle className="text-xl text-gray-900">{education.school}</CardTitle>
+                  <CardTitle className="text-xl text-white">{education.school}</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="leading-relaxed text-gray-700">{education.summary}</p>
