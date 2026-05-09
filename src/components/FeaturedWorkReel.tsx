@@ -56,13 +56,17 @@ export default function FeaturedWorkReel() {
       className="featured-work-reel relative w-full py-12"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
+      style={{ overflow: 'visible' }}
     >
       <div
         ref={scrollContainer}
-        className="featured-work-scroll flex gap-6 overflow-hidden"
+        className="featured-work-scroll flex gap-6"
         style={{
           scrollBehavior: 'auto',
           scrollbarWidth: 'none',
+          overflowX: 'auto',
+          overflowY: 'visible',
+          overflow: 'visible',
         }}
       >
         {/* Duplicate videos for seamless loop */}
@@ -72,7 +76,7 @@ export default function FeaturedWorkReel() {
             className="flex-shrink-0 flex items-center justify-center min-w-max"
           >
             <button
-              className={`w-48 h-48 rounded-xl bg-gradient-to-br ${CATEGORY_COLORS[item.category] ?? 'from-gray-300 to-gray-200'} border border-gray-400 flex flex-col items-center justify-center gap-2 cursor-pointer hover:border-yellow-500 transition-all duration-300 group bubble-hover hover:shadow-xl hover:scale-105`}
+              className={`w-64 h-64 rounded-xl bg-gradient-to-br ${CATEGORY_COLORS[item.category] ?? 'from-gray-300 to-gray-200'} border border-gray-400 flex flex-col items-center justify-center gap-2 cursor-pointer hover:border-yellow-500 transition-all duration-500 ease-out group bubble-hover hover:shadow-2xl hover:scale-110`}
             >
               <div className="absolute inset-0 bg-white/0 group-hover:bg-white/10 transition-all duration-300 rounded-xl" />
               <div className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center relative z-10 group-hover:bg-white/30 transition-all">
@@ -87,8 +91,8 @@ export default function FeaturedWorkReel() {
       </div>
 
       {/* Fade effect on edges */}
-      <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-white to-transparent pointer-events-none" />
-      <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-white to-transparent pointer-events-none" />
+      <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-white to-transparent pointer-events-none" />
+      <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-white to-transparent pointer-events-none" />
     </div>
   )
 }
