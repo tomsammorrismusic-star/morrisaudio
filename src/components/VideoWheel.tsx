@@ -101,28 +101,36 @@ export default function VideoWheel() {
               <div key={`${item.id}-${index}`} className="flex-shrink-0 w-64 overflow-visible">
                 <button
                   onClick={() => handleCardClick(item)}
-                  className="w-full h-56 rounded-xl bg-gradient-to-br from-gray-300 to-gray-200 border border-gray-400 flex flex-col items-center justify-center gap-3 cursor-pointer hover:border-yellow-500/50 transition-colors group bubble-hover overflow-visible"
+                  className="w-full h-56 rounded-xl overflow-hidden border border-gray-400 cursor-pointer hover:border-yellow-500/50 transition-colors group bubble-hover relative"
+                  style={item.youtubeId ? {
+                    backgroundImage: `url('${getYouTubeThumbnail(item.youtubeId)}')`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                  } : undefined}
                 >
-                  <div className={`w-full h-full rounded-xl bg-gradient-to-br ${CATEGORY_COLORS[item.category] ?? 'from-gray-300 to-gray-200'} border border-gray-400 flex flex-col items-center justify-center gap-3 cursor-pointer hover:border-yellow-500/50 transition-colors relative overflow-hidden`}>
-                    {item.youtubeId ? (
-                      <img
-                        src={getYouTubeThumbnail(item.youtubeId)}
-                        alt={item.title}
-                        className="w-full h-full object-cover"
-                        onError={(e) => {
-                          (e.target as HTMLImageElement).style.display = 'none'
-                        }}
-                      />
-                    ) : null}
-                    <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-all duration-200" />
-                    <div className="w-14 h-14 rounded-full bg-white/10 flex items-center justify-center relative z-10">
-                      <Play className="w-6 h-6 text-white fill-white ml-1" />
+                  {item.youtubeId ? (
+                    <>
+                      <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-all duration-200" />
+                      <div className="absolute inset-0 flex flex-col items-center justify-center gap-3">
+                        <div className="w-14 h-14 rounded-full bg-white/20 flex items-center justify-center">
+                          <Play className="w-6 h-6 text-white fill-white ml-1" />
+                        </div>
+                        <div className="text-center px-4">
+                          <p className="text-white font-semibold text-sm leading-tight">{item.title}</p>
+                        </div>
+                      </div>
+                    </>
+                  ) : (
+                    <div className={`w-full h-full rounded-xl bg-gradient-to-br ${CATEGORY_COLORS[item.category] ?? 'from-gray-300 to-gray-200'} flex flex-col items-center justify-center gap-3`}>
+                      <div className="w-14 h-14 rounded-full bg-white/10 flex items-center justify-center">
+                        <Play className="w-6 h-6 text-white fill-white ml-1" />
+                      </div>
+                      <div className="text-center px-4">
+                        <p className="text-white font-semibold text-sm leading-tight">{item.title}</p>
+                        <p className="text-white/50 text-xs mt-1 uppercase tracking-wider">{item.category}</p>
+                      </div>
                     </div>
-                    <div className="text-center px-4 relative z-10">
-                      <p className="text-white font-semibold text-sm leading-tight">{item.title}</p>
-                      <p className="text-white/50 text-xs mt-1 uppercase tracking-wider">{item.category}</p>
-                    </div>
-                  </div>
+                  )}
                 </button>
               </div>
             ))}
