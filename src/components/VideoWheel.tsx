@@ -42,6 +42,7 @@ export default function VideoWheel() {
   const [canScrollRight, setCanScrollRight] = useState(true)
   const [selectedItem, setSelectedItem] = useState<VideoItem | null>(null)
   const [isPaused, setIsPaused] = useState(false)
+  const [currentIndex, setCurrentIndex] = useState(0)
 
   const checkScroll = () => {
     if (scrollContainer.current) {
@@ -74,13 +75,22 @@ export default function VideoWheel() {
     if (!scrollContainer.current || isPaused) return
 
     const interval = setInterval(() => {
-      if (scrollContainer.current) {
-        const scrollAmount = 280
-        scrollContainer.current.scrollBy({
-          left: scrollAmount,
-          behavior: 'smooth',
-        })
-      }
+      setCurrentIndex((prev) => {
+        const nextIndex = (prev + 1) % videoItems.length
+
+        if (scrollContainer.current) {
+          // w-64 = 256px, gap-4 = 16px, total = 272px per card
+          const cardWidth = 272
+          const scrollTarget = nextIndex * cardWidth
+
+          scrollContainer.current.scrollTo({
+            left: scrollTarget,
+            behavior: 'smooth',
+          })
+        }
+
+        return nextIndex
+      })
     }, 4000)
 
     return () => clearInterval(interval)
