@@ -9,6 +9,10 @@ interface VideoItem {
   youtubeId?: string
 }
 
+const getYouTubeThumbnail = (youtubeId: string) => {
+  return `https://img.youtube.com/vi/${youtubeId}/maxresdefault.jpg`
+}
+
 const videoItems: VideoItem[] = [
   { id: '1', title: 'Feature Film Location Sound', category: 'Film', youtubeId: '' },
   { id: '2', title: 'Documentary — Wildlife Series', category: 'Documentary', youtubeId: '' },
@@ -99,8 +103,18 @@ export default function VideoWheel() {
                   onClick={() => handleCardClick(item)}
                   className="w-full h-56 rounded-xl bg-gradient-to-br from-gray-300 to-gray-200 border border-gray-400 flex flex-col items-center justify-center gap-3 cursor-pointer hover:border-yellow-500/50 transition-colors group bubble-hover overflow-visible"
                 >
-                  <div className={`w-full h-full rounded-xl bg-gradient-to-br ${CATEGORY_COLORS[item.category] ?? 'from-gray-300 to-gray-200'} border border-gray-400 flex flex-col items-center justify-center gap-3 cursor-pointer hover:border-yellow-500/50 transition-colors relative overflow-visible`}>
-                    <div className="absolute inset-0 bg-white/0 group-hover:bg-white/10 transition-all duration-200" />
+                  <div className={`w-full h-full rounded-xl bg-gradient-to-br ${CATEGORY_COLORS[item.category] ?? 'from-gray-300 to-gray-200'} border border-gray-400 flex flex-col items-center justify-center gap-3 cursor-pointer hover:border-yellow-500/50 transition-colors relative overflow-hidden`}>
+                    {item.youtubeId ? (
+                      <img
+                        src={getYouTubeThumbnail(item.youtubeId)}
+                        alt={item.title}
+                        className="w-full h-full object-cover"
+                        onError={(e) => {
+                          (e.target as HTMLImageElement).style.display = 'none'
+                        }}
+                      />
+                    ) : null}
+                    <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-all duration-200" />
                     <div className="w-14 h-14 rounded-full bg-white/10 flex items-center justify-center relative z-10">
                       <Play className="w-6 h-6 text-white fill-white ml-1" />
                     </div>
