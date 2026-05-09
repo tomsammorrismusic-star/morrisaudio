@@ -84,6 +84,21 @@ export default function VideoWheel() {
     return () => clearInterval(interval)
   }, [isPaused])
 
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'ArrowLeft') {
+        e.preventDefault()
+        scroll('left')
+      } else if (e.key === 'ArrowRight') {
+        e.preventDefault()
+        scroll('right')
+      }
+    }
+
+    window.addEventListener('keydown', handleKeyDown)
+    return () => window.removeEventListener('keydown', handleKeyDown)
+  }, [])
+
   const handleLightboxNav = (direction: 'prev' | 'next') => {
     if (!selectedItem) return
     const currentIndex = videoItems.findIndex((item) => item.id === selectedItem.id)
