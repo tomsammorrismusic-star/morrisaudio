@@ -31,14 +31,14 @@ const CATEGORY_COLORS: Record<string, string> = {
 
 // Layout positions - masonry-inspired collage with focal points
 const layoutConfig = [
-  { id: '1', w: 150, h: 200, x: 10, y: 60 },       // left column top
-  { id: '2', w: 160, h: 230, x: 10, y: 280 },      // left column bottom
-  { id: '3', w: 220, h: 280, x: 190, y: 50 },      // center-left hero
-  { id: '4', w: 200, h: 250, x: 430, y: 80 },      // center hero (focal)
-  { id: '5', w: 180, h: 220, x: 650, y: 60 },      // right column top
-  { id: '6', w: 170, h: 240, x: 650, y: 300 },     // right column bottom
-  { id: '7', w: 190, h: 210, x: 190, y: 350 },     // bottom left
-  { id: '8', w: 210, h: 240, x: 400, y: 350 },     // bottom center
+  { id: '1', w: 150, h: 200, x: 10, y: 100 },      // left column top
+  { id: '2', w: 160, h: 230, x: 10, y: 320 },      // left column bottom
+  { id: '3', w: 220, h: 280, x: 190, y: 90 },      // center-left hero
+  { id: '4', w: 200, h: 250, x: 430, y: 120 },     // center hero (focal)
+  { id: '5', w: 180, h: 220, x: 650, y: 100 },     // right column top
+  { id: '6', w: 170, h: 240, x: 650, y: 340 },     // right column bottom
+  { id: '7', w: 190, h: 210, x: 190, y: 390 },     // bottom left
+  { id: '8', w: 210, h: 240, x: 400, y: 390 },     // bottom center
 ]
 
 export default function VideoCollage() {
@@ -47,7 +47,7 @@ export default function VideoCollage() {
   return (
     <>
       <div className="flex items-center justify-center w-full py-12 px-4 bg-gradient-to-b from-white to-gray-50">
-        <div className="relative max-w-6xl w-full" style={{ height: '600px' }}>
+        <div className="relative max-w-6xl w-full" style={{ height: '680px' }}>
           {videoItems.map((item, index) => {
             const config = layoutConfig[index]
             return (
