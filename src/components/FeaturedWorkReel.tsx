@@ -73,13 +73,12 @@ export default function FeaturedWorkReel() {
             className="flex-shrink-0 flex items-center justify-center min-w-max"
           >
             <button
-              className={`w-64 h-64 rounded-xl bg-gradient-to-br ${CATEGORY_COLORS[item.category] ?? 'from-gray-300 to-gray-200'} border border-gray-400 flex flex-col items-center justify-center gap-2 cursor-pointer hover:border-yellow-500 transition-all duration-500 ease-out group bubble-hover hover:shadow-2xl hover:scale-110`}
+              className={`relative w-64 h-64 rounded-xl bg-gradient-to-br ${CATEGORY_COLORS[item.category] ?? 'from-gray-300 to-gray-200'} border border-gray-400 flex flex-col items-center justify-center gap-2 cursor-pointer hover:border-yellow-500 transition-all duration-500 ease-out group bubble-hover hover:shadow-2xl hover:scale-110`}
             >
-              <div className="absolute inset-0 bg-white/0 group-hover:bg-white/10 transition-all duration-300 rounded-xl" />
-              <div className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center relative z-10 group-hover:bg-white/30 transition-all">
+              <div className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center group-hover:bg-white/30 transition-all duration-300">
                 <Play className="w-5 h-5 text-white fill-white ml-0.5" />
               </div>
-              <div className="text-center px-3 relative z-10">
+              <div className="text-center px-3">
                 <p className="text-white font-semibold text-xs leading-tight line-clamp-2">{item.title}</p>
               </div>
             </button>
