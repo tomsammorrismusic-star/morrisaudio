@@ -92,11 +92,11 @@ export default function VideoWheel() {
           {/* Inner scroll container without overflow clipping */}
           <div
             ref={scrollContainer}
-            className="flex gap-4 scroll-smooth no-scrollbar video-wheel-scroll"
+            className="flex gap-4 scroll-smooth video-wheel-scroll"
             onScroll={checkScroll}
             onMouseEnter={() => setIsPaused(true)}
             onMouseLeave={() => setIsPaused(false)}
-            style={{ scrollBehavior: 'smooth', scrollbarWidth: 'none' }}
+            style={{ scrollBehavior: 'smooth' }}
           >
             {[...videoItems, ...videoItems].map((item, index) => (
               <div key={`${item.id}-${index}`} className="flex-shrink-0 w-64 overflow-visible">
