@@ -21,7 +21,7 @@ const videoItems: VideoItem[] = [
   { id: '4', title: 'Short Film — Drama', category: 'Drama', youtubeId: 'iFlZqFyTiso' },
   { id: '5', title: 'Corporate Interview Package', category: 'Corporate', youtubeId: '' },
   { id: '6', title: 'Social Commercial — Gold Bullion', category: 'Commercial', youtubeId: '58wu_GswQD0' },
-  { id: '7', title: 'Corporate Podcast — Executive Interview', category: 'Corporate', youtubeId: 'L_n0IijJl74', description: 'Professional corporate podcast production featuring executive interviews. This production showcases in-depth interviewing techniques, audio mastering, and production quality suitable for corporate communications and leadership discussions.' },
+  { id: '7', title: 'Corporate Podcast — VCL Vintners', category: 'Corporate', youtubeId: 'L_n0IijJl74', description: 'Professional corporate podcast production for VCL Vintners. This production showcases in-depth interviewing techniques, audio mastering, and production quality suitable for corporate communications and industry discussions.' },
   { id: '8', title: 'Podcast & Voice Over', category: 'Audio', youtubeId: '' },
 ]
 
