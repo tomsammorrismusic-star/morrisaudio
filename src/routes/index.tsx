@@ -34,17 +34,17 @@ function Home() {
       {/* Hero */}
       <section className="relative min-h-[80vh] flex flex-col items-center justify-center text-center px-4 py-20">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(217,119,6,0.03)_0%,_transparent_70%)] pointer-events-none" />
-        <div className="relative z-10 max-w-3xl mx-auto space-y-6">
+        <div className="relative z-10 w-full max-w-4xl mx-auto space-y-6">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-yellow-500/10 border border-yellow-500/30 text-yellow-500 text-sm font-medium">
             <Mic size={14} />
             Available for hire&nbsp;
           </div>
-          <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight">
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight">
             Capturing You
             <br />
             <span className="text-yellow-500">Great Audio</span>
           </h1>
-          <p className="text-xl text-gray-600 max-w-xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
             Professional sound recordist specialising in film, documentary, and commercial productions.&nbsp;
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-2">
@@ -65,8 +65,8 @@ function Home() {
       </section>
 
       {/* Trusted By */}
-      <section className="py-16">
-        <div className="max-w-5xl mx-auto px-4 mb-12">
+      <section className="py-16 lg:py-24">
+        <div className="max-w-6xl mx-auto px-4 mb-12">
           <div className="text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-3">Trusted By</h2>
             <p className="text-gray-600 max-w-xl mx-auto">
@@ -78,8 +78,8 @@ function Home() {
       </section>
 
       {/* Stats */}
-      <section className="border-y border-gray-200 py-10">
-        <div className="max-w-5xl mx-auto px-4 flex flex-col sm:flex-row gap-6 justify-center items-center flex-wrap">
+      <section className="border-y border-gray-200 py-10 lg:py-16">
+        <div className="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row gap-6 justify-center items-center flex-wrap">
           {stats.map((s) => (
             <div key={s.label} className="flex flex-col items-center justify-center px-6 py-4 rounded-xl border border-gray-300 bg-gray-50 hover:border-yellow-500/50 transition-colors bubble-hover">
               <p className="text-4xl font-extrabold text-yellow-500">{s.value}</p>
@@ -90,8 +90,8 @@ function Home() {
       </section>
 
       {/* Featured Work */}
-      <section className="py-16">
-        <div className="max-w-5xl mx-auto px-4 mb-12">
+      <section className="py-16 lg:py-24">
+        <div className="max-w-6xl mx-auto px-4 mb-12">
           <div className="text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-3">Featured Work</h2>
             <p className="text-gray-600 max-w-xl mx-auto">
@@ -103,9 +103,9 @@ function Home() {
       </section>
 
       {/* Services */}
-      <section className="py-24 px-4 border-t border-gray-200">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">What I Do</h2>
+      <section className="py-24 lg:py-32 px-4 border-t border-gray-200">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-16">What I Do</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
             {services.map((svc) => (
               <div
@@ -122,11 +122,11 @@ function Home() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 px-4 border-t border-gray-200">
-        <div className="max-w-2xl mx-auto text-center space-y-6">
-          <Award className="w-12 h-12 text-yellow-500 mx-auto" />
-          <h2 className="text-3xl md:text-4xl font-bold">Ready to work together?</h2>
-          <p className="text-gray-600 text-lg">
+      <section className="py-20 lg:py-28 px-4 border-t border-gray-200">
+        <div className="max-w-3xl mx-auto text-center space-y-6">
+          <Award className="w-12 h-12 lg:w-16 lg:h-16 text-yellow-500 mx-auto" />
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold">Ready to work together?</h2>
+          <p className="text-gray-600 text-lg md:text-xl">
             Let's talk about your next production. Available for short-term engagements
             and long-term projects worldwide.
           </p>
