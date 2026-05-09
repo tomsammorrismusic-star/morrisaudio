@@ -104,8 +104,8 @@ export default function VideoWheel() {
           <ChevronLeft size={32} />
         </button>
 
-        {/* Outer scroll container with overflow-x-auto */}
-        <div className="w-full px-16 overflow-x-auto py-8">
+        {/* Outer scroll container with overflow-x-scroll */}
+        <div className="w-full px-16 overflow-x-scroll py-8">
           {/* Inner scroll container without overflow clipping */}
           <div
             ref={scrollContainer}
