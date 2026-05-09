@@ -118,6 +118,8 @@ export default function VideoWheel() {
             className="flex gap-4 scroll-smooth video-wheel-scroll"
             onMouseEnter={() => setIsPaused(true)}
             onMouseLeave={() => setIsPaused(false)}
+            onClick={() => setIsPaused(true)}
+            onBlur={() => setIsPaused(false)}
             style={{ scrollBehavior: 'auto' }}
           >
             {[...videoItems, ...videoItems].map((item, index) => (
