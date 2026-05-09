@@ -7,6 +7,7 @@ interface VideoItem {
   category: string
   thumbnail?: string
   youtubeId?: string
+  description?: string
 }
 
 const getYouTubeThumbnail = (youtubeId: string) => {
@@ -20,7 +21,7 @@ const videoItems: VideoItem[] = [
   { id: '4', title: 'Short Film — Drama', category: 'Drama', youtubeId: 'iFlZqFyTiso' },
   { id: '5', title: 'Corporate Interview Package', category: 'Corporate', youtubeId: '' },
   { id: '6', title: 'Social Commercial — Gold Bullion', category: 'Commercial', youtubeId: '58wu_GswQD0' },
-  { id: '7', title: 'ENG News — Field Recording', category: 'News', youtubeId: 'L_n0IijJl74' },
+  { id: '7', title: 'ENG News — Field Recording', category: 'News', youtubeId: 'L_n0IijJl74', description: 'Professional field recording for broadcast news. This production demonstrates live location audio capture, mic placement techniques, and real-time audio management in fast-paced news gathering environments.' },
   { id: '8', title: 'Podcast & Voice Over', category: 'Audio', youtubeId: '' },
 ]
 
@@ -183,7 +184,7 @@ export default function VideoWheel() {
               <h3 className="text-3xl font-bold mb-2 text-black">{selectedItem.title}</h3>
               <p className="text-yellow-500 uppercase text-sm tracking-wider font-semibold mb-4">{selectedItem.category}</p>
               <p className="text-gray-700 mb-6 leading-relaxed">
-                This production showcases professional audio work in the {selectedItem.category.toLowerCase()} industry, featuring cutting-edge recording techniques and post-production expertise.
+                {selectedItem.description || `This production showcases professional audio work in the ${selectedItem.category.toLowerCase()} industry, featuring cutting-edge recording techniques and post-production expertise.`}
               </p>
 
               {/* Navigation */}
