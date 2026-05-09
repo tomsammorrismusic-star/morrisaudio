@@ -59,17 +59,11 @@ function Showreel() {
           </p>
           <a
             href="mailto:tomsammorrismusic@gmail.com"
-            className="inline-block px-6 py-3 bg-yellow-400 hover:bg-yellow-300 text-gray-950 font-semibold rounded-lg transition-colors"
+            className="inline-block px-6 py-3 bg-yellow-400 hover:bg-yellow-300 text-gray-950 font-semibold rounded-lg transition-colors mb-6"
           >
             Get in Touch
           </a>
-        </div>
-      </div>
-
-      <div className="max-w-6xl mx-auto px-4 py-16">
-        <div className="text-center">
-          <h3 className="text-lg font-semibold mb-6 text-gray-200">Follow on social media</h3>
-          <div className="flex justify-center gap-6">
+          <div className="flex justify-center gap-4">
             <a
               href="https://www.instagram.com/tom_morris2810/"
               target="_blank"

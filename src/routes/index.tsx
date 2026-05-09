@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
 import VideoWheel from '@/components/VideoWheel'
 import LogoReel from '@/components/LogoReel'
-import { Mic, Volume2, Headphones, Award, Mail } from 'lucide-react'
+import { Mic, Volume2, Headphones, Award, Mail, Instagram, MessageCircle } from 'lucide-react'
 
 export const Route = createFileRoute('/')({
   component: Home,
@@ -131,7 +131,7 @@ function Home() {
             Let's talk about your next production. Available for short-term engagements
             and long-term projects worldwide.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
             <Link
               to="/contact"
               className="inline-flex items-center justify-center gap-2 px-8 py-3 bg-yellow-400 hover:bg-yellow-300 text-gray-950 font-bold rounded-xl transition-colors bubble-hover"
@@ -144,6 +144,26 @@ function Home() {
               className="inline-flex items-center justify-center gap-2 px-8 py-3 border border-gray-600 hover:border-yellow-400 text-gray-200 hover:text-white rounded-xl transition-colors bubble-hover"
             >
               Email Directly
+            </a>
+          </div>
+          <div className="flex justify-center gap-4">
+            <a
+              href="https://www.instagram.com/tom_morris2810/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-gray-800 border border-gray-600 hover:border-yellow-400 transition-colors"
+              aria-label="Instagram"
+            >
+              <Instagram className="w-6 h-6 text-yellow-400" />
+            </a>
+            <a
+              href="https://wa.me/447857484127"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-gray-800 border border-gray-600 hover:border-yellow-400 transition-colors"
+              aria-label="WhatsApp"
+            >
+              <MessageCircle className="w-6 h-6 text-yellow-400" />
             </a>
           </div>
         </div>

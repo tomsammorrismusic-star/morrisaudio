@@ -1,6 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { useState } from 'react'
-import { Mail, Send, Phone, MapPin, Clock } from 'lucide-react'
+import { Mail, Send, Phone, MapPin, Clock, Instagram, MessageCircle } from 'lucide-react'
 
 export const Route = createFileRoute('/contact')({
   component: Contact,
@@ -211,6 +211,31 @@ function Contact() {
                 Send Message
               </button>
             </form>
+          </div>
+        </div>
+
+        {/* Social media links */}
+        <div className="mt-16 text-center">
+          <h3 className="text-lg font-semibold mb-6 text-gray-200">Or connect on social media</h3>
+          <div className="flex justify-center gap-4">
+            <a
+              href="https://www.instagram.com/tom_morris2810/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-gray-800 border border-gray-600 hover:border-yellow-400 transition-colors"
+              aria-label="Instagram"
+            >
+              <Instagram className="w-6 h-6 text-yellow-400" />
+            </a>
+            <a
+              href="https://wa.me/447857484127"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-gray-800 border border-gray-600 hover:border-yellow-400 transition-colors"
+              aria-label="WhatsApp"
+            >
+              <MessageCircle className="w-6 h-6 text-yellow-400" />
+            </a>
           </div>
         </div>
       </div>
