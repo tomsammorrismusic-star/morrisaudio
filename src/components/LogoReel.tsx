@@ -38,17 +38,17 @@ export default function LogoReel() {
   return (
     <div
       className="logo-reel-container relative w-full"
-      onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => setIsPaused(false)}
       style={{ padding: '3rem 0' }}
     >
       <div
         ref={scrollContainer}
-        className="logo-reel-scroll flex gap-12 overflow-x-auto"
+        className="logo-reel-scroll flex gap-12 overflow-x-auto items-center"
         style={{
           scrollBehavior: 'auto',
           scrollbarWidth: 'none',
           WebkitOverflowScrolling: 'touch',
+          overflowY: 'visible',
+          minHeight: '200px',
         }}
       >
         {/* Duplicate logos for seamless loop */}
@@ -56,6 +56,8 @@ export default function LogoReel() {
           <div
             key={`${item.id}-${index}`}
             className="logo-item flex-shrink-0 flex items-center justify-center px-8 py-6 rounded-xl border border-gray-300 bg-gray-50 hover:border-yellow-500/50 hover:bg-gray-100 transition-all duration-300 min-w-max bubble-hover"
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
           >
             <div className="flex items-center gap-3">
               <span className="text-4xl">{item.logo}</span>
@@ -66,8 +68,8 @@ export default function LogoReel() {
       </div>
 
       {/* Fade effect on edges */}
-      <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-white to-transparent pointer-events-none" />
-      <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-white to-transparent pointer-events-none" />
+      <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-white/50 to-transparent pointer-events-none" />
+      <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-white/50 to-transparent pointer-events-none" />
     </div>
   )
 }

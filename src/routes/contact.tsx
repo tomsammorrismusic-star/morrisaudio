@@ -119,6 +119,7 @@ function Contact() {
               method="POST"
               data-netlify="true"
               netlify-honeypot="bot-field"
+              data-netlify-recaptcha="true"
               onSubmit={(e) => {
                 e.preventDefault()
                 const form = e.currentTarget
@@ -134,6 +135,8 @@ function Contact() {
               className="space-y-5"
             >
               <input type="hidden" name="form-name" value="contact" />
+              <input type="hidden" name="subject" value="New Contact Form Submission" />
+              <input type="hidden" name="to" value="tomsammorrismusic@gmail.com" />
               <p hidden>
                 <label>
                   Don't fill this out: <input name="bot-field" />
