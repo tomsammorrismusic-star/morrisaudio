@@ -1,5 +1,5 @@
 import { Link } from '@tanstack/react-router'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Menu, X, Mic } from 'lucide-react'
 
 const navLinks = [
@@ -12,9 +12,18 @@ const navLinks = [
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 0)
+    }
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   return (
-    <header className="sticky top-0 z-50 bg-gray-900/80 backdrop-blur-md border-b border-gray-800 transition-all duration-300">
+    <header className={`sticky top-0 z-50 backdrop-blur-md border-b transition-all duration-300 ${isScrolled ? 'bg-gray-900/80 border-gray-800' : 'bg-transparent border-transparent'}`}>
       <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between rounded-b-2xl">
         <Link to="/" className="flex items-center gap-3 font-bold text-2xl md:text-3xl text-white hover:text-yellow-400 transition-colors tracking-tight">
           <Mic className="w-7 h-7 md:w-8 md:h-8 text-yellow-500" />
