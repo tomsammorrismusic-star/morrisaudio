@@ -29,16 +29,16 @@ const CATEGORY_COLORS: Record<string, string> = {
   Audio: 'from-teal-900 to-teal-700',
 }
 
-// Layout positions - enlarged and centered to fill width
+// Layout positions - masonry-inspired collage with focal points
 const layoutConfig = [
-  { id: '1', w: 160, h: 220, x: 20, y: 10 },       // top left
-  { id: '2', w: 170, h: 245, x: 200, y: 5 },       // top center-left
-  { id: '3', w: 280, h: 195, x: 390, y: 50 },      // right (focal)
-  { id: '4', w: 170, h: 230, x: 690, y: 20 },      // top right
-  { id: '5', w: 160, h: 215, x: 20, y: 250 },      // middle left
-  { id: '6', w: 195, h: 240, x: 200, y: 280 },     // middle center-left
-  { id: '7', w: 190, h: 235, x: 410, y: 270 },     // middle center-right
-  { id: '8', w: 180, h: 245, x: 620, y: 270 },     // middle right
+  { id: '1', w: 150, h: 200, x: 10, y: 20 },       // left column top
+  { id: '2', w: 160, h: 230, x: 10, y: 240 },      // left column bottom
+  { id: '3', w: 220, h: 280, x: 190, y: 10 },      // center-left hero
+  { id: '4', w: 200, h: 250, x: 430, y: 40 },      // center hero (focal)
+  { id: '5', w: 180, h: 220, x: 650, y: 20 },      // right column top
+  { id: '6', w: 170, h: 240, x: 650, y: 260 },     // right column bottom
+  { id: '7', w: 190, h: 210, x: 190, y: 310 },     // bottom left
+  { id: '8', w: 210, h: 240, x: 400, y: 310 },     // bottom center
 ]
 
 export default function VideoCollage() {
@@ -46,15 +46,15 @@ export default function VideoCollage() {
 
   return (
     <>
-      <div className="flex items-center justify-center w-full py-8 px-4">
-        <div className="relative max-w-6xl w-full" style={{ height: '550px' }}>
+      <div className="flex items-center justify-center w-full py-12 px-4 bg-gradient-to-b from-white to-gray-50">
+        <div className="relative max-w-6xl w-full" style={{ height: '600px' }}>
           {videoItems.map((item, index) => {
             const config = layoutConfig[index]
             return (
               <button
                 key={item.id}
                 onClick={() => setSelectedItem(item)}
-                className={`absolute bg-gradient-to-br ${CATEGORY_COLORS[item.category]} flex flex-col items-center justify-center gap-2 cursor-pointer transition-all duration-300 group overflow-hidden bubble-hover hover:shadow-2xl hover:z-20`}
+                className={`absolute bg-gradient-to-br ${CATEGORY_COLORS[item.category]} flex flex-col items-center justify-center gap-2 cursor-pointer transition-all duration-300 group overflow-hidden bubble-hover hover:shadow-2xl hover:z-20 hover:scale-105 rounded-lg border border-white/10`}
                 style={{
                   left: `${config.x}px`,
                   top: `${config.y}px`,
@@ -62,12 +62,13 @@ export default function VideoCollage() {
                   height: `${config.h}px`,
                 }}
               >
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300" />
-                <div className="w-10 h-10 rounded-full bg-white/15 flex items-center justify-center relative z-10 group-hover:bg-white/25 transition-all">
-                  <Play className="w-5 h-5 text-white fill-white ml-1" />
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300" />
+                <div className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center relative z-10 group-hover:bg-yellow-500/40 transition-all group-hover:scale-125">
+                  <Play className="w-6 h-6 text-white fill-white ml-1" />
                 </div>
-                <div className="text-center px-2 relative z-10">
-                  <p className="text-white font-semibold text-xs leading-snug line-clamp-2">{item.title}</p>
+                <div className="text-center px-2 relative z-10 bottom-2 group-hover:bottom-0 transition-all duration-300">
+                  <p className="text-white font-bold text-xs leading-snug line-clamp-2 drop-shadow-lg">{item.title}</p>
+                  <p className="text-white/70 text-xs uppercase tracking-wider mt-1">{item.category}</p>
                 </div>
               </button>
             )
