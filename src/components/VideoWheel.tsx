@@ -109,15 +109,6 @@ export default function VideoWheel() {
   return (
     <>
       <div className="relative w-full flex flex-col items-center gap-6">
-        {/* Left arrow */}
-        <button
-          onClick={() => scroll('left')}
-          disabled={!canScrollLeft}
-          className="absolute left-0 top-1/2 -translate-y-1/2 p-3 text-gray-500 hover:text-yellow-500 disabled:opacity-30 disabled:cursor-not-allowed transition-colors z-10 bubble-hover"
-          aria-label="Previous video"
-        >
-          <ChevronLeft size={32} />
-        </button>
 
         {/* Outer scroll container with overflow-x-scroll */}
         <div className="w-full px-16 overflow-x-scroll py-8">
@@ -137,12 +128,8 @@ export default function VideoWheel() {
                 >
                   <div className={`w-full h-full rounded-xl bg-gradient-to-br ${CATEGORY_COLORS[item.category] ?? 'from-gray-300 to-gray-200'} border border-gray-400 flex flex-col items-center justify-center gap-3 cursor-pointer hover:border-yellow-500/50 transition-colors shadow-xl relative overflow-hidden`}>
                     <div className="absolute inset-0 bg-white/0 group-hover:bg-white/10 transition-all duration-200" />
-                    <div className="w-14 h-14 rounded-full bg-white/10 flex items-center justify-center relative z-10">
+                    <div className="w-14 h-14 rounded-full bg-white/10 flex items-center justify-center relative z-10 group-hover:bg-white/20 transition-all">
                       <Play className="w-6 h-6 text-white fill-white ml-1" />
-                    </div>
-                    <div className="text-center px-4 relative z-10">
-                      <p className="text-white font-semibold text-sm leading-tight">{item.title}</p>
-                      <p className="text-white/50 text-xs mt-1 uppercase tracking-wider">{item.category}</p>
                     </div>
                   </div>
                 </button>
@@ -151,20 +138,6 @@ export default function VideoWheel() {
           </div>
         </div>
 
-        {/* Right arrow */}
-        <button
-          onClick={() => scroll('right')}
-          disabled={!canScrollRight}
-          className="absolute right-0 top-1/2 -translate-y-1/2 p-3 text-gray-500 hover:text-yellow-500 disabled:opacity-30 disabled:cursor-not-allowed transition-colors z-10 bubble-hover"
-          aria-label="Next video"
-        >
-          <ChevronRight size={32} />
-        </button>
-
-        <p className="text-gray-600 text-sm flex items-center gap-2">
-          <Film size={14} />
-          Use arrows to browse productions
-        </p>
       </div>
 
       {/* Lightbox Modal */}
