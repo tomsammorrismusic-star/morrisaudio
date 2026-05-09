@@ -20,7 +20,7 @@ const videoItems: VideoItem[] = [
   { id: '4', title: 'Short Film — Drama', category: 'Drama', youtubeId: 'iFlZqFyTiso' },
   { id: '5', title: 'Corporate Interview Package', category: 'Corporate', youtubeId: '' },
   { id: '6', title: 'Social Commercial — Gold Bullion', category: 'Commercial', youtubeId: '58wu_GswQD0' },
-  { id: '7', title: 'ENG News — Field Recording', category: 'News', youtubeId: '' },
+  { id: '7', title: 'ENG News — Field Recording', category: 'News', youtubeId: 'L_n0IijJl74' },
   { id: '8', title: 'Podcast & Voice Over', category: 'Audio', youtubeId: '' },
 ]
 
