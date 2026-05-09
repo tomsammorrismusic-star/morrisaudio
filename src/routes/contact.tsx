@@ -76,7 +76,7 @@ function Contact() {
               <div className="space-y-4">
                 {contactDetails.map((item) => (
                   <div key={item.label} className="flex items-start gap-3">
-                    <div className="w-9 h-9 rounded-lg bg-gray-800 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <div className="w-9 h-9 rounded-lg bg-transparent border border-gray-300 flex items-center justify-center flex-shrink-0 mt-0.5">
                       <item.icon size={16} className="text-yellow-500" />
                     </div>
                     <div>
@@ -150,7 +150,7 @@ function Contact() {
                     id="name"
                     name="name"
                     required
-                    className="w-full px-4 py-2.5 bg-white border border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500 outline-none transition-colors"
+                    className="w-full px-4 py-2.5 bg-transparent border border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500 outline-none transition-colors"
                     placeholder="Your name"
                   />
                 </div>
@@ -163,7 +163,7 @@ function Contact() {
                     id="email"
                     name="email"
                     required
-                    className="w-full px-4 py-2.5 bg-gray-800 border border-gray-600 rounded-lg text-white placeholder-gray-500 focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500 outline-none transition-colors"
+                    className="w-full px-4 py-2.5 bg-transparent border border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500 outline-none transition-colors"
                     placeholder="your@email.com"
                   />
                 </div>
@@ -176,7 +176,7 @@ function Contact() {
                 <select
                   id="production"
                   name="production"
-                  className="w-full px-4 py-2.5 bg-white border border-gray-300 rounded-lg text-gray-900 focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500 outline-none transition-colors"
+                  className="w-full px-4 py-2.5 bg-transparent border border-gray-300 rounded-lg text-gray-900 focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500 outline-none transition-colors"
                 >
                   <option value="">Select a type…</option>
                   <option value="film">Feature Film</option>
@@ -198,7 +198,7 @@ function Contact() {
                   name="message"
                   required
                   rows={5}
-                  className="w-full px-4 py-2.5 bg-white border border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500 outline-none transition-colors resize-none"
+                  className="w-full px-4 py-2.5 bg-transparent border border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500 outline-none transition-colors resize-none"
                   placeholder="Tell me about your project — dates, location, and what you need…"
                 />
               </div>
