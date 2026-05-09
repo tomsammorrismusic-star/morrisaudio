@@ -53,7 +53,7 @@ export default function Header() {
         {/* Mobile toggle */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="md:hidden p-2 text-gray-200 hover:text-white"
+          className="md:hidden p-2 text-gray-600 hover:text-yellow-500 transition-colors"
           aria-label="Toggle menu"
         >
           {mobileOpen ? <X size={22} /> : <Menu size={22} />}
@@ -62,13 +62,14 @@ export default function Header() {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <nav className="md:hidden border-t border-gray-300 bg-gray-50 px-4 py-4 flex flex-col gap-4">
+        <nav className="md:hidden border-t border-gray-200 bg-white px-4 py-4 flex flex-col gap-4">
           {navLinks.map((link) => (
             <Link
               key={link.to}
               to={link.to}
               onClick={() => setMobileOpen(false)}
-              className="text-gray-700 hover:text-black hover:underline underline-offset-4 transition-colors bubble-hover"
+              className="text-gray-600 hover:text-black hover:underline underline-offset-4 transition-colors bubble-hover"
+              activeProps={{ className: 'text-gray-600 hover:text-black hover:underline underline-offset-4 transition-colors bubble-hover text-yellow-500' }}
             >
               {link.label}
             </Link>
