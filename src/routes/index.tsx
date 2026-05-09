@@ -65,16 +65,16 @@ function Home() {
       </section>
 
       {/* Trusted By */}
-      <section className="py-16 px-4">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-12">
+      <section className="py-16">
+        <div className="max-w-5xl mx-auto px-4 mb-12">
+          <div className="text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-3">Trusted By</h2>
             <p className="text-gray-600 max-w-xl mx-auto">
               Working with leading brands across sports and technology.
             </p>
           </div>
-          <LogoReel />
         </div>
+        <LogoReel />
       </section>
 
       {/* Stats */}
