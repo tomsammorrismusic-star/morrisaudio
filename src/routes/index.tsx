@@ -89,19 +89,6 @@ function Home() {
         </div>
       </section>
 
-      {/* Featured Work */}
-      <section className="py-16 px-4">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-3">Featured Work</h2>
-            <p className="text-gray-600 max-w-xl mx-auto">
-              A selection of productions across genres and formats.
-            </p>
-          </div>
-          <VideoWheel />
-        </div>
-      </section>
-
       {/* Services */}
       <section className="py-24 px-4 border-t border-gray-200">
         <div className="max-w-6xl mx-auto">
