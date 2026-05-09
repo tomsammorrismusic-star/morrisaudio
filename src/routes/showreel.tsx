@@ -9,29 +9,29 @@ export const Route = createFileRoute('/showreel')({
 
 function Showreel() {
   return (
-    <div className="min-h-screen text-white" style={{ backgroundColor: '#2d2d2d' }}>
+    <div className="min-h-screen bg-white text-gray-900">
       <div className="max-w-6xl mx-auto px-4 py-16">
         <h1 className="text-4xl md:text-5xl font-extrabold mb-3">Showreel</h1>
-        <p className="text-gray-200 mb-10 text-lg">
+        <p className="text-gray-600 mb-10 text-lg">
           Podcast, voice-over, corporate, and commercial audio production samples.
         </p>
       </div>
 
       <div className="max-w-6xl mx-auto px-4 py-12">
         <div className="bg-gray-50 rounded-lg p-8 mb-16 border border-gray-200">
-          <h2 className="text-2xl font-bold mb-6 text-white">Featured Work</h2>
+          <h2 className="text-2xl font-bold mb-6 text-gray-900">Featured Work</h2>
           <VideoWheel />
         </div>
       </div>
 
       <div className="max-w-6xl mx-auto px-4 py-12">
-        <h2 className="text-3xl font-bold mb-8 text-white">Featured Podcast</h2>
+        <h2 className="text-3xl font-bold mb-8 text-gray-900">Featured Podcast</h2>
         <div className="bg-gray-50 rounded-lg p-8 mb-16 border border-gray-200">
           <div className="flex items-center gap-3 mb-4">
-            <Music className="w-6 h-6 text-yellow-400" />
-            <h3 className="text-2xl font-bold text-white">VCL Vintners Podcast</h3>
+            <Music className="w-6 h-6 text-yellow-500" />
+            <h3 className="text-2xl font-bold text-gray-900">VCL Vintners Podcast</h3>
           </div>
-          <p className="text-gray-200 mb-6">Listen now</p>
+          <p className="text-gray-600 mb-6">Listen now</p>
           <div className="rounded-lg overflow-hidden">
             <iframe
               src="https://open.spotify.com/embed/show/50zl8ics5uAV2aMAJ7spOF?utm_source=generator&theme=0"
@@ -47,19 +47,19 @@ function Showreel() {
       </div>
 
       <div className="max-w-6xl mx-auto px-4 py-12">
-        <h2 className="text-3xl font-bold mb-8 text-white">Portfolio</h2>
+        <h2 className="text-3xl font-bold mb-8 text-gray-900">Portfolio</h2>
         <VideoCollage />
       </div>
 
       <div className="max-w-6xl mx-auto px-4 py-16">
         <div className="bg-gray-50 rounded-lg p-8 text-center border border-gray-200">
-          <h3 className="text-2xl font-bold mb-3 text-white">Ready to work together?</h3>
-          <p className="text-gray-200 mb-6">
+          <h3 className="text-2xl font-bold mb-3 text-gray-900">Ready to work together?</h3>
+          <p className="text-gray-700 mb-6">
             Let's discuss your next audio project and how I can help bring your vision to life.
           </p>
           <a
             href="mailto:tomsammorrismusic@gmail.com"
-            className="inline-block px-6 py-3 bg-yellow-400 hover:bg-yellow-300 text-gray-950 font-semibold rounded-lg transition-colors mb-6"
+            className="inline-block px-6 py-3 bg-yellow-500 hover:bg-yellow-400 text-gray-950 font-semibold rounded-lg transition-colors mb-6"
           >
             Get in Touch
           </a>
@@ -68,19 +68,19 @@ function Showreel() {
               href="https://www.instagram.com/tom_morris2810/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center w-12 h-12 rounded-lg border border-gray-600 hover:border-yellow-400 transition-colors bubble-hover"
+              className="inline-flex items-center justify-center w-12 h-12 rounded-lg border border-gray-600 hover:border-yellow-500 text-gray-400 hover:text-yellow-500 transition-colors bubble-hover"
               aria-label="Instagram"
             >
-              <Instagram className="w-6 h-6 text-yellow-400" />
+              <Instagram className="w-6 h-6" />
             </a>
             <a
               href="https://wa.me/447857484127"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center w-12 h-12 rounded-lg border border-gray-600 hover:border-yellow-400 transition-colors bubble-hover"
+              className="inline-flex items-center justify-center w-12 h-12 rounded-lg border border-gray-600 hover:border-yellow-500 text-gray-400 hover:text-yellow-500 transition-colors bubble-hover"
               aria-label="WhatsApp"
             >
-              <MessageCircle className="w-6 h-6 text-yellow-400" />
+              <MessageCircle className="w-6 h-6" />
             </a>
           </div>
         </div>

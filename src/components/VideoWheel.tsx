@@ -67,13 +67,21 @@ export default function VideoWheel() {
   }
 
   useEffect(() => {
-    if (!scrollContainer.current) return
+    if (isPaused || !scrollContainer.current) return
 
-    if (isPaused) {
-      scrollContainer.current.style.animationPlayState = 'paused'
-    } else {
-      scrollContainer.current.style.animationPlayState = 'running'
+    const container = scrollContainer.current
+    let scrollPos = 0
+
+    const autoScroll = () => {
+      scrollPos += 2
+      if (scrollPos > container.scrollWidth - container.clientWidth) {
+        scrollPos = 0
+      }
+      container.scrollLeft = scrollPos
     }
+
+    const interval = setInterval(autoScroll, 30)
+    return () => clearInterval(interval)
   }, [isPaused])
 
   const handleLightboxNav = (direction: 'prev' | 'next') => {
@@ -96,16 +104,15 @@ export default function VideoWheel() {
           <ChevronLeft size={32} />
         </button>
 
-        {/* Outer scroll container with overflow-x-auto */}
-        <div className="w-full px-16 overflow-x-auto py-8">
+        {/* Outer scroll container with overflow-x-scroll */}
+        <div className="w-full px-16 overflow-x-scroll py-8">
           {/* Inner scroll container without overflow clipping */}
           <div
             ref={scrollContainer}
             className="flex gap-4 scroll-smooth video-wheel-scroll"
-            onScroll={checkScroll}
             onMouseEnter={() => setIsPaused(true)}
             onMouseLeave={() => setIsPaused(false)}
-            style={{ scrollBehavior: 'smooth' }}
+            style={{ scrollBehavior: 'auto' }}
           >
             {[...videoItems, ...videoItems].map((item, index) => (
               <div key={`${item.id}-${index}`} className="flex-shrink-0 w-64 overflow-visible">

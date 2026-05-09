@@ -38,18 +38,18 @@ function Contact() {
 
   if (submitted) {
     return (
-      <div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: '#2d2d2d' }}>
+      <div className="min-h-screen flex items-center justify-center bg-white">
         <div className="text-center max-w-md mx-auto px-4">
-          <div className="w-16 h-16 bg-yellow-400/10 border border-yellow-400/30 rounded-full flex items-center justify-center mx-auto mb-4">
-            <Mail className="w-8 h-8 text-yellow-400" />
+          <div className="w-16 h-16 bg-yellow-500/10 border border-yellow-500/30 rounded-full flex items-center justify-center mx-auto mb-4">
+            <Mail className="w-8 h-8 text-yellow-500" />
           </div>
-          <h2 className="text-2xl font-bold text-white mb-2">Message Sent!</h2>
-          <p className="text-gray-200 mb-6">
+          <h2 className="text-2xl font-bold text-gray-900 mb-2">Message Sent!</h2>
+          <p className="text-gray-700 mb-6">
             Thanks for reaching out. I'll get back to you as soon as possible.
           </p>
           <button
             onClick={() => setSubmitted(false)}
-            className="px-6 py-2 bg-yellow-400 hover:bg-yellow-300 text-gray-950 font-semibold rounded-lg transition-colors"
+            className="px-6 py-2 bg-yellow-500 hover:bg-yellow-400 text-gray-950 font-semibold rounded-lg transition-colors"
           >
             Send Another Message
           </button>
@@ -59,11 +59,11 @@ function Contact() {
   }
 
   return (
-    <div className="min-h-screen text-white" style={{ backgroundColor: '#2d2d2d' }}>
+    <div className="min-h-screen bg-white text-gray-900">
       <div className="max-w-5xl mx-auto px-4 py-16">
         <div className="mb-12">
           <h1 className="text-4xl md:text-5xl font-extrabold mb-3">Get In Touch</h1>
-          <p className="text-gray-200 text-lg max-w-xl">
+          <p className="text-gray-600 text-lg max-w-xl">
             Looking for a sound recordist for your next production? Let's talk.
           </p>
         </div>
@@ -72,24 +72,24 @@ function Contact() {
           {/* Contact details */}
           <div className="lg:col-span-2 space-y-6">
             <div>
-              <h2 className="text-xl font-semibold mb-4 text-yellow-300">Contact Details</h2>
+              <h2 className="text-xl font-semibold mb-4 text-gray-900">Contact Details</h2>
               <div className="space-y-4">
                 {contactDetails.map((item) => (
                   <div key={item.label} className="flex items-start gap-3">
-                    <div className="w-9 h-9 rounded-lg bg-gray-800 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <item.icon size={16} className="text-yellow-400" />
+                    <div className="w-9 h-9 rounded-lg bg-transparent border border-gray-300 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <item.icon size={16} className="text-yellow-500" />
                     </div>
                     <div>
                       <p className="text-xs text-gray-500 uppercase tracking-wider mb-0.5">{item.label}</p>
-                      {item.href ? (
+                    {item.href ? (
                         <a
                           href={item.href}
-                          className="text-white hover:text-yellow-300 transition-colors font-medium"
+                          className="text-gray-900 hover:text-yellow-500 transition-colors font-medium"
                         >
                           {item.value}
                         </a>
                       ) : (
-                        <p className="text-white font-medium">{item.value}</p>
+                        <p className="text-gray-900 font-medium">{item.value}</p>
                       )}
                     </div>
                   </div>
@@ -98,13 +98,13 @@ function Contact() {
             </div>
 
             {/* Direct email CTA */}
-            <div className="p-5 rounded-2xl bg-yellow-400/10 border border-yellow-400/30">
-              <p className="text-sm text-gray-200 mb-3">
+            <div className="p-5 rounded-2xl bg-yellow-500/10 border border-yellow-500/30">
+              <p className="text-sm text-gray-700 mb-3">
                 Prefer to email directly? Use the button below.
               </p>
               <a
                 href="mailto:tomsammorrismusic@gmail.com?subject=Audio%20Production%20Inquiry"
-                className="inline-flex items-center gap-2 px-5 py-2.5 bg-yellow-400 hover:bg-yellow-300 text-gray-950 font-bold rounded-lg transition-colors text-sm w-full justify-center"
+                className="inline-flex items-center gap-2 px-5 py-2.5 bg-yellow-500 hover:bg-yellow-400 text-gray-950 font-bold rounded-lg transition-colors text-sm w-full justify-center"
               >
                 <Mail size={16} />
                 Email Me
@@ -142,7 +142,7 @@ function Contact() {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-200 mb-1.5">
+                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1.5">
                     Name
                   </label>
                   <input
@@ -150,12 +150,12 @@ function Contact() {
                     id="name"
                     name="name"
                     required
-                    className="w-full px-4 py-2.5 bg-gray-800 border border-gray-600 rounded-lg text-white placeholder-gray-500 focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400 outline-none transition-colors"
+                    className="w-full px-4 py-2.5 bg-transparent border border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500 outline-none transition-colors"
                     placeholder="Your name"
                   />
                 </div>
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-200 mb-1.5">
+                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1.5">
                     Email
                   </label>
                   <input
@@ -163,20 +163,20 @@ function Contact() {
                     id="email"
                     name="email"
                     required
-                    className="w-full px-4 py-2.5 bg-gray-800 border border-gray-600 rounded-lg text-white placeholder-gray-500 focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400 outline-none transition-colors"
+                    className="w-full px-4 py-2.5 bg-transparent border border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500 outline-none transition-colors"
                     placeholder="your@email.com"
                   />
                 </div>
               </div>
 
               <div>
-                <label htmlFor="production" className="block text-sm font-medium text-gray-200 mb-1.5">
+                <label htmlFor="production" className="block text-sm font-medium text-gray-700 mb-1.5">
                   Production Type
                 </label>
                 <select
                   id="production"
                   name="production"
-                  className="w-full px-4 py-2.5 bg-gray-800 border border-gray-600 rounded-lg text-white focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400 outline-none transition-colors"
+                  className="w-full px-4 py-2.5 bg-transparent border border-gray-300 rounded-lg text-gray-900 focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500 outline-none transition-colors"
                 >
                   <option value="">Select a type…</option>
                   <option value="film">Feature Film</option>
@@ -190,7 +190,7 @@ function Contact() {
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-200 mb-1.5">
+                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1.5">
                   Message
                 </label>
                 <textarea
@@ -198,14 +198,14 @@ function Contact() {
                   name="message"
                   required
                   rows={5}
-                  className="w-full px-4 py-2.5 bg-gray-800 border border-gray-600 rounded-lg text-white placeholder-gray-500 focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400 outline-none transition-colors resize-none"
+                  className="w-full px-4 py-2.5 bg-transparent border border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500 outline-none transition-colors resize-none"
                   placeholder="Tell me about your project — dates, location, and what you need…"
                 />
               </div>
 
               <button
                 type="submit"
-                className="inline-flex items-center gap-2 px-7 py-3 bg-yellow-400 hover:bg-yellow-300 text-gray-950 rounded-xl font-bold transition-colors"
+                className="inline-flex items-center gap-2 px-7 py-3 bg-yellow-500 hover:bg-yellow-400 text-gray-950 rounded-xl font-bold transition-colors"
               >
                 <Send size={16} />
                 Send Message
@@ -216,25 +216,25 @@ function Contact() {
 
         {/* Social media links */}
         <div className="mt-16 text-center">
-          <h3 className="text-lg font-semibold mb-6 text-gray-200">Or connect on social media</h3>
+          <h3 className="text-lg font-semibold mb-6 text-gray-700">Or connect on social media</h3>
           <div className="flex justify-center gap-4">
             <a
               href="https://www.instagram.com/tom_morris2810/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center w-12 h-12 rounded-lg border border-gray-600 hover:border-yellow-400 transition-colors bubble-hover"
+              className="inline-flex items-center justify-center w-12 h-12 rounded-lg border border-gray-600 hover:border-yellow-500 text-gray-400 hover:text-yellow-500 transition-colors bubble-hover"
               aria-label="Instagram"
             >
-              <Instagram className="w-6 h-6 text-yellow-400" />
+              <Instagram className="w-6 h-6" />
             </a>
             <a
               href="https://wa.me/447857484127"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center w-12 h-12 rounded-lg border border-gray-600 hover:border-yellow-400 transition-colors bubble-hover"
+              className="inline-flex items-center justify-center w-12 h-12 rounded-lg border border-gray-600 hover:border-yellow-500 text-gray-400 hover:text-yellow-500 transition-colors bubble-hover"
               aria-label="WhatsApp"
             >
-              <MessageCircle className="w-6 h-6 text-yellow-400" />
+              <MessageCircle className="w-6 h-6" />
             </a>
           </div>
         </div>

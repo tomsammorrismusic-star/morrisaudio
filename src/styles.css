@@ -162,3 +162,26 @@ code {
 .bubble-hover:hover {
   animation: bubble-expand 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
 }
+
+/* Scrollbar styling */
+.video-wheel-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: #eab308 #f5f5f5;
+}
+
+.video-wheel-scroll::-webkit-scrollbar {
+  height: 8px;
+}
+
+.video-wheel-scroll::-webkit-scrollbar-track {
+  background: #f5f5f5;
+}
+
+.video-wheel-scroll::-webkit-scrollbar-thumb {
+  background: #eab308;
+  border-radius: 4px;
+}
+
+.video-wheel-scroll::-webkit-scrollbar-thumb:hover {
+  background: #facc15;
+}
