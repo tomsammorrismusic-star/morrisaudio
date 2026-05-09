@@ -13,7 +13,7 @@ const videoItems: VideoItem[] = [
   { id: '1', title: 'Feature Film Location Sound', category: 'Film', youtubeId: '' },
   { id: '2', title: 'Documentary — Wildlife Series', category: 'Documentary', youtubeId: '' },
   { id: '3', title: 'TV Commercial — Automotive', category: 'Commercial', youtubeId: '' },
-  { id: '4', title: 'Short Film — Drama', category: 'Drama', youtubeId: '' },
+  { id: '4', title: 'Short Film — Drama', category: 'Drama', youtubeId: 'iFlZqFyTiso' },
   { id: '5', title: 'Corporate Interview Package', category: 'Corporate', youtubeId: '' },
   { id: '6', title: 'Music Video — Live Recording', category: 'Music', youtubeId: '' },
   { id: '7', title: 'ENG News — Field Recording', category: 'News', youtubeId: '' },
@@ -138,9 +138,22 @@ export default function VideoWheel() {
 
             {/* Lightbox content */}
             <div className={`w-full h-96 rounded-t-xl bg-gradient-to-br ${CATEGORY_COLORS[selectedItem.category] ?? 'from-gray-300 to-gray-200'} flex flex-col items-center justify-center gap-4 relative overflow-hidden`}>
-              <div className="w-20 h-20 rounded-full bg-white/20 flex items-center justify-center">
-                <Play className="w-8 h-8 text-white fill-white ml-1" />
-              </div>
+              {selectedItem.youtubeId ? (
+                <iframe
+                  width="100%"
+                  height="100%"
+                  src={`https://www.youtube.com/embed/${selectedItem.youtubeId}`}
+                  title={selectedItem.title}
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="rounded-t-xl"
+                />
+              ) : (
+                <div className="w-20 h-20 rounded-full bg-white/20 flex items-center justify-center">
+                  <Play className="w-8 h-8 text-white fill-white ml-1" />
+                </div>
+              )}
             </div>
 
             {/* Content section */}
