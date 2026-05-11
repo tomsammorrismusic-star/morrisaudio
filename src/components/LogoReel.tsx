@@ -10,7 +10,7 @@ interface LogoItem {
 
 const logos: LogoItem[] = [
   { id: '1', name: 'Google', logo: 'https://cdn.builder.io/api/v1/image/assets%2F1a8d84947e9444f98df7c975eda41851%2Fc9df219b912547e183a428606a5457c7', isImage: true },
-  { id: '2', name: 'EE', logo: '🟡' },
+  { id: '2', name: 'EE', logo: 'https://cdn.builder.io/api/v1/image/assets%2F1a8d84947e9444f98df7c975eda41851%2Fc48271bcac514f62a44ec3bfb21dcae2', isImage: true },
   { id: '3', name: 'Manchester United', logo: 'https://cdn.builder.io/api/v1/image/assets%2F1a8d84947e9444f98df7c975eda41851%2F5a2c905ae39d4e0685007a989717d45b', isImage: true },
   { id: '4', name: 'Newcastle United', logo: 'https://cdn.builder.io/api/v1/image/assets%2F1a8d84947e9444f98df7c975eda41851%2F07095ea69744465dbbd66041d74fd75e', isImage: true },
 ]
