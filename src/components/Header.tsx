@@ -23,7 +23,7 @@ export default function Header() {
   }, [])
 
   return (
-    <header className="sticky top-0 z-50 bg-emerald-950/80 backdrop-blur-md border-b border-emerald-700 transition-all duration-300">
+    <header className="sticky top-0 z-50 bg-brand/80 backdrop-blur-md border-b border-emerald-700 transition-all duration-300">
       <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between rounded-b-2xl">
         <Link to="/" className="flex items-center gap-3 font-bold text-2xl md:text-3xl text-white hover:text-emerald-700 transition-colors tracking-tight">
           <Mic className="w-7 h-7 md:w-8 md:h-8 text-emerald-700" />
@@ -83,7 +83,7 @@ export default function Header() {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <nav className="md:hidden border-t border-emerald-800 bg-emerald-950 px-3 py-2 flex flex-col gap-2 max-h-[calc(100vh-64px)] overflow-y-auto">
+        <nav className="md:hidden border-t border-emerald-800 bg-brand px-3 py-2 flex flex-col gap-2 max-h-[calc(100vh-64px)] overflow-y-auto">
           <div className="flex gap-1.5 flex-wrap">
             {navLinks.map((link) => (
               <Link
