@@ -128,8 +128,8 @@ export default function VideoWheel() {
                   className="w-full h-56 rounded-xl bg-gradient-to-br from-gray-300 to-gray-200 border border-emerald-700 flex flex-col items-center justify-center gap-3 cursor-pointer hover:border-emerald-700/50 transition-colors shadow-xl group bubble-hover"
                 >
                   <div className={`w-full h-full rounded-xl bg-gradient-to-br ${CATEGORY_COLORS[item.category] ?? 'from-gray-300 to-gray-200'} border border-emerald-700 flex flex-col items-center justify-center gap-3 cursor-pointer hover:border-emerald-700/50 transition-colors shadow-xl relative overflow-hidden`}>
-                    <div className="absolute inset-0 bg-emerald-900/0 group-hover:bg-emerald-900/10 transition-all duration-200" />
-                    <div className="w-14 h-14 rounded-full bg-emerald-900/10 flex items-center justify-center relative z-10 group-hover:bg-emerald-900/20 transition-all">
+                    <div className="absolute inset-0 bg-emerald-950/0 group-hover:bg-emerald-950/10 transition-all duration-200" />
+                    <div className="w-14 h-14 rounded-full bg-emerald-950/10 flex items-center justify-center relative z-10 group-hover:bg-emerald-950/20 transition-all">
                       <Play className="w-6 h-6 text-white fill-white ml-1" />
                     </div>
                   </div>
@@ -148,7 +148,7 @@ export default function VideoWheel() {
           onClick={() => setSelectedItem(null)}
         >
           <div
-            className="relative bg-emerald-900 rounded-xl border border-emerald-700 shadow-2xl max-w-2xl w-full"
+            className="relative bg-emerald-950 rounded-xl border border-emerald-700 shadow-2xl max-w-2xl w-full"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Close button */}
@@ -162,13 +162,13 @@ export default function VideoWheel() {
 
             {/* Lightbox content */}
             <div className={`w-full h-96 rounded-t-xl bg-gradient-to-br ${CATEGORY_COLORS[selectedItem.category] ?? 'from-gray-300 to-gray-200'} flex flex-col items-center justify-center gap-4 relative overflow-hidden`}>
-              <div className="w-20 h-20 rounded-full bg-emerald-900/20 flex items-center justify-center">
+              <div className="w-20 h-20 rounded-full bg-emerald-950/20 flex items-center justify-center">
                 <Play className="w-8 h-8 text-white fill-white ml-1" />
               </div>
             </div>
 
             {/* Content section */}
-            <div className="p-8 bg-emerald-900">
+            <div className="p-8 bg-emerald-950">
               <h3 className="text-3xl font-bold mb-2 text-white">{selectedItem.title}</h3>
               <p className="text-emerald-700 uppercase text-sm tracking-wider font-semibold mb-4">{selectedItem.category}</p>
               <p className="text-gray-100 mb-6 leading-relaxed">

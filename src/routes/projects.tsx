@@ -10,7 +10,7 @@ export const Route = createFileRoute('/projects')({
 
 function Projects() {
   return (
-    <div className="min-h-screen bg-emerald-900 text-white">
+    <div className="min-h-screen bg-emerald-950 text-white">
       <div className="max-w-4xl mx-auto px-4 py-16">
         <h1 className="text-4xl md:text-5xl font-extrabold mb-3">Notable Productions</h1>
         <p className="text-gray-200 mb-10 text-lg">

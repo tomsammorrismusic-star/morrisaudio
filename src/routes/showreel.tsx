@@ -8,7 +8,7 @@ export const Route = createFileRoute('/showreel')({
 
 function Showreel() {
   return (
-    <div className="min-h-screen bg-emerald-900 text-white">
+    <div className="min-h-screen bg-emerald-950 text-white">
       <div className="max-w-6xl mx-auto px-4 py-16">
         <h1 className="text-4xl md:text-5xl font-extrabold mb-3">Showreel</h1>
         <p className="text-gray-300 mb-10 text-lg">

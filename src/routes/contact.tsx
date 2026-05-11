@@ -38,7 +38,7 @@ function Contact() {
 
   if (submitted) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-emerald-900">
+      <div className="min-h-screen flex items-center justify-center bg-emerald-950">
         <div className="text-center max-w-md mx-auto px-4">
           <div className="w-16 h-16 bg-emerald-700/10 border border-emerald-700/30 rounded-full flex items-center justify-center mx-auto mb-4">
             <Mail className="w-8 h-8 text-emerald-700" />
@@ -59,7 +59,7 @@ function Contact() {
   }
 
   return (
-    <div className="min-h-screen bg-emerald-900 text-white">
+    <div className="min-h-screen bg-emerald-950 text-white">
       <div className="max-w-5xl mx-auto px-4 py-16">
         <div className="mb-12">
           <h1 className="text-4xl md:text-5xl font-extrabold mb-3">Get In Touch</h1>

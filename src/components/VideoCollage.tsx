@@ -63,7 +63,7 @@ export default function VideoCollage() {
                 }}
               >
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300" />
-                <div className="w-12 h-12 rounded-full bg-emerald-900/20 flex items-center justify-center relative z-10 group-hover:bg-emerald-700/40 transition-all group-hover:scale-125">
+                <div className="w-12 h-12 rounded-full bg-emerald-950/20 flex items-center justify-center relative z-10 group-hover:bg-emerald-700/40 transition-all group-hover:scale-125">
                   <Play className="w-6 h-6 text-white fill-white ml-1" />
                 </div>
                 <div className="text-center px-2 relative z-10 bottom-2 group-hover:bottom-0 transition-all duration-300">
@@ -94,7 +94,7 @@ export default function VideoCollage() {
             className={`relative bg-gradient-to-br ${CATEGORY_COLORS[selectedItem.category]} rounded-3xl border-4 border-emerald-600 w-full max-w-5xl aspect-video flex flex-col items-center justify-center gap-8 shadow-2xl bubble-hover`}
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="w-40 h-40 rounded-full bg-emerald-900/20 flex items-center justify-center animate-pulse">
+            <div className="w-40 h-40 rounded-full bg-emerald-950/20 flex items-center justify-center animate-pulse">
               <Play className="w-20 h-20 text-white fill-white ml-3" />
             </div>
             <div className="text-center px-12">

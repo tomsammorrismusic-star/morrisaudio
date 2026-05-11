@@ -80,7 +80,7 @@ export default function FeaturedWorkReel() {
               onMouseEnter={() => setIsPaused(true)}
               onMouseLeave={() => setIsPaused(false)}
             >
-              <div className="w-12 h-12 rounded-full bg-emerald-900/20 flex items-center justify-center group-hover:bg-emerald-900/30 transition-all duration-300">
+              <div className="w-12 h-12 rounded-full bg-emerald-950/20 flex items-center justify-center group-hover:bg-emerald-950/30 transition-all duration-300">
                 <Play className="w-5 h-5 text-white fill-white ml-0.5" />
               </div>
               <div className="text-center px-3">
