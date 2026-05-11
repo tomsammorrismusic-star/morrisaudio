@@ -75,12 +75,16 @@ function Showreel() {
             </div>
           </div>
 
-          {/* 2x2 grid of smaller videos */}
+          {/* Grid of smaller videos */}
           {[
             { id: 'VIDEO_ID_2', title: 'Documentary Series' },
             { id: 'VIDEO_ID_3', title: 'Commercial - Automotive' },
             { id: 'VIDEO_ID_4', title: 'Corporate Interview' },
             { id: 'VIDEO_ID_5', title: 'TV Drama Series' },
+            { id: 'VIDEO_ID_6', title: 'Music Video Production' },
+            { id: 'VIDEO_ID_7', title: 'Podcast Recording' },
+            { id: 'VIDEO_ID_8', title: 'Commercial - Tech' },
+            { id: 'VIDEO_ID_9', title: 'Short Film' },
           ].map((video, idx) => (
             <div
               key={idx}
@@ -102,8 +106,8 @@ function Showreel() {
             </div>
           ))}
         </div>
-        <p className="text-gray-400 mt-6 text-sm text-center">
-          Replace VIDEO_ID_1, VIDEO_ID_2, etc. with your actual YouTube video IDs
+        <p className="text-gray-400 mt-8 text-sm text-center max-w-2xl mx-auto">
+          Replace VIDEO_ID_1 through VIDEO_ID_9 with your actual YouTube video IDs. Each video card shows a project title on hover and includes a responsive masonry layout that adapts beautifully across all devices.
         </p>
       </div>
 
