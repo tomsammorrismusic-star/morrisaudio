@@ -1,11 +1,25 @@
 import { createFileRoute } from '@tanstack/react-router'
-import { Music, Instagram, MessageCircle } from 'lucide-react'
+import { Music, Instagram, MessageCircle, ChevronDown } from 'lucide-react'
+import { useState } from 'react'
 
 export const Route = createFileRoute('/showreel')({
   component: Showreel,
 })
 
 function Showreel() {
+  const [expandMoreWork, setExpandMoreWork] = useState(false)
+
+  const moreWorkVideos = [
+    { id: 'VIDEO_ID_2', title: 'Documentary Series' },
+    { id: 'VIDEO_ID_3', title: 'Commercial - Automotive' },
+    { id: 'VIDEO_ID_4', title: 'Corporate Interview' },
+    { id: 'VIDEO_ID_5', title: 'TV Drama Series' },
+    { id: 'VIDEO_ID_6', title: 'Music Video' },
+    { id: 'VIDEO_ID_7', title: 'Podcast Recording' },
+  ]
+
+  const displayedVideos = expandMoreWork ? moreWorkVideos : moreWorkVideos.slice(0, 3)
+
   return (
     <div className="min-h-screen bg-brand text-white">
       <div className="max-w-6xl mx-auto px-4 py-16">
@@ -78,17 +92,10 @@ function Showreel() {
             <p className="text-gray-300 mt-3">Featured Project</p>
           </div>
 
-          {/* Sidebar with video list */}
+          {/* Sidebar with collapsible video list */}
           <div className="flex flex-col gap-4">
             <p className="text-sm text-gray-400 uppercase tracking-wider font-semibold">More Work</p>
-            {[
-              { id: 'VIDEO_ID_2', title: 'Documentary Series' },
-              { id: 'VIDEO_ID_3', title: 'Commercial - Automotive' },
-              { id: 'VIDEO_ID_4', title: 'Corporate Interview' },
-              { id: 'VIDEO_ID_5', title: 'TV Drama Series' },
-              { id: 'VIDEO_ID_6', title: 'Music Video' },
-              { id: 'VIDEO_ID_7', title: 'Podcast Recording' },
-            ].map((video, idx) => (
+            {displayedVideos.map((video, idx) => (
               <div
                 key={idx}
                 className="rounded-lg overflow-hidden bg-black aspect-video flex items-center justify-center group cursor-pointer bubble-hover hover:ring-2 hover:ring-emerald-700 transition-all"
@@ -108,6 +115,24 @@ function Showreel() {
                 </div>
               </div>
             ))}
+            {!expandMoreWork && moreWorkVideos.length > 3 && (
+              <button
+                onClick={() => setExpandMoreWork(true)}
+                className="flex items-center justify-center gap-2 px-4 py-3 border border-emerald-700 text-emerald-700 hover:bg-emerald-700/10 rounded-lg transition-colors font-semibold text-sm"
+              >
+                <span>View {moreWorkVideos.length - 3} More Videos</span>
+                <ChevronDown className="w-4 h-4" />
+              </button>
+            )}
+            {expandMoreWork && (
+              <button
+                onClick={() => setExpandMoreWork(false)}
+                className="flex items-center justify-center gap-2 px-4 py-3 border border-emerald-700 text-emerald-700 hover:bg-emerald-700/10 rounded-lg transition-colors font-semibold text-sm"
+              >
+                <span>Show Less</span>
+                <ChevronDown className="w-4 h-4 rotate-180" />
+              </button>
+            )}
           </div>
         </div>
         <p className="text-gray-400 mt-8 text-sm text-center max-w-2xl mx-auto">
