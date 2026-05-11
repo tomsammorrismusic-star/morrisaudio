@@ -33,7 +33,6 @@ function Home() {
     <div className="bg-brand text-white">
       {/* Hero */}
       <section className="relative min-h-[80vh] flex flex-col items-center justify-center text-center px-4 py-20">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(5,150,105,0.03)_0%,_transparent_70%)] pointer-events-none" />
         <div className="relative z-10 w-full max-w-4xl mx-auto space-y-6">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-700/10 border border-emerald-700/30 text-emerald-700 text-sm font-medium">
             <Mic size={14} />
