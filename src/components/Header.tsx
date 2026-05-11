@@ -23,7 +23,7 @@ export default function Header() {
   }, [])
 
   return (
-    <header className="sticky top-0 z-50 bg-brand/80 backdrop-blur-md transition-all duration-300">
+    <header className={`sticky top-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-brand/80 backdrop-blur-md' : 'bg-transparent'}`}>
       <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between rounded-b-2xl">
         <Link to="/" className="flex items-center gap-3 font-bold text-2xl md:text-3xl text-white hover:text-emerald-700 transition-colors tracking-tight">
           <Mic className="w-7 h-7 md:w-8 md:h-8 text-emerald-700" />
