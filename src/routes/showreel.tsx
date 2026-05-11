@@ -1,6 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { Music, Instagram, MessageCircle } from 'lucide-react'
-import VideoCollage from '@/components/VideoCollage'
 
 export const Route = createFileRoute('/showreel')({
   component: Showreel,
@@ -36,11 +35,6 @@ function Showreel() {
             />
           </div>
         </div>
-      </div>
-
-      <div className="max-w-6xl mx-auto px-4 py-12">
-        <h2 className="text-3xl font-bold mb-8 text-white">Portfolio</h2>
-        <VideoCollage />
       </div>
 
       <div className="max-w-6xl mx-auto px-4 py-16">
