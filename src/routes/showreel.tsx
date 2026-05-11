@@ -70,6 +70,26 @@ function Showreel() {
       </div>
 
       <div className="max-w-6xl mx-auto px-4 py-12">
+        <h2 className="text-3xl font-bold mb-8 text-white">Audio Example</h2>
+        <div className="max-w-2xl mx-auto bg-emerald-800 rounded-lg p-8 border border-emerald-700">
+          <h3 className="text-xl font-semibold text-white mb-6">Production Sample</h3>
+          <audio
+            controls
+            className="w-full rounded-lg"
+            style={{
+              colorScheme: 'dark',
+            }}
+          >
+            <source src="https://example.com/audio.mp3" type="audio/mpeg" />
+            Your browser does not support the audio element.
+          </audio>
+          <p className="text-gray-300 mt-4 text-sm">
+            Replace the audio URL with your actual audio file (mp3, wav, etc.)
+          </p>
+        </div>
+      </div>
+
+      <div className="max-w-6xl mx-auto px-4 py-12">
         <h2 className="text-3xl font-bold mb-8 text-white">Portfolio</h2>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* Large featured video on left */}
@@ -140,26 +160,6 @@ function Showreel() {
         <p className="text-gray-400 mt-8 text-sm text-center max-w-2xl mx-auto">
           Replace VIDEO_ID_1 through VIDEO_ID_7 with your actual YouTube video IDs. The featured project takes the main focus while additional work appears in a organized sidebar.
         </p>
-      </div>
-
-      <div className="max-w-6xl mx-auto px-4 py-12">
-        <h2 className="text-3xl font-bold mb-8 text-white">Audio Example</h2>
-        <div className="max-w-2xl mx-auto bg-emerald-800 rounded-lg p-8 border border-emerald-700">
-          <h3 className="text-xl font-semibold text-white mb-6">Production Sample</h3>
-          <audio
-            controls
-            className="w-full rounded-lg"
-            style={{
-              colorScheme: 'dark',
-            }}
-          >
-            <source src="https://example.com/audio.mp3" type="audio/mpeg" />
-            Your browser does not support the audio element.
-          </audio>
-          <p className="text-gray-300 mt-4 text-sm">
-            Replace the audio URL with your actual audio file (mp3, wav, etc.)
-          </p>
-        </div>
       </div>
 
       <div className="max-w-6xl mx-auto px-4 py-16">
