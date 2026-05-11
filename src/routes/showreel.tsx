@@ -143,35 +143,23 @@ function Showreel() {
       </div>
 
       <div className="max-w-6xl mx-auto px-4 py-12">
-        <h2 className="text-3xl font-bold mb-8 text-white">Audio Examples</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {[
-            { title: 'Location Sound Recording', url: 'https://example.com/audio1.mp3' },
-            { title: 'Voice Over - Narration', url: 'https://example.com/audio2.mp3' },
-            { title: 'Podcast Production', url: 'https://example.com/audio3.mp3' },
-            { title: 'Commercial Audio', url: 'https://example.com/audio4.mp3' },
-          ].map((audio, idx) => (
-            <div
-              key={idx}
-              className="bg-emerald-800 rounded-lg p-6 border border-emerald-700 hover:border-emerald-500 transition-colors"
-            >
-              <h3 className="text-lg font-semibold text-white mb-4">{audio.title}</h3>
-              <audio
-                controls
-                className="w-full rounded-lg"
-                style={{
-                  colorScheme: 'dark',
-                }}
-              >
-                <source src={audio.url} type="audio/mpeg" />
-                Your browser does not support the audio element.
-              </audio>
-            </div>
-          ))}
+        <h2 className="text-3xl font-bold mb-8 text-white">Audio Example</h2>
+        <div className="max-w-2xl mx-auto bg-emerald-800 rounded-lg p-8 border border-emerald-700">
+          <h3 className="text-xl font-semibold text-white mb-6">Production Sample</h3>
+          <audio
+            controls
+            className="w-full rounded-lg"
+            style={{
+              colorScheme: 'dark',
+            }}
+          >
+            <source src="https://example.com/audio.mp3" type="audio/mpeg" />
+            Your browser does not support the audio element.
+          </audio>
+          <p className="text-gray-300 mt-4 text-sm">
+            Replace the audio URL with your actual audio file (mp3, wav, etc.)
+          </p>
         </div>
-        <p className="text-gray-400 mt-6 text-sm text-center">
-          Replace the audio URLs with your actual audio file URLs (mp3, wav, etc.)
-        </p>
       </div>
 
       <div className="max-w-6xl mx-auto px-4 py-16">
