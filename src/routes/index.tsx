@@ -78,10 +78,10 @@ function Home() {
       </section>
 
       {/* Stats */}
-      <section className="border-y border-emerald-800 py-10 lg:py-16">
+      <section className="border-y border-gray-300 py-10 lg:py-16">
         <div className="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row gap-6 justify-center items-center flex-wrap">
           {stats.map((s) => (
-            <div key={s.label} className="flex flex-col items-center justify-center px-6 py-4 rounded-xl border border-emerald-700 bg-emerald-800 hover:border-emerald-700/50 transition-colors bubble-hover">
+            <div key={s.label} className="flex flex-col items-center justify-center px-6 py-4 rounded-xl border border-gray-300 bg-gray-50 hover:border-emerald-700/50 transition-colors bubble-hover">
               <p className="text-4xl font-extrabold text-emerald-700">{s.value}</p>
               <p className="text-gray-300 text-sm mt-2 whitespace-nowrap">{s.label}</p>
             </div>
