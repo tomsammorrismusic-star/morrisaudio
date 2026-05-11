@@ -37,6 +37,24 @@ function Showreel() {
         </div>
       </div>
 
+      <div className="max-w-6xl mx-auto px-4 py-12">
+        <h2 className="text-3xl font-bold mb-8 text-white">Highlight Reel</h2>
+        <div className="rounded-lg overflow-hidden bg-black aspect-video flex items-center justify-center">
+          <iframe
+            src="https://www.youtube.com/embed/PASTE_YOUR_VIDEO_ID_HERE"
+            width="100%"
+            height="100%"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            className="w-full h-full"
+          />
+        </div>
+        <p className="text-gray-300 mt-4 text-center text-sm">
+          Replace PASTE_YOUR_VIDEO_ID_HERE with your YouTube video ID in the src attribute
+        </p>
+      </div>
+
       <div className="max-w-6xl mx-auto px-4 py-16">
         <div className="bg-emerald-800 rounded-lg p-8 text-center border border-emerald-800">
           <h3 className="text-2xl font-bold mb-3 text-white">Ready to work together?</h3>
