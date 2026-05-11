@@ -78,10 +78,10 @@ function Home() {
       </section>
 
       {/* Stats */}
-      <section className="border-y border-emerald-800 py-10 lg:py-16">
+      <section className="border-y border-gray-300 py-10 lg:py-16">
         <div className="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row gap-6 justify-center items-center flex-wrap">
           {stats.map((s) => (
-            <div key={s.label} className="flex flex-col items-center justify-center px-6 py-4 rounded-xl border border-emerald-700 bg-emerald-800 hover:border-emerald-700/50 transition-colors bubble-hover">
+            <div key={s.label} className="flex flex-col items-center justify-center px-6 py-4 rounded-xl border border-gray-300 hover:border-emerald-700/50 transition-colors bubble-hover">
               <p className="text-4xl font-extrabold text-emerald-700">{s.value}</p>
               <p className="text-gray-300 text-sm mt-2 whitespace-nowrap">{s.label}</p>
             </div>
@@ -103,7 +103,7 @@ function Home() {
       </section>
 
       {/* Services */}
-      <section className="py-24 lg:py-32 px-4 border-t border-emerald-800">
+      <section className="py-24 lg:py-32 px-4 border-t border-gray-200">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-16">What I Do</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
@@ -122,7 +122,7 @@ function Home() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 lg:py-28 px-4 border-t border-emerald-800">
+      <section className="py-20 lg:py-28 px-4 border-t border-gray-200">
         <div className="max-w-3xl mx-auto text-center space-y-6">
           <Award className="w-12 h-12 lg:w-16 lg:h-16 text-emerald-700 mx-auto" />
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold">Ready to work together?</h2>
