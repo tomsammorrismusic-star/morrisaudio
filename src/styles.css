@@ -19,7 +19,7 @@ code {
 }
 
 :root {
-  --brand-bg: #0f5f50;
+  --brand-bg: #0a4a3f;
   --background: oklch(1 0 0);
   --foreground: oklch(0.141 0.005 285.823);
   --card: oklch(1 0 0);
@@ -140,7 +140,7 @@ code {
 
 @layer components {
   .bg-brand {
-    @apply bg-[#0f5f50];
+    @apply bg-[#0a4a3f];
   }
 }
 
