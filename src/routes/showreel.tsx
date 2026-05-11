@@ -57,42 +57,13 @@ function Showreel() {
 
       <div className="max-w-6xl mx-auto px-4 py-12">
         <h2 className="text-3xl font-bold mb-8 text-white">Portfolio</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-max">
-          {/* Large featured video - takes 2 rows */}
-          <div className="lg:col-span-2 lg:row-span-2 rounded-lg overflow-hidden bg-black aspect-video flex items-center justify-center group cursor-pointer">
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            <iframe
-              src="https://www.youtube.com/embed/VIDEO_ID_1"
-              width="100%"
-              height="100%"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              className="w-full h-full"
-            />
-            <div className="absolute bottom-4 left-4 right-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 relative z-10">
-              <p className="font-semibold text-lg">Feature Film - Location Sound</p>
-            </div>
-          </div>
-
-          {/* Grid of smaller videos */}
-          {[
-            { id: 'VIDEO_ID_2', title: 'Documentary Series' },
-            { id: 'VIDEO_ID_3', title: 'Commercial - Automotive' },
-            { id: 'VIDEO_ID_4', title: 'Corporate Interview' },
-            { id: 'VIDEO_ID_5', title: 'TV Drama Series' },
-            { id: 'VIDEO_ID_6', title: 'Music Video Production' },
-            { id: 'VIDEO_ID_7', title: 'Podcast Recording' },
-            { id: 'VIDEO_ID_8', title: 'Commercial - Tech' },
-            { id: 'VIDEO_ID_9', title: 'Short Film' },
-          ].map((video, idx) => (
-            <div
-              key={idx}
-              className="rounded-lg overflow-hidden bg-black aspect-square flex items-center justify-center group cursor-pointer bubble-hover"
-            >
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          {/* Large featured video on left */}
+          <div className="lg:col-span-2">
+            <div className="rounded-lg overflow-hidden bg-black aspect-video flex items-center justify-center group cursor-pointer">
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               <iframe
-                src={`https://www.youtube.com/embed/${video.id}`}
+                src="https://www.youtube.com/embed/VIDEO_ID_1"
                 width="100%"
                 height="100%"
                 frameBorder="0"
@@ -100,14 +71,47 @@ function Showreel() {
                 allowFullScreen
                 className="w-full h-full"
               />
-              <div className="absolute bottom-3 left-3 right-3 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 relative z-10">
-                <p className="font-semibold text-sm line-clamp-2">{video.title}</p>
+              <div className="absolute bottom-4 left-4 right-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 relative z-10">
+                <p className="font-semibold text-lg">Feature Film - Location Sound</p>
               </div>
             </div>
-          ))}
+            <p className="text-gray-300 mt-3">Featured Project</p>
+          </div>
+
+          {/* Sidebar with video list */}
+          <div className="flex flex-col gap-4">
+            <p className="text-sm text-gray-400 uppercase tracking-wider font-semibold">More Work</p>
+            {[
+              { id: 'VIDEO_ID_2', title: 'Documentary Series' },
+              { id: 'VIDEO_ID_3', title: 'Commercial - Automotive' },
+              { id: 'VIDEO_ID_4', title: 'Corporate Interview' },
+              { id: 'VIDEO_ID_5', title: 'TV Drama Series' },
+              { id: 'VIDEO_ID_6', title: 'Music Video' },
+              { id: 'VIDEO_ID_7', title: 'Podcast Recording' },
+            ].map((video, idx) => (
+              <div
+                key={idx}
+                className="rounded-lg overflow-hidden bg-black aspect-video flex items-center justify-center group cursor-pointer bubble-hover hover:ring-2 hover:ring-emerald-700 transition-all"
+              >
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <iframe
+                  src={`https://www.youtube.com/embed/${video.id}`}
+                  width="100%"
+                  height="100%"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="w-full h-full"
+                />
+                <div className="absolute bottom-2 left-2 right-2 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 relative z-10">
+                  <p className="font-semibold text-xs line-clamp-1">{video.title}</p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
         <p className="text-gray-400 mt-8 text-sm text-center max-w-2xl mx-auto">
-          Replace VIDEO_ID_1 through VIDEO_ID_9 with your actual YouTube video IDs. Each video card shows a project title on hover and includes a responsive masonry layout that adapts beautifully across all devices.
+          Replace VIDEO_ID_1 through VIDEO_ID_7 with your actual YouTube video IDs. The featured project takes the main focus while additional work appears in a organized sidebar.
         </p>
       </div>
 
