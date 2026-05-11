@@ -4,13 +4,15 @@ interface LogoItem {
   id: string
   name: string
   logo: string
+  isImage?: boolean
+  bg?: string
 }
 
 const logos: LogoItem[] = [
-  { id: '1', name: 'Google', logo: '🔵' },
-  { id: '2', name: 'EE', logo: '🟡' },
-  { id: '3', name: 'Manchester United', logo: '🔴' },
-  { id: '4', name: 'Newcastle United', logo: '⚫' },
+  { id: '1', name: 'Google', logo: 'https://cdn.builder.io/api/v1/image/assets%2F1a8d84947e9444f98df7c975eda41851%2Fc9df219b912547e183a428606a5457c7', isImage: true },
+  { id: '2', name: 'EE', logo: 'https://cdn.builder.io/api/v1/image/assets%2F1a8d84947e9444f98df7c975eda41851%2Fc48271bcac514f62a44ec3bfb21dcae2', isImage: true },
+  { id: '3', name: 'Manchester United', logo: 'https://cdn.builder.io/api/v1/image/assets%2F1a8d84947e9444f98df7c975eda41851%2F5a2c905ae39d4e0685007a989717d45b', isImage: true },
+  { id: '4', name: 'Newcastle United', logo: 'https://cdn.builder.io/api/v1/image/assets%2F1a8d84947e9444f98df7c975eda41851%2F07095ea69744465dbbd66041d74fd75e', isImage: true },
 ]
 
 export default function LogoReel() {
@@ -55,21 +57,25 @@ export default function LogoReel() {
         {[...logos, ...logos].map((item, index) => (
           <div
             key={`${item.id}-${index}`}
-            className="logo-item flex-shrink-0 flex items-center justify-center px-8 py-6 rounded-xl border border-gray-300 bg-gray-50 hover:border-yellow-500/50 hover:bg-gray-100 transition-all duration-300 min-w-max bubble-hover"
+            className="logo-item flex-shrink-0 flex items-center justify-center px-6 py-4 rounded-xl transition-all duration-300 min-w-max bubble-hover"
             onMouseEnter={() => setIsPaused(true)}
             onMouseLeave={() => setIsPaused(false)}
           >
             <div className="flex items-center gap-3">
-              <span className="text-4xl">{item.logo}</span>
-              <span className="text-lg font-semibold text-gray-700">{item.name}</span>
+              {item.isImage ? (
+                <img src={item.logo} alt={item.name} className="w-24 h-24 object-contain rounded-lg" />
+              ) : (
+                <span className="text-4xl">{item.logo}</span>
+              )}
+              <span className="text-2xl font-bold text-white">{item.name}</span>
             </div>
           </div>
         ))}
       </div>
 
       {/* Fade effect on edges */}
-      <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-white/50 to-transparent pointer-events-none" />
-      <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-white/50 to-transparent pointer-events-none" />
+      <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-[#053d33] to-transparent pointer-events-none" />
+      <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-[#053d33] to-transparent pointer-events-none" />
     </div>
   )
 }
