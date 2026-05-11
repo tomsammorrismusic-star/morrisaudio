@@ -5,12 +5,13 @@ interface LogoItem {
   name: string
   logo: string
   isImage?: boolean
+  bg?: string
 }
 
 const logos: LogoItem[] = [
   { id: '1', name: 'Google', logo: '🔵' },
   { id: '2', name: 'EE', logo: '🟡' },
-  { id: '3', name: 'Manchester United', logo: 'https://cdn.builder.io/api/v1/image/assets%2F1a8d84947e9444f98df7c975eda41851%2F76145d54e4b44499a95fbeb9f2149dfb', isImage: true },
+  { id: '3', name: 'Manchester United', logo: 'https://cdn.builder.io/api/v1/image/assets%2F1a8d84947e9444f98df7c975eda41851%2F76145d54e4b44499a95fbeb9f2149dfb', isImage: true, bg: 'transparent' },
   { id: '4', name: 'Newcastle United', logo: '⚫' },
 ]
 
@@ -62,7 +63,7 @@ export default function LogoReel() {
           >
             <div className="flex items-center gap-3">
               {item.isImage ? (
-                <img src={item.logo} alt={item.name} className="w-10 h-10 object-contain" style={{ mixBlendMode: 'screen' }} />
+                <img src={item.logo} alt={item.name} className="w-10 h-10 object-contain" style={{ background: item.bg || 'transparent' }} />
               ) : (
                 <span className="text-4xl">{item.logo}</span>
               )}
