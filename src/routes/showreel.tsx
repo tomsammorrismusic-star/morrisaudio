@@ -92,42 +92,44 @@ function Showreel() {
             <p className="text-gray-300 mt-3">Featured Project</p>
           </div>
 
-          {/* Sidebar with collapsible video list */}
-          <div className="flex flex-col gap-4">
-            <p className="text-sm text-gray-400 uppercase tracking-wider font-semibold">More Work</p>
-            {displayedVideos.map((video, idx) => (
-              <div
-                key={idx}
-                className="rounded-lg overflow-hidden bg-black aspect-video flex items-center justify-center group cursor-pointer bubble-hover hover:ring-2 hover:ring-emerald-700 transition-all"
-              >
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <iframe
-                  src={`https://www.youtube.com/embed/${video.id}`}
-                  width="100%"
-                  height="100%"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  className="w-full h-full"
-                />
-                <div className="absolute bottom-2 left-2 right-2 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 relative z-10">
-                  <p className="font-semibold text-xs line-clamp-1">{video.title}</p>
+          {/* Sidebar with collapsible video list - same height as featured video */}
+          <div className="flex flex-col h-full">
+            <p className="text-sm text-gray-400 uppercase tracking-wider font-semibold mb-2">More Work</p>
+            <div className="flex-1 flex flex-col gap-2 min-h-0">
+              {displayedVideos.map((video, idx) => (
+                <div
+                  key={idx}
+                  className="flex-1 min-h-0 rounded-lg overflow-hidden bg-black flex items-center justify-center group cursor-pointer bubble-hover hover:ring-2 hover:ring-emerald-700 transition-all"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <iframe
+                    src={`https://www.youtube.com/embed/${video.id}`}
+                    width="100%"
+                    height="100%"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="w-full h-full"
+                  />
+                  <div className="absolute bottom-2 left-2 right-2 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 relative z-10">
+                    <p className="font-semibold text-xs line-clamp-1">{video.title}</p>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
             {!expandMoreWork && moreWorkVideos.length > 3 && (
               <button
                 onClick={() => setExpandMoreWork(true)}
-                className="flex items-center justify-center gap-2 px-4 py-3 border border-emerald-700 text-emerald-700 hover:bg-emerald-700/10 rounded-lg transition-colors font-semibold text-sm"
+                className="flex items-center justify-center gap-2 px-4 py-3 border border-emerald-700 text-emerald-700 hover:bg-emerald-700/10 rounded-lg transition-colors font-semibold text-sm mt-2"
               >
-                <span>View {moreWorkVideos.length - 3} More Videos</span>
+                <span>View {moreWorkVideos.length - 3} More</span>
                 <ChevronDown className="w-4 h-4" />
               </button>
             )}
             {expandMoreWork && (
               <button
                 onClick={() => setExpandMoreWork(false)}
-                className="flex items-center justify-center gap-2 px-4 py-3 border border-emerald-700 text-emerald-700 hover:bg-emerald-700/10 rounded-lg transition-colors font-semibold text-sm"
+                className="flex items-center justify-center gap-2 px-4 py-3 border border-emerald-700 text-emerald-700 hover:bg-emerald-700/10 rounded-lg transition-colors font-semibold text-sm mt-2"
               >
                 <span>Show Less</span>
                 <ChevronDown className="w-4 h-4 rotate-180" />
