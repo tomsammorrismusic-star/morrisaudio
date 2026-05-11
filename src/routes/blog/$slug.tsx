@@ -16,7 +16,7 @@ function BlogPost() {
     return (
       <div className="min-h-screen  flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-2xl font-bold text-gray-900 mb-4">
+          <h1 className="text-2xl font-bold text-white mb-4">
             Post not found
           </h1>
           <Link to="/" className="text-blue-600 hover:underline">
@@ -34,7 +34,7 @@ function BlogPost() {
       <div className="max-w-3xl mx-auto px-4 py-12">
         <Link
           to="/"
-          className="inline-flex items-center gap-2 text-gray-600 hover:text-gray-900 mb-8"
+          className="inline-flex items-center gap-2 text-gray-300 hover:text-white mb-8"
         >
           <ArrowLeft size={16} />
           Back to blog
@@ -42,7 +42,7 @@ function BlogPost() {
 
         <article>
           <header className="mb-8">
-            <h1 className="text-4xl font-bold text-gray-900 mb-4">
+            <h1 className="text-4xl font-bold text-white mb-4">
               {post.title}
             </h1>
             <div className="flex items-center gap-3 text-gray-500 mb-4">

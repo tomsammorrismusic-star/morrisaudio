@@ -24,7 +24,7 @@ export const Route = createRootRoute({
 
 function RootLayout() {
   return (
-    <div className="min-h-screen flex flex-col bg-white text-gray-900">
+    <div className="min-h-screen flex flex-col bg-emerald-900 text-white">
       <Header />
       <main className="flex-1">
         <Outlet />
