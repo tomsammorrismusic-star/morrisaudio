@@ -63,7 +63,7 @@ export default function LogoReel() {
           >
             <div className="flex items-center gap-3">
               {item.isImage ? (
-                <img src={item.logo} alt={item.name} className="w-10 h-10 object-contain rounded" />
+                <img src={item.logo} alt={item.name} className="w-16 h-16 object-contain rounded-lg shadow-lg" />
               ) : (
                 <span className="text-4xl">{item.logo}</span>
               )}
