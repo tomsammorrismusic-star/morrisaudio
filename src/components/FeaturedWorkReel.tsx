@@ -75,7 +75,7 @@ export default function FeaturedWorkReel() {
             style={{ perspective: '1000px' }}
           >
             <button
-              className={`relative w-64 h-64 rounded-xl bg-gradient-to-br ${CATEGORY_COLORS[item.category] ?? 'from-gray-300 to-gray-200'} border border-gray-400 flex flex-col items-center justify-center gap-2 cursor-pointer hover:border-yellow-500 transition-all duration-500 ease-out group bubble-hover hover:shadow-2xl hover:scale-110`}
+              className={`relative w-64 h-64 rounded-xl bg-gradient-to-br ${CATEGORY_COLORS[item.category] ?? 'from-gray-300 to-gray-200'} border border-gray-400 flex flex-col items-center justify-center gap-2 cursor-pointer hover:border-emerald-700 transition-all duration-500 ease-out group bubble-hover hover:shadow-2xl hover:scale-110`}
               style={{ transformOrigin: 'center' }}
               onMouseEnter={() => setIsPaused(true)}
               onMouseLeave={() => setIsPaused(false)}

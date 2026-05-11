@@ -52,7 +52,7 @@ function Resume() {
             <div className="mt-6">
               <a
                 href="mailto:tomsammorrismusic@gmail.com"
-                className="inline-flex items-center gap-2 px-5 py-2.5 bg-yellow-500 hover:bg-yellow-400 text-gray-950 font-bold rounded-lg transition-colors text-sm"
+                className="inline-flex items-center gap-2 px-5 py-2.5 bg-emerald-700 hover:bg-emerald-600 text-gray-950 font-bold rounded-lg transition-colors text-sm"
               >
                 <Mail size={16} />
                 Email Me
@@ -71,7 +71,7 @@ function Resume() {
                   <div className="flex justify-between items-start flex-wrap gap-3">
                     <div className="space-y-1">
                       <CardTitle className="text-xl text-gray-900">{job.jobTitle}</CardTitle>
-                      <p className="font-medium text-yellow-500">
+                      <p className="font-medium text-emerald-700">
                         {job.company} · {job.location}
                       </p>
                     </div>
@@ -86,7 +86,7 @@ function Resume() {
                     {job.tags.map((tag) => (
                       <HoverCard key={tag}>
                         <HoverCardTrigger>
-                          <Badge variant="outline" className="cursor-pointer border-gray-300 text-gray-700 hover:border-yellow-500">
+                          <Badge variant="outline" className="cursor-pointer border-gray-300 text-gray-700 hover:border-emerald-700">
                             {tag}
                           </Badge>
                         </HoverCardTrigger>

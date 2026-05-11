@@ -166,7 +166,7 @@ code {
 /* Scrollbar styling */
 .video-wheel-scroll {
   scrollbar-width: thin;
-  scrollbar-color: #eab308 #f5f5f5;
+  scrollbar-color: #059669 #f5f5f5;
 }
 
 .video-wheel-scroll::-webkit-scrollbar {
@@ -178,10 +178,10 @@ code {
 }
 
 .video-wheel-scroll::-webkit-scrollbar-thumb {
-  background: #eab308;
+  background: #059669;
   border-radius: 4px;
 }
 
 .video-wheel-scroll::-webkit-scrollbar-thumb:hover {
-  background: #facc15;
+  background: #047857;
 }

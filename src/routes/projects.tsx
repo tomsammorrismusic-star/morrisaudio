@@ -38,7 +38,7 @@ function Projects() {
                       href={project.liveUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-sm text-yellow-500 hover:text-yellow-400 transition-colors"
+                      className="inline-flex items-center gap-2 text-sm text-emerald-700 hover:text-emerald-600 transition-colors"
                     >
                       <ExternalLink size={16} />
                       View Project

@@ -20,7 +20,7 @@ function Showreel() {
         <h2 className="text-3xl font-bold mb-8 text-gray-900">Featured Podcast</h2>
         <div className="bg-gray-50 rounded-lg p-8 mb-16 border border-gray-200">
           <div className="flex items-center gap-3 mb-4">
-            <Music className="w-6 h-6 text-yellow-500" />
+            <Music className="w-6 h-6 text-emerald-700" />
             <h3 className="text-2xl font-bold text-gray-900">VCL Vintners Podcast</h3>
           </div>
           <p className="text-gray-600 mb-6">Listen now</p>
@@ -51,7 +51,7 @@ function Showreel() {
           </p>
           <a
             href="mailto:tomsammorrismusic@gmail.com"
-            className="inline-block px-6 py-3 bg-yellow-500 hover:bg-yellow-400 text-gray-950 font-semibold rounded-lg transition-colors mb-6"
+            className="inline-block px-6 py-3 bg-emerald-700 hover:bg-emerald-600 text-gray-950 font-semibold rounded-lg transition-colors mb-6"
           >
             Get in Touch
           </a>
@@ -60,7 +60,7 @@ function Showreel() {
               href="https://www.instagram.com/tom_morris2810/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center w-12 h-12 rounded-lg border border-gray-600 hover:border-yellow-500 text-gray-400 hover:text-yellow-500 transition-colors bubble-hover"
+              className="inline-flex items-center justify-center w-12 h-12 rounded-lg border border-gray-600 hover:border-emerald-700 text-gray-400 hover:text-emerald-700 transition-colors bubble-hover"
               aria-label="Instagram"
             >
               <Instagram className="w-6 h-6" />
@@ -69,7 +69,7 @@ function Showreel() {
               href="https://wa.me/447857484127"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center w-12 h-12 rounded-lg border border-gray-600 hover:border-yellow-500 text-gray-400 hover:text-yellow-500 transition-colors bubble-hover"
+              className="inline-flex items-center justify-center w-12 h-12 rounded-lg border border-gray-600 hover:border-emerald-700 text-gray-400 hover:text-emerald-700 transition-colors bubble-hover"
               aria-label="WhatsApp"
             >
               <MessageCircle className="w-6 h-6" />
