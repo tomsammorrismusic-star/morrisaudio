@@ -12,7 +12,7 @@ const logos: LogoItem[] = [
   { id: '1', name: 'Google', logo: '🔵' },
   { id: '2', name: 'EE', logo: '🟡' },
   { id: '3', name: 'Manchester United', logo: 'https://cdn.builder.io/api/v1/image/assets%2F1a8d84947e9444f98df7c975eda41851%2F5a2c905ae39d4e0685007a989717d45b', isImage: true },
-  { id: '4', name: 'Newcastle United', logo: 'https://cdn.builder.io/api/v1/image/assets%2F1a8d84947e9444f98df7c975eda41851%2F78b727b07b644593b1f40dc742efd4ed', isImage: true },
+  { id: '4', name: 'Newcastle United', logo: 'https://cdn.builder.io/api/v1/image/assets%2F1a8d84947e9444f98df7c975eda41851%2F07095ea69744465dbbd66041d74fd75e', isImage: true },
 ]
 
 export default function LogoReel() {
