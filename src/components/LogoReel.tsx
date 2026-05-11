@@ -55,13 +55,13 @@ export default function LogoReel() {
         {[...logos, ...logos].map((item, index) => (
           <div
             key={`${item.id}-${index}`}
-            className="logo-item flex-shrink-0 flex items-center justify-center px-8 py-6 rounded-xl border border-gray-300 bg-gray-50 hover:border-emerald-700/50 hover:bg-gray-100 transition-all duration-300 min-w-max bubble-hover"
+            className="logo-item flex-shrink-0 flex items-center justify-center px-8 py-6 rounded-xl border border-emerald-700 bg-emerald-800 hover:border-emerald-700/50 hover:bg-emerald-800 transition-all duration-300 min-w-max bubble-hover"
             onMouseEnter={() => setIsPaused(true)}
             onMouseLeave={() => setIsPaused(false)}
           >
             <div className="flex items-center gap-3">
               <span className="text-4xl">{item.logo}</span>
-              <span className="text-lg font-semibold text-gray-700">{item.name}</span>
+              <span className="text-lg font-semibold text-gray-100">{item.name}</span>
             </div>
           </div>
         ))}

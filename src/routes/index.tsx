@@ -30,7 +30,7 @@ const services = [
 
 function Home() {
   return (
-    <div className="bg-white text-gray-900">
+    <div className="bg-brand text-white">
       {/* Hero */}
       <section className="relative min-h-[80vh] flex flex-col items-center justify-center text-center px-4 py-20">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(5,150,105,0.03)_0%,_transparent_70%)] pointer-events-none" />
@@ -44,7 +44,7 @@ function Home() {
             <br />
             <span className="text-emerald-700">Great Audio</span>
           </h1>
-          <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
             Professional sound recordist specialising in film, documentary, and commercial productions.&nbsp;
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-2">
@@ -56,7 +56,7 @@ function Home() {
             </Link>
             <Link
               to="/projects"
-              className="px-8 py-3 border border-gray-400 hover:border-emerald-700 text-gray-700 hover:text-black rounded-xl transition-colors text-lg bubble-hover"
+              className="px-8 py-3 border border-emerald-700 hover:border-emerald-700 text-gray-100 hover:text-white rounded-xl transition-colors text-lg bubble-hover"
             >
               View My Work
             </Link>
@@ -69,7 +69,7 @@ function Home() {
         <div className="max-w-6xl mx-auto px-4 mb-12">
           <div className="text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-3">Trusted By</h2>
-            <p className="text-gray-600 max-w-xl mx-auto">
+            <p className="text-gray-300 max-w-xl mx-auto">
               Working with leading brands across sports and technology.
             </p>
           </div>
@@ -78,12 +78,12 @@ function Home() {
       </section>
 
       {/* Stats */}
-      <section className="border-y border-gray-200 py-10 lg:py-16">
+      <section className="border-y border-emerald-800 py-10 lg:py-16">
         <div className="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row gap-6 justify-center items-center flex-wrap">
           {stats.map((s) => (
-            <div key={s.label} className="flex flex-col items-center justify-center px-6 py-4 rounded-xl border border-gray-300 bg-gray-50 hover:border-emerald-700/50 transition-colors bubble-hover">
+            <div key={s.label} className="flex flex-col items-center justify-center px-6 py-4 rounded-xl border border-emerald-700 bg-emerald-800 hover:border-emerald-700/50 transition-colors bubble-hover">
               <p className="text-4xl font-extrabold text-emerald-700">{s.value}</p>
-              <p className="text-gray-600 text-sm mt-2 whitespace-nowrap">{s.label}</p>
+              <p className="text-gray-300 text-sm mt-2 whitespace-nowrap">{s.label}</p>
             </div>
           ))}
         </div>
@@ -94,7 +94,7 @@ function Home() {
         <div className="max-w-6xl mx-auto px-4 mb-12">
           <div className="text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-3">Featured Work</h2>
-            <p className="text-gray-600 max-w-xl mx-auto">
+            <p className="text-gray-300 max-w-xl mx-auto">
               A selection of productions across genres and formats.
             </p>
           </div>
@@ -103,18 +103,18 @@ function Home() {
       </section>
 
       {/* Services */}
-      <section className="py-24 lg:py-32 px-4 border-t border-gray-200">
+      <section className="py-24 lg:py-32 px-4 border-t border-emerald-800">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-16">What I Do</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
             {services.map((svc) => (
               <div
                 key={svc.title}
-                className="p-8 rounded-3xl border border-gray-300 hover:border-emerald-700/60 bg-gradient-to-br from-gray-50 to-gray-100 hover:from-gray-100 hover:to-gray-100 transition-all duration-300 bubble-hover"
+                className="p-8 rounded-3xl border border-emerald-700 hover:border-emerald-700/60 bg-gradient-to-br from-emerald-800 to-emerald-800 hover:from-emerald-700 hover:to-emerald-800 transition-all duration-300 bubble-hover"
               >
                 <svc.icon className="w-14 h-14 text-emerald-700 mb-6" />
                 <h3 className="text-2xl font-bold mb-4">{svc.title}</h3>
-                <p className="text-gray-700 text-base leading-relaxed">{svc.desc}</p>
+                <p className="text-gray-100 text-base leading-relaxed">{svc.desc}</p>
               </div>
             ))}
           </div>
@@ -122,11 +122,11 @@ function Home() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 lg:py-28 px-4 border-t border-gray-200">
+      <section className="py-20 lg:py-28 px-4 border-t border-emerald-800">
         <div className="max-w-3xl mx-auto text-center space-y-6">
           <Award className="w-12 h-12 lg:w-16 lg:h-16 text-emerald-700 mx-auto" />
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold">Ready to work together?</h2>
-          <p className="text-gray-600 text-lg md:text-xl">
+          <p className="text-gray-300 text-lg md:text-xl">
             Let's talk about your next production. Available for short-term engagements
             and long-term projects worldwide.
           </p>
@@ -140,7 +140,7 @@ function Home() {
             </Link>
             <a
               href="mailto:tomsammorrismusic@gmail.com"
-              className="inline-flex items-center justify-center gap-2 px-8 py-3 border border-gray-400 hover:border-emerald-700 text-gray-700 hover:text-black rounded-xl transition-colors bubble-hover"
+              className="inline-flex items-center justify-center gap-2 px-8 py-3 border border-emerald-700 hover:border-emerald-700 text-gray-100 hover:text-white rounded-xl transition-colors bubble-hover"
             >
               Email Directly
             </a>
@@ -150,7 +150,7 @@ function Home() {
               href="https://www.instagram.com/tom_morris2810/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center w-12 h-12 rounded-lg border border-gray-300 hover:border-emerald-700 text-gray-600 hover:text-emerald-700 transition-colors bubble-hover"
+              className="inline-flex items-center justify-center w-12 h-12 rounded-lg border border-emerald-700 hover:border-emerald-700 text-gray-300 hover:text-emerald-700 transition-colors bubble-hover"
               aria-label="Instagram"
             >
               <Instagram className="w-6 h-6" />
@@ -159,7 +159,7 @@ function Home() {
               href="https://wa.me/447857484127"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center w-12 h-12 rounded-lg border border-gray-300 hover:border-emerald-700 text-gray-600 hover:text-emerald-700 transition-colors bubble-hover"
+              className="inline-flex items-center justify-center w-12 h-12 rounded-lg border border-emerald-700 hover:border-emerald-700 text-gray-300 hover:text-emerald-700 transition-colors bubble-hover"
               aria-label="WhatsApp"
             >
               <MessageCircle className="w-6 h-6" />
