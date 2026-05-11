@@ -58,10 +58,9 @@ export default function FeaturedWorkReel() {
     >
       <div
         ref={scrollContainer}
-        className="featured-work-scroll flex gap-6 overflow-x-auto items-center"
+        className="featured-work-scroll flex gap-6 overflow-x-auto items-center video-wheel-scroll"
         style={{
           scrollBehavior: 'auto',
-          scrollbarWidth: 'none',
           WebkitOverflowScrolling: 'touch',
           overflowY: 'visible',
           minHeight: '400px',
