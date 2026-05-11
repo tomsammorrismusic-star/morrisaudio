@@ -54,7 +54,7 @@ function Home() {
               Get In Touch
             </Link>
             <Link
-              to="/projects"
+              to="/showreel"
               className="px-8 py-3 border border-emerald-700 hover:border-emerald-700 text-gray-100 hover:text-white rounded-xl transition-colors text-lg bubble-hover"
             >
               View My Work
