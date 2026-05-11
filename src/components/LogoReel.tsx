@@ -4,12 +4,13 @@ interface LogoItem {
   id: string
   name: string
   logo: string
+  isImage?: boolean
 }
 
 const logos: LogoItem[] = [
   { id: '1', name: 'Google', logo: '🔵' },
   { id: '2', name: 'EE', logo: '🟡' },
-  { id: '3', name: 'Manchester United', logo: '🔴' },
+  { id: '3', name: 'Manchester United', logo: 'https://cdn.builder.io/api/v1/image/assets%2F1a8d84947e9444f98df7c975eda41851%2Fb1f8303e0651451ebb2204a72828c78a', isImage: true },
   { id: '4', name: 'Newcastle United', logo: '⚫' },
 ]
 
@@ -60,7 +61,11 @@ export default function LogoReel() {
             onMouseLeave={() => setIsPaused(false)}
           >
             <div className="flex items-center gap-3">
-              <span className="text-4xl">{item.logo}</span>
+              {item.isImage ? (
+                <img src={item.logo} alt={item.name} className="w-10 h-10 object-contain" />
+              ) : (
+                <span className="text-4xl">{item.logo}</span>
+              )}
               <span className="text-lg font-semibold text-gray-100">{item.name}</span>
             </div>
           </div>
