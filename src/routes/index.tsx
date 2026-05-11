@@ -103,7 +103,7 @@ function Home() {
       </section>
 
       {/* Services */}
-      <section className="py-24 lg:py-32 px-4 border-t border-emerald-800">
+      <section className="py-24 lg:py-32 px-4 border-t border-gray-200">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-16">What I Do</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
@@ -122,7 +122,7 @@ function Home() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 lg:py-28 px-4 border-t border-emerald-800">
+      <section className="py-20 lg:py-28 px-4 border-t border-gray-200">
         <div className="max-w-3xl mx-auto text-center space-y-6">
           <Award className="w-12 h-12 lg:w-16 lg:h-16 text-emerald-700 mx-auto" />
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold">Ready to work together?</h2>

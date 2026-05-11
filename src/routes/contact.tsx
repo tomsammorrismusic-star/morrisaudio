@@ -153,7 +153,7 @@ function Contact() {
                     id="name"
                     name="name"
                     required
-                    className="w-full px-4 py-2.5 bg-transparent border border-emerald-700 rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-emerald-700 focus:border-emerald-700 outline-none transition-colors"
+                    className="w-full px-4 py-2.5 bg-transparent border border-gray-400 rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-emerald-700 focus:border-emerald-700 outline-none transition-colors"
                     placeholder="Your name"
                   />
                 </div>
@@ -166,7 +166,7 @@ function Contact() {
                     id="email"
                     name="email"
                     required
-                    className="w-full px-4 py-2.5 bg-transparent border border-emerald-700 rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-emerald-700 focus:border-emerald-700 outline-none transition-colors"
+                    className="w-full px-4 py-2.5 bg-transparent border border-gray-400 rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-emerald-700 focus:border-emerald-700 outline-none transition-colors"
                     placeholder="your@email.com"
                   />
                 </div>
@@ -179,7 +179,7 @@ function Contact() {
                 <select
                   id="production"
                   name="production"
-                  className="w-full px-4 py-2.5 bg-transparent border border-emerald-700 rounded-lg text-white focus:ring-2 focus:ring-emerald-700 focus:border-emerald-700 outline-none transition-colors"
+                  className="w-full px-4 py-2.5 bg-transparent border border-gray-400 rounded-lg text-white focus:ring-2 focus:ring-emerald-700 focus:border-emerald-700 outline-none transition-colors"
                 >
                   <option value="">Select a type…</option>
                   <option value="film">Feature Film</option>
@@ -201,7 +201,7 @@ function Contact() {
                   name="message"
                   required
                   rows={5}
-                  className="w-full px-4 py-2.5 bg-transparent border border-emerald-700 rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-emerald-700 focus:border-emerald-700 outline-none transition-colors resize-none"
+                  className="w-full px-4 py-2.5 bg-transparent border border-gray-400 rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-emerald-700 focus:border-emerald-700 outline-none transition-colors resize-none"
                   placeholder="Tell me about your project — dates, location, and what you need…"
                 />
               </div>
