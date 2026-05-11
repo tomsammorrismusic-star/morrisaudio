@@ -77,7 +77,7 @@ function Home() {
       </section>
 
       {/* Stats */}
-      <section className="py-0 -mt-6 lg:-mt-8">
+      <section className="py-0 -mt-12 lg:-mt-16">
         <div className="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row gap-6 justify-center items-center flex-wrap">
           {stats.map((s) => (
             <div key={s.label} className="flex flex-col items-center justify-center px-6 py-4 rounded-xl border border-emerald-700/30 hover:border-emerald-700/50 transition-colors bubble-hover">
