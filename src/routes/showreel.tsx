@@ -71,7 +71,7 @@ function Showreel() {
 
       <div className="max-w-6xl mx-auto px-4 py-12">
         <h2 className="text-3xl font-bold mb-8 text-white">Audio Example</h2>
-        <div className="max-w-2xl mx-auto bg-emerald-800 rounded-lg p-8 border border-emerald-700">
+        <div className="bg-emerald-800 rounded-lg p-8 border border-emerald-700">
           <h3 className="text-xl font-semibold text-white mb-6">Production Sample</h3>
           <audio
             controls
