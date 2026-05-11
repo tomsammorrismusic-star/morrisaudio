@@ -55,6 +55,58 @@ function Showreel() {
         </div>
       </div>
 
+      <div className="max-w-6xl mx-auto px-4 py-12">
+        <h2 className="text-3xl font-bold mb-8 text-white">Portfolio</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-max">
+          {/* Large featured video - takes 2 rows */}
+          <div className="lg:col-span-2 lg:row-span-2 rounded-lg overflow-hidden bg-black aspect-video flex items-center justify-center group cursor-pointer">
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <iframe
+              src="https://www.youtube.com/embed/VIDEO_ID_1"
+              width="100%"
+              height="100%"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              className="w-full h-full"
+            />
+            <div className="absolute bottom-4 left-4 right-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 relative z-10">
+              <p className="font-semibold text-lg">Feature Film - Location Sound</p>
+            </div>
+          </div>
+
+          {/* 2x2 grid of smaller videos */}
+          {[
+            { id: 'VIDEO_ID_2', title: 'Documentary Series' },
+            { id: 'VIDEO_ID_3', title: 'Commercial - Automotive' },
+            { id: 'VIDEO_ID_4', title: 'Corporate Interview' },
+            { id: 'VIDEO_ID_5', title: 'TV Drama Series' },
+          ].map((video, idx) => (
+            <div
+              key={idx}
+              className="rounded-lg overflow-hidden bg-black aspect-square flex items-center justify-center group cursor-pointer bubble-hover"
+            >
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <iframe
+                src={`https://www.youtube.com/embed/${video.id}`}
+                width="100%"
+                height="100%"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="w-full h-full"
+              />
+              <div className="absolute bottom-3 left-3 right-3 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 relative z-10">
+                <p className="font-semibold text-sm line-clamp-2">{video.title}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+        <p className="text-gray-400 mt-6 text-sm text-center">
+          Replace VIDEO_ID_1, VIDEO_ID_2, etc. with your actual YouTube video IDs
+        </p>
+      </div>
+
       <div className="max-w-6xl mx-auto px-4 py-16">
         <div className="bg-emerald-800 rounded-lg p-8 text-center border border-emerald-800">
           <h3 className="text-2xl font-bold mb-3 text-white">Ready to work together?</h3>
