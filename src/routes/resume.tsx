@@ -262,7 +262,7 @@ ADDITIONAL EXPERIENCE
             <div className="flex flex-col md:flex-row gap-8 items-start">
               <div className="flex-1">
                 <p className="leading-relaxed text-slate-600">
-                  A versatile production sound mixer and boom operator based in London, with extensive credits across feature film, high-end TV drama, documentary, and commercial work. Trained in professional audio production with a commitment to capturing clean, emotionally resonant audio in any environment — from controlled studio sets to remote locations. Comfortable with all major production audio systems and experienced collaborating with international crews on Bollywood productions, BBC documentaries, and major brand commercials.
+                  A versatile production sound mixer and boom operator with extensive credits across feature film, high-end TV drama, documentary, and commercial work. Experienced collaborating with international crews on Bollywood productions, BBC documentaries, and major brand commercials.
                 </p>
                 <div className="mt-6">
                   <a
