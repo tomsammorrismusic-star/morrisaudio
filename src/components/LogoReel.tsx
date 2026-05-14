@@ -57,25 +57,25 @@ export default function LogoReel() {
         {[...logos, ...logos].map((item, index) => (
           <div
             key={`${item.id}-${index}`}
-            className="logo-item flex-shrink-0 flex items-center justify-center px-6 py-4 rounded-xl transition-all duration-300 min-w-max bubble-hover"
+            className="logo-item flex-shrink-0 flex items-center justify-center px-6 py-6 rounded-3xl transition-all duration-300 min-w-max bubble-hover"
             onMouseEnter={() => setIsPaused(true)}
             onMouseLeave={() => setIsPaused(false)}
           >
             <div className="flex items-center gap-3">
               {item.isImage ? (
-                <img src={item.logo} alt={item.name} className="w-24 h-24 object-contain rounded-lg" />
+                <img src={item.logo} alt={item.name} className="w-24 h-24 object-contain rounded-2xl" />
               ) : (
                 <span className="text-4xl">{item.logo}</span>
               )}
-              <span className="text-2xl font-bold text-white">{item.name}</span>
+              <span className="text-2xl font-semibold text-slate-700">{item.name}</span>
             </div>
           </div>
         ))}
       </div>
 
       {/* Fade effect on edges */}
-      <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-[#053d33] to-transparent pointer-events-none" />
-      <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-[#053d33] to-transparent pointer-events-none" />
+      <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-[#F5F0E8] to-transparent pointer-events-none" />
+      <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-[#F5F0E8] to-transparent pointer-events-none" />
     </div>
   )
 }

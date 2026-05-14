@@ -24,7 +24,7 @@ const CATEGORY_COLORS: Record<string, string> = {
   Commercial: 'from-purple-900 to-purple-700',
   Drama: 'from-red-900 to-red-700',
   Corporate: 'from-gray-800 to-gray-600',
-  Music: 'from-pink-900 to-pink-700',
+  Music: 'from-pink-900 to-emerald-700',
   News: 'from-orange-900 to-orange-700',
   Audio: 'from-teal-900 to-teal-700',
 }
@@ -54,7 +54,7 @@ export default function VideoCollage() {
               <button
                 key={item.id}
                 onClick={() => setSelectedItem(item)}
-                className={`absolute bg-gradient-to-br ${CATEGORY_COLORS[item.category]} flex flex-col items-center justify-center gap-2 cursor-pointer transition-all duration-300 group overflow-hidden bubble-hover hover:shadow-2xl hover:z-20 hover:scale-105 rounded-lg border border-white/10`}
+                className={`absolute bg-gradient-to-br ${CATEGORY_COLORS[item.category]} flex flex-col items-center justify-center gap-2 cursor-pointer transition-all duration-300 group overflow-hidden bubble-hover hover:shadow-2xl hover:z-20 hover:scale-105 rounded-2xl border border-yellow-500/10`}
                 style={{
                   left: `${config.x}px`,
                   top: `${config.y}px`,
@@ -63,12 +63,12 @@ export default function VideoCollage() {
                 }}
               >
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300" />
-                <div className="w-12 h-12 rounded-full bg-brand/20 flex items-center justify-center relative z-10 group-hover:bg-emerald-700/40 transition-all group-hover:scale-125">
-                  <Play className="w-6 h-6 text-white fill-white ml-1" />
+                <div className="w-12 h-12 rounded-full bg-brand/20 flex items-center justify-center relative z-10 group-hover:bg-white/40 transition-all group-hover:scale-125">
+                  <Play className="w-6 h-6 text-slate-700 fill-white ml-1" />
                 </div>
                 <div className="text-center px-2 relative z-10 bottom-2 group-hover:bottom-0 transition-all duration-300">
-                  <p className="text-white font-bold text-xs leading-snug line-clamp-2 drop-shadow-lg">{item.title}</p>
-                  <p className="text-white/70 text-xs uppercase tracking-wider mt-1">{item.category}</p>
+                  <p className="text-slate-700 font-semibold text-xs leading-snug line-clamp-2 drop-shadow-lg">{item.title}</p>
+                  <p className="text-slate-700/70 text-xs uppercase tracking-wider mt-1">{item.category}</p>
                 </div>
               </button>
             )
@@ -84,22 +84,22 @@ export default function VideoCollage() {
         >
           <button
             onClick={() => setSelectedItem(null)}
-            className="absolute top-8 right-8 p-3 text-white hover:text-emerald-600 bg-black/60 hover:bg-black/80 rounded-full z-10 transition-all duration-300 bubble-hover"
+            className="absolute top-8 right-8 p-3 text-slate-700 hover:text-yellow-500 bg-black/60 hover:bg-black/80 rounded-full z-10 transition-all duration-300 bubble-hover"
             aria-label="Close"
           >
             <X size={28} />
           </button>
 
           <div
-            className={`relative bg-gradient-to-br ${CATEGORY_COLORS[selectedItem.category]} rounded-3xl border-4 border-emerald-600 w-full max-w-5xl aspect-video flex flex-col items-center justify-center gap-8 shadow-2xl bubble-hover`}
+            className={`relative bg-gradient-to-br ${CATEGORY_COLORS[selectedItem.category]} rounded-3xl border-4 border-lime-700 w-full max-w-5xl aspect-video flex flex-col items-center justify-center gap-8 shadow-2xl bubble-hover`}
             onClick={(e) => e.stopPropagation()}
           >
             <div className="w-40 h-40 rounded-full bg-brand/20 flex items-center justify-center animate-pulse">
-              <Play className="w-20 h-20 text-white fill-white ml-3" />
+              <Play className="w-20 h-20 text-slate-700 fill-white ml-3" />
             </div>
             <div className="text-center px-12">
-              <h2 className="text-5xl font-bold text-white mb-3">{selectedItem.title}</h2>
-              <p className="text-white/80 text-2xl uppercase tracking-widest font-semibold">{selectedItem.category}</p>
+              <h2 className="text-5xl font-semibold text-slate-700 mb-4">{selectedItem.title}</h2>
+              <p className="text-slate-700/80 text-2xl uppercase tracking-widest font-semibold">{selectedItem.category}</p>
             </div>
           </div>
         </div>

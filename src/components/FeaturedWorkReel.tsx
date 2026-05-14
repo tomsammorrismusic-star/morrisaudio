@@ -24,7 +24,7 @@ const CATEGORY_COLORS: Record<string, string> = {
   Commercial: 'from-purple-900 to-purple-700',
   Drama: 'from-red-900 to-red-700',
   Corporate: 'from-gray-800 to-gray-600',
-  Music: 'from-pink-900 to-pink-700',
+  Music: 'from-pink-900 to-emerald-700',
   News: 'from-orange-900 to-orange-700',
   Audio: 'from-teal-900 to-teal-700',
 }
@@ -58,7 +58,7 @@ export default function FeaturedWorkReel() {
     >
       <div
         ref={scrollContainer}
-        className="featured-work-scroll flex gap-6 overflow-x-auto items-center video-wheel-scroll"
+        className="featured-work-scroll flex gap-8 overflow-x-auto items-center video-wheel-scroll"
         style={{
           scrollBehavior: 'auto',
           WebkitOverflowScrolling: 'touch',
@@ -74,16 +74,16 @@ export default function FeaturedWorkReel() {
             style={{ perspective: '1000px' }}
           >
             <button
-              className={`relative w-64 h-64 rounded-xl bg-gradient-to-br ${CATEGORY_COLORS[item.category] ?? 'from-gray-300 to-gray-200'} border border-emerald-700 flex flex-col items-center justify-center gap-2 cursor-pointer hover:border-emerald-700 transition-all duration-500 ease-out group bubble-hover hover:shadow-2xl hover:scale-110`}
+              className={`relative w-64 h-64 rounded-3xl bg-gradient-to-br ${CATEGORY_COLORS[item.category] ?? 'from-gray-300 to-gray-200'} border border-[#ECC85D] flex flex-col items-center justify-center gap-2 cursor-pointer hover:border-[#ECC85D] transition-all duration-500 ease-out group bubble-hover hover:shadow-2xl hover:scale-110`}
               style={{ transformOrigin: 'center' }}
               onMouseEnter={() => setIsPaused(true)}
               onMouseLeave={() => setIsPaused(false)}
             >
               <div className="w-12 h-12 rounded-full bg-brand/20 flex items-center justify-center group-hover:bg-brand/30 transition-all duration-300">
-                <Play className="w-5 h-5 text-white fill-white ml-0.5" />
+                <Play className="w-5 h-5 text-slate-700 fill-white ml-0.5" />
               </div>
               <div className="text-center px-3">
-                <p className="text-white font-semibold text-xs leading-tight line-clamp-2">{item.title}</p>
+                <p className="text-slate-700 font-semibold text-xs leading-tight line-clamp-2">{item.title}</p>
               </div>
             </button>
           </div>
@@ -91,8 +91,8 @@ export default function FeaturedWorkReel() {
       </div>
 
       {/* Fade effect on edges */}
-      <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-[#053d33] to-transparent pointer-events-none" />
-      <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-[#053d33] to-transparent pointer-events-none" />
+      <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-[#F5F0E8] to-transparent pointer-events-none" />
+      <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-[#F5F0E8] to-transparent pointer-events-none" />
     </div>
   )
 }
