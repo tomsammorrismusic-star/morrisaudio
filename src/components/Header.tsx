@@ -43,7 +43,7 @@ export default function Header() {
               <link.icon className="w-5 h-5" />
             </Link>
           ))}
-          <div className="flex items-center gap-2 pl-2 border-l border-[#F8D83A]">
+          <div className="flex items-center gap-2 pl-2 border-l border-slate-700">
             <a
               href="https://www.instagram.com/tom_morris2810/"
               target="_blank"
