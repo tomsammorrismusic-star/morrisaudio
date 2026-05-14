@@ -258,7 +258,7 @@ ADDITIONAL EXPERIENCE
                   </a>
                 </div>
               </div>
-              <div className="flex flex-col gap-3 w-44">
+              <div className="flex flex-col gap-3 w-44 h-full">
                 <div className="flex gap-2">
                   <button
                     onClick={downloadCV}
@@ -278,7 +278,7 @@ ADDITIONAL EXPERIENCE
                 <img
                   src="https://cdn.builder.io/api/v1/image/assets%2F1a8d84947e9444f98df7c975eda41851%2Fadd1319ac1184a8ea01e94321ca2fce2?format=webp&width=800&height=1200"
                   alt="Tom Morris - Professional headshot"
-                  className="w-full h-auto rounded-2xl object-cover shadow-md"
+                  className="w-full h-full rounded-2xl object-cover shadow-md flex-1"
                 />
               </div>
             </div>
