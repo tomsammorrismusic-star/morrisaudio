@@ -13,13 +13,13 @@ function Projects() {
     <div className="min-h-screen bg-brand text-slate-700">
       <div className="max-w-4xl mx-auto px-4 py-16">
         <h1 className="text-4xl md:text-5xl font-bold mb-4">Notable Productions</h1>
-        <p className="text-yellow-600 mb-10 text-lg">
+        <p className="text-slate-700 mb-10 text-lg">
           A selection of film, documentary, and commercial projects.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {allProjects.map((project) => (
-            <Card key={project._meta.path} className="flex flex-col bg-lime-700 border-yellow-500 text-slate-700">
+            <Card key={project._meta.path} className="flex flex-col bg-[#F5F0E8] border-slate-700 text-slate-700">
               <CardHeader>
                 <CardTitle className="text-xl text-slate-700">{project.title}</CardTitle>
               </CardHeader>
@@ -38,7 +38,7 @@ function Projects() {
                       href={project.liveUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-sm text-yellow-600 hover:text-yellow-500 transition-colors"
+                      className="inline-flex items-center gap-2 text-sm text-slate-700 hover:text-slate-600 transition-colors"
                     >
                       <ExternalLink size={16} />
                       View Project
