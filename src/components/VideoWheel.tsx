@@ -125,9 +125,9 @@ export default function VideoWheel() {
               <div key={`${item.id}-${index}`} className="flex-shrink-0 w-64 overflow-visible">
                 <button
                   onClick={() => handleCardClick(item)}
-                  className="w-full h-56 rounded-3xl bg-gradient-to-br from-gray-300 to-gray-200 border border-lime-600 flex flex-col items-center justify-center gap-3 cursor-pointer hover:border-lime-600/50 transition-colors shadow-xl group bubble-hover"
+                  className="w-full h-56 rounded-3xl bg-gradient-to-br from-gray-300 to-gray-200 border border-lime-600 flex flex-col items-center justify-center gap-3 cursor-pointer hover:border-red-400/50 transition-colors shadow-xl group bubble-hover"
                 >
-                  <div className={`w-full h-full rounded-3xl bg-gradient-to-br ${CATEGORY_COLORS[item.category] ?? 'from-gray-300 to-gray-200'} border border-lime-600 flex flex-col items-center justify-center gap-3 cursor-pointer hover:border-lime-600/50 transition-colors shadow-xl relative overflow-hidden`}>
+                  <div className={`w-full h-full rounded-3xl bg-gradient-to-br ${CATEGORY_COLORS[item.category] ?? 'from-gray-300 to-gray-200'} border border-lime-600 flex flex-col items-center justify-center gap-3 cursor-pointer hover:border-red-400/50 transition-colors shadow-xl relative overflow-hidden`}>
                     <div className="absolute inset-0 bg-brand/0 group-hover:bg-brand/10 transition-all duration-200" />
                     <div className="w-14 h-14 rounded-full bg-brand/10 flex items-center justify-center relative z-10 group-hover:bg-brand/20 transition-all">
                       <Play className="w-6 h-6 text-yellow-100 fill-white ml-1" />

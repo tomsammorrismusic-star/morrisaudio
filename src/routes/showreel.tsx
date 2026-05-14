@@ -170,7 +170,7 @@ function Showreel() {
           </p>
           <a
             href="mailto:tomsammorrismusic@gmail.com"
-            className="inline-block px-6 py-3 bg-lime-50 hover:bg-lime-700 text-yellow-100 font-semibold rounded-2xl transition-colors mb-8"
+            className="inline-block px-6 py-3 bg-lime-600 hover:bg-red-400 text-yellow-100 font-semibold rounded-2xl transition-colors mb-8"
           >
             Get in Touch
           </a>
@@ -179,7 +179,7 @@ function Showreel() {
               href="https://www.instagram.com/tom_morris2810/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center w-12 h-12 rounded-2xl border border-gray-600 hover:border-lime-600 text-gray-400 hover:text-lime-700 transition-colors bubble-hover"
+              className="inline-flex items-center justify-center w-12 h-12 rounded-2xl border border-gray-600 hover:border-red-400 text-gray-400 hover:text-lime-700 transition-colors bubble-hover"
               aria-label="Instagram"
             >
               <Instagram className="w-6 h-6" />
@@ -188,7 +188,7 @@ function Showreel() {
               href="https://wa.me/447857484127"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center w-12 h-12 rounded-2xl border border-gray-600 hover:border-lime-600 text-gray-400 hover:text-lime-700 transition-colors bubble-hover"
+              className="inline-flex items-center justify-center w-12 h-12 rounded-2xl border border-gray-600 hover:border-red-400 text-gray-400 hover:text-lime-700 transition-colors bubble-hover"
               aria-label="WhatsApp"
             >
               <MessageCircle className="w-6 h-6" />

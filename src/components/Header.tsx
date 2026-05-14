@@ -36,7 +36,7 @@ export default function Header() {
             <Link
               key={link.to}
               to={link.to}
-              className="inline-flex items-center justify-center w-9 h-9 rounded-2xl text-red-300 hover:text-lime-700 hover:border border-lime-600 hover:border-lime-600 transition-colors bubble-hover"
+              className="inline-flex items-center justify-center w-9 h-9 rounded-2xl text-red-300 hover:text-lime-700 hover:border border-lime-600 hover:border-red-400 transition-colors bubble-hover"
               activeProps={{ className: 'inline-flex items-center justify-center w-9 h-9 rounded-2xl text-lime-700 border border-lime-600 transition-colors' }}
               title={link.label}
             >
@@ -48,7 +48,7 @@ export default function Header() {
               href="https://www.instagram.com/tom_morris2810/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center w-9 h-9 rounded-2xl border border-lime-600 hover:border-lime-600 text-red-300 hover:text-lime-700 transition-colors bubble-hover"
+              className="inline-flex items-center justify-center w-9 h-9 rounded-2xl border border-lime-600 hover:border-red-400 text-red-300 hover:text-lime-700 transition-colors bubble-hover"
               aria-label="Instagram"
             >
               <Instagram className="w-4 h-4" />
@@ -57,7 +57,7 @@ export default function Header() {
               href="https://wa.me/447857484127"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center w-9 h-9 rounded-2xl border border-lime-600 hover:border-lime-600 text-red-300 hover:text-lime-700 transition-colors bubble-hover"
+              className="inline-flex items-center justify-center w-9 h-9 rounded-2xl border border-lime-600 hover:border-red-400 text-red-300 hover:text-lime-700 transition-colors bubble-hover"
               aria-label="WhatsApp"
             >
               <MessageCircle className="w-4 h-4" />
@@ -65,7 +65,7 @@ export default function Header() {
           </div>
           <a
             href="mailto:tomsammorrismusic@gmail.com"
-            className="px-3 py-2 bg-lime-50 hover:bg-lime-700 text-yellow-100 font-semibold text-xs rounded-2xl transition-all duration-200 bubble-hover ml-2"
+            className="px-3 py-2 bg-lime-600 hover:bg-red-400 text-yellow-100 font-semibold text-xs rounded-2xl transition-all duration-200 bubble-hover ml-2"
           >
             Email
           </a>
@@ -90,7 +90,7 @@ export default function Header() {
                 key={link.to}
                 to={link.to}
                 onClick={() => setMobileOpen(false)}
-                className="flex-1 min-w-max inline-flex items-center justify-center gap-1 px-2 py-1.5 rounded border border-lime-600 hover:border-lime-600 text-red-300 hover:text-lime-700 transition-colors bubble-hover text-xs"
+                className="flex-1 min-w-max inline-flex items-center justify-center gap-1 px-2 py-1.5 rounded border border-lime-600 hover:border-red-400 text-red-300 hover:text-lime-700 transition-colors bubble-hover text-xs"
                 activeProps={{ className: 'flex-1 min-w-max inline-flex items-center justify-center gap-1 px-2 py-1.5 rounded border border-lime-600 text-lime-700 transition-colors bubble-hover text-xs font-medium' }}
                 title={link.label}
               >
@@ -104,7 +104,7 @@ export default function Header() {
               href="https://www.instagram.com/tom_morris2810/"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-1 inline-flex items-center justify-center px-2 py-1.5 rounded border border-lime-600 hover:border-lime-600 text-red-300 hover:text-lime-700 transition-colors bubble-hover"
+              className="flex-1 inline-flex items-center justify-center px-2 py-1.5 rounded border border-lime-600 hover:border-red-400 text-red-300 hover:text-lime-700 transition-colors bubble-hover"
               aria-label="Instagram"
             >
               <Instagram className="w-3 h-3" />
@@ -113,7 +113,7 @@ export default function Header() {
               href="https://wa.me/447857484127"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-1 inline-flex items-center justify-center px-2 py-1.5 rounded border border-lime-600 hover:border-lime-600 text-red-300 hover:text-lime-700 transition-colors bubble-hover"
+              className="flex-1 inline-flex items-center justify-center px-2 py-1.5 rounded border border-lime-600 hover:border-red-400 text-red-300 hover:text-lime-700 transition-colors bubble-hover"
               aria-label="WhatsApp"
             >
               <MessageCircle className="w-3 h-3" />
@@ -121,7 +121,7 @@ export default function Header() {
           </div>
           <a
             href="mailto:tomsammorrismusic@gmail.com"
-            className="px-3 py-1.5 bg-lime-50 hover:bg-lime-700 text-yellow-100 font-semibold text-xs rounded transition-all duration-200 text-center bubble-hover"
+            className="px-3 py-1.5 bg-lime-600 hover:bg-red-400 text-yellow-100 font-semibold text-xs rounded transition-all duration-200 text-center bubble-hover"
           >
             Email
           </a>

@@ -52,7 +52,7 @@ function Resume() {
             <div className="mt-6">
               <a
                 href="mailto:tomsammorrismusic@gmail.com"
-                className="inline-flex items-center gap-2 px-5 py-2.5 bg-lime-50 hover:bg-lime-700 text-yellow-100 font-semibold rounded-2xl transition-colors text-sm"
+                className="inline-flex items-center gap-2 px-5 py-2.5 bg-lime-600 hover:bg-red-400 text-yellow-100 font-semibold rounded-2xl transition-colors text-sm"
               >
                 <Mail size={16} />
                 Email Me
@@ -86,7 +86,7 @@ function Resume() {
                     {job.tags.map((tag) => (
                       <HoverCard key={tag}>
                         <HoverCardTrigger>
-                          <Badge variant="outline" className="cursor-pointer border-lime-600 text-red-200 hover:border-lime-600">
+                          <Badge variant="outline" className="cursor-pointer border-lime-600 text-red-200 hover:border-red-400">
                             {tag}
                           </Badge>
                         </HoverCardTrigger>
