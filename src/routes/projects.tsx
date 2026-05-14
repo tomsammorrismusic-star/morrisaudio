@@ -10,7 +10,7 @@ export const Route = createFileRoute('/projects')({
 
 function Projects() {
   return (
-    <div className="min-h-screen bg-brand text-white">
+    <div className="min-h-screen bg-brand text-yellow-100">
       <div className="max-w-4xl mx-auto px-4 py-16">
         <h1 className="text-4xl md:text-5xl font-bold mb-4">Notable Productions</h1>
         <p className="text-gray-200 mb-10 text-lg">
@@ -19,15 +19,15 @@ function Projects() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {allProjects.map((project) => (
-            <Card key={project._meta.path} className="flex flex-col bg-emerald-600 border-emerald-500 text-white">
+            <Card key={project._meta.path} className="flex flex-col bg-lime-700 border-lime-600 text-yellow-100">
               <CardHeader>
-                <CardTitle className="text-xl text-white">{project.title}</CardTitle>
+                <CardTitle className="text-xl text-yellow-100">{project.title}</CardTitle>
               </CardHeader>
               <CardContent className="flex-1 flex flex-col">
-                <p className="text-gray-100 mb-4 flex-1">{project.description}</p>
+                <p className="text-red-200 mb-4 flex-1">{project.description}</p>
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.tags.map((tag) => (
-                    <Badge key={tag} variant="secondary" className="bg-gray-200 text-gray-100">
+                    <Badge key={tag} variant="secondary" className="bg-gray-200 text-red-200">
                       {tag}
                     </Badge>
                   ))}
@@ -38,7 +38,7 @@ function Projects() {
                       href={project.liveUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-sm text-emerald-600 hover:text-emerald-600 transition-colors"
+                      className="inline-flex items-center gap-2 text-sm text-lime-700 hover:text-lime-700 transition-colors"
                     >
                       <ExternalLink size={16} />
                       View Project
