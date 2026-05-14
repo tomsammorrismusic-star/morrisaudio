@@ -25,11 +25,11 @@ function Resume() {
           <p className="text-slate-700 text-lg">
             Professional sound recordist with 10+ years in film, documentary, and broadcast.
           </p>
-          <Separator className="mt-8 bg-gray-300" />
+          <Separator className="mt-8 bg-yellow-400" />
         </div>
 
         {/* Career Summary */}
-        <Card className="bg-lime-700 border-gray-400 text-slate-700">
+        <Card className="bg-lime-700 border-yellow-500 text-slate-700">
           <CardHeader>
             <CardTitle className="text-2xl text-slate-700">Career Summary</CardTitle>
           </CardHeader>
@@ -52,7 +52,7 @@ function Resume() {
             <div className="mt-6">
               <a
                 href="mailto:tomsammorrismusic@gmail.com"
-                className="inline-flex items-center gap-2 px-5 py-2.5 bg-gray-300 hover:bg-gray-600 text-slate-700 font-semibold rounded-2xl transition-colors text-sm"
+                className="inline-flex items-center gap-2 px-5 py-2.5 bg-yellow-400 hover:bg-yellow-600 text-slate-700 font-semibold rounded-2xl transition-colors text-sm"
               >
                 <Mail size={16} />
                 Email Me
@@ -66,12 +66,12 @@ function Resume() {
           <h2 className="text-3xl font-semibold text-slate-700">Work Experience</h2>
           <div className="space-y-6">
             {allJobs.map((job) => (
-              <Card key={job.jobTitle} className="bg-lime-700 border-gray-400 text-slate-700">
+              <Card key={job.jobTitle} className="bg-lime-700 border-yellow-500 text-slate-700">
                 <CardHeader>
                   <div className="flex justify-between items-start flex-wrap gap-3">
                     <div className="space-y-1">
                       <CardTitle className="text-xl text-slate-700">{job.jobTitle}</CardTitle>
-                      <p className="font-medium text-gray-200">
+                      <p className="font-medium text-yellow-600">
                         {job.company} · {job.location}
                       </p>
                     </div>
@@ -86,11 +86,11 @@ function Resume() {
                     {job.tags.map((tag) => (
                       <HoverCard key={tag}>
                         <HoverCardTrigger>
-                          <Badge variant="outline" className="cursor-pointer border-gray-400 text-slate-600 hover:border-gray-300">
+                          <Badge variant="outline" className="cursor-pointer border-yellow-500 text-slate-600 hover:border-yellow-500">
                             {tag}
                           </Badge>
                         </HoverCardTrigger>
-                        <HoverCardContent className="w-64 bg-lime-700 border-gray-400 text-slate-700">
+                        <HoverCardContent className="w-64 bg-lime-700 border-yellow-500 text-slate-700">
                           <p className="text-sm">Proficient with {tag}</p>
                         </HoverCardContent>
                       </HoverCard>
@@ -113,7 +113,7 @@ function Resume() {
           <h2 className="text-3xl font-semibold text-slate-700">Education</h2>
           <div className="space-y-6">
             {allEducations.map((education) => (
-              <Card key={education.school} className="bg-lime-700 border-gray-400 text-slate-700">
+              <Card key={education.school} className="bg-lime-700 border-yellow-500 text-slate-700">
                 <CardHeader>
                   <CardTitle className="text-xl text-slate-700">{education.school}</CardTitle>
                 </CardHeader>
