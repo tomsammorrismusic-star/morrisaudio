@@ -280,6 +280,22 @@ ADDITIONAL EXPERIENCE
                 className="w-44 h-full rounded-2xl object-cover flex-shrink-0 shadow-md"
               />
             </div>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mt-4 w-full">
+              <button
+                onClick={downloadCV}
+                className="inline-flex items-center gap-2 px-6 py-3 bg-[#F5C429] hover:bg-[#D4A600] text-slate-700 font-semibold rounded-2xl transition-colors"
+              >
+                <Download size={18} />
+                Download CV
+              </button>
+              <button
+                onClick={downloadCredits}
+                className="inline-flex items-center gap-2 px-6 py-3 border border-slate-700 hover:bg-slate-100 text-slate-700 font-semibold rounded-2xl transition-colors"
+              >
+                <Download size={18} />
+                Download Credits List
+              </button>
+            </div>
           </CardContent>
         </Card>
 
