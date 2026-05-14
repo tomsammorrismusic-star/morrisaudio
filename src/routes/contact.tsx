@@ -40,8 +40,8 @@ function Contact() {
     return (
       <div className="min-h-screen flex items-center justify-center bg-brand">
         <div className="text-center max-w-md mx-auto px-4">
-          <div className="w-16 h-16 bg-white/10 border border-white/30 rounded-full flex items-center justify-center mx-auto mb-4">
-            <Mail className="w-8 h-8 text-white" />
+          <div className="w-16 h-16 bg-gray-300/10 border border-gray-300/30 rounded-full flex items-center justify-center mx-auto mb-4">
+            <Mail className="w-8 h-8 text-gray-200" />
           </div>
           <h2 className="text-2xl font-semibold text-slate-700 mb-2">Message Sent!</h2>
           <p className="text-slate-600 mb-8">
@@ -49,7 +49,7 @@ function Contact() {
           </p>
           <button
             onClick={() => setSubmitted(false)}
-            className="px-6 py-2 bg-white hover:bg-gray-600 text-slate-700 font-semibold rounded-2xl transition-colors"
+            className="px-6 py-2 bg-gray-300 hover:bg-gray-600 text-slate-700 font-semibold rounded-2xl transition-colors"
           >
             Send Another Message
           </button>
@@ -77,14 +77,14 @@ function Contact() {
                 {contactDetails.map((item) => (
                   <div key={item.label} className="flex items-start gap-3">
                     <div className="w-9 h-9 rounded-2xl bg-transparent border border-gray-400 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <item.icon size={16} className="text-white" />
+                      <item.icon size={16} className="text-gray-200" />
                     </div>
                     <div>
                       <p className="text-xs text-gray-500 uppercase tracking-wider mb-0.5">{item.label}</p>
                     {item.href ? (
                         <a
                           href={item.href}
-                          className="text-slate-700 hover:text-white transition-colors font-medium"
+                          className="text-slate-700 hover:text-gray-300 transition-colors font-medium"
                         >
                           {item.value}
                         </a>
@@ -98,13 +98,13 @@ function Contact() {
             </div>
 
             {/* Direct email CTA */}
-            <div className="p-5 rounded-2xl bg-white/10 border border-white/30">
+            <div className="p-5 rounded-2xl bg-gray-300/10 border border-gray-300/30">
               <p className="text-sm text-slate-600 mb-4">
                 Prefer to email directly? Use the button below.
               </p>
               <a
                 href="mailto:tomsammorrismusic@gmail.com?subject=Audio%20Production%20Inquiry"
-                className="inline-flex items-center gap-2 px-5 py-2.5 bg-white hover:bg-gray-600 text-slate-700 font-semibold rounded-2xl transition-colors text-sm w-full justify-center"
+                className="inline-flex items-center gap-2 px-5 py-2.5 bg-gray-300 hover:bg-gray-600 text-slate-700 font-semibold rounded-2xl transition-colors text-sm w-full justify-center"
               >
                 <Mail size={16} />
                 Email Me
@@ -208,7 +208,7 @@ function Contact() {
 
               <button
                 type="submit"
-                className="inline-flex items-center gap-2 px-7 py-3 bg-white hover:bg-gray-600 text-slate-700 rounded-3xl font-semibold transition-colors"
+                className="inline-flex items-center gap-2 px-7 py-3 bg-gray-300 hover:bg-gray-600 text-slate-700 rounded-3xl font-semibold transition-colors"
               >
                 <Send size={16} />
                 Send Message
@@ -225,7 +225,7 @@ function Contact() {
               href="https://www.instagram.com/tom_morris2810/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center w-12 h-12 rounded-2xl border border-gray-600 hover:border-white text-gray-400 hover:text-white transition-colors bubble-hover"
+              className="inline-flex items-center justify-center w-12 h-12 rounded-2xl border border-gray-600 hover:border-gray-300 text-gray-400 hover:text-gray-300 transition-colors bubble-hover"
               aria-label="Instagram"
             >
               <Instagram className="w-6 h-6" />
@@ -234,7 +234,7 @@ function Contact() {
               href="https://wa.me/447857484127"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center w-12 h-12 rounded-2xl border border-gray-600 hover:border-white text-gray-400 hover:text-white transition-colors bubble-hover"
+              className="inline-flex items-center justify-center w-12 h-12 rounded-2xl border border-gray-600 hover:border-gray-300 text-gray-400 hover:text-gray-300 transition-colors bubble-hover"
               aria-label="WhatsApp"
             >
               <MessageCircle className="w-6 h-6" />

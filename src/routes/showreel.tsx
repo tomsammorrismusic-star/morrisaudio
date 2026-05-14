@@ -51,7 +51,7 @@ function Showreel() {
         <h2 className="text-3xl font-semibold mb-8 text-slate-700">Featured Podcast</h2>
         <div className="bg-lime-700 rounded-2xl p-8 mb-16 border border-gray-400">
           <div className="flex items-center gap-3 mb-4">
-            <Music className="w-6 h-6 text-white" />
+            <Music className="w-6 h-6 text-gray-200" />
             <h3 className="text-2xl font-semibold text-slate-700">VCL Vintners Podcast</h3>
           </div>
           <p className="text-slate-700 mb-8">Listen now</p>
@@ -140,7 +140,7 @@ function Showreel() {
             {!expandMoreWork && moreWorkVideos.length > 3 && (
               <button
                 onClick={() => setExpandMoreWork(true)}
-                className="flex items-center justify-center gap-2 px-4 py-3 border border-gray-400 text-white hover:bg-white/10 rounded-2xl transition-colors font-semibold text-sm mt-3"
+                className="flex items-center justify-center gap-2 px-4 py-3 border border-gray-400 text-gray-200 hover:bg-gray-300/10 rounded-2xl transition-colors font-semibold text-sm mt-3"
               >
                 <span>View {moreWorkVideos.length - 3} More</span>
                 <ChevronDown className="w-4 h-4" />
@@ -149,7 +149,7 @@ function Showreel() {
             {expandMoreWork && (
               <button
                 onClick={() => setExpandMoreWork(false)}
-                className="flex items-center justify-center gap-2 px-4 py-3 border border-gray-400 text-white hover:bg-white/10 rounded-2xl transition-colors font-semibold text-sm mt-3"
+                className="flex items-center justify-center gap-2 px-4 py-3 border border-gray-400 text-gray-200 hover:bg-gray-300/10 rounded-2xl transition-colors font-semibold text-sm mt-3"
               >
                 <span>Show Less</span>
                 <ChevronDown className="w-4 h-4 rotate-180" />
@@ -170,7 +170,7 @@ function Showreel() {
           </p>
           <a
             href="mailto:tomsammorrismusic@gmail.com"
-            className="inline-block px-6 py-3 bg-white hover:bg-gray-600 text-slate-700 font-semibold rounded-2xl transition-colors mb-8"
+            className="inline-block px-6 py-3 bg-gray-300 hover:bg-gray-600 text-slate-700 font-semibold rounded-2xl transition-colors mb-8"
           >
             Get in Touch
           </a>
@@ -179,7 +179,7 @@ function Showreel() {
               href="https://www.instagram.com/tom_morris2810/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center w-12 h-12 rounded-2xl border border-gray-600 hover:border-white text-gray-400 hover:text-white transition-colors bubble-hover"
+              className="inline-flex items-center justify-center w-12 h-12 rounded-2xl border border-gray-600 hover:border-gray-300 text-gray-400 hover:text-gray-300 transition-colors bubble-hover"
               aria-label="Instagram"
             >
               <Instagram className="w-6 h-6" />
@@ -188,7 +188,7 @@ function Showreel() {
               href="https://wa.me/447857484127"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center w-12 h-12 rounded-2xl border border-gray-600 hover:border-white text-gray-400 hover:text-white transition-colors bubble-hover"
+              className="inline-flex items-center justify-center w-12 h-12 rounded-2xl border border-gray-600 hover:border-gray-300 text-gray-400 hover:text-gray-300 transition-colors bubble-hover"
               aria-label="WhatsApp"
             >
               <MessageCircle className="w-6 h-6" />

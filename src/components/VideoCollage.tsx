@@ -54,7 +54,7 @@ export default function VideoCollage() {
               <button
                 key={item.id}
                 onClick={() => setSelectedItem(item)}
-                className={`absolute bg-gradient-to-br ${CATEGORY_COLORS[item.category]} flex flex-col items-center justify-center gap-2 cursor-pointer transition-all duration-300 group overflow-hidden bubble-hover hover:shadow-2xl hover:z-20 hover:scale-105 rounded-2xl border border-white/10`}
+                className={`absolute bg-gradient-to-br ${CATEGORY_COLORS[item.category]} flex flex-col items-center justify-center gap-2 cursor-pointer transition-all duration-300 group overflow-hidden bubble-hover hover:shadow-2xl hover:z-20 hover:scale-105 rounded-2xl border border-gray-300/10`}
                 style={{
                   left: `${config.x}px`,
                   top: `${config.y}px`,
@@ -84,7 +84,7 @@ export default function VideoCollage() {
         >
           <button
             onClick={() => setSelectedItem(null)}
-            className="absolute top-8 right-8 p-3 text-slate-700 hover:text-white bg-black/60 hover:bg-black/80 rounded-full z-10 transition-all duration-300 bubble-hover"
+            className="absolute top-8 right-8 p-3 text-slate-700 hover:text-gray-300 bg-black/60 hover:bg-black/80 rounded-full z-10 transition-all duration-300 bubble-hover"
             aria-label="Close"
           >
             <X size={28} />
