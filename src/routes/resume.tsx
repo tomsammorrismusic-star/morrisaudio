@@ -248,7 +248,7 @@ ADDITIONAL EXPERIENCE
                 <p className="leading-relaxed text-slate-600">
                   I'm a production sound mixer and boom operator with a genuine passion for capturing excellent audio on set. I've worked across feature films, high-end TV dramas, documentaries, and commercials, collaborating with talented international crews. My credits include Bollywood productions, BBC documentaries, and major brand campaigns. I'm committed to bringing professionalism and creativity to every project.
                 </p>
-                <div className="mt-6">
+                <div className="mt-6 flex flex-wrap gap-2">
                   <a
                     href="mailto:tomsammorrismusic@gmail.com"
                     className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#F5C429] hover:bg-[#D4A600] text-slate-700 font-semibold rounded-2xl transition-colors text-sm"
@@ -256,6 +256,20 @@ ADDITIONAL EXPERIENCE
                     <Mail size={16} />
                     Email Me
                   </a>
+                  <button
+                    onClick={downloadCV}
+                    className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#F5C429] hover:bg-[#D4A600] text-slate-700 font-semibold rounded-2xl transition-colors text-sm"
+                  >
+                    <Download size={16} />
+                    Download CV
+                  </button>
+                  <button
+                    onClick={downloadCredits}
+                    className="inline-flex items-center gap-2 px-5 py-2.5 border border-slate-700 hover:bg-slate-100 text-slate-700 font-semibold rounded-2xl transition-colors text-sm"
+                  >
+                    <Download size={16} />
+                    Download Credits
+                  </button>
                 </div>
               </div>
               <img
@@ -263,22 +277,6 @@ ADDITIONAL EXPERIENCE
                 alt="Tom Morris - Professional headshot"
                 className="w-44 h-auto rounded-2xl object-cover flex-shrink-0 shadow-md"
               />
-            </div>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center w-full">
-              <button
-                onClick={downloadCV}
-                className="inline-flex items-center gap-2 px-6 py-3 bg-[#F5C429] hover:bg-[#D4A600] text-slate-700 font-semibold rounded-2xl transition-colors"
-              >
-                <Download size={18} />
-                Download CV
-              </button>
-              <button
-                onClick={downloadCredits}
-                className="inline-flex items-center gap-2 px-6 py-3 border border-slate-700 hover:bg-slate-100 text-slate-700 font-semibold rounded-2xl transition-colors"
-              >
-                <Download size={18} />
-                Download Credits List
-              </button>
             </div>
           </CardContent>
         </Card>
