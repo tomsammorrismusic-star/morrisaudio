@@ -34,14 +34,14 @@ function Home() {
       {/* Hero */}
       <section className="relative min-h-[80vh] flex flex-col items-center justify-center text-center px-4 py-20">
         <div className="relative z-10 w-full max-w-4xl mx-auto space-y-6">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#A8C86F]/10 border border-[#C9A887]/30 text-[#6B7D4E] text-sm font-medium">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#B8956F]/10 border border-[#C9A887]/30 text-[#8B6F47] text-sm font-medium">
             <Mic size={14} />
             Available for hire&nbsp;
           </div>
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight">
             Capturing You
             <br />
-            <span className="text-[#6B7D4E]">Great Audio</span>
+            <span className="text-[#8B6F47]">Great Audio</span>
           </h1>
           <p className="text-lg md:text-xl text-slate-700 max-w-2xl mx-auto leading-relaxed">
             Professional sound recordist specialising in film, documentary, and commercial productions.&nbsp;
@@ -49,7 +49,7 @@ function Home() {
           <div className="flex flex-col sm:flex-row gap-5 justify-center pt-2">
             <Link
               to="/contact"
-              className="px-10 py-3 bg-[#A8C86F] hover:bg-[#6B7D4E] text-white font-semibold rounded-3xl transition-colors text-lg bubble-hover"
+              className="px-10 py-3 bg-[#B8956F] hover:bg-[#8B6F47] text-white font-semibold rounded-3xl transition-colors text-lg bubble-hover"
             >
               Get In Touch
             </Link>
@@ -111,7 +111,7 @@ function Home() {
                 key={svc.title}
                 className="p-8 rounded-3xl border border-[#C9A887] hover:border-[#B8956F] bg-[#F5F0E8] hover:bg-[#EDE5D8] transition-all duration-300 bubble-hover"
               >
-                <svc.icon className="w-14 h-14 text-[#6B7D4E] mb-8" />
+                <svc.icon className="w-14 h-14 text-[#8B6F47] mb-8" />
                 <h3 className="text-2xl font-semibold mb-4">{svc.title}</h3>
                 <p className="text-slate-600 text-base leading-relaxed">{svc.desc}</p>
               </div>
@@ -123,7 +123,7 @@ function Home() {
       {/* CTA */}
       <section className="py-20 lg:py-28 px-4">
         <div className="max-w-3xl mx-auto text-center space-y-6">
-          <Award className="w-12 h-12 lg:w-16 lg:h-16 text-[#6B7D4E] mx-auto" />
+          <Award className="w-12 h-12 lg:w-16 lg:h-16 text-[#8B6F47] mx-auto" />
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold">Ready to work together?</h2>
           <p className="text-slate-700 text-lg md:text-xl">
             Let's talk about your next production. Available for short-term engagements
@@ -132,7 +132,7 @@ function Home() {
           <div className="flex flex-col sm:flex-row gap-5 justify-center mb-8">
             <Link
               to="/contact"
-              className="inline-flex items-center justify-center gap-2 px-10 py-3 bg-[#A8C86F] hover:bg-[#6B7D4E] text-white font-semibold rounded-3xl transition-colors bubble-hover"
+              className="inline-flex items-center justify-center gap-2 px-10 py-3 bg-[#B8956F] hover:bg-[#8B6F47] text-white font-semibold rounded-3xl transition-colors bubble-hover"
             >
               <Mail size={18} />
               Contact Me
@@ -149,7 +149,7 @@ function Home() {
               href="https://www.instagram.com/tom_morris2810/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center w-12 h-12 rounded-2xl border border-[#C9A887] hover:border-[#C9A887] text-slate-700 hover:text-[#7A8D5F] transition-colors bubble-hover"
+              className="inline-flex items-center justify-center w-12 h-12 rounded-2xl border border-[#C9A887] hover:border-[#C9A887] text-slate-700 hover:text-[#A08560] transition-colors bubble-hover"
               aria-label="Instagram"
             >
               <Instagram className="w-6 h-6" />
@@ -158,7 +158,7 @@ function Home() {
               href="https://wa.me/447857484127"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center w-12 h-12 rounded-2xl border border-[#C9A887] hover:border-[#C9A887] text-slate-700 hover:text-[#7A8D5F] transition-colors bubble-hover"
+              className="inline-flex items-center justify-center w-12 h-12 rounded-2xl border border-[#C9A887] hover:border-[#C9A887] text-slate-700 hover:text-[#A08560] transition-colors bubble-hover"
               aria-label="WhatsApp"
             >
               <MessageCircle className="w-6 h-6" />
