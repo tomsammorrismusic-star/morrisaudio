@@ -140,7 +140,7 @@ code {
 
 @layer components {
   .bg-brand {
-    @apply bg-[#053d33];
+    @apply bg-[#1a1a1a];
   }
 }
 
