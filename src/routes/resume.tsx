@@ -29,7 +29,7 @@ function Resume() {
         </div>
 
         {/* Career Summary */}
-        <Card className="bg-lime-700 border-rose-300 text-slate-700">
+        <Card className="bg-lime-700 border-amber-700 text-slate-700">
           <CardHeader>
             <CardTitle className="text-2xl text-slate-700">Career Summary</CardTitle>
           </CardHeader>
@@ -52,7 +52,7 @@ function Resume() {
             <div className="mt-6">
               <a
                 href="mailto:tomsammorrismusic@gmail.com"
-                className="inline-flex items-center gap-2 px-5 py-2.5 bg-rose-300 hover:bg-purple-300 text-slate-700 font-semibold rounded-2xl transition-colors text-sm"
+                className="inline-flex items-center gap-2 px-5 py-2.5 bg-amber-600 hover:bg-lime-600 text-slate-700 font-semibold rounded-2xl transition-colors text-sm"
               >
                 <Mail size={16} />
                 Email Me
@@ -66,12 +66,12 @@ function Resume() {
           <h2 className="text-3xl font-semibold text-slate-700">Work Experience</h2>
           <div className="space-y-6">
             {allJobs.map((job) => (
-              <Card key={job.jobTitle} className="bg-lime-700 border-rose-300 text-slate-700">
+              <Card key={job.jobTitle} className="bg-lime-700 border-amber-700 text-slate-700">
                 <CardHeader>
                   <div className="flex justify-between items-start flex-wrap gap-3">
                     <div className="space-y-1">
                       <CardTitle className="text-xl text-slate-700">{job.jobTitle}</CardTitle>
-                      <p className="font-medium text-teal-600">
+                      <p className="font-medium text-amber-900">
                         {job.company} · {job.location}
                       </p>
                     </div>
@@ -86,11 +86,11 @@ function Resume() {
                     {job.tags.map((tag) => (
                       <HoverCard key={tag}>
                         <HoverCardTrigger>
-                          <Badge variant="outline" className="cursor-pointer border-rose-300 text-slate-600 hover:border-purple-300">
+                          <Badge variant="outline" className="cursor-pointer border-amber-700 text-slate-600 hover:border-lime-600">
                             {tag}
                           </Badge>
                         </HoverCardTrigger>
-                        <HoverCardContent className="w-64 bg-lime-700 border-rose-300 text-slate-700">
+                        <HoverCardContent className="w-64 bg-lime-700 border-amber-700 text-slate-700">
                           <p className="text-sm">Proficient with {tag}</p>
                         </HoverCardContent>
                       </HoverCard>
@@ -113,7 +113,7 @@ function Resume() {
           <h2 className="text-3xl font-semibold text-slate-700">Education</h2>
           <div className="space-y-6">
             {allEducations.map((education) => (
-              <Card key={education.school} className="bg-lime-700 border-rose-300 text-slate-700">
+              <Card key={education.school} className="bg-lime-700 border-amber-700 text-slate-700">
                 <CardHeader>
                   <CardTitle className="text-xl text-slate-700">{education.school}</CardTitle>
                 </CardHeader>
