@@ -12,12 +12,12 @@ function Projects() {
   return (
     <div className="min-h-screen bg-brand text-white">
       <div className="max-w-4xl mx-auto px-4 py-16">
-        <h1 className="text-4xl md:text-5xl font-extrabold mb-3">Notable Productions</h1>
+        <h1 className="text-4xl md:text-5xl font-bold mb-4">Notable Productions</h1>
         <p className="text-gray-200 mb-10 text-lg">
           A selection of film, documentary, and commercial projects.
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {allProjects.map((project) => (
             <Card key={project._meta.path} className="flex flex-col bg-emerald-600 border-emerald-500 text-white">
               <CardHeader>

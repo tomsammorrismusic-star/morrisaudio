@@ -21,7 +21,7 @@ function Resume() {
     <div className="min-h-screen bg-brand text-white p-8 lg:p-12">
       <div className="max-w-4xl mx-auto space-y-12">
         <div className="text-center space-y-4">
-          <h1 className="text-5xl font-bold">Experience & CV</h1>
+          <h1 className="text-5xl font-semibold">Experience & CV</h1>
           <p className="text-gray-300 text-lg">
             Professional sound recordist with 10+ years in film, documentary, and broadcast.
           </p>
@@ -52,7 +52,7 @@ function Resume() {
             <div className="mt-6">
               <a
                 href="mailto:tomsammorrismusic@gmail.com"
-                className="inline-flex items-center gap-2 px-5 py-2.5 bg-emerald-50 hover:bg-emerald-600 text-white font-bold rounded-lg transition-colors text-sm"
+                className="inline-flex items-center gap-2 px-5 py-2.5 bg-emerald-50 hover:bg-emerald-600 text-white font-semibold rounded-2xl transition-colors text-sm"
               >
                 <Mail size={16} />
                 Email Me
@@ -81,7 +81,7 @@ function Resume() {
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <p className="mb-6 leading-relaxed text-gray-100">{job.summary}</p>
+                  <p className="mb-8 leading-relaxed text-gray-100">{job.summary}</p>
                   <div className="flex flex-wrap gap-2">
                     {job.tags.map((tag) => (
                       <HoverCard key={tag}>

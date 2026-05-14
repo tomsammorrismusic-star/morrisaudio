@@ -23,15 +23,15 @@ function Showreel() {
   return (
     <div className="min-h-screen bg-brand text-white">
       <div className="max-w-6xl mx-auto px-4 py-16">
-        <h1 className="text-4xl md:text-5xl font-extrabold mb-3">Showreel</h1>
+        <h1 className="text-4xl md:text-5xl font-bold mb-4">Showreel</h1>
         <p className="text-gray-300 mb-10 text-lg">
           Podcast, voice-over, corporate, and commercial audio production samples.
         </p>
       </div>
 
       <div className="max-w-6xl mx-auto px-4 py-12">
-        <h2 className="text-3xl font-bold mb-8 text-white">Highlight Reel</h2>
-        <div className="rounded-lg overflow-hidden bg-black aspect-video flex items-center justify-center">
+        <h2 className="text-3xl font-semibold mb-8 text-white">Highlight Reel</h2>
+        <div className="rounded-2xl overflow-hidden bg-black aspect-video flex items-center justify-center">
           <iframe
             src="https://www.youtube.com/embed/PASTE_YOUR_VIDEO_ID_HERE"
             width="100%"
@@ -42,20 +42,20 @@ function Showreel() {
             className="w-full h-full"
           />
         </div>
-        <p className="text-gray-300 mt-4 text-center text-sm">
+        <p className="text-gray-300 mt-6 text-center text-sm">
           Replace PASTE_YOUR_VIDEO_ID_HERE with your YouTube video ID in the src attribute
         </p>
       </div>
 
       <div className="max-w-6xl mx-auto px-4 py-12">
-        <h2 className="text-3xl font-bold mb-8 text-white">Featured Podcast</h2>
-        <div className="bg-emerald-600 rounded-lg p-8 mb-16 border border-emerald-500">
+        <h2 className="text-3xl font-semibold mb-8 text-white">Featured Podcast</h2>
+        <div className="bg-emerald-600 rounded-2xl p-8 mb-16 border border-emerald-500">
           <div className="flex items-center gap-3 mb-4">
             <Music className="w-6 h-6 text-emerald-600" />
-            <h3 className="text-2xl font-bold text-white">VCL Vintners Podcast</h3>
+            <h3 className="text-2xl font-semibold text-white">VCL Vintners Podcast</h3>
           </div>
-          <p className="text-gray-300 mb-6">Listen now</p>
-          <div className="rounded-lg overflow-hidden">
+          <p className="text-gray-300 mb-8">Listen now</p>
+          <div className="rounded-2xl overflow-hidden">
             <iframe
               src="https://open.spotify.com/embed/show/50zl8ics5uAV2aMAJ7spOF?utm_source=generator&theme=0"
               width="100%"
@@ -63,19 +63,19 @@ function Showreel() {
               frameBorder="0"
               allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
               loading="lazy"
-              className="rounded-lg"
+              className="rounded-2xl"
             />
           </div>
         </div>
       </div>
 
       <div className="max-w-6xl mx-auto px-4 py-12">
-        <h2 className="text-3xl font-bold mb-8 text-white">Audio Example</h2>
-        <div className="bg-emerald-600 rounded-lg p-8 border border-emerald-500">
-          <h3 className="text-xl font-semibold text-white mb-6">Production Sample</h3>
+        <h2 className="text-3xl font-semibold mb-8 text-white">Audio Example</h2>
+        <div className="bg-emerald-600 rounded-2xl p-8 border border-emerald-500">
+          <h3 className="text-xl font-semibold text-white mb-8">Production Sample</h3>
           <audio
             controls
-            className="w-full rounded-lg"
+            className="w-full rounded-2xl"
             style={{
               colorScheme: 'dark',
             }}
@@ -83,18 +83,18 @@ function Showreel() {
             <source src="https://example.com/audio.mp3" type="audio/mpeg" />
             Your browser does not support the audio element.
           </audio>
-          <p className="text-gray-300 mt-4 text-sm">
+          <p className="text-gray-300 mt-6 text-sm">
             Replace the audio URL with your actual audio file (mp3, wav, etc.)
           </p>
         </div>
       </div>
 
       <div className="max-w-6xl mx-auto px-4 py-12">
-        <h2 className="text-3xl font-bold mb-8 text-white">Portfolio</h2>
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <h2 className="text-3xl font-semibold mb-8 text-white">Portfolio</h2>
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Large featured video on left */}
           <div className="lg:col-span-2">
-            <div className="rounded-lg overflow-hidden bg-black aspect-video flex items-center justify-center group cursor-pointer">
+            <div className="rounded-2xl overflow-hidden bg-black aspect-video flex items-center justify-center group cursor-pointer">
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               <iframe
                 src="https://www.youtube.com/embed/VIDEO_ID_1"
@@ -119,7 +119,7 @@ function Showreel() {
               {displayedVideos.map((video, idx) => (
                 <div
                   key={idx}
-                  className="flex-1 min-h-0 rounded-lg overflow-hidden bg-black flex items-center justify-center group cursor-pointer bubble-hover hover:ring-2 hover:ring-emerald-700 transition-all"
+                  className="flex-1 min-h-0 rounded-2xl overflow-hidden bg-black flex items-center justify-center group cursor-pointer bubble-hover hover:ring-2 hover:ring-emerald-700 transition-all"
                 >
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   <iframe
@@ -140,7 +140,7 @@ function Showreel() {
             {!expandMoreWork && moreWorkVideos.length > 3 && (
               <button
                 onClick={() => setExpandMoreWork(true)}
-                className="flex items-center justify-center gap-2 px-4 py-3 border border-emerald-500 text-emerald-600 hover:bg-emerald-50/10 rounded-lg transition-colors font-semibold text-sm mt-2"
+                className="flex items-center justify-center gap-2 px-4 py-3 border border-emerald-500 text-emerald-600 hover:bg-emerald-50/10 rounded-2xl transition-colors font-semibold text-sm mt-3"
               >
                 <span>View {moreWorkVideos.length - 3} More</span>
                 <ChevronDown className="w-4 h-4" />
@@ -149,7 +149,7 @@ function Showreel() {
             {expandMoreWork && (
               <button
                 onClick={() => setExpandMoreWork(false)}
-                className="flex items-center justify-center gap-2 px-4 py-3 border border-emerald-500 text-emerald-600 hover:bg-emerald-50/10 rounded-lg transition-colors font-semibold text-sm mt-2"
+                className="flex items-center justify-center gap-2 px-4 py-3 border border-emerald-500 text-emerald-600 hover:bg-emerald-50/10 rounded-2xl transition-colors font-semibold text-sm mt-3"
               >
                 <span>Show Less</span>
                 <ChevronDown className="w-4 h-4 rotate-180" />
@@ -163,23 +163,23 @@ function Showreel() {
       </div>
 
       <div className="max-w-6xl mx-auto px-4 py-16">
-        <div className="bg-emerald-600 rounded-lg p-8 text-center border border-emerald-500">
-          <h3 className="text-2xl font-bold mb-3 text-white">Ready to work together?</h3>
-          <p className="text-gray-100 mb-6">
+        <div className="bg-emerald-600 rounded-2xl p-8 text-center border border-emerald-500">
+          <h3 className="text-2xl font-semibold mb-4 text-white">Ready to work together?</h3>
+          <p className="text-gray-100 mb-8">
             Let's discuss your next audio project and how I can help bring your vision to life.
           </p>
           <a
             href="mailto:tomsammorrismusic@gmail.com"
-            className="inline-block px-6 py-3 bg-emerald-50 hover:bg-emerald-600 text-white font-semibold rounded-lg transition-colors mb-6"
+            className="inline-block px-6 py-3 bg-emerald-50 hover:bg-emerald-600 text-white font-semibold rounded-2xl transition-colors mb-8"
           >
             Get in Touch
           </a>
-          <div className="flex justify-center gap-4">
+          <div className="flex justify-center gap-5">
             <a
               href="https://www.instagram.com/tom_morris2810/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center w-12 h-12 rounded-lg border border-gray-600 hover:border-emerald-500 text-gray-400 hover:text-emerald-600 transition-colors bubble-hover"
+              className="inline-flex items-center justify-center w-12 h-12 rounded-2xl border border-gray-600 hover:border-emerald-500 text-gray-400 hover:text-emerald-600 transition-colors bubble-hover"
               aria-label="Instagram"
             >
               <Instagram className="w-6 h-6" />
@@ -188,7 +188,7 @@ function Showreel() {
               href="https://wa.me/447857484127"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center w-12 h-12 rounded-lg border border-gray-600 hover:border-emerald-500 text-gray-400 hover:text-emerald-600 transition-colors bubble-hover"
+              className="inline-flex items-center justify-center w-12 h-12 rounded-2xl border border-gray-600 hover:border-emerald-500 text-gray-400 hover:text-emerald-600 transition-colors bubble-hover"
               aria-label="WhatsApp"
             >
               <MessageCircle className="w-6 h-6" />

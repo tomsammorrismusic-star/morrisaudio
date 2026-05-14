@@ -25,7 +25,7 @@ export default function Header() {
   return (
     <header className={`sticky top-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-brand/80 backdrop-blur-md' : 'bg-transparent'}`}>
       <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between rounded-b-2xl">
-        <Link to="/" className="flex items-center gap-3 font-bold text-2xl md:text-3xl text-white hover:text-emerald-600 transition-colors tracking-tight">
+        <Link to="/" className="flex items-center gap-3 font-semibold text-2xl md:text-3xl text-white hover:text-emerald-600 transition-colors tracking-tight">
           <Mic className="w-7 h-7 md:w-8 md:h-8 text-emerald-600" />
           <span>Morris Audio</span>
         </Link>
@@ -36,8 +36,8 @@ export default function Header() {
             <Link
               key={link.to}
               to={link.to}
-              className="inline-flex items-center justify-center w-9 h-9 rounded-lg text-gray-300 hover:text-emerald-600 hover:border border-emerald-500 hover:border-emerald-500 transition-colors bubble-hover"
-              activeProps={{ className: 'inline-flex items-center justify-center w-9 h-9 rounded-lg text-emerald-600 border border-emerald-500 transition-colors' }}
+              className="inline-flex items-center justify-center w-9 h-9 rounded-2xl text-gray-300 hover:text-emerald-600 hover:border border-emerald-500 hover:border-emerald-500 transition-colors bubble-hover"
+              activeProps={{ className: 'inline-flex items-center justify-center w-9 h-9 rounded-2xl text-emerald-600 border border-emerald-500 transition-colors' }}
               title={link.label}
             >
               <link.icon className="w-5 h-5" />
@@ -48,7 +48,7 @@ export default function Header() {
               href="https://www.instagram.com/tom_morris2810/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center w-9 h-9 rounded-lg border border-emerald-500 hover:border-emerald-500 text-gray-300 hover:text-emerald-600 transition-colors bubble-hover"
+              className="inline-flex items-center justify-center w-9 h-9 rounded-2xl border border-emerald-500 hover:border-emerald-500 text-gray-300 hover:text-emerald-600 transition-colors bubble-hover"
               aria-label="Instagram"
             >
               <Instagram className="w-4 h-4" />
@@ -57,7 +57,7 @@ export default function Header() {
               href="https://wa.me/447857484127"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center w-9 h-9 rounded-lg border border-emerald-500 hover:border-emerald-500 text-gray-300 hover:text-emerald-600 transition-colors bubble-hover"
+              className="inline-flex items-center justify-center w-9 h-9 rounded-2xl border border-emerald-500 hover:border-emerald-500 text-gray-300 hover:text-emerald-600 transition-colors bubble-hover"
               aria-label="WhatsApp"
             >
               <MessageCircle className="w-4 h-4" />
@@ -65,7 +65,7 @@ export default function Header() {
           </div>
           <a
             href="mailto:tomsammorrismusic@gmail.com"
-            className="px-3 py-2 bg-emerald-50 hover:bg-emerald-600 text-white font-semibold text-xs rounded-lg transition-all duration-200 bubble-hover ml-2"
+            className="px-3 py-2 bg-emerald-50 hover:bg-emerald-600 text-white font-semibold text-xs rounded-2xl transition-all duration-200 bubble-hover ml-2"
           >
             Email
           </a>

@@ -16,7 +16,7 @@ function BlogPost() {
     return (
       <div className="min-h-screen  flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-2xl font-bold text-white mb-4">
+          <h1 className="text-2xl font-semibold text-white mb-4">
             Post not found
           </h1>
           <Link to="/" className="text-blue-600 hover:underline">
@@ -42,7 +42,7 @@ function BlogPost() {
 
         <article>
           <header className="mb-8">
-            <h1 className="text-4xl font-bold text-white mb-4">
+            <h1 className="text-4xl font-semibold text-white mb-4">
               {post.title}
             </h1>
             <div className="flex items-center gap-3 text-gray-500 mb-4">

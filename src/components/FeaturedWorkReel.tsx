@@ -58,7 +58,7 @@ export default function FeaturedWorkReel() {
     >
       <div
         ref={scrollContainer}
-        className="featured-work-scroll flex gap-6 overflow-x-auto items-center video-wheel-scroll"
+        className="featured-work-scroll flex gap-8 overflow-x-auto items-center video-wheel-scroll"
         style={{
           scrollBehavior: 'auto',
           WebkitOverflowScrolling: 'touch',
@@ -74,7 +74,7 @@ export default function FeaturedWorkReel() {
             style={{ perspective: '1000px' }}
           >
             <button
-              className={`relative w-64 h-64 rounded-xl bg-gradient-to-br ${CATEGORY_COLORS[item.category] ?? 'from-gray-300 to-gray-200'} border border-emerald-500 flex flex-col items-center justify-center gap-2 cursor-pointer hover:border-emerald-500 transition-all duration-500 ease-out group bubble-hover hover:shadow-2xl hover:scale-110`}
+              className={`relative w-64 h-64 rounded-3xl bg-gradient-to-br ${CATEGORY_COLORS[item.category] ?? 'from-gray-300 to-gray-200'} border border-emerald-500 flex flex-col items-center justify-center gap-2 cursor-pointer hover:border-emerald-500 transition-all duration-500 ease-out group bubble-hover hover:shadow-2xl hover:scale-110`}
               style={{ transformOrigin: 'center' }}
               onMouseEnter={() => setIsPaused(true)}
               onMouseLeave={() => setIsPaused(false)}

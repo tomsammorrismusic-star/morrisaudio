@@ -54,7 +54,7 @@ export default function VideoCollage() {
               <button
                 key={item.id}
                 onClick={() => setSelectedItem(item)}
-                className={`absolute bg-gradient-to-br ${CATEGORY_COLORS[item.category]} flex flex-col items-center justify-center gap-2 cursor-pointer transition-all duration-300 group overflow-hidden bubble-hover hover:shadow-2xl hover:z-20 hover:scale-105 rounded-lg border border-white/10`}
+                className={`absolute bg-gradient-to-br ${CATEGORY_COLORS[item.category]} flex flex-col items-center justify-center gap-2 cursor-pointer transition-all duration-300 group overflow-hidden bubble-hover hover:shadow-2xl hover:z-20 hover:scale-105 rounded-2xl border border-white/10`}
                 style={{
                   left: `${config.x}px`,
                   top: `${config.y}px`,
@@ -67,7 +67,7 @@ export default function VideoCollage() {
                   <Play className="w-6 h-6 text-white fill-white ml-1" />
                 </div>
                 <div className="text-center px-2 relative z-10 bottom-2 group-hover:bottom-0 transition-all duration-300">
-                  <p className="text-white font-bold text-xs leading-snug line-clamp-2 drop-shadow-lg">{item.title}</p>
+                  <p className="text-white font-semibold text-xs leading-snug line-clamp-2 drop-shadow-lg">{item.title}</p>
                   <p className="text-white/70 text-xs uppercase tracking-wider mt-1">{item.category}</p>
                 </div>
               </button>
@@ -98,7 +98,7 @@ export default function VideoCollage() {
               <Play className="w-20 h-20 text-white fill-white ml-3" />
             </div>
             <div className="text-center px-12">
-              <h2 className="text-5xl font-bold text-white mb-3">{selectedItem.title}</h2>
+              <h2 className="text-5xl font-semibold text-white mb-4">{selectedItem.title}</h2>
               <p className="text-white/80 text-2xl uppercase tracking-widest font-semibold">{selectedItem.category}</p>
             </div>
           </div>
