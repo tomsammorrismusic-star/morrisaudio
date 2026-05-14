@@ -258,7 +258,7 @@ ADDITIONAL EXPERIENCE
                   </a>
                 </div>
               </div>
-              <div className="flex flex-col gap-3 w-44 h-full -mt-6">
+              <div className="flex flex-col gap-3 w-44 h-full -mt-12">
                 <div className="flex gap-2">
                   <button
                     onClick={downloadCV}
