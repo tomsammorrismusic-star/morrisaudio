@@ -179,7 +179,7 @@ function Showreel() {
               href="https://www.instagram.com/tom_morris2810/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center w-12 h-12 rounded-2xl border border-gray-600 hover:border-yellow-500 text-gray-400 hover:text-yellow-500 transition-colors bubble-hover"
+              className="inline-flex items-center justify-center w-12 h-12 rounded-2xl border border-slate-700 hover:border-slate-700 text-slate-700 hover:text-[#E5CA38] transition-colors bubble-hover"
               aria-label="Instagram"
             >
               <Instagram className="w-6 h-6" />
@@ -188,7 +188,7 @@ function Showreel() {
               href="https://wa.me/447857484127"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center w-12 h-12 rounded-2xl border border-gray-600 hover:border-yellow-500 text-gray-400 hover:text-yellow-500 transition-colors bubble-hover"
+              className="inline-flex items-center justify-center w-12 h-12 rounded-2xl border border-slate-700 hover:border-slate-700 text-slate-700 hover:text-[#E5CA38] transition-colors bubble-hover"
               aria-label="WhatsApp"
             >
               <MessageCircle className="w-6 h-6" />
