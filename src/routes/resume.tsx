@@ -248,7 +248,7 @@ ADDITIONAL EXPERIENCE
                 <p className="leading-relaxed text-slate-600">
                   I'm a production sound mixer and boom operator with a genuine passion for capturing excellent audio on set. I've worked across feature films, high-end TV dramas, documentaries, and commercials, collaborating with talented international crews. My credits include Bollywood productions, BBC documentaries, and major brand campaigns. I'm committed to bringing professionalism and creativity to every project.
                 </p>
-                <div className="mt-6 flex flex-wrap gap-2">
+                <div className="mt-6">
                   <a
                     href="mailto:tomsammorrismusic@gmail.com"
                     className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#F5C429] hover:bg-[#D4A600] text-slate-700 font-semibold rounded-2xl transition-colors text-sm"
@@ -256,27 +256,29 @@ ADDITIONAL EXPERIENCE
                     <Mail size={16} />
                     Email Me
                   </a>
-                  <button
-                    onClick={downloadCV}
-                    className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#F5C429] hover:bg-[#D4A600] text-slate-700 font-semibold rounded-2xl transition-colors text-sm"
-                  >
-                    <Download size={16} />
-                    Download CV
-                  </button>
-                  <button
-                    onClick={downloadCredits}
-                    className="inline-flex items-center gap-2 px-5 py-2.5 border border-slate-700 hover:bg-slate-100 text-slate-700 font-semibold rounded-2xl transition-colors text-sm"
-                  >
-                    <Download size={16} />
-                    Download Credits
-                  </button>
                 </div>
               </div>
-              <img
-                src="https://cdn.builder.io/api/v1/image/assets%2F1a8d84947e9444f98df7c975eda41851%2Fadd1319ac1184a8ea01e94321ca2fce2?format=webp&width=800&height=1200"
-                alt="Tom Morris - Professional headshot"
-                className="w-44 h-auto rounded-2xl object-cover flex-shrink-0 shadow-md"
-              />
+              <div className="flex flex-col gap-3 w-44">
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets%2F1a8d84947e9444f98df7c975eda41851%2Fadd1319ac1184a8ea01e94321ca2fce2?format=webp&width=800&height=1200"
+                  alt="Tom Morris - Professional headshot"
+                  className="w-full h-auto rounded-2xl object-cover shadow-md"
+                />
+                <button
+                  onClick={downloadCV}
+                  className="w-full inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-[#F5C429] hover:bg-[#D4A600] text-slate-700 font-semibold rounded-2xl transition-colors text-sm"
+                >
+                  <Download size={16} />
+                  Download CV
+                </button>
+                <button
+                  onClick={downloadCredits}
+                  className="w-full inline-flex items-center justify-center gap-2 px-5 py-2.5 border border-slate-700 hover:bg-slate-100 text-slate-700 font-semibold rounded-2xl transition-colors text-sm"
+                >
+                  <Download size={16} />
+                  Download Credits
+                </button>
+              </div>
             </div>
           </CardContent>
         </Card>
