@@ -63,7 +63,7 @@ export default function VideoCollage() {
                 }}
               >
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300" />
-                <div className="w-12 h-12 rounded-full bg-brand/20 flex items-center justify-center relative z-10 group-hover:bg-amber-100/40 transition-all group-hover:scale-125">
+                <div className="w-12 h-12 rounded-full bg-brand/20 flex items-center justify-center relative z-10 group-hover:bg-green-50/40 transition-all group-hover:scale-125">
                   <Play className="w-6 h-6 text-slate-700 fill-white ml-1" />
                 </div>
                 <div className="text-center px-2 relative z-10 bottom-2 group-hover:bottom-0 transition-all duration-300">
@@ -84,7 +84,7 @@ export default function VideoCollage() {
         >
           <button
             onClick={() => setSelectedItem(null)}
-            className="absolute top-8 right-8 p-3 text-slate-700 hover:text-amber-900 bg-black/60 hover:bg-black/80 rounded-full z-10 transition-all duration-300 bubble-hover"
+            className="absolute top-8 right-8 p-3 text-slate-700 hover:text-green-800 bg-black/60 hover:bg-black/80 rounded-full z-10 transition-all duration-300 bubble-hover"
             aria-label="Close"
           >
             <X size={28} />
