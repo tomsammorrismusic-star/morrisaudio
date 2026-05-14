@@ -81,7 +81,7 @@ function Home() {
         <div className="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row gap-8 justify-center items-center flex-wrap">
           {stats.map((s) => (
             <div key={s.label} className="flex flex-col items-center justify-center px-6 py-6 rounded-3xl border border-[#7A8D5F]/30 hover:border-[#7A8D5F]/50 transition-colors bubble-hover">
-              <p className="text-4xl font-bold text-[#6B7D4E]">{s.value}</p>
+              <p className="text-4xl font-bold text-slate-700">{s.value}</p>
               <p className="text-slate-700 text-sm mt-3 whitespace-nowrap">{s.label}</p>
             </div>
           ))}
