@@ -21,16 +21,16 @@ function Showreel() {
   const displayedVideos = expandMoreWork ? moreWorkVideos : moreWorkVideos.slice(0, 3)
 
   return (
-    <div className="min-h-screen bg-brand text-gray-900">
+    <div className="min-h-screen bg-brand text-slate-700">
       <div className="max-w-6xl mx-auto px-4 py-16">
         <h1 className="text-4xl md:text-5xl font-bold mb-4">Showreel</h1>
-        <p className="text-gray-900 mb-10 text-lg">
+        <p className="text-slate-700 mb-10 text-lg">
           Podcast, voice-over, corporate, and commercial audio production samples.
         </p>
       </div>
 
       <div className="max-w-6xl mx-auto px-4 py-12">
-        <h2 className="text-3xl font-semibold mb-8 text-gray-900">Highlight Reel</h2>
+        <h2 className="text-3xl font-semibold mb-8 text-slate-700">Highlight Reel</h2>
         <div className="rounded-2xl overflow-hidden bg-black aspect-video flex items-center justify-center">
           <iframe
             src="https://www.youtube.com/embed/PASTE_YOUR_VIDEO_ID_HERE"
@@ -42,19 +42,19 @@ function Showreel() {
             className="w-full h-full"
           />
         </div>
-        <p className="text-gray-900 mt-6 text-center text-sm">
+        <p className="text-slate-700 mt-6 text-center text-sm">
           Replace PASTE_YOUR_VIDEO_ID_HERE with your YouTube video ID in the src attribute
         </p>
       </div>
 
       <div className="max-w-6xl mx-auto px-4 py-12">
-        <h2 className="text-3xl font-semibold mb-8 text-gray-900">Featured Podcast</h2>
-        <div className="bg-lime-700 rounded-2xl p-8 mb-16 border border-orange-600">
+        <h2 className="text-3xl font-semibold mb-8 text-slate-700">Featured Podcast</h2>
+        <div className="bg-lime-700 rounded-2xl p-8 mb-16 border border-rose-300">
           <div className="flex items-center gap-3 mb-4">
-            <Music className="w-6 h-6 text-lime-700" />
-            <h3 className="text-2xl font-semibold text-gray-900">VCL Vintners Podcast</h3>
+            <Music className="w-6 h-6 text-teal-600" />
+            <h3 className="text-2xl font-semibold text-slate-700">VCL Vintners Podcast</h3>
           </div>
-          <p className="text-gray-900 mb-8">Listen now</p>
+          <p className="text-slate-700 mb-8">Listen now</p>
           <div className="rounded-2xl overflow-hidden">
             <iframe
               src="https://open.spotify.com/embed/show/50zl8ics5uAV2aMAJ7spOF?utm_source=generator&theme=0"
@@ -70,9 +70,9 @@ function Showreel() {
       </div>
 
       <div className="max-w-6xl mx-auto px-4 py-12">
-        <h2 className="text-3xl font-semibold mb-8 text-gray-900">Audio Example</h2>
-        <div className="bg-lime-700 rounded-2xl p-8 border border-orange-600">
-          <h3 className="text-xl font-semibold text-gray-900 mb-8">Production Sample</h3>
+        <h2 className="text-3xl font-semibold mb-8 text-slate-700">Audio Example</h2>
+        <div className="bg-lime-700 rounded-2xl p-8 border border-rose-300">
+          <h3 className="text-xl font-semibold text-slate-700 mb-8">Production Sample</h3>
           <audio
             controls
             className="w-full rounded-2xl"
@@ -83,14 +83,14 @@ function Showreel() {
             <source src="https://example.com/audio.mp3" type="audio/mpeg" />
             Your browser does not support the audio element.
           </audio>
-          <p className="text-gray-900 mt-6 text-sm">
+          <p className="text-slate-700 mt-6 text-sm">
             Replace the audio URL with your actual audio file (mp3, wav, etc.)
           </p>
         </div>
       </div>
 
       <div className="max-w-6xl mx-auto px-4 py-12">
-        <h2 className="text-3xl font-semibold mb-8 text-gray-900">Portfolio</h2>
+        <h2 className="text-3xl font-semibold mb-8 text-slate-700">Portfolio</h2>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Large featured video on left */}
           <div className="lg:col-span-2">
@@ -105,11 +105,11 @@ function Showreel() {
                 allowFullScreen
                 className="w-full h-full"
               />
-              <div className="absolute bottom-4 left-4 right-4 text-gray-900 opacity-0 group-hover:opacity-100 transition-opacity duration-300 relative z-10">
+              <div className="absolute bottom-4 left-4 right-4 text-slate-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300 relative z-10">
                 <p className="font-semibold text-lg">Feature Film - Location Sound</p>
               </div>
             </div>
-            <p className="text-gray-900 mt-3">Featured Project</p>
+            <p className="text-slate-700 mt-3">Featured Project</p>
           </div>
 
           {/* Sidebar with collapsible video list - same height as featured video */}
@@ -131,7 +131,7 @@ function Showreel() {
                     allowFullScreen
                     className="w-full h-full"
                   />
-                  <div className="absolute bottom-2 left-2 right-2 text-gray-900 opacity-0 group-hover:opacity-100 transition-opacity duration-300 relative z-10">
+                  <div className="absolute bottom-2 left-2 right-2 text-slate-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300 relative z-10">
                     <p className="font-semibold text-xs line-clamp-1">{video.title}</p>
                   </div>
                 </div>
@@ -140,7 +140,7 @@ function Showreel() {
             {!expandMoreWork && moreWorkVideos.length > 3 && (
               <button
                 onClick={() => setExpandMoreWork(true)}
-                className="flex items-center justify-center gap-2 px-4 py-3 border border-orange-600 text-lime-700 hover:bg-orange-500/10 rounded-2xl transition-colors font-semibold text-sm mt-3"
+                className="flex items-center justify-center gap-2 px-4 py-3 border border-rose-300 text-teal-600 hover:bg-rose-200/10 rounded-2xl transition-colors font-semibold text-sm mt-3"
               >
                 <span>View {moreWorkVideos.length - 3} More</span>
                 <ChevronDown className="w-4 h-4" />
@@ -149,7 +149,7 @@ function Showreel() {
             {expandMoreWork && (
               <button
                 onClick={() => setExpandMoreWork(false)}
-                className="flex items-center justify-center gap-2 px-4 py-3 border border-orange-600 text-lime-700 hover:bg-orange-500/10 rounded-2xl transition-colors font-semibold text-sm mt-3"
+                className="flex items-center justify-center gap-2 px-4 py-3 border border-rose-300 text-teal-600 hover:bg-rose-200/10 rounded-2xl transition-colors font-semibold text-sm mt-3"
               >
                 <span>Show Less</span>
                 <ChevronDown className="w-4 h-4 rotate-180" />
@@ -163,14 +163,14 @@ function Showreel() {
       </div>
 
       <div className="max-w-6xl mx-auto px-4 py-16">
-        <div className="bg-lime-700 rounded-2xl p-8 text-center border border-orange-600">
-          <h3 className="text-2xl font-semibold mb-4 text-gray-900">Ready to work together?</h3>
-          <p className="text-gray-800 mb-8">
+        <div className="bg-lime-700 rounded-2xl p-8 text-center border border-rose-300">
+          <h3 className="text-2xl font-semibold mb-4 text-slate-700">Ready to work together?</h3>
+          <p className="text-slate-600 mb-8">
             Let's discuss your next audio project and how I can help bring your vision to life.
           </p>
           <a
             href="mailto:tomsammorrismusic@gmail.com"
-            className="inline-block px-6 py-3 bg-orange-600 hover:bg-red-500 text-gray-900 font-semibold rounded-2xl transition-colors mb-8"
+            className="inline-block px-6 py-3 bg-rose-300 hover:bg-purple-300 text-slate-700 font-semibold rounded-2xl transition-colors mb-8"
           >
             Get in Touch
           </a>
@@ -179,7 +179,7 @@ function Showreel() {
               href="https://www.instagram.com/tom_morris2810/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center w-12 h-12 rounded-2xl border border-gray-600 hover:border-red-500 text-gray-400 hover:text-lime-700 transition-colors bubble-hover"
+              className="inline-flex items-center justify-center w-12 h-12 rounded-2xl border border-gray-600 hover:border-purple-300 text-gray-400 hover:text-teal-600 transition-colors bubble-hover"
               aria-label="Instagram"
             >
               <Instagram className="w-6 h-6" />
@@ -188,7 +188,7 @@ function Showreel() {
               href="https://wa.me/447857484127"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center w-12 h-12 rounded-2xl border border-gray-600 hover:border-red-500 text-gray-400 hover:text-lime-700 transition-colors bubble-hover"
+              className="inline-flex items-center justify-center w-12 h-12 rounded-2xl border border-gray-600 hover:border-purple-300 text-gray-400 hover:text-teal-600 transition-colors bubble-hover"
               aria-label="WhatsApp"
             >
               <MessageCircle className="w-6 h-6" />

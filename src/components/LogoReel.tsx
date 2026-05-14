@@ -67,15 +67,15 @@ export default function LogoReel() {
               ) : (
                 <span className="text-4xl">{item.logo}</span>
               )}
-              <span className="text-2xl font-semibold text-gray-900">{item.name}</span>
+              <span className="text-2xl font-semibold text-slate-700">{item.name}</span>
             </div>
           </div>
         ))}
       </div>
 
       {/* Fade effect on edges */}
-      <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-[#FFFACD] to-transparent pointer-events-none" />
-      <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-[#FFFACD] to-transparent pointer-events-none" />
+      <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-[#F5F0E8] to-transparent pointer-events-none" />
+      <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-[#F5F0E8] to-transparent pointer-events-none" />
     </div>
   )
 }
