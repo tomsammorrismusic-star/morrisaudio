@@ -49,9 +49,9 @@ function Showreel() {
 
       <div className="max-w-6xl mx-auto px-4 py-12">
         <h2 className="text-3xl font-bold mb-8 text-white">Featured Podcast</h2>
-        <div className="bg-emerald-800 rounded-lg p-8 mb-16 border border-emerald-800">
+        <div className="bg-amber-700 rounded-lg p-8 mb-16 border border-amber-700">
           <div className="flex items-center gap-3 mb-4">
-            <Music className="w-6 h-6 text-emerald-700" />
+            <Music className="w-6 h-6 text-amber-600" />
             <h3 className="text-2xl font-bold text-white">VCL Vintners Podcast</h3>
           </div>
           <p className="text-gray-300 mb-6">Listen now</p>
@@ -71,7 +71,7 @@ function Showreel() {
 
       <div className="max-w-6xl mx-auto px-4 py-12">
         <h2 className="text-3xl font-bold mb-8 text-white">Audio Example</h2>
-        <div className="bg-emerald-800 rounded-lg p-8 border border-emerald-700">
+        <div className="bg-amber-700 rounded-lg p-8 border border-amber-600">
           <h3 className="text-xl font-semibold text-white mb-6">Production Sample</h3>
           <audio
             controls
@@ -140,7 +140,7 @@ function Showreel() {
             {!expandMoreWork && moreWorkVideos.length > 3 && (
               <button
                 onClick={() => setExpandMoreWork(true)}
-                className="flex items-center justify-center gap-2 px-4 py-3 border border-emerald-700 text-emerald-700 hover:bg-emerald-700/10 rounded-lg transition-colors font-semibold text-sm mt-2"
+                className="flex items-center justify-center gap-2 px-4 py-3 border border-amber-600 text-amber-600 hover:bg-amber-600/10 rounded-lg transition-colors font-semibold text-sm mt-2"
               >
                 <span>View {moreWorkVideos.length - 3} More</span>
                 <ChevronDown className="w-4 h-4" />
@@ -149,7 +149,7 @@ function Showreel() {
             {expandMoreWork && (
               <button
                 onClick={() => setExpandMoreWork(false)}
-                className="flex items-center justify-center gap-2 px-4 py-3 border border-emerald-700 text-emerald-700 hover:bg-emerald-700/10 rounded-lg transition-colors font-semibold text-sm mt-2"
+                className="flex items-center justify-center gap-2 px-4 py-3 border border-amber-600 text-amber-600 hover:bg-amber-600/10 rounded-lg transition-colors font-semibold text-sm mt-2"
               >
                 <span>Show Less</span>
                 <ChevronDown className="w-4 h-4 rotate-180" />
@@ -163,14 +163,14 @@ function Showreel() {
       </div>
 
       <div className="max-w-6xl mx-auto px-4 py-16">
-        <div className="bg-emerald-800 rounded-lg p-8 text-center border border-emerald-800">
+        <div className="bg-amber-700 rounded-lg p-8 text-center border border-amber-700">
           <h3 className="text-2xl font-bold mb-3 text-white">Ready to work together?</h3>
           <p className="text-gray-100 mb-6">
             Let's discuss your next audio project and how I can help bring your vision to life.
           </p>
           <a
             href="mailto:tomsammorrismusic@gmail.com"
-            className="inline-block px-6 py-3 bg-emerald-700 hover:bg-emerald-600 text-white font-semibold rounded-lg transition-colors mb-6"
+            className="inline-block px-6 py-3 bg-amber-600 hover:bg-emerald-600 text-white font-semibold rounded-lg transition-colors mb-6"
           >
             Get in Touch
           </a>
@@ -179,7 +179,7 @@ function Showreel() {
               href="https://www.instagram.com/tom_morris2810/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center w-12 h-12 rounded-lg border border-gray-600 hover:border-emerald-700 text-gray-400 hover:text-emerald-700 transition-colors bubble-hover"
+              className="inline-flex items-center justify-center w-12 h-12 rounded-lg border border-gray-600 hover:border-amber-600 text-gray-400 hover:text-amber-600 transition-colors bubble-hover"
               aria-label="Instagram"
             >
               <Instagram className="w-6 h-6" />
@@ -188,7 +188,7 @@ function Showreel() {
               href="https://wa.me/447857484127"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center w-12 h-12 rounded-lg border border-gray-600 hover:border-emerald-700 text-gray-400 hover:text-emerald-700 transition-colors bubble-hover"
+              className="inline-flex items-center justify-center w-12 h-12 rounded-lg border border-gray-600 hover:border-amber-600 text-gray-400 hover:text-amber-600 transition-colors bubble-hover"
               aria-label="WhatsApp"
             >
               <MessageCircle className="w-6 h-6" />
