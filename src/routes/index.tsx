@@ -109,7 +109,7 @@ function Home() {
             {services.map((svc) => (
               <div
                 key={svc.title}
-                className="p-8 rounded-3xl border border-yellow-500 hover:border-yellow-500/60 bg-gradient-to-br from-lime-700 to-lime-700 hover:from-emerald-700 hover:to-lime-700 transition-all duration-300 bubble-hover"
+                className="p-8 rounded-3xl border border-yellow-300 hover:border-yellow-400 bg-yellow-50 hover:bg-yellow-100 transition-all duration-300 bubble-hover"
               >
                 <svc.icon className="w-14 h-14 text-yellow-600 mb-8" />
                 <h3 className="text-2xl font-semibold mb-4">{svc.title}</h3>
