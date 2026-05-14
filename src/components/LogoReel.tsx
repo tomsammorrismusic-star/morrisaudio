@@ -67,7 +67,7 @@ export default function LogoReel() {
               ) : (
                 <span className="text-4xl">{item.logo}</span>
               )}
-              <span className="text-2xl font-semibold text-slate-700">{item.name}</span>
+              <span className="text-2xl font-semibold text-[#6B4423]">{item.name}</span>
             </div>
           </div>
         ))}
