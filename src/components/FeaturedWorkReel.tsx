@@ -74,16 +74,16 @@ export default function FeaturedWorkReel() {
             style={{ perspective: '1000px' }}
           >
             <button
-              className={`relative w-64 h-64 rounded-3xl bg-gradient-to-br ${CATEGORY_COLORS[item.category] ?? 'from-gray-300 to-gray-200'} border border-lime-600 flex flex-col items-center justify-center gap-2 cursor-pointer hover:border-red-400 transition-all duration-500 ease-out group bubble-hover hover:shadow-2xl hover:scale-110`}
+              className={`relative w-64 h-64 rounded-3xl bg-gradient-to-br ${CATEGORY_COLORS[item.category] ?? 'from-gray-300 to-gray-200'} border border-orange-500 flex flex-col items-center justify-center gap-2 cursor-pointer hover:border-yellow-400 transition-all duration-500 ease-out group bubble-hover hover:shadow-2xl hover:scale-110`}
               style={{ transformOrigin: 'center' }}
               onMouseEnter={() => setIsPaused(true)}
               onMouseLeave={() => setIsPaused(false)}
             >
               <div className="w-12 h-12 rounded-full bg-brand/20 flex items-center justify-center group-hover:bg-brand/30 transition-all duration-300">
-                <Play className="w-5 h-5 text-yellow-100 fill-white ml-0.5" />
+                <Play className="w-5 h-5 text-white fill-white ml-0.5" />
               </div>
               <div className="text-center px-3">
-                <p className="text-yellow-100 font-semibold text-xs leading-tight line-clamp-2">{item.title}</p>
+                <p className="text-white font-semibold text-xs leading-tight line-clamp-2">{item.title}</p>
               </div>
             </button>
           </div>
@@ -91,8 +91,8 @@ export default function FeaturedWorkReel() {
       </div>
 
       {/* Fade effect on edges */}
-      <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-[#F5E6E8] to-transparent pointer-events-none" />
-      <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-[#F5E6E8] to-transparent pointer-events-none" />
+      <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-[#FFF5F0] to-transparent pointer-events-none" />
+      <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-[#FFF5F0] to-transparent pointer-events-none" />
     </div>
   )
 }
