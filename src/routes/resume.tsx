@@ -259,7 +259,7 @@ ADDITIONAL EXPERIENCE
             <CardTitle className="text-2xl text-slate-700">Career Summary</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="flex flex-col md:flex-row gap-8 items-start">
+            <div className="flex flex-col md:flex-row gap-8 items-center">
               <div className="flex-1">
                 <p className="leading-relaxed text-slate-600">
                   I'm a production sound mixer and boom operator who loves capturing great audio on set. I've worked on everything from feature films and TV dramas to documentaries and commercials, and I really enjoy collaborating with talented crews. I've had the privilege of working on Bollywood productions, BBC documentaries, and major brand campaigns, and I'm always excited to bring my best to each project.
@@ -277,7 +277,7 @@ ADDITIONAL EXPERIENCE
               <img
                 src="https://cdn.builder.io/api/v1/image/assets%2F1a8d84947e9444f98df7c975eda41851%2Fadd1319ac1184a8ea01e94321ca2fce2?format=webp&width=800&height=1200"
                 alt="Tom Morris - Professional headshot"
-                className="w-44 h-auto rounded-2xl object-cover flex-shrink-0 shadow-md"
+                className="w-44 h-full rounded-2xl object-cover flex-shrink-0 shadow-md"
               />
             </div>
           </CardContent>
