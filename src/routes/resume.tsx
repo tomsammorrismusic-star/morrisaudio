@@ -259,7 +259,7 @@ ADDITIONAL EXPERIENCE
             <CardTitle className="text-2xl text-slate-700">Career Summary</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="flex flex-col md:flex-row gap-8 items-center">
+            <div className="flex flex-col md:flex-row gap-8 items-center h-full">
               <div className="flex-1">
                 <p className="leading-relaxed text-slate-600">
                   I'm a production sound mixer and boom operator with a genuine passion for capturing excellent audio on set. I've worked across feature films, high-end TV dramas, documentaries, and commercials, collaborating with talented international crews. My credits include Bollywood productions, BBC documentaries, and major brand campaigns. I'm committed to bringing professionalism and creativity to every project.
