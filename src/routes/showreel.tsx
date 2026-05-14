@@ -163,7 +163,7 @@ function Showreel() {
       </div>
 
       <div className="max-w-6xl mx-auto px-4 py-16">
-        <div className="bg-[#F5F0E8] rounded-2xl p-8 text-center border border-slate-700">
+        <div className="bg-[#F5F0E8] rounded-2xl p-8 text-center">
           <h3 className="text-2xl font-semibold mb-4 text-slate-700">Ready to work together?</h3>
           <p className="text-slate-600 mb-8">
             Let's discuss your next audio project and how I can help bring your vision to life.
