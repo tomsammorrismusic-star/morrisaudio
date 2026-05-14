@@ -170,7 +170,7 @@ export default function VideoWheel() {
             {/* Content section */}
             <div className="p-8 bg-brand">
               <h3 className="text-3xl font-semibold mb-2 text-slate-700">{selectedItem.title}</h3>
-              <p className="text-gray-600 uppercase text-sm tracking-wider font-semibold mb-4">{selectedItem.category}</p>
+              <p className="text-white uppercase text-sm tracking-wider font-semibold mb-4">{selectedItem.category}</p>
               <p className="text-slate-600 mb-8 leading-relaxed">
                 This production showcases professional audio work in the {selectedItem.category.toLowerCase()} industry, featuring cutting-edge recording techniques and post-production expertise.
               </p>
@@ -179,7 +179,7 @@ export default function VideoWheel() {
               <div className="flex items-center justify-between gap-5">
                 <button
                   onClick={() => handleLightboxNav('prev')}
-                  className="p-2 text-slate-700 hover:text-gray-600 transition-colors bubble-hover"
+                  className="p-2 text-slate-700 hover:text-white transition-colors bubble-hover"
                   aria-label="Previous item"
                 >
                   <ChevronLeft size={24} />
@@ -189,7 +189,7 @@ export default function VideoWheel() {
                 </span>
                 <button
                   onClick={() => handleLightboxNav('next')}
-                  className="p-2 text-slate-700 hover:text-gray-600 transition-colors bubble-hover"
+                  className="p-2 text-slate-700 hover:text-white transition-colors bubble-hover"
                   aria-label="Next item"
                 >
                   <ChevronRight size={24} />

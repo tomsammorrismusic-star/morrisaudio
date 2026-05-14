@@ -84,7 +84,7 @@ export default function VideoCollage() {
         >
           <button
             onClick={() => setSelectedItem(null)}
-            className="absolute top-8 right-8 p-3 text-slate-700 hover:text-gray-600 bg-black/60 hover:bg-black/80 rounded-full z-10 transition-all duration-300 bubble-hover"
+            className="absolute top-8 right-8 p-3 text-slate-700 hover:text-white bg-black/60 hover:bg-black/80 rounded-full z-10 transition-all duration-300 bubble-hover"
             aria-label="Close"
           >
             <X size={28} />
