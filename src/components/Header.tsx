@@ -36,19 +36,19 @@ export default function Header() {
             <Link
               key={link.to}
               to={link.to}
-              className="inline-flex items-center justify-center w-9 h-9 rounded-2xl text-slate-700 hover:text-[#A08560] hover:border border-[#A08560] hover:border-[#A08560] transition-colors bubble-hover"
-              activeProps={{ className: 'inline-flex items-center justify-center w-9 h-9 rounded-2xl text-[#8B6F47] border border-[#A08560] transition-colors' }}
+              className="inline-flex items-center justify-center w-9 h-9 rounded-2xl text-slate-700 hover:text-[#A08560] hover:border border-[#C9A887] hover:border-[#C9A887] transition-colors bubble-hover"
+              activeProps={{ className: 'inline-flex items-center justify-center w-9 h-9 rounded-2xl text-[#8B6F47] border border-[#C9A887] transition-colors' }}
               title={link.label}
             >
               <link.icon className="w-5 h-5" />
             </Link>
           ))}
-          <div className="flex items-center gap-2 pl-2 border-l border-[#A08560]">
+          <div className="flex items-center gap-2 pl-2 border-l border-[#C9A887]">
             <a
               href="https://www.instagram.com/tom_morris2810/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center w-9 h-9 rounded-2xl border border-[#A08560] hover:border-[#A08560] text-slate-700 hover:text-[#A08560] transition-colors bubble-hover"
+              className="inline-flex items-center justify-center w-9 h-9 rounded-2xl border border-[#C9A887] hover:border-[#C9A887] text-slate-700 hover:text-[#A08560] transition-colors bubble-hover"
               aria-label="Instagram"
             >
               <Instagram className="w-4 h-4" />
@@ -57,7 +57,7 @@ export default function Header() {
               href="https://wa.me/447857484127"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center w-9 h-9 rounded-2xl border border-[#A08560] hover:border-[#A08560] text-slate-700 hover:text-[#A08560] transition-colors bubble-hover"
+              className="inline-flex items-center justify-center w-9 h-9 rounded-2xl border border-[#C9A887] hover:border-[#C9A887] text-slate-700 hover:text-[#A08560] transition-colors bubble-hover"
               aria-label="WhatsApp"
             >
               <MessageCircle className="w-4 h-4" />
@@ -83,15 +83,15 @@ export default function Header() {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <nav className="md:hidden border-t border-[#A08560] bg-brand px-3 py-2 flex flex-col gap-2 max-h-[calc(100vh-64px)] overflow-y-auto">
+        <nav className="md:hidden border-t border-[#C9A887] bg-brand px-3 py-2 flex flex-col gap-2 max-h-[calc(100vh-64px)] overflow-y-auto">
           <div className="flex gap-1.5 flex-wrap">
             {navLinks.map((link) => (
               <Link
                 key={link.to}
                 to={link.to}
                 onClick={() => setMobileOpen(false)}
-                className="flex-1 min-w-max inline-flex items-center justify-center gap-1 px-2 py-1.5 rounded border border-[#A08560] hover:border-[#A08560] text-slate-700 hover:text-[#A08560] transition-colors bubble-hover text-xs"
-                activeProps={{ className: 'flex-1 min-w-max inline-flex items-center justify-center gap-1 px-2 py-1.5 rounded border border-[#A08560] text-[#8B6F47] transition-colors bubble-hover text-xs font-medium' }}
+                className="flex-1 min-w-max inline-flex items-center justify-center gap-1 px-2 py-1.5 rounded border border-[#C9A887] hover:border-[#C9A887] text-slate-700 hover:text-[#A08560] transition-colors bubble-hover text-xs"
+                activeProps={{ className: 'flex-1 min-w-max inline-flex items-center justify-center gap-1 px-2 py-1.5 rounded border border-[#C9A887] text-[#8B6F47] transition-colors bubble-hover text-xs font-medium' }}
                 title={link.label}
               >
                 <link.icon className="w-3 h-3" />
@@ -104,7 +104,7 @@ export default function Header() {
               href="https://www.instagram.com/tom_morris2810/"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-1 inline-flex items-center justify-center px-2 py-1.5 rounded border border-[#A08560] hover:border-[#A08560] text-slate-700 hover:text-[#A08560] transition-colors bubble-hover"
+              className="flex-1 inline-flex items-center justify-center px-2 py-1.5 rounded border border-[#C9A887] hover:border-[#C9A887] text-slate-700 hover:text-[#A08560] transition-colors bubble-hover"
               aria-label="Instagram"
             >
               <Instagram className="w-3 h-3" />
@@ -113,7 +113,7 @@ export default function Header() {
               href="https://wa.me/447857484127"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-1 inline-flex items-center justify-center px-2 py-1.5 rounded border border-[#A08560] hover:border-[#A08560] text-slate-700 hover:text-[#A08560] transition-colors bubble-hover"
+              className="flex-1 inline-flex items-center justify-center px-2 py-1.5 rounded border border-[#C9A887] hover:border-[#C9A887] text-slate-700 hover:text-[#A08560] transition-colors bubble-hover"
               aria-label="WhatsApp"
             >
               <MessageCircle className="w-3 h-3" />

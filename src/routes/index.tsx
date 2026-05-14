@@ -34,7 +34,7 @@ function Home() {
       {/* Hero */}
       <section className="relative min-h-[80vh] flex flex-col items-center justify-center text-center px-4 py-20">
         <div className="relative z-10 w-full max-w-4xl mx-auto space-y-6">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#A8C86F]/10 border border-[#7A8D5F]/30 text-[#6B7D4E] text-sm font-medium">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#A8C86F]/10 border border-[#C9A887]/30 text-[#6B7D4E] text-sm font-medium">
             <Mic size={14} />
             Available for hire&nbsp;
           </div>
@@ -55,7 +55,7 @@ function Home() {
             </Link>
             <Link
               to="/showreel"
-              className="px-10 py-3 border border-[#7A8D5F] hover:border-[#7A8D5F] text-slate-600 hover:text-slate-700 rounded-3xl transition-colors text-lg bubble-hover"
+              className="px-10 py-3 border border-[#C9A887] hover:border-[#C9A887] text-slate-600 hover:text-slate-700 rounded-3xl transition-colors text-lg bubble-hover"
             >
               View My Work
             </Link>
@@ -80,7 +80,7 @@ function Home() {
       <section className="py-0 -mt-12 lg:-mt-16">
         <div className="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row gap-8 justify-center items-center flex-wrap">
           {stats.map((s) => (
-            <div key={s.label} className="flex flex-col items-center justify-center px-6 py-6 rounded-3xl border border-[#7A8D5F]/30 hover:border-[#7A8D5F]/50 transition-colors bubble-hover">
+            <div key={s.label} className="flex flex-col items-center justify-center px-6 py-6 rounded-3xl border border-[#C9A887]/30 hover:border-[#C9A887]/50 transition-colors bubble-hover">
               <p className="text-4xl font-bold text-slate-700">{s.value}</p>
               <p className="text-slate-700 text-sm mt-3 whitespace-nowrap">{s.label}</p>
             </div>
@@ -109,7 +109,7 @@ function Home() {
             {services.map((svc) => (
               <div
                 key={svc.title}
-                className="p-8 rounded-3xl border border-slate-700 hover:border-slate-600 bg-[#F5F0E8] hover:bg-[#EDE5D8] transition-all duration-300 bubble-hover"
+                className="p-8 rounded-3xl border border-[#C9A887] hover:border-[#B8956F] bg-[#F5F0E8] hover:bg-[#EDE5D8] transition-all duration-300 bubble-hover"
               >
                 <svc.icon className="w-14 h-14 text-[#6B7D4E] mb-8" />
                 <h3 className="text-2xl font-semibold mb-4">{svc.title}</h3>
@@ -139,7 +139,7 @@ function Home() {
             </Link>
             <a
               href="mailto:tomsammorrismusic@gmail.com"
-              className="inline-flex items-center justify-center gap-2 px-10 py-3 border border-[#7A8D5F] hover:border-[#7A8D5F] text-slate-600 hover:text-slate-700 rounded-3xl transition-colors bubble-hover"
+              className="inline-flex items-center justify-center gap-2 px-10 py-3 border border-[#C9A887] hover:border-[#C9A887] text-slate-600 hover:text-slate-700 rounded-3xl transition-colors bubble-hover"
             >
               Email Directly
             </a>
@@ -149,7 +149,7 @@ function Home() {
               href="https://www.instagram.com/tom_morris2810/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center w-12 h-12 rounded-2xl border border-[#7A8D5F] hover:border-[#7A8D5F] text-slate-700 hover:text-[#7A8D5F] transition-colors bubble-hover"
+              className="inline-flex items-center justify-center w-12 h-12 rounded-2xl border border-[#C9A887] hover:border-[#C9A887] text-slate-700 hover:text-[#7A8D5F] transition-colors bubble-hover"
               aria-label="Instagram"
             >
               <Instagram className="w-6 h-6" />
@@ -158,7 +158,7 @@ function Home() {
               href="https://wa.me/447857484127"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center w-12 h-12 rounded-2xl border border-[#7A8D5F] hover:border-[#7A8D5F] text-slate-700 hover:text-[#7A8D5F] transition-colors bubble-hover"
+              className="inline-flex items-center justify-center w-12 h-12 rounded-2xl border border-[#C9A887] hover:border-[#C9A887] text-slate-700 hover:text-[#7A8D5F] transition-colors bubble-hover"
               aria-label="WhatsApp"
             >
               <MessageCircle className="w-6 h-6" />
