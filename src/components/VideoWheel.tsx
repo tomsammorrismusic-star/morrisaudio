@@ -31,7 +31,7 @@ const CATEGORY_COLORS: Record<string, string> = {
   Commercial: 'from-purple-900 to-purple-700',
   Drama: 'from-red-900 to-red-700',
   Corporate: 'from-gray-800 to-gray-600',
-  Music: 'from-pink-900 to-pink-700',
+  Music: 'from-pink-900 to-emerald-700',
   News: 'from-orange-900 to-orange-700',
   Audio: 'from-teal-900 to-teal-700',
 }
@@ -125,9 +125,9 @@ export default function VideoWheel() {
               <div key={`${item.id}-${index}`} className="flex-shrink-0 w-64 overflow-visible">
                 <button
                   onClick={() => handleCardClick(item)}
-                  className="w-full h-56 rounded-xl bg-gradient-to-br from-gray-300 to-gray-200 border border-pink-500 flex flex-col items-center justify-center gap-3 cursor-pointer hover:border-pink-500/50 transition-colors shadow-xl group bubble-hover"
+                  className="w-full h-56 rounded-xl bg-gradient-to-br from-gray-300 to-gray-200 border border-emerald-500 flex flex-col items-center justify-center gap-3 cursor-pointer hover:border-emerald-500/50 transition-colors shadow-xl group bubble-hover"
                 >
-                  <div className={`w-full h-full rounded-xl bg-gradient-to-br ${CATEGORY_COLORS[item.category] ?? 'from-gray-300 to-gray-200'} border border-pink-500 flex flex-col items-center justify-center gap-3 cursor-pointer hover:border-pink-500/50 transition-colors shadow-xl relative overflow-hidden`}>
+                  <div className={`w-full h-full rounded-xl bg-gradient-to-br ${CATEGORY_COLORS[item.category] ?? 'from-gray-300 to-gray-200'} border border-emerald-500 flex flex-col items-center justify-center gap-3 cursor-pointer hover:border-emerald-500/50 transition-colors shadow-xl relative overflow-hidden`}>
                     <div className="absolute inset-0 bg-brand/0 group-hover:bg-brand/10 transition-all duration-200" />
                     <div className="w-14 h-14 rounded-full bg-brand/10 flex items-center justify-center relative z-10 group-hover:bg-brand/20 transition-all">
                       <Play className="w-6 h-6 text-white fill-white ml-1" />
@@ -148,13 +148,13 @@ export default function VideoWheel() {
           onClick={() => setSelectedItem(null)}
         >
           <div
-            className="relative bg-brand rounded-xl border border-pink-500 shadow-2xl max-w-2xl w-full"
+            className="relative bg-brand rounded-xl border border-emerald-500 shadow-2xl max-w-2xl w-full"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Close button */}
             <button
               onClick={() => setSelectedItem(null)}
-              className="absolute top-4 right-4 p-2 text-gray-300 hover:text-white bg-pink-500 rounded-lg z-10 transition-colors"
+              className="absolute top-4 right-4 p-2 text-gray-300 hover:text-white bg-emerald-600 rounded-lg z-10 transition-colors"
               aria-label="Close lightbox"
             >
               <X size={24} />
@@ -170,7 +170,7 @@ export default function VideoWheel() {
             {/* Content section */}
             <div className="p-8 bg-brand">
               <h3 className="text-3xl font-bold mb-2 text-white">{selectedItem.title}</h3>
-              <p className="text-pink-500 uppercase text-sm tracking-wider font-semibold mb-4">{selectedItem.category}</p>
+              <p className="text-emerald-600 uppercase text-sm tracking-wider font-semibold mb-4">{selectedItem.category}</p>
               <p className="text-gray-100 mb-6 leading-relaxed">
                 This production showcases professional audio work in the {selectedItem.category.toLowerCase()} industry, featuring cutting-edge recording techniques and post-production expertise.
               </p>
@@ -179,7 +179,7 @@ export default function VideoWheel() {
               <div className="flex items-center justify-between gap-4">
                 <button
                   onClick={() => handleLightboxNav('prev')}
-                  className="p-2 text-gray-300 hover:text-pink-500 transition-colors bubble-hover"
+                  className="p-2 text-gray-300 hover:text-emerald-600 transition-colors bubble-hover"
                   aria-label="Previous item"
                 >
                   <ChevronLeft size={24} />
@@ -189,7 +189,7 @@ export default function VideoWheel() {
                 </span>
                 <button
                   onClick={() => handleLightboxNav('next')}
-                  className="p-2 text-gray-300 hover:text-pink-500 transition-colors bubble-hover"
+                  className="p-2 text-gray-300 hover:text-emerald-600 transition-colors bubble-hover"
                   aria-label="Next item"
                 >
                   <ChevronRight size={24} />

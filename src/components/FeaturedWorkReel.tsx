@@ -24,7 +24,7 @@ const CATEGORY_COLORS: Record<string, string> = {
   Commercial: 'from-purple-900 to-purple-700',
   Drama: 'from-red-900 to-red-700',
   Corporate: 'from-gray-800 to-gray-600',
-  Music: 'from-pink-900 to-pink-700',
+  Music: 'from-pink-900 to-emerald-700',
   News: 'from-orange-900 to-orange-700',
   Audio: 'from-teal-900 to-teal-700',
 }
@@ -74,7 +74,7 @@ export default function FeaturedWorkReel() {
             style={{ perspective: '1000px' }}
           >
             <button
-              className={`relative w-64 h-64 rounded-xl bg-gradient-to-br ${CATEGORY_COLORS[item.category] ?? 'from-gray-300 to-gray-200'} border border-pink-500 flex flex-col items-center justify-center gap-2 cursor-pointer hover:border-pink-500 transition-all duration-500 ease-out group bubble-hover hover:shadow-2xl hover:scale-110`}
+              className={`relative w-64 h-64 rounded-xl bg-gradient-to-br ${CATEGORY_COLORS[item.category] ?? 'from-gray-300 to-gray-200'} border border-emerald-500 flex flex-col items-center justify-center gap-2 cursor-pointer hover:border-emerald-500 transition-all duration-500 ease-out group bubble-hover hover:shadow-2xl hover:scale-110`}
               style={{ transformOrigin: 'center' }}
               onMouseEnter={() => setIsPaused(true)}
               onMouseLeave={() => setIsPaused(false)}
@@ -91,8 +91,8 @@ export default function FeaturedWorkReel() {
       </div>
 
       {/* Fade effect on edges */}
-      <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-[#F5F3F0] to-transparent pointer-events-none" />
-      <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-[#F5F3F0] to-transparent pointer-events-none" />
+      <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-[#FAF8F6] to-transparent pointer-events-none" />
+      <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-[#FAF8F6] to-transparent pointer-events-none" />
     </div>
   )
 }

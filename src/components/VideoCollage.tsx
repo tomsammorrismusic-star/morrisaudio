@@ -24,7 +24,7 @@ const CATEGORY_COLORS: Record<string, string> = {
   Commercial: 'from-purple-900 to-purple-700',
   Drama: 'from-red-900 to-red-700',
   Corporate: 'from-gray-800 to-gray-600',
-  Music: 'from-pink-900 to-pink-700',
+  Music: 'from-pink-900 to-emerald-700',
   News: 'from-orange-900 to-orange-700',
   Audio: 'from-teal-900 to-teal-700',
 }
@@ -63,7 +63,7 @@ export default function VideoCollage() {
                 }}
               >
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300" />
-                <div className="w-12 h-12 rounded-full bg-brand/20 flex items-center justify-center relative z-10 group-hover:bg-pink-100/40 transition-all group-hover:scale-125">
+                <div className="w-12 h-12 rounded-full bg-brand/20 flex items-center justify-center relative z-10 group-hover:bg-emerald-50/40 transition-all group-hover:scale-125">
                   <Play className="w-6 h-6 text-white fill-white ml-1" />
                 </div>
                 <div className="text-center px-2 relative z-10 bottom-2 group-hover:bottom-0 transition-all duration-300">

@@ -19,7 +19,7 @@ function Projects() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {allProjects.map((project) => (
-            <Card key={project._meta.path} className="flex flex-col bg-pink-500 border-pink-500 text-white">
+            <Card key={project._meta.path} className="flex flex-col bg-emerald-600 border-emerald-500 text-white">
               <CardHeader>
                 <CardTitle className="text-xl text-white">{project.title}</CardTitle>
               </CardHeader>
@@ -38,7 +38,7 @@ function Projects() {
                       href={project.liveUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-sm text-pink-500 hover:text-emerald-600 transition-colors"
+                      className="inline-flex items-center gap-2 text-sm text-emerald-600 hover:text-emerald-600 transition-colors"
                     >
                       <ExternalLink size={16} />
                       View Project
