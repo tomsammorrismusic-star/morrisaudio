@@ -12,7 +12,6 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as ShowreelRouteImport } from './routes/showreel'
 import { Route as ResumeRouteImport } from './routes/resume'
 import { Route as ProjectsRouteImport } from './routes/projects'
-import { Route as CreditsRouteImport } from './routes/credits'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as BlogSlugRouteImport } from './routes/blog/$slug'
@@ -30,11 +29,6 @@ const ResumeRoute = ResumeRouteImport.update({
 const ProjectsRoute = ProjectsRouteImport.update({
   id: '/projects',
   path: '/projects',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const CreditsRoute = CreditsRouteImport.update({
-  id: '/credits',
-  path: '/credits',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactRoute = ContactRouteImport.update({
@@ -56,7 +50,6 @@ const BlogSlugRoute = BlogSlugRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
-  '/credits': typeof CreditsRoute
   '/projects': typeof ProjectsRoute
   '/resume': typeof ResumeRoute
   '/showreel': typeof ShowreelRoute
@@ -65,7 +58,6 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
-  '/credits': typeof CreditsRoute
   '/projects': typeof ProjectsRoute
   '/resume': typeof ResumeRoute
   '/showreel': typeof ShowreelRoute
@@ -75,7 +67,6 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
-  '/credits': typeof CreditsRoute
   '/projects': typeof ProjectsRoute
   '/resume': typeof ResumeRoute
   '/showreel': typeof ShowreelRoute
@@ -86,25 +77,16 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/contact'
-    | '/credits'
     | '/projects'
     | '/resume'
     | '/showreel'
     | '/blog/$slug'
   fileRoutesByTo: FileRoutesByTo
-  to:
-    | '/'
-    | '/contact'
-    | '/credits'
-    | '/projects'
-    | '/resume'
-    | '/showreel'
-    | '/blog/$slug'
+  to: '/' | '/contact' | '/projects' | '/resume' | '/showreel' | '/blog/$slug'
   id:
     | '__root__'
     | '/'
     | '/contact'
-    | '/credits'
     | '/projects'
     | '/resume'
     | '/showreel'
@@ -114,7 +96,6 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ContactRoute: typeof ContactRoute
-  CreditsRoute: typeof CreditsRoute
   ProjectsRoute: typeof ProjectsRoute
   ResumeRoute: typeof ResumeRoute
   ShowreelRoute: typeof ShowreelRoute
@@ -144,13 +125,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProjectsRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/credits': {
-      id: '/credits'
-      path: '/credits'
-      fullPath: '/credits'
-      preLoaderRoute: typeof CreditsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/contact': {
       id: '/contact'
       path: '/contact'
@@ -178,7 +152,6 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ContactRoute: ContactRoute,
-  CreditsRoute: CreditsRoute,
   ProjectsRoute: ProjectsRoute,
   ResumeRoute: ResumeRoute,
   ShowreelRoute: ShowreelRoute,
