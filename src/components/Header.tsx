@@ -48,7 +48,7 @@ export default function Header() {
               href="https://www.instagram.com/tom_morris2810/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center w-9 h-9 rounded-2xl border border-[#F8D83A] hover:border-[#F8D83A] text-slate-700 hover:text-[#E5CA38] transition-colors bubble-hover"
+              className="inline-flex items-center justify-center w-9 h-9 rounded-2xl border border-slate-700 hover:border-slate-700 text-slate-700 hover:text-[#E5CA38] transition-colors bubble-hover"
               aria-label="Instagram"
             >
               <Instagram className="w-4 h-4" />
@@ -57,7 +57,7 @@ export default function Header() {
               href="https://wa.me/447857484127"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center w-9 h-9 rounded-2xl border border-[#F8D83A] hover:border-[#F8D83A] text-slate-700 hover:text-[#E5CA38] transition-colors bubble-hover"
+              className="inline-flex items-center justify-center w-9 h-9 rounded-2xl border border-slate-700 hover:border-slate-700 text-slate-700 hover:text-[#E5CA38] transition-colors bubble-hover"
               aria-label="WhatsApp"
             >
               <MessageCircle className="w-4 h-4" />
