@@ -32,9 +32,20 @@ const CATEGORY_COLORS: Record<string, string> = {
 export default function FeaturedWorkReel() {
   const scrollContainer = useRef<HTMLDivElement>(null)
   const [isPaused, setIsPaused] = useState(false)
+  const [isMobile, setIsMobile] = useState(false)
 
   useEffect(() => {
-    if (isPaused || !scrollContainer.current) return
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768)
+    }
+
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [])
+
+  useEffect(() => {
+    if (isPaused || !scrollContainer.current || isMobile) return
 
     const container = scrollContainer.current
 
@@ -49,7 +60,7 @@ export default function FeaturedWorkReel() {
 
     const interval = setInterval(scroll, 50)
     return () => clearInterval(interval)
-  }, [isPaused])
+  }, [isPaused, isMobile])
 
   return (
     <div
