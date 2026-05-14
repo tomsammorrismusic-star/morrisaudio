@@ -259,17 +259,26 @@ ADDITIONAL EXPERIENCE
             <CardTitle className="text-2xl text-slate-700">Career Summary</CardTitle>
           </CardHeader>
           <CardContent>
-            <p className="leading-relaxed text-slate-600">
-              A versatile production sound mixer and boom operator based in London, with extensive credits across feature film, high-end TV drama, documentary, and commercial work. Trained in professional audio production with a commitment to capturing clean, emotionally resonant audio in any environment — from controlled studio sets to remote locations. Comfortable with all major production audio systems and experienced collaborating with international crews on Bollywood productions, BBC documentaries, and major brand commercials.
-            </p>
-            <div className="mt-6">
-              <a
-                href="mailto:tomsammorrismusic@gmail.com"
-                className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#F5C429] hover:bg-[#D4A600] text-slate-700 font-semibold rounded-2xl transition-colors text-sm"
-              >
-                <Mail size={16} />
-                Email Me
-              </a>
+            <div className="flex flex-col md:flex-row gap-8 items-start">
+              <div className="flex-1">
+                <p className="leading-relaxed text-slate-600">
+                  A versatile production sound mixer and boom operator based in London, with extensive credits across feature film, high-end TV drama, documentary, and commercial work. Trained in professional audio production with a commitment to capturing clean, emotionally resonant audio in any environment — from controlled studio sets to remote locations. Comfortable with all major production audio systems and experienced collaborating with international crews on Bollywood productions, BBC documentaries, and major brand commercials.
+                </p>
+                <div className="mt-6">
+                  <a
+                    href="mailto:tomsammorrismusic@gmail.com"
+                    className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#F5C429] hover:bg-[#D4A600] text-slate-700 font-semibold rounded-2xl transition-colors text-sm"
+                  >
+                    <Mail size={16} />
+                    Email Me
+                  </a>
+                </div>
+              </div>
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets%2F1a8d84947e9444f98df7c975eda41851%2Fadd1319ac1184a8ea01e94321ca2fce2?format=webp&width=800&height=1200"
+                alt="Tom Morris - Professional headshot"
+                className="w-44 h-auto rounded-2xl object-cover flex-shrink-0 shadow-md"
+              />
             </div>
           </CardContent>
         </Card>
