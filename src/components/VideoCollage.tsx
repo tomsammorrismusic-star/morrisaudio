@@ -63,12 +63,12 @@ export default function VideoCollage() {
                 }}
               >
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300" />
-                <div className="w-12 h-12 rounded-full bg-brand/20 flex items-center justify-center relative z-10 group-hover:bg-orange-400/40 transition-all group-hover:scale-125">
-                  <Play className="w-6 h-6 text-white fill-white ml-1" />
+                <div className="w-12 h-12 rounded-full bg-brand/20 flex items-center justify-center relative z-10 group-hover:bg-orange-500/40 transition-all group-hover:scale-125">
+                  <Play className="w-6 h-6 text-gray-900 fill-white ml-1" />
                 </div>
                 <div className="text-center px-2 relative z-10 bottom-2 group-hover:bottom-0 transition-all duration-300">
-                  <p className="text-white font-semibold text-xs leading-snug line-clamp-2 drop-shadow-lg">{item.title}</p>
-                  <p className="text-white/70 text-xs uppercase tracking-wider mt-1">{item.category}</p>
+                  <p className="text-gray-900 font-semibold text-xs leading-snug line-clamp-2 drop-shadow-lg">{item.title}</p>
+                  <p className="text-gray-900/70 text-xs uppercase tracking-wider mt-1">{item.category}</p>
                 </div>
               </button>
             )
@@ -84,7 +84,7 @@ export default function VideoCollage() {
         >
           <button
             onClick={() => setSelectedItem(null)}
-            className="absolute top-8 right-8 p-3 text-white hover:text-lime-700 bg-black/60 hover:bg-black/80 rounded-full z-10 transition-all duration-300 bubble-hover"
+            className="absolute top-8 right-8 p-3 text-gray-900 hover:text-lime-700 bg-black/60 hover:bg-black/80 rounded-full z-10 transition-all duration-300 bubble-hover"
             aria-label="Close"
           >
             <X size={28} />
@@ -95,11 +95,11 @@ export default function VideoCollage() {
             onClick={(e) => e.stopPropagation()}
           >
             <div className="w-40 h-40 rounded-full bg-brand/20 flex items-center justify-center animate-pulse">
-              <Play className="w-20 h-20 text-white fill-white ml-3" />
+              <Play className="w-20 h-20 text-gray-900 fill-white ml-3" />
             </div>
             <div className="text-center px-12">
-              <h2 className="text-5xl font-semibold text-white mb-4">{selectedItem.title}</h2>
-              <p className="text-white/80 text-2xl uppercase tracking-widest font-semibold">{selectedItem.category}</p>
+              <h2 className="text-5xl font-semibold text-gray-900 mb-4">{selectedItem.title}</h2>
+              <p className="text-gray-900/80 text-2xl uppercase tracking-widest font-semibold">{selectedItem.category}</p>
             </div>
           </div>
         </div>
