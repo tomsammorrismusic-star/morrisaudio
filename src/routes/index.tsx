@@ -78,11 +78,11 @@ function Home() {
 
       {/* Stats */}
       <section className="py-0 -mt-12 lg:-mt-16">
-        <div className="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row gap-8 justify-center items-center flex-wrap">
+        <div className="max-w-6xl mx-auto px-4 flex flex-row gap-3 sm:gap-8 justify-center items-center flex-wrap">
           {stats.map((s) => (
-            <div key={s.label} className="flex flex-col items-center justify-center px-6 py-6 rounded-3xl border border-slate-700/30 hover:border-slate-700/50 transition-colors bubble-hover">
-              <p className="text-4xl font-bold text-slate-700">{s.value}</p>
-              <p className="text-slate-700 text-sm mt-3 whitespace-nowrap">{s.label}</p>
+            <div key={s.label} className="flex flex-col items-center justify-center px-3 sm:px-6 py-3 sm:py-6 rounded-2xl sm:rounded-3xl border border-slate-700/30 hover:border-slate-700/50 transition-colors bubble-hover">
+              <p className="text-2xl sm:text-4xl font-bold text-slate-700">{s.value}</p>
+              <p className="text-slate-700 text-xs sm:text-sm mt-2 sm:mt-3 whitespace-nowrap">{s.label}</p>
             </div>
           ))}
         </div>
