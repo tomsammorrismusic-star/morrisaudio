@@ -242,9 +242,9 @@ ADDITIONAL EXPERIENCE
           <CardHeader>
             <CardTitle className="text-2xl text-slate-700">Career Summary</CardTitle>
           </CardHeader>
-          <CardContent>
-            <div className="flex flex-col md:flex-row gap-8 items-center h-full">
-              <div className="flex-1">
+          <CardContent className="flex flex-col gap-6">
+            <div className="flex flex-col md:flex-row gap-8 items-stretch">
+              <div className="flex-1 flex flex-col justify-center">
                 <p className="leading-relaxed text-slate-600">
                   I'm a production sound mixer and boom operator with a genuine passion for capturing excellent audio on set. I've worked across feature films, high-end TV dramas, documentaries, and commercials, collaborating with talented international crews. My credits include Bollywood productions, BBC documentaries, and major brand campaigns. I'm committed to bringing professionalism and creativity to every project.
                 </p>
@@ -261,10 +261,10 @@ ADDITIONAL EXPERIENCE
               <img
                 src="https://cdn.builder.io/api/v1/image/assets%2F1a8d84947e9444f98df7c975eda41851%2Fadd1319ac1184a8ea01e94321ca2fce2?format=webp&width=800&height=1200"
                 alt="Tom Morris - Professional headshot"
-                className="w-44 h-full rounded-2xl object-cover flex-shrink-0 shadow-md"
+                className="w-44 h-auto rounded-2xl object-cover flex-shrink-0 shadow-md"
               />
             </div>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mt-4 w-full">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center w-full">
               <button
                 onClick={downloadCV}
                 className="inline-flex items-center gap-2 px-6 py-3 bg-[#F5C429] hover:bg-[#D4A600] text-slate-700 font-semibold rounded-2xl transition-colors"
