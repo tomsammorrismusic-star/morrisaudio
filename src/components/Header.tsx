@@ -36,8 +36,8 @@ export default function Header() {
             <Link
               key={link.to}
               to={link.to}
-              className="inline-flex items-center justify-center w-9 h-9 rounded-none text-slate-700 hover:text-[#E5CA38] border-b-2 border-b-transparent hover:border-b-slate-700 transition-colors bubble-hover"
-              activeProps={{ className: 'inline-flex items-center justify-center w-9 h-9 rounded-none text-[#D4A600] border-b-2 border-b-slate-700 transition-colors' }}
+              className="inline-flex items-center justify-center w-9 h-9 rounded-none text-slate-700 hover:text-[#E5CA38] border-b-2 border-b-transparent hover:border-b-slate-700 transition-colors bubble-hover data-[status=active]:text-[#D4A600] data-[status=active]:border-b-slate-700"
+              activeProps={{ 'data-status': 'active' }}
               title={link.label}
             >
               <link.icon className="w-5 h-5" />
