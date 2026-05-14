@@ -139,7 +139,7 @@ function Home() {
             </Link>
             <a
               href="mailto:tomsammorrismusic@gmail.com"
-              className="inline-flex items-center justify-center gap-2 px-10 py-3 border border-[#F8D83A] hover:border-[#F8D83A] text-slate-600 hover:text-slate-700 rounded-3xl transition-colors bubble-hover"
+              className="inline-flex items-center justify-center gap-2 px-10 py-3 border border-slate-700 hover:border-slate-700 text-slate-600 hover:text-slate-700 rounded-3xl transition-colors bubble-hover"
             >
               Email Directly
             </a>
