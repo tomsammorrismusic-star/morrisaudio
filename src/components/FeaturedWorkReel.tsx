@@ -6,11 +6,12 @@ interface VideoItem {
   title: string
   category: string
   url?: string
+  customTitle?: string
 }
 
 const videos: VideoItem[] = [
   { id: '1', title: 'Feature Film Location Sound', category: 'Film', url: 'https://www.youtube.com/watch?v=iFlZqFyTiso' },
-  { id: '2', title: 'Documentary — Wildlife Series', category: 'Documentary', url: 'https://next.frame.io/share/194b2f94-1bab-472a-897a-cd096544c58e/reel/421f7a89-974f-4e78-bc47-37a8640e0ad8' },
+  { id: '2', title: 'Documentary — Wildlife Series', category: 'Documentary', url: 'https://next.frame.io/share/194b2f94-1bab-472a-897a-cd096544c58e/reel/421f7a89-974f-4e78-bc47-37a8640e0ad8', customTitle: 'the happiness equation' },
   { id: '3', title: 'TV Commercial — Automotive', category: 'Commercial', url: 'https://www.youtube.com/watch?v=KMBRz_KBSAw' },
   { id: '4', title: 'Short Film — Drama', category: 'Drama', url: 'https://www.youtube.com/watch?v=3T1xqHHvoo4' },
   { id: '5', title: 'Corporate Interview Package', category: 'Corporate', url: 'https://www.youtube.com/watch?v=V8wpLnxb-UQ' },
@@ -108,26 +109,38 @@ export default function FeaturedWorkReel() {
           >
             <button
               onClick={() => item.url && setSelectedVideoUrl(item.url)}
-              className={`relative w-64 h-64 rounded-3xl bg-gradient-to-br ${CATEGORY_COLORS[item.category] ?? 'from-gray-300 to-gray-200'} border border-slate-700 flex flex-col items-center justify-center gap-2 cursor-pointer hover:border-slate-700 transition-all duration-500 ease-out group bubble-hover hover:shadow-2xl hover:scale-110 overflow-hidden`}
+              className={`relative w-64 h-64 rounded-3xl bg-gradient-to-br ${item.customTitle ? 'from-black to-slate-900' : (CATEGORY_COLORS[item.category] ?? 'from-gray-300 to-gray-200')} border border-slate-700 flex flex-col items-center justify-center gap-2 cursor-pointer hover:border-slate-700 transition-all duration-500 ease-out group bubble-hover hover:shadow-2xl hover:scale-110 overflow-hidden`}
               style={{
                 transformOrigin: 'center',
-                backgroundImage: getThumbnail(item.url) ? `url(${getThumbnail(item.url)})` : undefined,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
+                backgroundImage: item.customTitle ? 'radial-gradient(circle, white 1px, transparent 1px), linear-gradient(to bottom, #0a0e27, #1a1f3a)' : (getThumbnail(item.url) ? `url(${getThumbnail(item.url)})` : undefined),
+                backgroundSize: item.customTitle ? '50px 50px, cover' : 'cover',
+                backgroundPosition: item.customTitle ? '0 0, center' : 'center',
+                backgroundAttachment: item.customTitle ? 'fixed' : undefined,
               }}
               onMouseEnter={() => setIsPaused(true)}
               onMouseLeave={() => setIsPaused(false)}
             >
-              {getThumbnail(item.url) && (
+              {getThumbnail(item.url) && !item.customTitle && (
                 <div className="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-all duration-300" />
               )}
-              <div className="relative z-10 w-12 h-12 rounded-full bg-brand/20 flex items-center justify-center group-hover:bg-brand/30 transition-all duration-300">
-                <Play className="w-5 h-5 text-slate-700 fill-white ml-0.5" />
-              </div>
-              {!getThumbnail(item.url) && (
-                <div className="relative z-10 text-center px-3">
-                  <p className="text-slate-700 font-semibold text-xs leading-tight line-clamp-2">{item.title}</p>
+              {item.customTitle && (
+                <div className="absolute inset-0" />
+              )}
+              {item.customTitle ? (
+                <div className="relative z-10 text-center px-6 flex flex-col items-center justify-center h-full">
+                  <p className="text-white font-bold text-2xl leading-tight">{item.customTitle}</p>
                 </div>
+              ) : (
+                <>
+                  <div className="relative z-10 w-12 h-12 rounded-full bg-brand/20 flex items-center justify-center group-hover:bg-brand/30 transition-all duration-300">
+                    <Play className="w-5 h-5 text-slate-700 fill-white ml-0.5" />
+                  </div>
+                  {!getThumbnail(item.url) && (
+                    <div className="relative z-10 text-center px-3">
+                      <p className="text-slate-700 font-semibold text-xs leading-tight line-clamp-2">{item.title}</p>
+                    </div>
+                  )}
+                </>
               )}
             </button>
           </div>
