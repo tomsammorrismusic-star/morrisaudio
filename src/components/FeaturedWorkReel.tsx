@@ -30,11 +30,24 @@ const CATEGORY_COLORS: Record<string, string> = {
   Audio: 'from-teal-900 to-teal-700',
 }
 
-function getYouTubeThumbnail(url?: string): string | null {
+function getThumbnail(url?: string): string | null {
   if (!url) return null
-  const match = url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&\n?#]+)/)
-  const videoId = match?.[1]
-  return videoId ? `https://img.youtube.com/vi/${videoId}/hqdefault.jpg` : null
+
+  // YouTube thumbnails
+  const youtubeMatch = url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&\n?#]+)/)
+  if (youtubeMatch?.[1]) {
+    return `https://img.youtube.com/vi/${youtubeMatch[1]}/hqdefault.jpg`
+  }
+
+  // Frame.io thumbnails - attempt to fetch via their API
+  const frameioMatch = url.match(/frame\.io\/share\/([^\/]+)\/(?:reel|frame)\/([^/?]+)/)
+  if (frameioMatch) {
+    // Use Frame.io's public API to get a preview image
+    // Try using their thumbnail endpoint if available
+    return `https://thumbs.frame.io/${frameioMatch[2]}/latest?size=1280`
+  }
+
+  return null
 }
 
 export default function FeaturedWorkReel() {
@@ -98,20 +111,20 @@ export default function FeaturedWorkReel() {
               className={`relative w-64 h-64 rounded-3xl bg-gradient-to-br ${CATEGORY_COLORS[item.category] ?? 'from-gray-300 to-gray-200'} border border-slate-700 flex flex-col items-center justify-center gap-2 cursor-pointer hover:border-slate-700 transition-all duration-500 ease-out group bubble-hover hover:shadow-2xl hover:scale-110 overflow-hidden`}
               style={{
                 transformOrigin: 'center',
-                backgroundImage: getYouTubeThumbnail(item.url) ? `url(${getYouTubeThumbnail(item.url)})` : undefined,
+                backgroundImage: getThumbnail(item.url) ? `url(${getThumbnail(item.url)})` : undefined,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
               }}
               onMouseEnter={() => setIsPaused(true)}
               onMouseLeave={() => setIsPaused(false)}
             >
-              {getYouTubeThumbnail(item.url) && (
+              {getThumbnail(item.url) && (
                 <div className="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-all duration-300" />
               )}
               <div className="relative z-10 w-12 h-12 rounded-full bg-brand/20 flex items-center justify-center group-hover:bg-brand/30 transition-all duration-300">
                 <Play className="w-5 h-5 text-slate-700 fill-white ml-0.5" />
               </div>
-              {!getYouTubeThumbnail(item.url) && (
+              {!getThumbnail(item.url) && (
                 <div className="relative z-10 text-center px-3">
                   <p className="text-slate-700 font-semibold text-xs leading-tight line-clamp-2">{item.title}</p>
                 </div>
