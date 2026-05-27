@@ -1,5 +1,5 @@
 import { useRef, useEffect, useState } from 'react'
-import { Play } from 'lucide-react'
+import { Play, X } from 'lucide-react'
 
 interface VideoItem {
   id: string
@@ -34,6 +34,7 @@ export default function FeaturedWorkReel() {
   const scrollContainer = useRef<HTMLDivElement>(null)
   const [isPaused, setIsPaused] = useState(false)
   const [isMobile, setIsMobile] = useState(false)
+  const [selectedVideoUrl, setSelectedVideoUrl] = useState<string | null>(null)
 
   useEffect(() => {
     const checkMobile = () => {
@@ -86,7 +87,7 @@ export default function FeaturedWorkReel() {
             style={{ perspective: '1000px' }}
           >
             <button
-              onClick={() => item.url && window.open(item.url, '_blank')}
+              onClick={() => item.url && setSelectedVideoUrl(item.url)}
               className={`relative w-64 h-64 rounded-3xl bg-gradient-to-br ${CATEGORY_COLORS[item.category] ?? 'from-gray-300 to-gray-200'} border border-slate-700 flex flex-col items-center justify-center gap-2 cursor-pointer hover:border-slate-700 transition-all duration-500 ease-out group bubble-hover hover:shadow-2xl hover:scale-110`}
               style={{ transformOrigin: 'center' }}
               onMouseEnter={() => setIsPaused(true)}
@@ -106,6 +107,35 @@ export default function FeaturedWorkReel() {
       {/* Fade effect on edges */}
       <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-[#F5F0E8] to-transparent pointer-events-none" />
       <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-[#F5F0E8] to-transparent pointer-events-none" />
+
+      {/* Video Modal */}
+      {selectedVideoUrl && (
+        <div
+          className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4"
+          onClick={() => setSelectedVideoUrl(null)}
+        >
+          <div
+            className="relative w-full max-w-4xl bg-black rounded-2xl overflow-hidden"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              onClick={() => setSelectedVideoUrl(null)}
+              className="absolute top-4 right-4 z-10 bg-slate-700 hover:bg-slate-800 text-white p-2 rounded-full transition-colors"
+            >
+              <X size={24} />
+            </button>
+            <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
+              <iframe
+                src={selectedVideoUrl.replace('watch?v=', 'embed/') + '?autoplay=1'}
+                className="absolute inset-0 w-full h-full"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   )
 }
