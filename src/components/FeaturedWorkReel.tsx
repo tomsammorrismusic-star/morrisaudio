@@ -109,7 +109,7 @@ export default function FeaturedWorkReel() {
           >
             <button
               onClick={() => item.url && setSelectedVideoUrl(item.url)}
-              className={`relative w-64 h-64 rounded-3xl bg-gradient-to-br ${item.customTitle ? 'from-black to-slate-900' : (CATEGORY_COLORS[item.category] ?? 'from-gray-300 to-gray-200')} border border-slate-700 flex flex-col items-center justify-center gap-2 cursor-pointer hover:border-slate-700 transition-all duration-500 ease-out group bubble-hover hover:shadow-2xl hover:scale-110 overflow-hidden`}
+              className={`relative w-64 h-64 rounded-3xl bg-gradient-to-br ${item.customTitle ? 'from-black to-slate-900' : (CATEGORY_COLORS[item.category] ?? 'from-gray-300 to-gray-200')} flex flex-col items-center justify-center gap-2 cursor-pointer transition-all duration-500 ease-out group bubble-hover hover:shadow-2xl hover:scale-110 overflow-hidden`}
               style={{
                 transformOrigin: 'center',
                 backgroundImage: item.customTitle ? 'radial-gradient(circle, white 1px, transparent 1px), linear-gradient(to bottom, #0a0e27, #1a1f3a)' : (getThumbnail(item.url) ? `url(${getThumbnail(item.url)})` : undefined),
@@ -126,6 +126,12 @@ export default function FeaturedWorkReel() {
               {item.customTitle && (
                 <div className="absolute inset-0" />
               )}
+              {/* Title overlay at top */}
+              {!item.customTitle && (
+                <div className="absolute top-0 left-0 right-0 p-4 bg-gradient-to-b from-black/50 to-transparent z-10">
+                  <p className="text-white font-semibold text-sm leading-tight line-clamp-2">{item.title}</p>
+                </div>
+              )}
               {item.customTitle ? (
                 <>
                   <div className="relative z-10 text-center px-6 flex flex-col items-center justify-center h-full gap-4">
@@ -137,14 +143,9 @@ export default function FeaturedWorkReel() {
                 </>
               ) : (
                 <>
-                  <div className="relative z-10 w-12 h-12 rounded-full bg-brand/20 flex items-center justify-center group-hover:bg-brand/30 transition-all duration-300">
-                    <Play className="w-5 h-5 text-slate-700 fill-white ml-0.5" />
+                  <div className="relative z-10 w-12 h-12 rounded-full bg-white/20 flex items-center justify-center group-hover:bg-white/30 transition-all duration-300">
+                    <Play className="w-5 h-5 text-white fill-white ml-0.5" />
                   </div>
-                  {!getThumbnail(item.url) && (
-                    <div className="relative z-10 text-center px-3">
-                      <p className="text-slate-700 font-semibold text-xs leading-tight line-clamp-2">{item.title}</p>
-                    </div>
-                  )}
                 </>
               )}
             </button>
