@@ -84,7 +84,7 @@ function Showreel() {
             Your browser does not support the audio element.
           </audio>
           <p className="text-slate-700 mt-6 text-sm">
-            Production sample featuring a combination of lavalier and boom microphone audio techniques
+            Production sample demonstrating audio recorded with both lavalier and boom microphones
           </p>
         </div>
       </div>
