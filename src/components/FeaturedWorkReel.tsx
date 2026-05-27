@@ -10,7 +10,7 @@ interface VideoItem {
 }
 
 const videos: VideoItem[] = [
-  { id: '1', title: 'The Spy', category: 'Film', url: 'https://www.youtube.com/watch?v=iFlZqFyTiso' },
+  { id: '1', title: 'The Spy', category: 'Short Film', url: 'https://www.youtube.com/watch?v=iFlZqFyTiso' },
   { id: '2', title: 'Documentary — Wildlife Series', category: 'Documentary', url: 'https://next.frame.io/share/194b2f94-1bab-472a-897a-cd096544c58e/reel/421f7a89-974f-4e78-bc47-37a8640e0ad8', customTitle: 'The Happiness Equation' },
   { id: '3', title: 'Sands Christmas Charity Campaign', category: 'Charity', url: 'https://www.youtube.com/watch?v=KMBRz_KBSAw' },
   { id: '4', title: 'Belonging', category: 'Short Film', url: 'https://www.youtube.com/watch?v=3T1xqHHvoo4' },
