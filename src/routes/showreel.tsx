@@ -80,11 +80,11 @@ function Showreel() {
               colorScheme: 'dark',
             }}
           >
-            <source src="https://example.com/audio.mp3" type="audio/mpeg" />
+            <source src="https://cdn.builder.io/o/assets%2F1a8d84947e9444f98df7c975eda41851%2F66a46760af3744faa16a617aa24824eb?alt=media&token=16beffb2-e7f1-4bc6-9a46-ddcadc7d5b9a&apiKey=1a8d84947e9444f98df7c975eda41851" type="audio/mp4" />
             Your browser does not support the audio element.
           </audio>
           <p className="text-slate-700 mt-6 text-sm">
-            Replace the audio URL with your actual audio file (mp3, wav, etc.)
+            Production sample that switches between lavalier and boom microphone audio
           </p>
         </div>
       </div>
