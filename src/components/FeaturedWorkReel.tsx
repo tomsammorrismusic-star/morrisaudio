@@ -15,7 +15,7 @@ const videos: VideoItem[] = [
   { id: '3', title: 'TV Commercial — Automotive', category: 'Commercial', url: 'https://www.youtube.com/watch?v=KMBRz_KBSAw' },
   { id: '4', title: 'Short Film — Drama', category: 'Drama', url: 'https://www.youtube.com/watch?v=3T1xqHHvoo4' },
   { id: '5', title: 'Corporate Interview Package', category: 'Corporate', url: 'https://www.youtube.com/watch?v=V8wpLnxb-UQ' },
-  { id: '6', title: 'Social Commercial — Gold Bullion', category: 'Commercial', url: 'https://www.youtube.com/watch?v=1AodX2C-M9Y' },
+  { id: '6', title: 'Gods Gamblers - short film', category: 'Commercial', url: 'https://www.youtube.com/watch?v=1AodX2C-M9Y' },
   { id: '7', title: 'The bullion club Advert', category: 'Corporate', url: 'https://www.youtube.com/watch?v=58wu_GswQD0' },
   { id: '8', title: 'VCL Podcast', category: 'Audio', url: 'https://www.youtube.com/watch?v=DnaJFdKI0mY' },
 ]
