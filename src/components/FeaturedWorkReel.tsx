@@ -127,9 +127,14 @@ export default function FeaturedWorkReel() {
                 <div className="absolute inset-0" />
               )}
               {item.customTitle ? (
-                <div className="relative z-10 text-center px-6 flex flex-col items-center justify-center h-full">
-                  <p className="text-white font-bold text-2xl leading-tight">{item.customTitle}</p>
-                </div>
+                <>
+                  <div className="relative z-10 text-center px-6 flex flex-col items-center justify-center h-full gap-4">
+                    <p className="text-white font-bold text-2xl leading-tight">{item.customTitle}</p>
+                    <div className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center group-hover:bg-white/30 transition-all duration-300">
+                      <Play className="w-5 h-5 text-white fill-white ml-0.5" />
+                    </div>
+                  </div>
+                </>
               ) : (
                 <>
                   <div className="relative z-10 w-12 h-12 rounded-full bg-brand/20 flex items-center justify-center group-hover:bg-brand/30 transition-all duration-300">
