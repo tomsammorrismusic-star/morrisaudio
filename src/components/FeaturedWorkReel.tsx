@@ -10,14 +10,15 @@ interface VideoItem {
 }
 
 const videos: VideoItem[] = [
-  { id: '1', title: 'The Spy', category: 'Film', url: 'https://www.youtube.com/watch?v=iFlZqFyTiso' },
+  { id: '1', title: 'The Spy', category: 'Short Film', url: 'https://www.youtube.com/watch?v=iFlZqFyTiso' },
   { id: '2', title: 'Documentary — Wildlife Series', category: 'Documentary', url: 'https://next.frame.io/share/194b2f94-1bab-472a-897a-cd096544c58e/reel/421f7a89-974f-4e78-bc47-37a8640e0ad8', customTitle: 'The Happiness Equation' },
-  { id: '3', title: 'Sands Christmas Charity Campaign', category: 'Commercial', url: 'https://www.youtube.com/watch?v=KMBRz_KBSAw' },
-  { id: '4', title: 'Belonging', category: 'Drama', url: 'https://www.youtube.com/watch?v=3T1xqHHvoo4' },
-  { id: '5', title: 'Apollo Tyres Campaign', category: 'Corporate', url: 'https://www.youtube.com/watch?v=V8wpLnxb-UQ' },
-  { id: '6', title: 'Gods Gamblers', category: 'Commercial', url: 'https://www.youtube.com/watch?v=1AodX2C-M9Y' },
-  { id: '7', title: 'The Bullion Club', category: 'Corporate', url: 'https://www.youtube.com/watch?v=58wu_GswQD0' },
-  { id: '8', title: 'VCL Podcast', category: 'Audio', url: 'https://www.youtube.com/watch?v=DnaJFdKI0mY' },
+  { id: '3', title: 'Sands Christmas Charity Campaign', category: 'Charity', url: 'https://www.youtube.com/watch?v=KMBRz_KBSAw' },
+  { id: '4', title: 'Belonging', category: 'Short Film', url: 'https://www.youtube.com/watch?v=3T1xqHHvoo4' },
+  { id: '5', title: 'Apollo Tyres Campaign', category: 'Commercial', url: 'https://www.youtube.com/watch?v=V8wpLnxb-UQ' },
+  { id: '6', title: 'Gods Gamblers', category: 'Short Film', url: 'https://www.youtube.com/watch?v=1AodX2C-M9Y' },
+  { id: '7', title: 'The Bullion Club', category: 'Commercial', url: 'https://www.youtube.com/watch?v=58wu_GswQD0' },
+  { id: '8', title: 'VCL Podcast', category: 'Corporate', url: 'https://www.youtube.com/watch?v=DnaJFdKI0mY' },
+  { id: '9', title: 'Newcastle United', category: 'Commercial', url: 'https://www.youtube.com/watch?v=24Pl0uOCJko' },
 ]
 
 const CATEGORY_COLORS: Record<string, string> = {
@@ -126,28 +127,15 @@ export default function FeaturedWorkReel() {
               {item.customTitle && (
                 <div className="absolute inset-0" />
               )}
-              {/* Title overlay at top */}
-              {!item.customTitle && (
-                <div className="absolute top-0 left-0 right-0 p-4 bg-gradient-to-b from-black/50 to-transparent z-10">
-                  <p className="text-white font-semibold text-sm leading-tight line-clamp-2">{item.title}</p>
+              <div className="relative z-10 text-center px-6 flex flex-col items-center justify-center h-full gap-4">
+                <div className="flex flex-col items-center gap-2">
+                  <p className="text-white font-bold text-2xl leading-tight">{item.customTitle || item.title}</p>
+                  <p className="text-white/60 text-xs tracking-wider uppercase">{item.category}</p>
                 </div>
-              )}
-              {item.customTitle ? (
-                <>
-                  <div className="relative z-10 text-center px-6 flex flex-col items-center justify-center h-full gap-4">
-                    <p className="text-white font-bold text-2xl leading-tight">{item.customTitle}</p>
-                    <div className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center group-hover:bg-white/30 transition-all duration-300">
-                      <Play className="w-5 h-5 text-white fill-white ml-0.5" />
-                    </div>
-                  </div>
-                </>
-              ) : (
-                <>
-                  <div className="relative z-10 w-12 h-12 rounded-full bg-white/20 flex items-center justify-center group-hover:bg-white/30 transition-all duration-300">
-                    <Play className="w-5 h-5 text-white fill-white ml-0.5" />
-                  </div>
-                </>
-              )}
+                <div className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center group-hover:bg-white/30 transition-all duration-300">
+                  <Play className="w-5 h-5 text-white fill-white ml-0.5" />
+                </div>
+              </div>
             </button>
           </div>
         ))}
