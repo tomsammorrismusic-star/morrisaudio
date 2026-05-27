@@ -9,7 +9,7 @@ interface VideoItem {
 }
 
 const videos: VideoItem[] = [
-  { id: '1', title: 'Feature Film Location Sound', category: 'Film' },
+  { id: '1', title: 'Feature Film Location Sound', category: 'Film', url: 'https://www.youtube.com/watch?v=iFlZqFyTiso' },
   { id: '2', title: 'Documentary — Wildlife Series', category: 'Documentary' },
   { id: '3', title: 'TV Commercial — Automotive', category: 'Commercial', url: 'https://www.youtube.com/watch?v=KMBRz_KBSAw' },
   { id: '4', title: 'Short Film — Drama', category: 'Drama', url: 'https://www.youtube.com/watch?v=3T1xqHHvoo4' },
