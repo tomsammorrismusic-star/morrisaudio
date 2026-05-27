@@ -18,6 +18,7 @@ const videos: VideoItem[] = [
   { id: '6', title: 'Gods Gamblers', category: 'Commercial', url: 'https://www.youtube.com/watch?v=1AodX2C-M9Y' },
   { id: '7', title: 'The Bullion Club', category: 'Corporate', url: 'https://www.youtube.com/watch?v=58wu_GswQD0' },
   { id: '8', title: 'VCL Podcast', category: 'Audio', url: 'https://www.youtube.com/watch?v=DnaJFdKI0mY' },
+  { id: '9', title: 'Newcastle United', category: 'Commercial', url: 'https://www.youtube.com/watch?v=24Pl0uOCJko' },
 ]
 
 const CATEGORY_COLORS: Record<string, string> = {
