@@ -10,13 +10,13 @@ interface VideoItem {
 }
 
 const videos: VideoItem[] = [
-  { id: '1', title: 'the spy short film', category: 'Film', url: 'https://www.youtube.com/watch?v=iFlZqFyTiso' },
-  { id: '2', title: 'Documentary — Wildlife Series', category: 'Documentary', url: 'https://next.frame.io/share/194b2f94-1bab-472a-897a-cd096544c58e/reel/421f7a89-974f-4e78-bc47-37a8640e0ad8', customTitle: 'the happiness equation' },
-  { id: '3', title: 'sands christmas charity advert', category: 'Commercial', url: 'https://www.youtube.com/watch?v=KMBRz_KBSAw' },
-  { id: '4', title: 'belonging short film', category: 'Drama', url: 'https://www.youtube.com/watch?v=3T1xqHHvoo4' },
-  { id: '5', title: 'apollo tyres advert', category: 'Corporate', url: 'https://www.youtube.com/watch?v=V8wpLnxb-UQ' },
-  { id: '6', title: 'Gods Gamblers - short film', category: 'Commercial', url: 'https://www.youtube.com/watch?v=1AodX2C-M9Y' },
-  { id: '7', title: 'The bullion club Advert', category: 'Corporate', url: 'https://www.youtube.com/watch?v=58wu_GswQD0' },
+  { id: '1', title: 'The Spy', category: 'Film', url: 'https://www.youtube.com/watch?v=iFlZqFyTiso' },
+  { id: '2', title: 'Documentary — Wildlife Series', category: 'Documentary', url: 'https://next.frame.io/share/194b2f94-1bab-472a-897a-cd096544c58e/reel/421f7a89-974f-4e78-bc47-37a8640e0ad8', customTitle: 'The Happiness Equation' },
+  { id: '3', title: 'Sands Christmas Charity Campaign', category: 'Commercial', url: 'https://www.youtube.com/watch?v=KMBRz_KBSAw' },
+  { id: '4', title: 'Belonging', category: 'Drama', url: 'https://www.youtube.com/watch?v=3T1xqHHvoo4' },
+  { id: '5', title: 'Apollo Tyres Campaign', category: 'Corporate', url: 'https://www.youtube.com/watch?v=V8wpLnxb-UQ' },
+  { id: '6', title: 'Gods Gamblers', category: 'Commercial', url: 'https://www.youtube.com/watch?v=1AodX2C-M9Y' },
+  { id: '7', title: 'The Bullion Club', category: 'Corporate', url: 'https://www.youtube.com/watch?v=58wu_GswQD0' },
   { id: '8', title: 'VCL Podcast', category: 'Audio', url: 'https://www.youtube.com/watch?v=DnaJFdKI0mY' },
 ]
 
