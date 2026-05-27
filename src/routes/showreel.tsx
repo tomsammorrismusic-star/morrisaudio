@@ -84,7 +84,7 @@ function Showreel() {
             Your browser does not support the audio element.
           </audio>
           <p className="text-slate-700 mt-6 text-sm">
-            Production sample that switches between lavalier and boom microphone audio to demonstrate the sonic differences between both recording techniques
+            Production sample that switches between lavalier and boom microphone audio
           </p>
         </div>
       </div>
