@@ -15,7 +15,7 @@ const videos: VideoItem[] = [
   { id: '4', title: 'Short Film — Drama', category: 'Drama', url: 'https://www.youtube.com/watch?v=3T1xqHHvoo4' },
   { id: '5', title: 'Corporate Interview Package', category: 'Corporate', url: 'https://www.youtube.com/watch?v=V8wpLnxb-UQ' },
   { id: '6', title: 'Social Commercial — Gold Bullion', category: 'Commercial' },
-  { id: '7', title: 'Corporate Podcast — VCL Vintners', category: 'Corporate' },
+  { id: '7', title: 'Corporate Podcast — VCL Vintners', category: 'Corporate', url: 'https://www.youtube.com/watch?v=58wu_GswQD0' },
   { id: '8', title: 'Podcast & Voice Over', category: 'Audio', url: 'https://www.youtube.com/watch?v=DnaJFdKI0mY' },
 ]
 
