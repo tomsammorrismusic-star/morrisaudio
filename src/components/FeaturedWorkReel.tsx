@@ -10,7 +10,7 @@ interface VideoItem {
 
 const videos: VideoItem[] = [
   { id: '1', title: 'Feature Film Location Sound', category: 'Film', url: 'https://www.youtube.com/watch?v=iFlZqFyTiso' },
-  { id: '2', title: 'Documentary — Wildlife Series', category: 'Documentary' },
+  { id: '2', title: 'Documentary — Wildlife Series', category: 'Documentary', url: 'https://next.frame.io/share/194b2f94-1bab-472a-897a-cd096544c58e/reel/421f7a89-974f-4e78-bc47-37a8640e0ad8' },
   { id: '3', title: 'TV Commercial — Automotive', category: 'Commercial', url: 'https://www.youtube.com/watch?v=KMBRz_KBSAw' },
   { id: '4', title: 'Short Film — Drama', category: 'Drama', url: 'https://www.youtube.com/watch?v=3T1xqHHvoo4' },
   { id: '5', title: 'Corporate Interview Package', category: 'Corporate', url: 'https://www.youtube.com/watch?v=V8wpLnxb-UQ' },
@@ -143,7 +143,7 @@ export default function FeaturedWorkReel() {
             </button>
             <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
               <iframe
-                src={selectedVideoUrl.replace('watch?v=', 'embed/') + '?autoplay=1'}
+                src={selectedVideoUrl.includes('frame.io') ? selectedVideoUrl : selectedVideoUrl.replace('watch?v=', 'embed/') + '?autoplay=1'}
                 className="absolute inset-0 w-full h-full"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
