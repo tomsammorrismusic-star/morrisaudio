@@ -84,7 +84,7 @@ function Showreel() {
             Your browser does not support the audio element.
           </audio>
           <p className="text-slate-700 mt-6 text-sm">
-            Replace the audio URL with your actual audio file (mp3, wav, etc.)
+            Here is an example of some work i recorded, which switches between the lav and boom
           </p>
         </div>
       </div>
