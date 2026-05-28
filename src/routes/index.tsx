@@ -146,6 +146,13 @@ function Home() {
           </div>
           <div className="flex justify-center gap-5">
             <a
+              href="mailto:tomsammorrismusic@gmail.com"
+              className="inline-flex items-center justify-center w-12 h-12 rounded-2xl border border-slate-700 hover:border-slate-700 text-slate-700 hover:text-[#E5CA38] transition-colors bubble-hover"
+              aria-label="Email"
+            >
+              <Mail className="w-6 h-6" />
+            </a>
+            <a
               href="https://www.instagram.com/tom_morris2810/"
               target="_blank"
               rel="noopener noreferrer"
