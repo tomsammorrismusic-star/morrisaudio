@@ -33,8 +33,13 @@ function Showreel() {
     return null
   }
 
-  const moreWorkVideos = portfolioVideos.slice(1)
-  const featuredVideo = portfolioVideos[0]
+  const canEmbed = (url: string) => {
+    return url.includes('youtube.com') || url.includes('youtu.be') || url.includes('frame.io')
+  }
+
+  const embeddableVideos = portfolioVideos.filter(v => canEmbed(v.url))
+  const moreWorkVideos = embeddableVideos.slice(1)
+  const featuredVideo = embeddableVideos[0]
 
   const displayedVideos = expandMoreWork ? moreWorkVideos : moreWorkVideos.slice(0, 3)
 
