@@ -23,43 +23,33 @@ function PostAudio() {
       title: 'Audio Mixing & Mastering',
       desc: 'Full mix down, surround sound preparation, and mastering for various delivery formats.',
     },
-    {
-      icon: Zap,
-      title: 'ADR & Voice-Over',
-      desc: 'Dialogue recording, voice-over sessions, and automated dialogue replacement services.',
-    },
   ]
 
   const projects = [
     {
-      title: 'Feature Film Post Production',
-      description: 'Complete post-audio workflow including dialogue cleanup, Foley recording, and final mix.',
-      details: 'Delivered in 5.1 Surround and Stereo formats',
+      title: 'Short Film: Chasing Nothing',
+      description: 'Complete Post Audio Package',
+      details: 'Full dialogue cleanup, sound design, and final mix',
     },
     {
-      title: 'Documentary Sound Design',
-      description: 'Custom sound design and atmospheric sound beds for multi-part documentary series.',
-      details: 'BBC broadcast specifications',
+      title: 'Short Film: Paramoure',
+      description: 'Complete Post Audio Package',
+      details: 'Dialogue editing, foley recording, and audio mastering',
     },
     {
-      title: 'Commercial Audio Mixing',
-      description: 'High-impact audio mixing for broadcast commercials with quick turnarounds.',
-      details: '30-60 second spots',
+      title: 'Podcast Audio Cleanup',
+      description: 'VCL Vintners (Complete Post Audio Package)',
+      details: 'Dialogue enhancement, noise reduction, and audio mastering',
     },
     {
-      title: 'TV Drama Audio Post',
-      description: 'Full dialogue cleanup, sound effects layering, and mix for episodic television.',
-      details: 'Episode lengths from 30 to 60 minutes',
+      title: 'Social Content: One Cask At A Time',
+      description: 'Dialogue Cleanup',
+      details: 'Professional dialogue editing and noise reduction',
     },
     {
-      title: 'Podcast Production',
-      description: 'Audio editing, noise reduction, and mastering for professional podcast delivery.',
-      details: 'Optimized for streaming platforms',
-    },
-    {
-      title: 'Game Audio Mastering',
-      description: 'Audio mastering and implementation support for interactive game projects.',
-      details: 'Dialogue, music, and SFX integration',
+      title: 'Social Advert: The Bullion Club',
+      description: 'Dialogue enhancement, Mixing & Mastering',
+      details: 'Professional audio enhancement and final mastering',
     },
   ]
 
@@ -88,17 +78,30 @@ function PostAudio() {
               Complete post-production audio solutions tailored to your project's needs.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {services.map((svc) => (
-              <div
-                key={svc.title}
-                className="p-8 rounded-3xl border border-slate-700 hover:border-slate-600 bg-[#F5F0E8] hover:bg-[#EDE5D8] transition-all duration-300 bubble-hover"
-              >
-                <svc.icon className="w-14 h-14 text-[#D4A600] mb-8" />
-                <h3 className="text-2xl font-semibold mb-4">{svc.title}</h3>
-                <p className="text-slate-600 text-base leading-relaxed">{svc.desc}</p>
-              </div>
-            ))}
+          <div className="flex flex-col items-center gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
+              {services.slice(0, 2).map((svc) => (
+                <div
+                  key={svc.title}
+                  className="p-8 rounded-3xl border border-slate-700 hover:border-slate-600 bg-[#F5F0E8] hover:bg-[#EDE5D8] transition-all duration-300 bubble-hover"
+                >
+                  <svc.icon className="w-14 h-14 text-[#D4A600] mb-8" />
+                  <h3 className="text-2xl font-semibold mb-4">{svc.title}</h3>
+                  <p className="text-slate-600 text-base leading-relaxed">{svc.desc}</p>
+                </div>
+              ))}
+            </div>
+            {services.length > 2 && services[2] && (() => {
+              const lastService = services[2]
+              const IconComponent = lastService.icon
+              return (
+                <div className="p-8 rounded-3xl border border-slate-700 hover:border-slate-600 bg-[#F5F0E8] hover:bg-[#EDE5D8] transition-all duration-300 bubble-hover w-full md:w-1/2">
+                  <IconComponent className="w-14 h-14 text-[#D4A600] mb-8" />
+                  <h3 className="text-2xl font-semibold mb-4">{lastService.title}</h3>
+                  <p className="text-slate-600 text-base leading-relaxed">{lastService.desc}</p>
+                </div>
+              )
+            })()}
           </div>
         </div>
       </section>

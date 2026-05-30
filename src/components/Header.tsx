@@ -34,15 +34,18 @@ export default function Header() {
         {/* Desktop nav */}
         <nav className="hidden md:flex items-center gap-3">
           {navLinks.map((link) => (
-            <Link
-              key={link.to}
-              to={link.to}
-              className="inline-flex items-center justify-center w-9 h-9 rounded-none text-slate-700 hover:text-[#E5CA38] border-b-2 border-b-transparent hover:border-b-slate-700 transition-colors bubble-hover data-[status=active]:text-[#D4A600] data-[status=active]:border-b-slate-700"
-              activeProps={{ 'data-status': 'active' }}
-              title={link.label}
-            >
-              <link.icon className="w-5 h-5" />
-            </Link>
+            <div key={link.to} className="relative group">
+              <Link
+                to={link.to}
+                className="inline-flex items-center justify-center w-9 h-9 rounded-none text-slate-700 hover:text-[#E5CA38] border-b-2 border-b-transparent hover:border-b-slate-700 transition-colors bubble-hover data-[status=active]:text-[#D4A600] data-[status=active]:border-b-slate-700"
+                activeProps={{ 'data-status': 'active' }}
+              >
+                <link.icon className="w-5 h-5" />
+              </Link>
+              <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 px-2 py-1 bg-slate-700 text-white text-xs rounded whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-10">
+                {link.label}
+              </div>
+            </div>
           ))}
           <div className="flex items-center gap-2 pl-2 border-l border-slate-700">
             <a
