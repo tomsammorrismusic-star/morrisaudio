@@ -83,7 +83,7 @@ function PostAudio() {
               Complete post-production audio solutions tailored to your project's needs.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 justify-center">
             {services.map((svc) => (
               <div
                 key={svc.title}
