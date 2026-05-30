@@ -132,7 +132,7 @@ function Showreel() {
                 <p className="font-semibold text-lg">{featuredVideo.title} — {featuredVideo.category}</p>
               </div>
             </div>
-            <p className="text-slate-700 mt-3">Featured Project</p>
+            <p className="text-slate-700 mt-3">Check out my work!</p>
           </div>
 
           {/* Sidebar with collapsible video list - same height as featured video */}
