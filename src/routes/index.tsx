@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
 import LogoReel from '@/components/LogoReel'
 import FeaturedWorkReel from '@/components/FeaturedWorkReel'
-import { Mic, Volume2, Headphones, Award, Mail, Instagram, MessageCircle } from 'lucide-react'
+import { Mic, Volume2, Headphones, Award, Mail, Instagram, MessageCircle, ChevronDown } from 'lucide-react'
 
 export const Route = createFileRoute('/')({
   component: Home,
@@ -60,6 +60,11 @@ function Home() {
               View My Work
             </Link>
           </div>
+        </div>
+        {/* Scroll Down Indicator */}
+        <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 animate-bounce flex flex-col items-center gap-2">
+          <p className="text-sm text-slate-700 font-medium">Scroll down for more</p>
+          <ChevronDown className="w-6 h-6 text-slate-700" />
         </div>
       </section>
 
@@ -145,6 +150,13 @@ function Home() {
             </a>
           </div>
           <div className="flex justify-center gap-5">
+            <a
+              href="mailto:tomsammorrismusic@gmail.com"
+              className="inline-flex items-center justify-center w-12 h-12 rounded-2xl border border-slate-700 hover:border-slate-700 text-slate-700 hover:text-[#E5CA38] transition-colors bubble-hover"
+              aria-label="Email"
+            >
+              <Mail className="w-6 h-6" />
+            </a>
             <a
               href="https://www.instagram.com/tom_morris2810/"
               target="_blank"
