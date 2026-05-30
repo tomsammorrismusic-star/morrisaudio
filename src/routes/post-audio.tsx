@@ -23,11 +23,6 @@ function PostAudio() {
       title: 'Audio Mixing & Mastering',
       desc: 'Full mix down, surround sound preparation, and mastering for various delivery formats.',
     },
-    {
-      icon: Zap,
-      title: 'ADR & Voice-Over',
-      desc: 'Dialogue recording, voice-over sessions, and automated dialogue replacement services.',
-    },
   ]
 
   const projects = [
