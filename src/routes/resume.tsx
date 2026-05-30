@@ -10,7 +10,7 @@ export const Route = createFileRoute('/resume')({
 function Resume() {
   const downloadCV = () => {
     const content = `TOM MORRIS
-Sound Recordist | Sound Mixer | Sound Designer
+Sound Recordist | Sound Mixer | Sound Designer | Boom Operator
 Email: TOMSAMMORRISMUSIC@GMAIL.COM
 Education: Music Technology, Kingston University - Bachelors
 
@@ -82,7 +82,7 @@ ADDITIONAL EXPERIENCE
 
   const downloadCredits = () => {
     const content = `TOM MORRIS - FULL CREDITS LIST
-Sound Recordist | Sound Mixer | Sound Designer
+Sound Recordist | Sound Mixer | Sound Designer | Boom Operator
 Email: TOMSAMMORRISMUSIC@GMAIL.COM
 
 FEATURE FILMS
@@ -229,7 +229,7 @@ ADDITIONAL EXPERIENCE
         {/* Header */}
         <div className="text-center space-y-4">
           <h1 className="text-5xl font-semibold">Experience & CV</h1>
-          <p className="text-slate-700 text-lg font-semibold">Sound Recordist | Sound Mixer | Sound Designer</p>
+          <p className="text-slate-700 text-lg font-semibold">Sound Recordist | Sound Mixer | Sound Designer | Boom Operator</p>
           <div className="space-y-2 text-sm text-slate-600">
             <p>Email: tomsammorrismusic@gmail.com</p>
             <p>Education: Music Technology, Kingston University - Bachelors</p>
