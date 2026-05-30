@@ -83,17 +83,30 @@ function PostAudio() {
               Complete post-production audio solutions tailored to your project's needs.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {services.map((svc, idx) => (
-              <div
-                key={svc.title}
-                className={`p-8 rounded-3xl border border-slate-700 hover:border-slate-600 bg-[#F5F0E8] hover:bg-[#EDE5D8] transition-all duration-300 bubble-hover ${idx === services.length - 1 && services.length % 2 === 1 ? 'md:col-start-2' : ''}`}
-              >
-                <svc.icon className="w-14 h-14 text-[#D4A600] mb-8" />
-                <h3 className="text-2xl font-semibold mb-4">{svc.title}</h3>
-                <p className="text-slate-600 text-base leading-relaxed">{svc.desc}</p>
-              </div>
-            ))}
+          <div className="flex flex-col items-center gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
+              {services.slice(0, 2).map((svc) => (
+                <div
+                  key={svc.title}
+                  className="p-8 rounded-3xl border border-slate-700 hover:border-slate-600 bg-[#F5F0E8] hover:bg-[#EDE5D8] transition-all duration-300 bubble-hover"
+                >
+                  <svc.icon className="w-14 h-14 text-[#D4A600] mb-8" />
+                  <h3 className="text-2xl font-semibold mb-4">{svc.title}</h3>
+                  <p className="text-slate-600 text-base leading-relaxed">{svc.desc}</p>
+                </div>
+              ))}
+            </div>
+            {services.length > 2 && services[2] && (() => {
+              const lastService = services[2]
+              const IconComponent = lastService.icon
+              return (
+                <div className="p-8 rounded-3xl border border-slate-700 hover:border-slate-600 bg-[#F5F0E8] hover:bg-[#EDE5D8] transition-all duration-300 bubble-hover w-full md:w-1/2">
+                  <IconComponent className="w-14 h-14 text-[#D4A600] mb-8" />
+                  <h3 className="text-2xl font-semibold mb-4">{lastService.title}</h3>
+                  <p className="text-slate-600 text-base leading-relaxed">{lastService.desc}</p>
+                </div>
+              )
+            })()}
           </div>
         </div>
       </section>
