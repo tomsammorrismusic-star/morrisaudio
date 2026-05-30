@@ -94,8 +94,8 @@ function Showreel() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Large featured video on left */}
           <div className="lg:col-span-2">
-            <div className="rounded-2xl overflow-hidden bg-black aspect-video flex items-center justify-center group cursor-pointer">
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <div className="rounded-2xl overflow-hidden bg-black aspect-video flex items-center justify-center group cursor-pointer relative">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none will-change-opacity" />
               <iframe
                 src="https://www.youtube.com/embed/VIDEO_ID_1"
                 width="100%"
@@ -121,7 +121,7 @@ function Showreel() {
                   key={idx}
                   className="flex-1 min-h-0 rounded-2xl overflow-hidden bg-black flex items-center justify-center group cursor-pointer bubble-hover hover:ring-2 hover:ring-emerald-700 transition-all"
                 >
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none will-change-opacity" />
                   <iframe
                     src={`https://www.youtube.com/embed/${video.id}`}
                     width="100%"
