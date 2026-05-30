@@ -7,6 +7,7 @@ interface VideoItem {
   category: string
   url?: string
   customTitle?: string
+  thumbnail?: string
 }
 
 const videos: VideoItem[] = [
@@ -19,10 +20,13 @@ const videos: VideoItem[] = [
   { id: '7', title: 'The Bullion Club', category: 'Commercial', url: 'https://www.youtube.com/watch?v=58wu_GswQD0' },
   { id: '8', title: 'VCL Podcast', category: 'Corporate', url: 'https://www.youtube.com/watch?v=DnaJFdKI0mY' },
   { id: '9', title: 'Newcastle United', category: 'Commercial', url: 'https://www.youtube.com/watch?v=24Pl0uOCJko' },
+  { id: '10', title: 'Worry Time', category: 'Feature Film', url: 'https://www.facebook.com/watch/?v=822559357481192', thumbnail: 'https://cdn.builder.io/api/v1/image/assets%2F1a8d84947e9444f98df7c975eda41851%2Fe7baa1af4d2b40e1bcaeca5edbc41660' },
+  { id: '11', title: 'Untold Stories', category: 'Documentary', url: 'https://www.youtube.com/watch?v=iOUK6ke_hjI' },
 ]
 
 const CATEGORY_COLORS: Record<string, string> = {
   Film: 'from-blue-900 to-blue-700',
+  'Feature Film': 'from-blue-900 to-blue-700',
   Documentary: 'from-green-900 to-green-700',
   Commercial: 'from-purple-900 to-purple-700',
   Drama: 'from-red-900 to-red-700',
@@ -32,20 +36,19 @@ const CATEGORY_COLORS: Record<string, string> = {
   Audio: 'from-teal-900 to-teal-700',
 }
 
-function getThumbnail(url?: string): string | null {
-  if (!url) return null
+function getThumbnail(item: VideoItem): string | null {
+  if (item.thumbnail) return item.thumbnail
+  if (!item.url) return null
 
   // YouTube thumbnails
-  const youtubeMatch = url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&\n?#]+)/)
+  const youtubeMatch = item.url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&\n?#]+)/)
   if (youtubeMatch?.[1]) {
     return `https://img.youtube.com/vi/${youtubeMatch[1]}/hqdefault.jpg`
   }
 
-  // Frame.io thumbnails - attempt to fetch via their API
-  const frameioMatch = url.match(/frame\.io\/share\/([^\/]+)\/(?:reel|frame)\/([^/?]+)/)
+  // Frame.io thumbnails
+  const frameioMatch = item.url.match(/frame\.io\/share\/([^\/]+)\/(?:reel|frame)\/([^/?]+)/)
   if (frameioMatch) {
-    // Use Frame.io's public API to get a preview image
-    // Try using their thumbnail endpoint if available
     return `https://thumbs.frame.io/${frameioMatch[2]}/latest?size=1280`
   }
 
@@ -113,7 +116,7 @@ export default function FeaturedWorkReel() {
               className={`relative w-64 h-64 rounded-3xl bg-gradient-to-br ${item.customTitle ? 'from-black to-slate-900' : (CATEGORY_COLORS[item.category] ?? 'from-gray-300 to-gray-200')} flex flex-col items-center justify-center gap-2 cursor-pointer transition-all duration-500 ease-out group bubble-hover hover:shadow-2xl hover:scale-110 overflow-hidden`}
               style={{
                 transformOrigin: 'center',
-                backgroundImage: item.customTitle ? 'radial-gradient(circle, white 1px, transparent 1px), linear-gradient(to bottom, #0a0e27, #1a1f3a)' : (getThumbnail(item.url) ? `url(${getThumbnail(item.url)})` : undefined),
+                backgroundImage: item.customTitle ? 'radial-gradient(circle, white 1px, transparent 1px), linear-gradient(to bottom, #0a0e27, #1a1f3a)' : (getThumbnail(item) ? `url(${getThumbnail(item)})` : undefined),
                 backgroundSize: item.customTitle ? '50px 50px, cover' : 'cover',
                 backgroundPosition: item.customTitle ? '0 0, center' : 'center',
                 backgroundAttachment: item.customTitle ? 'fixed' : undefined,
@@ -121,7 +124,7 @@ export default function FeaturedWorkReel() {
               onMouseEnter={() => setIsPaused(true)}
               onMouseLeave={() => setIsPaused(false)}
             >
-              {getThumbnail(item.url) && !item.customTitle && (
+              {getThumbnail(item) && !item.customTitle && (
                 <div className="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-all duration-300" />
               )}
               {item.customTitle && (
@@ -163,7 +166,13 @@ export default function FeaturedWorkReel() {
             </button>
             <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
               <iframe
-                src={selectedVideoUrl.includes('frame.io') ? selectedVideoUrl : selectedVideoUrl.replace('watch?v=', 'embed/') + '?autoplay=1'}
+                src={
+                  selectedVideoUrl.includes('frame.io')
+                    ? selectedVideoUrl
+                    : selectedVideoUrl.includes('facebook.com')
+                    ? `https://www.facebook.com/plugins/video.php?href=${encodeURIComponent(selectedVideoUrl)}&show_text=false&width=880`
+                    : selectedVideoUrl.replace('watch?v=', 'embed/') + '?autoplay=1'
+                }
                 className="absolute inset-0 w-full h-full"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

@@ -9,14 +9,37 @@ export const Route = createFileRoute('/showreel')({
 function Showreel() {
   const [expandMoreWork, setExpandMoreWork] = useState(false)
 
-  const moreWorkVideos = [
-    { id: 'VIDEO_ID_2', title: 'Documentary Series' },
-    { id: 'VIDEO_ID_3', title: 'Commercial - Automotive' },
-    { id: 'VIDEO_ID_4', title: 'Corporate Interview' },
-    { id: 'VIDEO_ID_5', title: 'TV Drama Series' },
-    { id: 'VIDEO_ID_6', title: 'Music Video' },
-    { id: 'VIDEO_ID_7', title: 'Podcast Recording' },
+  const portfolioVideos = [
+    { id: '1', title: 'The Spy', category: 'Short Film', url: 'https://www.youtube.com/watch?v=iFlZqFyTiso' },
+    { id: '2', title: 'The Happiness Equation', category: 'Documentary', url: 'https://next.frame.io/share/194b2f94-1bab-472a-897a-cd096544c58e/reel/421f7a89-974f-4e78-bc47-37a8640e0ad8' },
+    { id: '3', title: 'Sands Christmas Charity Campaign', category: 'Charity', url: 'https://www.youtube.com/watch?v=KMBRz_KBSAw' },
+    { id: '4', title: 'Belonging', category: 'Short Film', url: 'https://www.youtube.com/watch?v=3T1xqHHvoo4' },
+    { id: '5', title: 'Apollo Tyres Campaign', category: 'Commercial', url: 'https://www.youtube.com/watch?v=V8wpLnxb-UQ' },
+    { id: '6', title: 'Gods Gamblers', category: 'Short Film', url: 'https://www.youtube.com/watch?v=1AodX2C-M9Y' },
+    { id: '7', title: 'The Bullion Club', category: 'Commercial', url: 'https://www.youtube.com/watch?v=58wu_GswQD0' },
+    { id: '8', title: 'VCL Podcast', category: 'Corporate', url: 'https://www.youtube.com/watch?v=DnaJFdKI0mY' },
+    { id: '9', title: 'Newcastle United', category: 'Commercial', url: 'https://www.youtube.com/watch?v=24Pl0uOCJko' },
+    { id: '10', title: 'Worry Time', category: 'Feature Film', url: 'https://www.facebook.com/watch/?v=822559357481192' },
+    { id: '11', title: 'Untold Stories', category: 'Documentary', url: 'https://www.youtube.com/watch?v=iOUK6ke_hjI' },
   ]
+
+  const extractVideoId = (url: string) => {
+    const youtubeMatch = url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&\n?#]+)/)
+    if (youtubeMatch?.[1]) return youtubeMatch[1]
+
+    const frameioMatch = url.match(/frame\.io\/share\/([^\/]+)\/(?:reel|frame)\/([^/?]+)/)
+    if (frameioMatch) return `frame-io-${frameioMatch[2]}`
+
+    return null
+  }
+
+  const canEmbed = (url: string) => {
+    return url.includes('youtube.com') || url.includes('youtu.be') || url.includes('frame.io')
+  }
+
+  const embeddableVideos = portfolioVideos.filter(v => canEmbed(v.url))
+  const moreWorkVideos = embeddableVideos.slice(1)
+  const featuredVideo = embeddableVideos[0]
 
   const displayedVideos = expandMoreWork ? moreWorkVideos : moreWorkVideos.slice(0, 3)
 
@@ -94,10 +117,10 @@ function Showreel() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Large featured video on left */}
           <div className="lg:col-span-2">
-            <div className="rounded-2xl overflow-hidden bg-black aspect-video flex items-center justify-center group cursor-pointer">
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <div className="rounded-2xl overflow-hidden bg-black aspect-video flex items-center justify-center group cursor-pointer relative">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none will-change-opacity" />
               <iframe
-                src="https://www.youtube.com/embed/VIDEO_ID_1"
+                src={featuredVideo.url.includes('frame.io') ? featuredVideo.url : `https://www.youtube.com/embed/${extractVideoId(featuredVideo.url)}`}
                 width="100%"
                 height="100%"
                 frameBorder="0"
@@ -106,7 +129,7 @@ function Showreel() {
                 className="w-full h-full"
               />
               <div className="absolute bottom-4 left-4 right-4 text-slate-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300 relative z-10">
-                <p className="font-semibold text-lg">Feature Film - Location Sound</p>
+                <p className="font-semibold text-lg">{featuredVideo.title} — {featuredVideo.category}</p>
               </div>
             </div>
             <p className="text-slate-700 mt-3">Featured Project</p>
@@ -116,26 +139,30 @@ function Showreel() {
           <div className="flex flex-col h-full">
             <p className="text-sm text-gray-400 uppercase tracking-wider font-semibold mb-2">More Work</p>
             <div className="flex-1 flex flex-col gap-2 min-h-0">
-              {displayedVideos.map((video, idx) => (
-                <div
-                  key={idx}
-                  className="flex-1 min-h-0 rounded-2xl overflow-hidden bg-black flex items-center justify-center group cursor-pointer bubble-hover hover:ring-2 hover:ring-emerald-700 transition-all"
-                >
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  <iframe
-                    src={`https://www.youtube.com/embed/${video.id}`}
-                    width="100%"
-                    height="100%"
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                    className="w-full h-full"
-                  />
-                  <div className="absolute bottom-2 left-2 right-2 text-slate-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300 relative z-10">
-                    <p className="font-semibold text-xs line-clamp-1">{video.title}</p>
+              {displayedVideos.map((video, idx) => {
+                const videoId = extractVideoId(video.url)
+                const embedUrl = video.url.includes('frame.io') ? video.url : `https://www.youtube.com/embed/${videoId}`
+                return (
+                  <div
+                    key={idx}
+                    className="flex-1 min-h-0 rounded-2xl overflow-hidden bg-black flex items-center justify-center group cursor-pointer bubble-hover hover:ring-2 hover:ring-emerald-700 transition-all relative"
+                  >
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none will-change-opacity" />
+                    <iframe
+                      src={embedUrl}
+                      width="100%"
+                      height="100%"
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      className="w-full h-full"
+                    />
+                    <div className="absolute bottom-2 left-2 right-2 text-slate-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300 relative z-10">
+                      <p className="font-semibold text-xs line-clamp-1">{video.title}</p>
+                    </div>
                   </div>
-                </div>
-              ))}
+                )
+              })}
             </div>
             {!expandMoreWork && moreWorkVideos.length > 3 && (
               <button
@@ -157,9 +184,6 @@ function Showreel() {
             )}
           </div>
         </div>
-        <p className="text-gray-400 mt-8 text-sm text-center max-w-2xl mx-auto">
-          Replace VIDEO_ID_1 through VIDEO_ID_7 with your actual YouTube video IDs. The featured project takes the main focus while additional work appears in a organized sidebar.
-        </p>
       </div>
 
       <div className="max-w-6xl mx-auto px-4 py-16">

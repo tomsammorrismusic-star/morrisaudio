@@ -162,6 +162,19 @@ code {
   }
 }
 
+@keyframes subtle-bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+.animate-subtle-bounce {
+  animation: subtle-bounce 2s infinite;
+}
+
 .bubble-hover {
   transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
  }
