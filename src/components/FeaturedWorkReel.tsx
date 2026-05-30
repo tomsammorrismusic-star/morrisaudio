@@ -7,6 +7,7 @@ interface VideoItem {
   category: string
   url?: string
   customTitle?: string
+  thumbnail?: string
 }
 
 const videos: VideoItem[] = [
@@ -19,7 +20,7 @@ const videos: VideoItem[] = [
   { id: '7', title: 'The Bullion Club', category: 'Commercial', url: 'https://www.youtube.com/watch?v=58wu_GswQD0' },
   { id: '8', title: 'VCL Podcast', category: 'Corporate', url: 'https://www.youtube.com/watch?v=DnaJFdKI0mY' },
   { id: '9', title: 'Newcastle United', category: 'Commercial', url: 'https://www.youtube.com/watch?v=24Pl0uOCJko' },
-  { id: '10', title: 'Worry Time', category: 'Feature Film', url: 'https://www.facebook.com/watch/?v=822559357481192' },
+  { id: '10', title: 'Worry Time', category: 'Feature Film', url: 'https://www.facebook.com/watch/?v=822559357481192', thumbnail: 'https://cdn.builder.io/api/v1/image/assets%2F1a8d84947e9444f98df7c975eda41851%2Fe7baa1af4d2b40e1bcaeca5edbc41660' },
 ]
 
 const CATEGORY_COLORS: Record<string, string> = {
@@ -34,25 +35,20 @@ const CATEGORY_COLORS: Record<string, string> = {
   Audio: 'from-teal-900 to-teal-700',
 }
 
-function getThumbnail(url?: string): string | null {
-  if (!url) return null
+function getThumbnail(item: VideoItem): string | null {
+  if (item.thumbnail) return item.thumbnail
+  if (!item.url) return null
 
   // YouTube thumbnails
-  const youtubeMatch = url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&\n?#]+)/)
+  const youtubeMatch = item.url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&\n?#]+)/)
   if (youtubeMatch?.[1]) {
     return `https://img.youtube.com/vi/${youtubeMatch[1]}/hqdefault.jpg`
   }
 
   // Frame.io thumbnails
-  const frameioMatch = url.match(/frame\.io\/share\/([^\/]+)\/(?:reel|frame)\/([^/?]+)/)
+  const frameioMatch = item.url.match(/frame\.io\/share\/([^\/]+)\/(?:reel|frame)\/([^/?]+)/)
   if (frameioMatch) {
     return `https://thumbs.frame.io/${frameioMatch[2]}/latest?size=1280`
-  }
-
-  // Facebook thumbnails - extract video ID and use Facebook's og:image
-  const facebookMatch = url.match(/facebook\.com\/watch\/?\?v=(\d+)/)
-  if (facebookMatch?.[1]) {
-    return `https://graph.facebook.com/${facebookMatch[1]}/picture?type=large`
   }
 
   return null
@@ -119,7 +115,7 @@ export default function FeaturedWorkReel() {
               className={`relative w-64 h-64 rounded-3xl bg-gradient-to-br ${item.customTitle ? 'from-black to-slate-900' : (CATEGORY_COLORS[item.category] ?? 'from-gray-300 to-gray-200')} flex flex-col items-center justify-center gap-2 cursor-pointer transition-all duration-500 ease-out group bubble-hover hover:shadow-2xl hover:scale-110 overflow-hidden`}
               style={{
                 transformOrigin: 'center',
-                backgroundImage: item.customTitle ? 'radial-gradient(circle, white 1px, transparent 1px), linear-gradient(to bottom, #0a0e27, #1a1f3a)' : (getThumbnail(item.url) ? `url(${getThumbnail(item.url)})` : undefined),
+                backgroundImage: item.customTitle ? 'radial-gradient(circle, white 1px, transparent 1px), linear-gradient(to bottom, #0a0e27, #1a1f3a)' : (getThumbnail(item) ? `url(${getThumbnail(item)})` : undefined),
                 backgroundSize: item.customTitle ? '50px 50px, cover' : 'cover',
                 backgroundPosition: item.customTitle ? '0 0, center' : 'center',
                 backgroundAttachment: item.customTitle ? 'fixed' : undefined,
@@ -127,7 +123,7 @@ export default function FeaturedWorkReel() {
               onMouseEnter={() => setIsPaused(true)}
               onMouseLeave={() => setIsPaused(false)}
             >
-              {getThumbnail(item.url) && !item.customTitle && (
+              {getThumbnail(item) && !item.customTitle && (
                 <div className="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-all duration-300" />
               )}
               {item.customTitle && (
