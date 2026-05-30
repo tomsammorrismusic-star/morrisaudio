@@ -41,6 +41,11 @@ function PostAudio() {
       description: 'VCL Vintners (Complete Post Audio Package)',
       details: 'Dialogue enhancement, noise reduction, and audio mastering',
     },
+    {
+      title: 'Social Content: One Cask At A Time',
+      description: 'Dialogue Cleanup',
+      details: 'Professional dialogue editing and noise reduction',
+    },
   ]
 
   return (
