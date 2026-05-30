@@ -46,6 +46,11 @@ function PostAudio() {
       description: 'Dialogue Cleanup',
       details: 'Professional dialogue editing and noise reduction',
     },
+    {
+      title: 'Social Advert: The Bullion Club',
+      description: 'Dialogue enhancement, Mixing & Mastering',
+      details: 'Professional audio enhancement and final mastering',
+    },
   ]
 
   return (
