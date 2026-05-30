@@ -62,7 +62,7 @@ function Home() {
           </div>
         </div>
         {/* Scroll Down Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-subtle-bounce flex flex-col items-center gap-2">
+        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 animate-subtle-bounce flex flex-col items-center gap-2">
           <p className="text-sm text-slate-700 font-medium">Scroll down for more</p>
           <ChevronDown className="w-6 h-6 text-slate-700" />
         </div>
