@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
 import LogoReel from '@/components/LogoReel'
 import FeaturedWorkReel from '@/components/FeaturedWorkReel'
-import { Mic, Volume2, Headphones, Award, Mail, Instagram, MessageCircle } from 'lucide-react'
+import { Mic, Volume2, Headphones, Award, Mail, Instagram, MessageCircle, ChevronDown } from 'lucide-react'
 
 export const Route = createFileRoute('/')({
   component: Home,
@@ -60,6 +60,10 @@ function Home() {
               View My Work
             </Link>
           </div>
+        </div>
+        {/* Scroll Down Indicator */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+          <ChevronDown className="w-6 h-6 text-slate-700" />
         </div>
       </section>
 
