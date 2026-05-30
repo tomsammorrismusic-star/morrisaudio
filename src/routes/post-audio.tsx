@@ -27,34 +27,14 @@ function PostAudio() {
 
   const projects = [
     {
-      title: 'Feature Film Post Production',
-      description: 'Complete post-audio workflow including dialogue cleanup, Foley recording, and final mix.',
-      details: 'Delivered in 5.1 Surround and Stereo formats',
+      title: 'Short Film: Chasing Nothing',
+      description: 'Complete Post Audio Package',
+      details: 'Full dialogue cleanup, sound design, and final mix',
     },
     {
-      title: 'Documentary Sound Design',
-      description: 'Custom sound design and atmospheric sound beds for multi-part documentary series.',
-      details: 'BBC broadcast specifications',
-    },
-    {
-      title: 'Commercial Audio Mixing',
-      description: 'High-impact audio mixing for broadcast commercials with quick turnarounds.',
-      details: '30-60 second spots',
-    },
-    {
-      title: 'TV Drama Audio Post',
-      description: 'Full dialogue cleanup, sound effects layering, and mix for episodic television.',
-      details: 'Episode lengths from 30 to 60 minutes',
-    },
-    {
-      title: 'Podcast Production',
-      description: 'Audio editing, noise reduction, and mastering for professional podcast delivery.',
-      details: 'Optimized for streaming platforms',
-    },
-    {
-      title: 'Game Audio Mastering',
-      description: 'Audio mastering and implementation support for interactive game projects.',
-      details: 'Dialogue, music, and SFX integration',
+      title: 'Short Film: Paramoure',
+      description: 'Complete Post Audio Package',
+      details: 'Dialogue editing, foley recording, and audio mastering',
     },
   ]
 
