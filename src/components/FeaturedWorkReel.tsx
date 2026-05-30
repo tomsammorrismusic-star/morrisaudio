@@ -19,6 +19,7 @@ const videos: VideoItem[] = [
   { id: '7', title: 'The Bullion Club', category: 'Commercial', url: 'https://www.youtube.com/watch?v=58wu_GswQD0' },
   { id: '8', title: 'VCL Podcast', category: 'Corporate', url: 'https://www.youtube.com/watch?v=DnaJFdKI0mY' },
   { id: '9', title: 'Newcastle United', category: 'Commercial', url: 'https://www.youtube.com/watch?v=24Pl0uOCJko' },
+  { id: '10', title: 'Facebook Video', category: 'Commercial', url: 'https://www.facebook.com/watch/?v=822559357481192' },
 ]
 
 const CATEGORY_COLORS: Record<string, string> = {
@@ -163,7 +164,13 @@ export default function FeaturedWorkReel() {
             </button>
             <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
               <iframe
-                src={selectedVideoUrl.includes('frame.io') ? selectedVideoUrl : selectedVideoUrl.replace('watch?v=', 'embed/') + '?autoplay=1'}
+                src={
+                  selectedVideoUrl.includes('frame.io')
+                    ? selectedVideoUrl
+                    : selectedVideoUrl.includes('facebook.com')
+                    ? `https://www.facebook.com/plugins/video.php?href=${encodeURIComponent(selectedVideoUrl)}&show_text=false&width=880`
+                    : selectedVideoUrl.replace('watch?v=', 'embed/') + '?autoplay=1'
+                }
                 className="absolute inset-0 w-full h-full"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
