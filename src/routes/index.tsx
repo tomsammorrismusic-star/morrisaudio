@@ -137,12 +137,12 @@ function Home() {
               <Mail size={18} />
               Contact Me
             </Link>
-            <a
-              href="mailto:tomsammorrismusic@gmail.com"
+            <Link
+              to="/contact"
               className="inline-flex items-center justify-center gap-2 px-10 py-3 border border-slate-700 hover:border-slate-700 text-slate-600 hover:text-slate-700 rounded-3xl transition-colors bubble-hover"
             >
               Email Directly
-            </a>
+            </Link>
           </div>
           <div className="flex justify-center gap-5">
             <a
