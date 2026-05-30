@@ -10,7 +10,7 @@ export const Route = createFileRoute('/resume')({
 function Resume() {
   const downloadCV = () => {
     const content = `TOM MORRIS
-Sound Recordist | Sound Mixer | Sound Designer
+Sound Recordist | Sound Mixer | Sound Designer | Boom Operator
 Email: TOMSAMMORRISMUSIC@GMAIL.COM
 Education: Music Technology, Kingston University - Bachelors
 
@@ -28,7 +28,7 @@ FEATURE FILMS
 • State of Us | Sound Mixer (April 2025)
 • The Hitman's Nightmare | Sound Recordist (May 2025)
 
-COMMERCIALS & INDUSTRIALS
+COMMERCIALS & CORPORATES
 • Sportsbet.io | Sound Mixer | Newcastle United x3 (Jun 2025)
 • EE & Google Pixel | Sound Mixer | Women's National Team (Apr 2025)
 • Apollo Tyres | Sound Mixer | Manchester United (Mar 2025)
@@ -82,7 +82,7 @@ ADDITIONAL EXPERIENCE
 
   const downloadCredits = () => {
     const content = `TOM MORRIS - FULL CREDITS LIST
-Sound Recordist | Sound Mixer | Sound Designer
+Sound Recordist | Sound Mixer | Sound Designer | Boom Operator
 Email: TOMSAMMORRISMUSIC@GMAIL.COM
 
 FEATURE FILMS
@@ -96,7 +96,7 @@ FEATURE FILMS
 • State of Us | Sound Mixer (April 2025)
 • The Hitman's Nightmare | Sound Recordist (May 2025)
 
-COMMERCIALS & INDUSTRIALS
+COMMERCIALS & CORPORATES
 • Sportsbet.io | Sound Mixer | Newcastle United x3 (Jun 2025)
 • EE & Google Pixel | Sound Mixer | Women's National Team (Apr 2025)
 • Apollo Tyres | Sound Mixer | Manchester United (Mar 2025)
@@ -229,7 +229,7 @@ ADDITIONAL EXPERIENCE
         {/* Header */}
         <div className="text-center space-y-4">
           <h1 className="text-5xl font-semibold">Experience & CV</h1>
-          <p className="text-slate-700 text-lg font-semibold">Sound Recordist | Sound Mixer | Sound Designer</p>
+          <p className="text-slate-700 text-lg font-semibold">Sound Recordist | Sound Mixer | Sound Designer | Boom Operator</p>
           <div className="space-y-2 text-sm text-slate-600">
             <p>Email: tomsammorrismusic@gmail.com</p>
             <p>Education: Music Technology, Kingston University - Bachelors</p>
@@ -290,7 +290,7 @@ ADDITIONAL EXPERIENCE
           <h2 className="text-3xl font-semibold text-slate-700">Professional Credits</h2>
           
           <CreditSection title="Feature Films" items={featureFilms} />
-          <CreditSection title="Commercials & Industrials" items={commercials} />
+          <CreditSection title="Commercials & Corporates" items={commercials} />
           <CreditSection title="Documentaries & Television" items={documentaries} />
           <CreditSection title="Short Films (Selection)" items={shortFilms} />
           <CreditSection title="Podcast" items={podcasts} />

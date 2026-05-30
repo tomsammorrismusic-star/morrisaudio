@@ -1,10 +1,11 @@
 import { Link } from '@tanstack/react-router'
 import { useState, useEffect } from 'react'
-import { Menu, X, Mic, Instagram, MessageCircle, Home, Film, Briefcase, FolderOpen, Mail } from 'lucide-react'
+import { Menu, X, Mic, Instagram, MessageCircle, Home, Film, Briefcase, FolderOpen, Mail, Headphones } from 'lucide-react'
 
 const navLinks = [
   { to: '/', label: 'Home', icon: Home },
   { to: '/showreel', label: 'Showreel', icon: Film },
+  { to: '/post-audio', label: 'Post Audio', icon: Headphones },
   { to: '/resume', label: 'Experience', icon: Briefcase },
   { to: '/projects', label: 'Projects', icon: FolderOpen },
   { to: '/contact', label: 'Contact', icon: Mail },
