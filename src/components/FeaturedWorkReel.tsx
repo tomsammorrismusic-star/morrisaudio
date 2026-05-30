@@ -19,11 +19,12 @@ const videos: VideoItem[] = [
   { id: '7', title: 'The Bullion Club', category: 'Commercial', url: 'https://www.youtube.com/watch?v=58wu_GswQD0' },
   { id: '8', title: 'VCL Podcast', category: 'Corporate', url: 'https://www.youtube.com/watch?v=DnaJFdKI0mY' },
   { id: '9', title: 'Newcastle United', category: 'Commercial', url: 'https://www.youtube.com/watch?v=24Pl0uOCJko' },
-  { id: '10', title: 'Facebook Video', category: 'Commercial', url: 'https://www.facebook.com/watch/?v=822559357481192' },
+  { id: '10', title: 'Worry Time', category: 'Feature Film', url: 'https://www.facebook.com/watch/?v=822559357481192' },
 ]
 
 const CATEGORY_COLORS: Record<string, string> = {
   Film: 'from-blue-900 to-blue-700',
+  'Feature Film': 'from-blue-900 to-blue-700',
   Documentary: 'from-green-900 to-green-700',
   Commercial: 'from-purple-900 to-purple-700',
   Drama: 'from-red-900 to-red-700',
@@ -42,12 +43,16 @@ function getThumbnail(url?: string): string | null {
     return `https://img.youtube.com/vi/${youtubeMatch[1]}/hqdefault.jpg`
   }
 
-  // Frame.io thumbnails - attempt to fetch via their API
+  // Frame.io thumbnails
   const frameioMatch = url.match(/frame\.io\/share\/([^\/]+)\/(?:reel|frame)\/([^/?]+)/)
   if (frameioMatch) {
-    // Use Frame.io's public API to get a preview image
-    // Try using their thumbnail endpoint if available
     return `https://thumbs.frame.io/${frameioMatch[2]}/latest?size=1280`
+  }
+
+  // Facebook thumbnails - extract video ID and use Facebook's og:image
+  const facebookMatch = url.match(/facebook\.com\/watch\/?\?v=(\d+)/)
+  if (facebookMatch?.[1]) {
+    return `https://graph.facebook.com/${facebookMatch[1]}/picture?type=large`
   }
 
   return null
