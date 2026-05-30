@@ -1,6 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { Volume2, Waveform, Music, Zap, Mail, Instagram, MessageCircle } from 'lucide-react'
+import { Volume2, Activity, Music, Zap, Mail, Instagram, MessageCircle } from 'lucide-react'
 
 export const Route = createFileRoute('/post-audio')({
   component: PostAudio,
@@ -14,7 +14,7 @@ function PostAudio() {
       desc: 'Professional dialogue editing, noise reduction, and spectral repair for broadcast-quality audio.',
     },
     {
-      icon: Waveform,
+      icon: Activity,
       title: 'Sound Design',
       desc: 'Creative sound design and Foley supervision for films, documentaries, and commercials.',
     },
