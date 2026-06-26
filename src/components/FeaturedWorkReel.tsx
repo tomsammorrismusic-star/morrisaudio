@@ -22,7 +22,7 @@ const videos: VideoItem[] = [
   { id: '9', title: 'Newcastle United', category: 'Commercial', url: 'https://www.youtube.com/watch?v=24Pl0uOCJko' },
   { id: '10', title: 'Worry Time', category: 'Feature Film', url: 'https://www.facebook.com/watch/?v=822559357481192', thumbnail: 'https://cdn.builder.io/api/v1/image/assets%2F1a8d84947e9444f98df7c975eda41851%2Fe7baa1af4d2b40e1bcaeca5edbc41660' },
   { id: '11', title: 'Untold Stories', category: 'Documentary', url: 'https://www.youtube.com/watch?v=iOUK6ke_hjI' },
-  { id: '12', title: 'Paramoure', category: 'Short Film', url: 'https://www.youtube.com/watch?v=K7CI5hNveMg' },
+  { id: '12', title: 'Happy Fathers Day', category: 'Short Film', url: 'https://www.youtube.com/watch?v=K7CI5hNveMg' },
 ]
 
 const CATEGORY_COLORS: Record<string, string> = {
